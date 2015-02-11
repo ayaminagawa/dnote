@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<% end %>
+
 
   <div class="col col-17 "> 
           <h2 class="title-bar"><i class="title-icon icon-edit"></i>レシピをのせる</h2>
@@ -25,9 +25,9 @@
                   <div class="edit-area">
                    <form action="#">
                       <!-- <textarea class="edit-field edit-recipe-title" rows="2" placeholder="レシピのタイトルを入力"></textarea> -->
-                      <%= form_for(@recipe) do |f| %>
+                    
                         <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'レシピのタイトルを入力', rows:'2' %>
-                      <% end %>
+          
                     </form>
                     
                   </div>
@@ -50,10 +50,12 @@
                   <div class="centering">
                     <div class="edit-recipe-img-typetext">
                       <i class="icon-s icon-camera"></i>
-                      <span class="border-b">写真を変更する</span>
-                      <form action="" class="form-recipe-img">
+                      <!-- <span class="border-b">写真を変更する</span> -->
+                      <!-- <form action="" class="form-recipe-img">
                         <input type="file" class="uploader-recipe-img-typetext">
-                      </form>
+                      </form> -->
+                      <%= f.file_field :image %>
+
                     </div>
                   </div>
                 </div>
@@ -72,9 +74,9 @@
                       <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
                       <br>
                     </form> -->
-                    <%= form_for(@recipe) do |f| %>
+                    
                       <%= f.text_field :description, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>
-                    <% end %>
+              
                   </div>
                 </div>
 
@@ -243,9 +245,9 @@
                       <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
                       <br>
                     </form> -->
-                    <%= form_for(@recipe) do |f| %>
+                    
                        <%= f.text_field :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>
-                    <% end %>
+                    
                   </div>
                 </div>
 
@@ -258,9 +260,9 @@
                   <!-- <form action="#" >
                     <textarea class="edit-field edit-kcal" placeholder="選択して編集する (例：400)"></textarea>
                   </form> -->
-                   <%= form_for(@recipe) do |f| %>
+                   
                      <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する (例：400)' %>
-                   <% end %>
+                   
                 </div>
 
               </div>
@@ -268,11 +270,13 @@
 
             <div class="centering mt-56 create-recipe-btn-container" >
 <!--               <a href="#" class="create-recipe-btn">レシピを公開する</a> -->
-              <%= form_for(@recipe) do |f| %>
+          
                 <%= f.submit "レシピを公開する", class: 'create-recipe-btn' %>
-              <% end %>
+              
             </div>
 
           </div>
         </div>
-      </div><!-- recipe-bottom -->
+      </div>
+
+<% end %>

@@ -44,101 +44,7 @@
   <div id="wrapper">
 
    <!-- Header -->
-   <header id="header">
-    <div class="header-container pc-header clear">
-      <div class="header-inner clear">
-        <div class="logo-container">
-          <h1>
-            <a href="index.html">
-              <img src="images/logo.png" alt="dnote" class="logo">
-            </a>
-          </h1>
-        </div>
-
-        <ul class="search-container">
-          <li class="keyword-search">
-            <form action="#">
-              <input type="text" class="search-bar">
-              <button class="search-submit"><i class="icon-search icon-m"></i></button>
-            </form>
-          </li>
-
-          <li class="category-search-container">
-            <a href="#is-category-dropdown-box" class="category-search" id="is-category-dropdown-switch">
-              カテゴリから探す<i class="icon-s icon-play"></i>
-            </a>
-
-            <ul class="category-list" id="is-category-dropdown-box">
-              <li class="category-item">
-                <a href="menu-recipe.html">
-                  カロリー表示あり
-                </a>    
-              </li>
-              <li class="category-item">
-                <a href="menu-recipe.html">
-                  糖質制限食
-                </a>    
-              </li>
-              <li class="category-item">
-                <a href="menu-recipe.html">
-                  HbA1c、血糖値の安定
-                </a>    
-              </li>
-              <li class="category-item">
-                <a href="menu-recipe.html">
-                  味に自信あり
-                </a>    
-              </li>
-              <li class="category-item">
-                <a href="menu-recipe.html">
-                  すぐできるメニュー
-                </a>    
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="user-menu-container">
-          <li class="signup">
-            <a href="#modal" > 
-              <i class="icon-new-account icon-s"></i>
-              新規登録<span style="font-weight:normal;">&nbsp;/&nbsp;</span>ログイン
-            </a>
-          </li>
-
-          <li class="post-recipe">
-            <a href="create-recipe.html">
-              <i class="icon-edit"></i>
-              <p class="post-recipe-text">
-                レシピを<br>のせる
-              </p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!--  SmartphoneHeader-->
-    <div class="header-container sp-header clear">
-      <div class="header-inner clear">
-        <div class="menu-btn" id="menu-btn">
-
-        </div>
-
-        <div class="sp-logo-container">
-          <a href="index.html">
-            <img src="images/logo.png" alt="dnote" class="logo">
-          </a>
-        </div>
-
-        <div class="account-btn">
-          <a href="#modal">
-            <i class="icon-login"></i><br>
-            ログイン
-          </a> 
-        </div>
-      </div>
-    </div>
-  </header>
+   <%= render 'layouts/header' %>
   <!-- Header -->
 
 
@@ -148,8 +54,9 @@
         <div class="title-bar">
           <i class="title-icon icon-cutlery"></i>レシピ
           <div class="recipe-edit-btn">
-            <a href="#">レシピを編集する
-            </a>
+            <!-- <a href="#">レシピを編集する
+            </a> -->
+            <%= link_to "レシピを編集する", edit_recipe_path(@recipe) %>
           </div>
         </div>
 
@@ -157,9 +64,7 @@
           <div class=" gutters row">
             <div class="col col-16 col-xs col-xs-17">
               <div class="menu-title-large">
-                <a href="#">
-                  ゴロゴロお肉のメキシカンスープと彩りサラダ
-                </a>
+                  <%= @recipe.name %>
               </div>
             </div>
 
@@ -181,8 +86,7 @@
               </div>
 
               <p class="menu-comment">
-                お酢でサッパリと鶏手羽元を煮込みました。 
-                圧力鍋未使用レシピです。分量はアバウトですが･･･
+                <%= @recipe.description %>
               </p>
 
               <p class="recipe-author clear">
@@ -193,7 +97,8 @@
 
               <div class="pull-left mt-30">
                 <p class="kcal">
-                  <i class="icon-scales"></i> 380kcal
+                  <i class="icon-scales"></i>
+                  <%= @recipe.calorie %>カロリー
                 </p>
               </div>
 
@@ -368,7 +273,7 @@
             <div class="memo-history recipe-memo col col-12">
               <h4 class="memo-head"><i class="title-icon icon-star"></i> コツ・ポイント</h4>
               <p class="memo-history-text">
-                ポイントは、ざっくり混ぜる事。一晩冷蔵庫で寝かせる事。サラダオイルを少量ひいて焼く事。この3つです。好みでチーズをのせて焼くとさらに高級な味わいになります。リコッタチーズも合います。前夜に生地を作っておけば当日焼くだけで楽ちんです♪
+                <%= @recipe.tip %>
               </p>
             </div>
 
@@ -563,517 +468,16 @@
 
 
 <!-- Footer -->
-<footer id="footer">
-  <div class="full pc-footer footer-container">
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Dnote" class="photo">
-    </div>
-
-    <div class="footer-head">
-      症状で探す
-    </div>
-
-    <ul class="footer-category-list">
-      <li class="category-item">
-        <a href="#">
-          血糖値・HbA1c安定
-        </a>    
-      </li>
-      <li class="category-item">
-        <a href="#">
-          コレステロール値改善
-        </a>    
-      </li>
-      <li class="category-item">
-        <a href="#">
-          動脈硬化により脂肪酸
-        </a>    
-      </li>
-      <li class="category-item">
-        <a href="#">
-          中性脂肪をおさえる
-        </a>    
-      </li>
-      <li class="category-item">
-        <a href="#">
-          時間がないときの時短メニュー
-        </a>    
-      </li>
-    </ul>
-
-    <ul class="social-list">
-      <li>
-        <a href="#">
-          <img src="images/facebook.png">
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="images/twitter.png">
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="images/google.png">
-
-        </a>
-      </li>
-    </ul>
-
-    <ul class="site-menu">
-      <li>
-        <a href="#">お問い合わせ</a>
-      </li>
-      <li>
-        <a href="#">利用規約</a>
-      </li>
-      <li>
-        <a href="#">運営会社</a>
-      </li>
-      <li>
-        <a href="#">個人情報保護方針</a>
-      </li>
-      <li>
-        <a href="#">情報セキュリティ基本方針</a>
-      </li>
-    </ul>
-  </div>
-
-
-  <div class="sp-footer footer-container">
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Dnote" class="photo">
-    </div>
-
-    <ul class="footer-menu">
-      <li>
-        <a href="#">会社概要</a>
-      </li>
-      <li>
-        <a href="#">プライバシーポリシー</a>
-      </li>
-      <li>
-        <a href="#">facebook</a>
-      </li>
-      <li>
-        <a href="#">twitter</a>
-      </li>
-    </ul>
-  </div>
-</footer>
+<%= render 'layouts/footer' %>
 <!-- Footer -->
 
 
 <!-- ログイン登録用のモーダル -->
-<div class="signup-modal remodal" data-remodal-id="modal">
-
-  <div class="gutters row">
-    <div class="col col-12 modal-inner">
-      <h4 class="modal-title"> ログイン</h4>
-      <p class="modal-head">
-        <i class="icon-circle"></i>
-        すでにユーザー登録されている方
-      </p>
-
-      <form action="#">
-        <input type="email" placeholder="メールアドレス" class="account-form">
-        <input type="text" placeholder="パスワード" class="account-form">
-        <div class="submit-container">
-          <input type="submit" class="button-b" value="ログイン" >
-        </div>
-      </form>
-
-      <div class="facebook-btn-container">
-        <a href="" class="facebook-btn">
-          <i class="icon-facebook-square"></i>
-          Facebookでログイン
-        </a>
-      </div>
-    </div>
-
-    <div class="col col-12 modal-inner">
-      <h4 class="modal-title">新規登録</h4>
-      <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されている方</p>
-      <div class="button-container">
-        <a href="#" class="button-b">ユーザー登録をする</a>
-      </div>
-
-      <div class="facebook-btn-container">
-        <a href="" class="facebook-btn">
-          <i class="icon-facebook-square"></i>
-          Facebookで新規登録
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/login' %>
 
 
 <!-- サイドバー -->
-<nav id="main-nav">
-  <div class="sidebar" id="slidemenu_contents">
-    <div class="gutters row sidemenu-account" id="slidemenu_list">
-      <div class="col col-xs col-xs-8">
-        <div class="user-name">
-          ゲストさん
-        </div>
-        <div class="account-img">
-          <i class="icon-user"></i>
-        </div>
-      </div>
-
-      <div class="col col-xs col-xs-16 centering">
-        <div class="button sidemenu-post-recipe">
-          <a href="create-recipe.html">
-            <i class="icon-edit"></i>
-            レシピをのせる
-          </a>
-        </div>
-        <div class="line"></div>
-        <div class="button sidemenu-post-repo">
-          <a href="#">
-            <i class="icon-recipes-1"></i>
-            つくレポを投稿
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sidemenu-search-container">
-      <form action="#">
-        <input type="text" class="search-bar">
-        <button class="search-submit"><i class="icon-search icon-m"></i></button>
-      </form>
-    </div>
-
-    <ul class="sidemenu" id="sidemenu">
-      <li class="sidemenu-item menu-sub-title">
-        <i class="icon-list-ul"></i>
-        カテゴリから探す
-      </li>
-
-      <li class="sidemenu-item">
-        <a href="menu-recipe.html">
-         カロリー表示あり
-       </a>    
-     </li>
-     <li class="sidemenu-item">
-      <a href="menu-recipe.html">
-        糖質制限食
-      </a>    
-    </li>
-    <li class="sidemenu-item">
-      <a href="menu-recipe.html">
-       HbA1c、血糖値の安定
-     </a>    
-   </li>
-   <li class="sidemenu-item">
-    <a href="menu-recipe.html">
-     味に自信あり
-   </a>    
- </li>
- <li class="sidemenu-item">
-  <a href="menu-recipe.html">
-    すぐできるメニュー
-  </a>    
-</li>
-
-<li class="sidemenu-item menu-sub-title">
-  <i class="icon-cutlery"></i>
-  レシピカテゴリ
-</li>
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        野菜のおかず
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        お肉のおかず
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        魚介のおかず
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-       ご飯物
-     </a>
-   </li>
-
-   <li class="menu-accordion-content">
-    <ul>
-      <li>
-        <a href="menu-recipe.html">
-          さつまいも
-        </a>
-      </li>
-      <li>
-        <a href="menu-recipe.html">
-          なす
-        </a>
-      </li>
-      <li>
-        <a href="menu-recipe.html">
-         かぼちゃ
-       </a>
-     </li>
-   </ul>
- </li>
-</ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        パスタ・グラタン
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        麺
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        サラダ
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        スープ・汁物
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        お弁当
-      </a>
-    </li>
-
-    <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li>
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
-</ul>
-
-</div>
-</nav>
+<%= render 'layouts/sidebar' %>
 
 </body>
 </html>
