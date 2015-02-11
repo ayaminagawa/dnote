@@ -12,18 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, 'お名前' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
+    <%= f.label :gender, '性別' %><br>
     <%= f.text_field :gender %>
   </div>
   <div class="field">
-    <%= f.label :sns_name %><br>
+    <%= f.label :sns_name, 'ニックネーム' %><br>
     <%= f.text_field :sns_name %>
   </div>
+  <div class="field">
+    <%= f.label :email, 'メールアドレス' %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password, 'パスワード' %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, 'パスワード確認' %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>

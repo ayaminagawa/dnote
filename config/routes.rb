@@ -1,6 +1,11 @@
 Dnote::Application.routes.draw do
 
   
+  resources :menus
+
+  get "menu/new"
+  get "menu/create"
+  get "menu/destroy"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

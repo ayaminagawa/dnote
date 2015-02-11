@@ -491,8 +491,8 @@ body {
 ==========================================*/
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?2j55ic');
-  src: url('fonts/icomoon.eot?#iefix2j55ic') format('embedded-opentype'), url('fonts/icomoon.woff?2j55ic') format('woff'), url('fonts/icomoon.ttf?2j55ic') format('truetype'), url('fonts/icomoon.svg?2j55ic#icomoon') format('svg');
+  src: asset-url('fonts/icomoon.eot?2j55ic');
+  src: asset-url('fonts/icomoon.eot?#iefix2j55ic') format('embedded-opentype'), asset-url('fonts/icomoon.woff?2j55ic') format('woff'), asset-url('fonts/icomoon.ttf?2j55ic') format('truetype'), asset-url('fonts/icomoon.svg?2j55ic#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }

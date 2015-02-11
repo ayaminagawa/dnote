@@ -1,0 +1,75 @@
+<%= form_for(@menu) do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- 
+  <div class="actions">
+    <%= f.submit %>
+  </div> -->
+<% end %>
+
+<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立を作る</h2>
+
+      <div class="container-full">
+        <div class="gutters row inner-30">
+          <div class="col col-20">
+            <div class="edit-recipe-title-container">
+              <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立のタイトルを入力</div>
+              <div class="edit-area">
+               <form action="#">
+                 <input type="text" class="edit-field edit-recipe-title" placeholder="献立のタイトルを入力">
+               </form>
+             </div>
+
+           </div>
+         </div>
+       </div>
+
+       <div class="gutters row inner-30 pb-30">
+        <div class="col col-13 menu-img">
+          <div class="sp-head"><i class="icon-s icon-image"></i>
+            献立の写真</div>
+            <div class="edit-recipe-img-container">
+              <div class="edit-recipe-img edit-menu">
+                <form action="" class="form-recipe-img">
+                  <input type="file" class="uploader-recipe-img">
+                </form>
+              </div>
+
+              <div class="centering">
+                <div class="edit-recipe-img-typetext">
+                  <i class="icon-s icon-camera"></i>
+                  <span class="border-b">写真を変更する</span>
+                  <form action="" class="form-recipe-img">
+                    <input type="file" class="uploader-recipe-img-typetext">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-11">
+            <div class="edit-recipe-copy">
+              <div class="sp-head edit-label">
+                <i class="icon-s icon-star"></i>
+                この献立のポイント
+              </div>
+
+              <div class="edit-area">
+                <p>あと60文字</p>
+                <form action="#" >
+                  <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択してポイントを編集する"></textarea>
+                  <br>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>

@@ -11,19 +11,268 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+  <div class="col col-17 "> 
+          <h2 class="title-bar"><i class="title-icon icon-edit"></i>レシピをのせる</h2>
+
+          <div class="container-full inner-30">
+            <div class=" gutters row">
+              <div class="col col-20">
+
+                <div class="edit-recipe-title-container">
+                  <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピのタイトルを入力</div>
+                  <div class="edit-area">
+                   <form action="#">
+                      <!-- <textarea class="edit-field edit-recipe-title" rows="2" placeholder="レシピのタイトルを入力"></textarea> -->
+                      <%= form_for(@recipe) do |f| %>
+                        <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'レシピのタイトルを入力', rows:'2' %>
+                      <% end %>
+                    </form>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="gutters row pb-30 pt-30">
+            <div class="col col-12">
+              <div class="sp-head"><i class="icon-s icon-image"></i>
+                写真</div>
+                <div class="edit-recipe-img-container">
+                  <div class="edit-recipe-img">
+                    <form action="" class="form-recipe-img">
+                      <input type="file" class="uploader-recipe-img">
+                    </form>
+
+                  </div>
+
+                  <div class="centering">
+                    <div class="edit-recipe-img-typetext">
+                      <i class="icon-s icon-camera"></i>
+                      <span class="border-b">写真を変更する</span>
+                      <form action="" class="form-recipe-img">
+                        <input type="file" class="uploader-recipe-img-typetext">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-12 inner">
+                <div class="edit-recipe-copy">
+                  <div class="sp-head edit-label">
+                    <i class="icon-s icon-pencil"></i>
+                    キャッチコピー
+                  </div>
+
+                  <div class="edit-area">
+                    <p>あと60文字</p>
+                    <!-- <form action="#" >
+                      <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
+                      <br>
+                    </form> -->
+                    <%= form_for(@recipe) do |f| %>
+                      <%= f.text_field :description, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="mt-30 edit-recipe-ingredient">
+                  <div class="sp-head edit-label">
+                    <i class="icon-s icon-scales"></i>
+                    &nbsp;材料
+                  </div>
+
+                  <div class="open-edit-area">
+                    <a href="#ingredient-modal">
+                      <img src="images/edit-ingredient.png" alt="" class="photo">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- recipe-topここまで -->
+
+            <hr>
+
+            <div class="recipe-bottom pt-30 pb-30">
+
+              <ul class="steps row" id="step-list">
+                <li class="step-head pc-off">作り方</li>
+
+                <!-- 作り方 -->
+                <li class="step col col-6">
+                  <div class="gutters row">
+                    <div class="step-move">
+                      <a href="#" class="step-prev">←</a>
+                      <a href="#" class="step-next">→</a>
+                    </div>
+                    <div class="edit-step-img col col-xs col-xs-11">
+                      <form action="#" class="form-step-img">
+                        <input type="file" class="uploader-step-img">
+                      </form>
+
+                      <div class="centering">
+                        <div class="edit-step-img-typetext">
+                          <i class="icon-s icon-camera"></i>
+                          <span class="border-b">変更</span>
+                          <form action="#" class="form-step-img">
+                            <input type="file" class="uploader-step-img-typetext">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col col-xs col-xs-12 edit-step-text-container">
+                      <div class="step-count">1</div>
+                      <div class="edit-area">
+                        <form action="#" >
+                          <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
+                          <br>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="step-footer pull-right">
+                      <a href="#" class="step-remove">削除</a>
+                      <a href="#" class="step-add">追加</a>
+                    </div>
+                  </div>
+                </li>
+                <!-- 作り方 -->
+
+                <!-- 作り方 -->
+                <li class="step col col-6">
+                  <div class="gutters row">
+                    <div class="step-move">
+                      <a href="#" class="step-prev">←</a>
+                      <a href="#" class="step-next">→</a>
+                    </div>
+                    <div class="edit-step-img col col-xs col-xs-11">
+                      <form action="#" class="form-step-img">
+                        <input type="file" class="uploader-step-img">
+                      </form>
+
+                      <div class="centering">
+                        <div class="edit-step-img-typetext">
+                          <i class="icon-s icon-camera"></i>
+                          <span class="border-b">変更</span>
+                          <form action="#" class="form-step-img">
+                            <input type="file" class="uploader-step-img-typetext">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col col-xs col-xs-12 edit-step-text-container">
+                      <div class="step-count">2</div>
+                      <div class="edit-area">
+                        <form action="#" >
+                          <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
+                          <br>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="step-footer pull-right">
+                      <a href="#" class="step-remove">削除</a>
+                      <a href="#" class="step-add">追加</a>
+                    </div>
+                  </div>
+                </li>
+                <!-- 作り方 -->
+
+                <!-- 作り方 -->
+                <li class="step col col-6">
+                  <div class="gutters row">
+                    <div class="step-move">
+                      <a href="#" class="step-prev">←</a>
+                      <a href="#" class="step-next">→</a>
+                    </div>
+                    <div class="edit-step-img col col-xs col-xs-11">
+                      <form action="#" class="form-step-img">
+                        <input type="file" class="uploader-step-img">
+                      </form>
+
+                      <div class="centering">
+                        <div class="edit-step-img-typetext">
+                          <i class="icon-s icon-camera"></i>
+                          <span class="border-b">変更</span>
+                          <form action="#" class="form-step-img">
+                            <input type="file" class="uploader-step-img-typetext">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col col-xs col-xs-12 edit-step-text-container">
+                      <div class="step-count">3</div>
+                      <div class="edit-area">
+                        <form action="#" >
+                          <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
+                          <br>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="step-footer pull-right">
+                      <a href="#" class="step-remove">削除</a>
+                      <a href="#" class="step-add">追加</a>
+                    </div>
+                  </div>
+                </li>
+                <!-- 作り方 -->
+              </ul>
+
+              <div class="centering">
+                <div class="step-add-btn">
+                  <a href="#">作り方を追加する</a>
+                </div>
+              </div>
+
+              <div class="row edit-memo-history-container inner-30">
+                <div class="memo-history memo-head recipe-memo col col-12">
+                  <div class="sp-head edit-label ">
+                    <i class="icon-star pc-off"></i>
+                    コツ・ポイント
+                  </div>
+
+                  <div class="edit-area">
+                    <!-- <form action="#" >
+                      <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
+                      <br>
+                    </form> -->
+                    <%= form_for(@recipe) do |f| %>
+                       <%= f.text_field :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="col col-12 memo-history recipe-history edit-history ">
+                 <div class="ml-30 sp-head edit-label">
+                   このレシピのカロリー
+                 </div>
+
+                 <div class="ml-30 edit-area">
+                  <!-- <form action="#" >
+                    <textarea class="edit-field edit-kcal" placeholder="選択して編集する (例：400)"></textarea>
+                  </form> -->
+                   <%= form_for(@recipe) do |f| %>
+                     <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する (例：400)' %>
+                   <% end %>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="centering mt-56 create-recipe-btn-container" >
+<!--               <a href="#" class="create-recipe-btn">レシピを公開する</a> -->
+              <%= form_for(@recipe) do |f| %>
+                <%= f.submit "レシピを公開する", class: 'create-recipe-btn' %>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+      </div><!-- recipe-bottom -->

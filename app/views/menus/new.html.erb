@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>d note</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles/css/base.css">
+  <link rel="stylesheet" href="styles/css/grid.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.remodal.js"></script>
+  <script src="scripts/jquery.mobile-menu.js"></script>
+  <script src="scripts/main.js"></script>
+
+</head>
+<body>
+
+  <div id="wrapper">
+    <!-- Header -->
+    <%= render 'layouts/header' %>
+    <!-- Header -->
+
+
+    <div class="contents" id="create-menu-page">
+      
+      <%= render 'form'%>
+
+        <hr>
+
+        <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
+
+          <ul class="select-menu-items menu-items sp-off">
+            <li class="menu-item col col-8">
+              <div class="sp-off  menu-role main">
+                <img src="images/main-icon.png" alt="" class="role-icon">
+                主菜
+              </div>
+              <a href="#select-menu-modal">
+                <div class="edit-recipe-img">  
+                </div>
+              </a>
+              <p class="menu-select-text">
+                <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+              </p>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="menu-role sub">
+                <img src="images/sub-icon.png" alt="" class="role-icon">
+                副菜
+              </div>
+              <a href="#select-menu-modal">
+                <div class="edit-recipe-img">  
+                </div>
+              </a>
+              <p class="menu-select-text">
+                <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+              </p>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="menu-role sub">
+                <img src="images/sub-icon.png" alt="" class="role-icon">
+                副菜
+              </div>
+              <a href="#select-menu-modal">
+                <div class="edit-recipe-img">  
+                </div>
+              </a>
+              <p class="menu-select-text">
+                <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+              </p>
+            </li>
+
+          </ul>
+
+          <ul class="pc-off select-menu-items">
+            <li class="select-menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+                </div>
+              </div>
+
+              <div class="gutters row">
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="#select-menu-modal">
+                    <div class="edit-recipe-img">  
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  <p class="menu-select-text">
+                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="select-menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+                </div>
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="#select-menu-modal">
+                    <div class="edit-recipe-img">  
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  <p class="menu-select-text">
+                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="select-menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+                </div>
+
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="#select-menu-modal">
+                    <div class="edit-recipe-img">  
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  <p class="menu-select-text">
+                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="centering mt-56 pb-30 create-recipe-btn-container">
+          <a href="#" class="create-recipe-btn">献立を公開する</a>
+        </div>
+      </div>
+
+
+    </div><!-- contents end-->
+  </div><!-- wrapper end-->
+
+  <!-- Footer -->
+  <%= render 'layouts/footer' %>
+  <!-- Footer -->
+
+  
+  <!-- レシピを選ぶmodal -->
+  <div class="select-menu remodal" data-remodal-id="select-menu-modal">
+    <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">主菜</h4>
+
+    <ul class="select-menu-list-container">
+      <li class="gutters row select-menu-list">
+        <div class="col col-4 col col-xs-10 menu-img">
+          <img src="images/menu-item-1.jpg" class="photo">
+        </div>  
+
+        <div class="col col-11 col col-xs-13 menu-title">
+          ゴロゴロお肉のメキシカンスープ～彩りのパプリカを添えて～
+        </div>
+
+        <div class="col col-6 menu-select-btn-container">
+          <a href="#" class="menu-select-btn">追加する</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ログイン登録用のモーダル -->
+  <div class="signup-modal remodal" data-remodal-id="modal">
+
+    <div class="gutters row">
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title"> ログイン</h4>
+        <p class="modal-head">
+          <i class="icon-circle"></i>
+          すでにユーザー登録されている方
+        </p>
+
+        <form action="#">
+          <input type="email" placeholder="メールアドレス" class="account-form">
+          <input type="text" placeholder="パスワード" class="account-form">
+          <div class="submit-container">
+            <input type="submit" class="button-b" value="ログイン" >
+          </div>
+        </form>
+
+        <div class="facebook-btn-container">
+          <a href="" class="facebook-btn">
+            <i class="icon-facebook-square"></i>
+            Facebookでログイン
+          </a>
+        </div>
+      </div>
+
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title">新規登録</h4>
+        <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されている方</p>
+        <div class="button-container">
+          <a href="#" class="button-b">ユーザー登録をする</a>
+        </div>
+
+        <div class="facebook-btn-container">
+          <a href="" class="facebook-btn">
+            <i class="icon-facebook-square"></i>
+            Facebookで新規登録
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- サイドバー -->
+  <%= render 'layouts/sidebar' %>
+
+
+</body>
+</html>
+
