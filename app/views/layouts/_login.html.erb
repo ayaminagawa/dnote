@@ -12,7 +12,12 @@
           <input type="email" placeholder="メールアドレス" class="account-form">
           <input type="text" placeholder="パスワード" class="account-form">
           <div class="submit-container">
-            <input type="submit" class="button-b" value="ログイン" >
+           <!--  <input type="submit" class="button-b" value="ログイン" > -->
+           <% if user_signed_in? %>
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'button-b'  %>
+           <% else %>
+             <%= link_to "ログイン", new_user_session_path, class:'button-b' %>
+           <% end %>
           </div>
         </form>
 
@@ -28,7 +33,7 @@
         <h4 class="modal-title">新規登録</h4>
         <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
         <div class="button-container">
-          <%= link_to "ユーザー登録をする", new_user_path, class:'button-b' %>
+          <%= link_to "ユーザー登録をする", new_user_registration_path, class:'button-b' %>
         </div>
 
         <div class="facebook-btn-container">
