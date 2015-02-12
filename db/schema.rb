@@ -11,7 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211164220) do
+ActiveRecord::Schema.define(version: 20150211210702) do
+
+  create_table "contacts", force: true do |t|
+    t.string   "email"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favorite_menus", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favorite_recipes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feedbacks", force: true do |t|
+    t.integer  "user_id"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ingredients", force: true do |t|
+    t.string   "name"
+    t.integer  "recipe_id"
+    t.string   "volume"
+    t.integer  "order_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "made_reports", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.string   "image"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menu_recipes", force: true do |t|
+    t.integer  "menu_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "menus", force: true do |t|
     t.datetime "created_at"
@@ -30,6 +83,8 @@ ActiveRecord::Schema.define(version: 20150211164220) do
     t.text     "tip"
     t.integer  "calorie"
     t.string   "image"
+    t.integer  "recipe_select"
+    t.integer  "favorite_number"
   end
 
   create_table "users", force: true do |t|
@@ -41,6 +96,8 @@ ActiveRecord::Schema.define(version: 20150211164220) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "image"
+    t.integer  "recipe_select"
+    t.integer  "favorite_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

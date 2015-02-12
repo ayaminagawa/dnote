@@ -1,6 +1,10 @@
 Dnote::Application.routes.draw do
 
   
+  get "made_report/new"
+  get "made_report/create"
+  get "made_report/destroy"
+  get "made_report/show"
   resources :menus
 
   get "menu/new"
