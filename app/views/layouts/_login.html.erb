@@ -22,10 +22,12 @@
         </form>
 
         <div class="facebook-btn-container">
-          <a href="" class="facebook-btn">
+          <!-- <a href="" class="facebook-btn">
             <i class="icon-facebook-square"></i>
             Facebookでログイン
-          </a>
+          </a> -->
+          <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+          <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
         </div>
       </div>
 
@@ -37,10 +39,11 @@
         </div>
 
         <div class="facebook-btn-container">
-          <a href="" class="facebook-btn">
+          <!-- <a href="" class="facebook-btn">
             <i class="icon-facebook-square"></i>
             Facebookで新規登録
-          </a>
+          </a> -->
+          <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212132658) do
+ActiveRecord::Schema.define(version: 20150212150410) do
 
   create_table "contacts", force: true do |t|
     t.string   "email"
@@ -93,10 +93,7 @@ ActiveRecord::Schema.define(version: 20150212132658) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
-    t.string   "password_digest"
     t.string   "image"
-    t.integer  "recipe_select"
-    t.integer  "favorite_number"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

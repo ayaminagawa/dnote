@@ -15,18 +15,21 @@ Dnote::Application.routes.draw do
   get "menu/destroy"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   get "column/index"
-  get "sessions/new"
-  get "sessions/create"
-  get "sessions/destroy"
   get "about/index"
 
   resources :recipes
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+
+  
+  
+  # devise_for :users, :controllers => {
+  # :sessions      => "users/sessions",
+  # :registrations => "users/registrations",
+  # :passwords     => "users/passwords",
+  # :omniauth_callbacks => "users/omniauth_callbacks" 
+  # }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
