@@ -3,8 +3,18 @@
 Devise.setup do |config|
 
    # API key   
-    config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca"
-    config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
+    # config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca"
+    # config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
+
+    config.omniauth( :facebook,
+"330215280471691",
+"55cc8c6daf5295b4569a81be479810ca",
+{:scope => 'email'} )
+
+config.omniauth( :twitter,
+"v7ByEftCPcYL06ufERUZ6IDrZ",
+"Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y",
+{:image_size => 'original', :display => 'popup'} )
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

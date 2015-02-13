@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable, :recoverable,
-         :registerable, :rememberable, :trackable, :validatable, omniauth_providers: [:twitter, :facebook]
+         :registerable, :rememberable, :trackable, omniauth_providers: [:twitter, :facebook]
  
  
 	# validates :name, length: { maximum: 15 }, presence: true
@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	has_many :recipes, dependent: :destroy
 	has_many :menus, dependent: :destroy 
 	# has_secure_password
-    validates :password, length: { minimum: 6 }
+    # validates :password, length: { minimum: 6 }
 
     def set_image(file)
     if !file.nil?
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
     def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
       unless user
-        user = User.create(name:     auth.extra.raw_info.name,
+        user = User.create!(name:     auth.extra.raw_info.name,
                            provider: auth.provider,
                            uid:      auth.uid,
                            email:    auth.info.email,

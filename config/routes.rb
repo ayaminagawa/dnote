@@ -1,7 +1,14 @@
 Dnote::Application.routes.draw do
 
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks",
+    :passwords => "users/passwords",
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+  }
+
   
-  devise_for :users
+ 
   get "made_report/new"
   get "made_report/create"
   get "made_report/destroy"
