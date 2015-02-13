@@ -19,13 +19,9 @@
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
-  <div class="field">
-    <%= f.label :gender, '性別' %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :sns_name, 'ニックネーム' %><br>
-    <%= f.text_field :sns_name %>
+  <div>
+    <label><%= f.radio_button :gender, "1" %>男</label>
+    <label><%= f.radio_button :gender, "2" %>女</label>
   </div>
   <div class="field">
     <%= f.label :email, 'メールアドレス' %><br>

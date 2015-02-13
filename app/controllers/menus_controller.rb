@@ -15,6 +15,8 @@ class MenusController < ApplicationController
   # GET /menus/new
   def new
     @menu = Menu.new
+    @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
+    @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
   end
 
   # GET /menus/1/edit

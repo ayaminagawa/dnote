@@ -25,11 +25,12 @@
               </a>
 
               <ul class="category-list" id="is-category-dropdown-box">
-                <li class="category-item">
+                <!-- <li class="category-item">
                   <a href="menu-recipe.html">
                     カロリー表示あり
                   </a>    
-                </li>
+                </li> -->
+                <%= link_to 'カロリー表示あり', recipes_path, :class =>'category-item' %>
                 <li class="category-item">
                   <a href="menu-recipe.html">
                     糖質制限食
@@ -62,12 +63,16 @@
             </li>
 
             <li class="post-recipe">
-              <a href="create-recipe.html">
+              <!-- <a href="create-recipe.html">
                 <i class="icon-edit"></i>
                 <p class="post-recipe-text">
                   レシピを<br>のせる
                 </p>
-              </a>
+              </a> -->
+              <%= link_to "レシピを<br>のせる", new_recipe_path, class:'icon-edit post-recipe-text' %>
+            </li>
+            <li class="post-recipe">
+              <%= link_to "献立を<br>のせる", new_menu_path, class:'icon-edit post-recipe-text' %>
             </li>
           </ul>
         </div>

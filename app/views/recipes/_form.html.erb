@@ -266,6 +266,25 @@
                 </div>
 
               </div>
+              <div>
+
+                    <p>レシピカテゴリ</p><br><br>
+                  
+                    <label><%= f.radio_button :kind, "1", {:checked => true} %> 野菜のおかず</label>
+                    <label><%= f.radio_button :kind, "2" %> お肉のおかず</label>
+                    <label><%= f.radio_button :kind, "3" %> ごはんもの</label>
+                    <label><%= f.radio_button :kind, "4" %> パスタ・グラタン</label>
+                    <label><%= f.radio_button :kind, "5" %> 麺</label>
+                    <label><%= f.radio_button :kind, "6" %> サラダ</label>
+                    <label><%= f.radio_button :kind, "7" %> スープ・汁物</label>
+                    <label><%= f.radio_button :kind, "8" %> お弁当</label>
+
+              </div>
+              <div>
+                    <br>
+                    <label><%= f.radio_button :recipe_select, "1", {:checked => true} %> 主菜</label>
+                    <label><%= f.radio_button :recipe_select, "2" %> 副菜</label>
+              </div>
             </div>
 
             <div class="centering mt-56 create-recipe-btn-container" >
@@ -276,6 +295,7 @@
             </div>
 
           </div>
+          
         </div>
       </div>
 
