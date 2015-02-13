@@ -7,7 +7,46 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @name = Recipe.name
     @menus = Menu.all
-    @munu_name = Menu.name
+    @menu_name = Menu.name
+
+  
+
+  end
+
+  def vagetables
+    @vagetables = Recipe.find(:all, :conditions => { :kind => 1 }) 
+  end
+
+  def meets
+    @meets = Recipe.find(:all, :conditions => { :kind => 2 }) 
+  end
+
+  def fishes
+    @fishes = Recipe.find(:all, :conditions => { :kind => 3 }) 
+  end
+
+  def rices
+    @rices = Recipe.find(:all, :conditions => { :kind => 4 }) 
+  end
+
+  def pastas
+    @pastas = Recipe.find(:all, :conditions => { :kind => 5 }) 
+  end
+
+  def noodles
+    @noodles = Recipe.find(:all, :conditions => { :kind => 6 }) 
+  end
+
+  def salads
+    @salads = Recipe.find(:all, :conditions => { :kind => 7 }) 
+  end
+
+  def soups
+    @soups = Recipe.find(:all, :conditions => { :kind => 8 }) 
+  end
+
+  def boxes
+    @boxes = Recipe.find(:all, :conditions => { :kind => 9 }) 
   end
 
   # GET /recipes/1

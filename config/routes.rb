@@ -29,6 +29,17 @@ Dnote::Application.routes.draw do
   resources :recipes
   resources :users
 
+  get '/vagetables', to:'recipes#vagetables'
+  get '/meets', to:'recipes#meets'
+  get '/fishes', to:'recipes#fishes'
+  get '/rices', to:'recipes#rices'
+  get '/pastas', to:'recipes#pastas'
+  get '/noodles', to:'recipes#noodles'
+  get '/salads', to:'recipes#salads'
+  get '/soups', to:'recipes#soups'
+  get '/boxes', to:'recipes#boxes'
+
+
   
   
   # devise_for :users, :controllers => {

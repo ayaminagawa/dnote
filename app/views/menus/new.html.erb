@@ -41,7 +41,9 @@
 
   
   <!-- レシピを選ぶmodal -->
-  <div class="select-menu remodal" data-remodal-id="select-menu-modal">
+
+　
+  <div class="select-mainmenu remodal" data-remodal-id="select-mainmenu-modal">
     <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">主菜</h4>
 
     <ul class="select-menu-list-container">
@@ -51,7 +53,31 @@
         </div>  
 
         <div class="col col-11 col col-xs-13 menu-title">
-          ゴロゴロお肉のメキシカンスープ～彩りのパプリカを添えて～
+          <% @main_recipes.each do |main_recipe| %>
+          <%= main_recipe.name %>
+          <% end %>
+        </div>
+
+        <div class="col col-6 menu-select-btn-container">
+          <a href="#" class="menu-select-btn">追加する</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="select-submenu remodal" data-remodal-id="select-submenu-modal">
+    <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">副菜</h4>
+
+    <ul class="select-menu-list-container">
+      <li class="gutters row select-menu-list">
+        <div class="col col-4 col col-xs-10 menu-img">
+          <img src="images/menu-item-1.jpg" class="photo">
+        </div>  
+
+        <div class="col col-11 col col-xs-13 menu-title">
+          <% @side_recipes.each do |side_recipe| %>
+          <%= side_recipe.name %>
+          <% end %>
         </div>
 
         <div class="col col-6 menu-select-btn-container">
