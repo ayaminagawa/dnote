@@ -55,6 +55,63 @@
 
 
   <div id="tab-box">
+
+    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
+      <!-- 献立ひとつ分 -->
+
+    <li class="gutters row menu">
+        <div class="col col-11 col-xs col-xs-11">
+          <!-- <div class="menu-img">
+            <a href="menu.html">
+              <img src="images/menu-item-1.jpg" alt="" class="photo">
+            </a>
+          </div> -->
+        </div>
+
+
+    <% @menu_stabilities.each do |menu_stability| %>
+
+        <div class="col col-13 col-xs col-xs-13">
+          <div class="menu-title">
+            <!-- <a href="menu.html">
+              献立タイトルが入ります
+              献立タイトルが入ります
+            </a> -->
+            <%= link_to "@name", menu_path(menu_stability) %>
+          </div>
+
+          <p class="menu-comment">
+            <%= menu_stability.point %>
+          </p>
+
+          <ul class="menu-list sp-off">
+            <li>
+             <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+             <a href="recipe.html">
+              ゴロゴロお肉のメキシカンスープ</a>
+            </li>
+
+            <li>
+              <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+              <a href="recipe.html">
+                芽キャベツのアンチョビオリーブパスタ
+              </a>
+            </li>
+            <li>
+             <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+             <a href="recipe.html">
+              パクチーの香草サラダ
+            </a>
+          </li>
+          <li class="author">
+            <a href="#">by つくったひと</a></li>
+          </ul>
+        </div>
+
+        <% end %>
+
+      </li>
+    </ul>
  
 
     <ul class="inner pt-30 tab-container menu-container" id="recipe-container">

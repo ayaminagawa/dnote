@@ -48,22 +48,27 @@ class RecipesController < ApplicationController
 
   def calories
     @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
+    @menu_calories = Menu.find(:all, :conditions => { :category => 1 }) 
   end
 
   def sugars
     @sugars = Recipe.find(:all, :conditions => { :category => 2 }) 
+    @menu_sugars = Menu.find(:all, :conditions => { :category => 2 }) 
   end
 
   def stabilities
     @stabilities = Recipe.find(:all, :conditions => { :category => 3 }) 
+    @menu_stabilities = Menu.find(:all, :conditions => { :category => 3 }) 
   end
 
   def goodtastes
     @goodtastes = Recipe.find(:all, :conditions => { :category => 4 }) 
+    @menu_goodtastes = Menu.find(:all, :conditions => { :category => 4 }) 
   end
 
   def easies
     @easies = Recipe.find(:all, :conditions => { :category => 5 }) 
+    @menu_easies = Menu.find(:all, :conditions => { :category => 5 }) 
   end
 
   # GET /recipes/1
