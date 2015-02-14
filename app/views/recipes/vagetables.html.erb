@@ -26,49 +26,7 @@
     <!-- Header -->
     <%= render 'layouts/header' %>
     <!-- Header -->
-
-
-    <div class="contents" id="menu-recipe-page">
-      <h2 class="title-bar"><i class="title-icon icon-cutlery"></i>
-        献立・レシピ一覧</h2>
-
-        <div class="container-full row pt-30">
-          <div class="col col-6 sidemenu-container sp-off" id="sidebar-container">
-            <ul class="sidemenu" id="sidemenu">
-              <li class="sidemenu-item menu-sub-title">
-                <i class="icon-list-ul"></i>
-                カテゴリから探す
-              </li>
-
-              <li class="sidemenu-item">
-                <a href="menu-recipe.html">
-                 カロリー表示あり
-                </a>    
-              </li>
-              <li class="sidemenu-item">
-               <a href="menu-recipe.html">
-                糖質制限食
-               </a>    
-              </li>
-              <li class="sidemenu-item">
-               <a href="menu-recipe.html">
-                HbA1c、血糖値の安定
-               </a>    
-              </li>
-              <li class="sidemenu-item">
-               <a href="menu-recipe.html">
-                味に自信あり
-               </a>    
-              </li>
-              <li class="sidemenu-item">
-               <a href="menu-recipe.html">
-                すぐできるメニュー
-               </a>    
-              </li>
-              <%= render 'recipes/category' %>
-   
-            </ul>
-          </div>
+    <%= render 'recipes/category' %>
 
 <div class="col col-18 menu-recipe-container">
   <div class="page-title">
@@ -79,9 +37,8 @@
   
   <div class="tab-switch-container">
     <ul>
-    
-      <li class="tab-switch">
-        <a href="#recipe-container">
+      <li class="tab-switch tab-active">
+        <a href="#menu-container">
           レシピ
         </a>
       </li>
@@ -91,7 +48,7 @@
   <div id="tab-box">
  
 
-    <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
+    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
 
       <!-- レシピひとつ分 -->
       <li class="gutters row menu">

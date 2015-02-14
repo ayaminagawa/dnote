@@ -8,9 +8,6 @@ class RecipesController < ApplicationController
     @name = Recipe.name
     @menus = Menu.all
     @menu_name = Menu.name
-
-  
-
   end
 
   def vagetables
@@ -47,6 +44,26 @@ class RecipesController < ApplicationController
 
   def boxes
     @boxes = Recipe.find(:all, :conditions => { :kind => 9 }) 
+  end
+
+  def calories
+    @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
+  end
+
+  def sugars
+    @sugars = Recipe.find(:all, :conditions => { :category => 2 }) 
+  end
+
+  def stabilities
+    @stabilities = Recipe.find(:all, :conditions => { :category => 3 }) 
+  end
+
+  def goodtastes
+    @goodtastes = Recipe.find(:all, :conditions => { :category => 4 }) 
+  end
+
+  def easies
+    @easies = Recipe.find(:all, :conditions => { :category => 5 }) 
   end
 
   # GET /recipes/1
@@ -111,6 +128,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :tip, :calorie, :kind, :recipe_select)
+      params.require(:recipe).permit(:name, :description, :tip, :calorie, :kind, :recipe_select, :category)
     end
 end

@@ -25,31 +25,35 @@
               </a>
 
               <ul class="category-list" id="is-category-dropdown-box">
-                <!-- <li class="category-item">
-                  <a href="menu-recipe.html">
+                <li class="category-item">
+                  <!-- <a href="menu-recipe.html">
                     カロリー表示あり
-                  </a>    
-                </li> -->
-                <%= link_to 'カロリー表示あり', recipes_path, :class =>'category-item' %>
+                  </a>     -->
+                  <%= link_to 'カロリー表示あり', calories_path %>
+                </li>
                 <li class="category-item">
-                  <a href="menu-recipe.html">
+                  <!-- <a href="menu-recipe.html">
                     糖質制限食
-                  </a>    
+                  </a>  -->   
+                  <%= link_to '糖質制限食', sugars_path %> 
                 </li>
                 <li class="category-item">
-                  <a href="menu-recipe.html">
+                  <!-- <a href="menu-recipe.html">
                     HbA1c、血糖値の安定
-                  </a>    
+                  </a>     -->
+                  <%= link_to 'HbA1c、血糖値の安定', stabilities_path %>   
                 </li>
                 <li class="category-item">
-                  <a href="menu-recipe.html">
+<!--                   <a href="menu-recipe.html">
                     味に自信あり
-                  </a>    
+                  </a>     -->
+                  <%= link_to '味に自信あり', goodtastes_path %>
                 </li>
                 <li class="category-item">
-                  <a href="menu-recipe.html">
+                  <!-- <a href="menu-recipe.html">
                     すぐできるメニュー
-                  </a>    
+                  </a>    --> 
+                  <%= link_to 'すぐできるメニュー', easies_path %>  
                 </li>
               </ul>
             </li>

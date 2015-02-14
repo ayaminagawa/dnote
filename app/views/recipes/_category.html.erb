@@ -1,306 +1,353 @@
-<li class="sidemenu-item menu-sub-title">
-          <i class="icon-cutlery"></i>
-          レシピカテゴリ
-        </li>
 
-        <!-- ひとつのカテゴリ -->
-        <li class="sidemenu-item menu-accordion-container">
-          <ul>
-            <!-- <li class="menu-accordion">
-              <a href="menu-recipe.html">
-                野菜のおかず
-              </a>
-              
-            </li> -->
-            <%= link_to '野菜のおかず', vagetables_path %>
-            <!-- <li class="menu-accordion-content">
-              <ul>
-                <li>
-                  <a href="menu-recipe.html">
-                    さつまいも
-                  </a>
-                </li>
-                <li>
-                  <a href="menu-recipe.html">
-                    なす
-                  </a>
-                </li>
-                <li>
-                  <a href="menu-recipe.html">
-                   かぼちゃ
-                 </a>
-               </li>
-             </ul>
-           </li> -->
-         </ul>
-       </li>
-       <!-- ひとつのカテゴリ -->
+    <div class="contents" id="menu-recipe-page">
+      <h2 class="title-bar"><i class="title-icon icon-cutlery"></i>
+        献立・レシピ一覧</h2>
 
-       <!-- ひとつのカテゴリ -->
-       <li class="sidemenu-item menu-accordion-container">
-        <ul>
-          <!-- <li class="menu-accordion"> -->
-            <!-- <a href="menu-recipe.html">
-              お肉のおかず
-            </a> -->
-            <%= link_to 'お肉のおかず', meets_path %>
-<!--           </li> -->
-
-          <!-- <li class="menu-accordion-content">
-            <ul>
-              <li>
-                <a href="menu-recipe.html">
-                  さつまいも
-                </a>
+        <div class="container-full row pt-30">
+          <div class="col col-6 sidemenu-container sp-off" id="sidebar-container">
+            <ul class="sidemenu" id="sidemenu">
+              <li class="sidemenu-item menu-sub-title">
+                <i class="icon-list-ul"></i>
+                カテゴリから探す
               </li>
-              <li>
-                <a href="menu-recipe.html">
-                  なす
-                </a>
+
+              <li class="sidemenu-item">
+                <!-- <a href="menu-recipe.html">
+                 カロリー表示あり
+                </a>    --> 
+               <%= link_to 'カロリー表示あり', calories_path %>
               </li>
-              <li>
-                <a href="menu-recipe.html">
-                 かぼちゃ
-               </a>
-             </li>
-           </ul>
-         </li> -->
-       </ul>
-     </li>
-     <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item">
+                <!-- <a href="menu-recipe.html">
+                 糖質制限食
+                </a>  --> 
+                <%= link_to '糖質制限食', sugars_path %>  
+              </li>
+              <li class="sidemenu-item">
+                <!-- <a href="menu-recipe.html">
+                  HbA1c、血糖値の安定
+                </a>   --> 
+                <%= link_to 'HbA1c、血糖値の安定', stabilities_path %>   
+              </li>
+              <li class="sidemenu-item">
+                <!-- <a href="menu-recipe.html">
+                 味に自信あり
+                </a>  -->
+                <%= link_to '味に自信あり', goodtastes_path %>     
+              </li>
+              <li class="sidemenu-item">
+                <!-- <a href="menu-recipe.html">
+                 すぐできるメニュー
+                </a>     -->
+                <%= link_to 'すぐできるメニュー', easies_path %>  
+              </li>
 
-     <!-- ひとつのカテゴリ -->
-     <li class="sidemenu-item menu-accordion-container">
-      <ul>
-        <!-- <li class="menu-accordion">
-          <a href="menu-recipe.html">
-            魚介のおかず
-          </a>
-        </li> -->
-        <%= link_to '魚介のおかず', fishes_path %>
 
-        <!-- <li class="menu-accordion-content">
-          <ul>
-            <li>
-              <a href="menu-recipe.html">
-                さつまいも
-              </a>
-            </li>
-            <li>
-              <a href="menu-recipe.html">
-                なす
-              </a>
-            </li>
-            <li>
-              <a href="menu-recipe.html">
-               かぼちゃ
-             </a>
-           </li>
-         </ul>
-       </li> -->
-     </ul>
-   </li>
-   <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item menu-sub-title">
+                        <i class="icon-cutlery"></i>
+                        レシピカテゴリ
+                      </li>
 
-   <!-- ひとつのカテゴリ -->
-   <li class="sidemenu-item menu-accordion-container">
-    <ul>
-      <!-- <li class="menu-accordion">
-        <a href="menu-recipe.html">
-         ご飯物
-       </a>
-     </li> -->
-     <%= link_to 'ごはんもの', rices_path %>
+                      <!-- ひとつのカテゴリ -->
+                      <li class="sidemenu-item menu-accordion-container">
+                        <ul>
+                          <!-- <li class="menu-accordion">
+                            <a href="menu-recipe.html">
+                              野菜のおかず
+                            </a>
+                            
+                          </li> -->
+                          <%= link_to '野菜のおかず', vagetables_path %>
+                          <!-- <li class="menu-accordion-content">
+                            <ul>
+                              <li>
+                                <a href="menu-recipe.html">
+                                  さつまいも
+                                </a>
+                              </li>
+                              <li>
+                                <a href="menu-recipe.html">
+                                  なす
+                                </a>
+                              </li>
+                              <li>
+                                <a href="menu-recipe.html">
+                                 かぼちゃ
+                               </a>
+                             </li>
+                           </ul>
+                         </li> -->
+                       </ul>
+                     </li>
+                     <!-- ひとつのカテゴリ -->
 
-     <!-- <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-        </li>
-       </ul>
-      </li> -->
-    </ul>
-</li>
-<!-- ひとつのカテゴリ -->
+                     <!-- ひとつのカテゴリ -->
+                     <li class="sidemenu-item menu-accordion-container">
+                      <ul>
+                        <!-- <li class="menu-accordion"> -->
+                          <!-- <a href="menu-recipe.html">
+                            お肉のおかず
+                          </a> -->
+                          <%= link_to 'お肉のおかず', meets_path %>
+              <!--           </li> -->
 
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <!-- <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        パスタ・グラタン
-      </a>
-    </li> -->
+                        <!-- <li class="menu-accordion-content">
+                          <ul>
+                            <li>
+                              <a href="menu-recipe.html">
+                                さつまいも
+                              </a>
+                            </li>
+                            <li>
+                              <a href="menu-recipe.html">
+                                なす
+                              </a>
+                            </li>
+                            <li>
+                              <a href="menu-recipe.html">
+                               かぼちゃ
+                             </a>
+                           </li>
+                         </ul>
+                       </li> -->
+                     </ul>
+                   </li>
+                   <!-- ひとつのカテゴリ -->
 
-    <%= link_to 'パスタ・グラタングラタン', pastas_path %>
+                   <!-- ひとつのカテゴリ -->
+                   <li class="sidemenu-item menu-accordion-container">
+                    <ul>
+                      <!-- <li class="menu-accordion">
+                        <a href="menu-recipe.html">
+                          魚介のおかず
+                        </a>
+                      </li> -->
+                      <%= link_to '魚介のおかず', fishes_path %>
 
-    <!-- <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li> -->
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
+                      <!-- <li class="menu-accordion-content">
+                        <ul>
+                          <li>
+                            <a href="menu-recipe.html">
+                              さつまいも
+                            </a>
+                          </li>
+                          <li>
+                            <a href="menu-recipe.html">
+                              なす
+                            </a>
+                          </li>
+                          <li>
+                            <a href="menu-recipe.html">
+                             かぼちゃ
+                           </a>
+                         </li>
+                       </ul>
+                     </li> -->
+                   </ul>
+                 </li>
+                 <!-- ひとつのカテゴリ -->
 
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <!-- <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        麺
-      </a>
-    </li> -->
+                 <!-- ひとつのカテゴリ -->
+                 <li class="sidemenu-item menu-accordion-container">
+                  <ul>
+                    <!-- <li class="menu-accordion">
+                      <a href="menu-recipe.html">
+                       ご飯物
+                     </a>
+                   </li> -->
+                   <%= link_to 'ごはんもの', rices_path %>
 
-    <%= link_to '麺', noodles_path %>
+                   <!-- <li class="menu-accordion-content">
+                    <ul>
+                      <li>
+                        <a href="menu-recipe.html">
+                          さつまいも
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                          なす
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                         かぼちゃ
+                       </a>
+                      </li>
+                     </ul>
+                    </li> -->
+                  </ul>
+              </li>
+              <!-- ひとつのカテゴリ -->
 
-    <!-- <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li> -->
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
+              <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item menu-accordion-container">
+                <ul>
+                  <!-- <li class="menu-accordion">
+                    <a href="menu-recipe.html">
+                      パスタ・グラタン
+                    </a>
+                  </li> -->
 
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <!-- <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        サラダ
-      </a>
-    </li> -->
+                  <%= link_to 'パスタ・グラタングラタン', pastas_path %>
 
-    <%= link_to 'サラダ', salads_path %>
+                  <!-- <li class="menu-accordion-content">
+                    <ul>
+                      <li>
+                        <a href="menu-recipe.html">
+                          さつまいも
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                          なす
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                         かぼちゃ
+                       </a>
+                     </li>
+                   </ul>
+                 </li> -->
+               </ul>
+              </li>
+              <!-- ひとつのカテゴリ -->
 
-    <!-- <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li> -->
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
+              <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item menu-accordion-container">
+                <ul>
+                  <!-- <li class="menu-accordion">
+                    <a href="menu-recipe.html">
+                      麺
+                    </a>
+                  </li> -->
 
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <!-- <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        スープ・汁物
-      </a>
-    </li> -->
+                  <%= link_to '麺', noodles_path %>
 
-    <%= link_to 'スープ・汁物', soups_path %>
+                  <!-- <li class="menu-accordion-content">
+                    <ul>
+                      <li>
+                        <a href="menu-recipe.html">
+                          さつまいも
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                          なす
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                         かぼちゃ
+                       </a>
+                     </li>
+                   </ul>
+                 </li> -->
+               </ul>
+              </li>
+              <!-- ひとつのカテゴリ -->
 
-    <!-- <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li> -->
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
+              <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item menu-accordion-container">
+                <ul>
+                  <!-- <li class="menu-accordion">
+                    <a href="menu-recipe.html">
+                      サラダ
+                    </a>
+                  </li> -->
 
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-  <ul>
-    <!-- <li class="menu-accordion">
-      <a href="menu-recipe.html">
-        お弁当
-      </a>
-    </li> -->
+                  <%= link_to 'サラダ', salads_path %>
 
-    <%= link_to 'お弁当', boxes_path %>
+                  <!-- <li class="menu-accordion-content">
+                    <ul>
+                      <li>
+                        <a href="menu-recipe.html">
+                          さつまいも
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                          なす
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                         かぼちゃ
+                       </a>
+                     </li>
+                   </ul>
+                 </li> -->
+               </ul>
+              </li>
+              <!-- ひとつのカテゴリ -->
 
-    <!-- <li class="menu-accordion-content">
-      <ul>
-        <li>
-          <a href="menu-recipe.html">
-            さつまいも
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-            なす
-          </a>
-        </li>
-        <li>
-          <a href="menu-recipe.html">
-           かぼちゃ
-         </a>
-       </li>
-     </ul>
-   </li> -->
- </ul>
-</li>
-<!-- ひとつのカテゴリ -->
+              <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item menu-accordion-container">
+                <ul>
+                  <!-- <li class="menu-accordion">
+                    <a href="menu-recipe.html">
+                      スープ・汁物
+                    </a>
+                  </li> -->
+
+                  <%= link_to 'スープ・汁物', soups_path %>
+
+                  <!-- <li class="menu-accordion-content">
+                    <ul>
+                      <li>
+                        <a href="menu-recipe.html">
+                          さつまいも
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                          なす
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                         かぼちゃ
+                       </a>
+                     </li>
+                   </ul>
+                 </li> -->
+               </ul>
+              </li>
+              <!-- ひとつのカテゴリ -->
+
+              <!-- ひとつのカテゴリ -->
+              <li class="sidemenu-item menu-accordion-container">
+                <ul>
+                  <!-- <li class="menu-accordion">
+                    <a href="menu-recipe.html">
+                      お弁当
+                    </a>
+                  </li> -->
+
+                  <%= link_to 'お弁当', boxes_path %>
+
+                  <!-- <li class="menu-accordion-content">
+                    <ul>
+                      <li>
+                        <a href="menu-recipe.html">
+                          さつまいも
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                          なす
+                        </a>
+                      </li>
+                      <li>
+                        <a href="menu-recipe.html">
+                         かぼちゃ
+                       </a>
+                     </li>
+                   </ul>
+                 </li> -->
+               </ul>
+              </li>
+              <!-- ひとつのカテゴリ -->
+      </ul>
+</div>
