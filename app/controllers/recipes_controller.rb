@@ -5,13 +5,14 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
-    @name = Recipe.name
+    
     @menus = Menu.all
-    @menu_name = Menu.name
+
   end
 
   def vagetables
     @vagetables = Recipe.find(:all, :conditions => { :kind => 1 }) 
+    # @user = @vagetables.user(@vagetables.user_id)
   end
 
   def meets
@@ -88,7 +89,8 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    # @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.build(recipe_params)
 
     respond_to do |format|
       if @recipe.save

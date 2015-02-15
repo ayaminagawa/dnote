@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213141726) do
+ActiveRecord::Schema.define(version: 20150214201734) do
 
   create_table "contacts", force: true do |t|
     t.string   "email"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20150213141726) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "menu_recipes", ["recipe_id", "menu_id"], name: "index_menu_recipes_on_recipe_id_and_menu_id", unique: true
 
   create_table "menus", force: true do |t|
     t.datetime "created_at"
