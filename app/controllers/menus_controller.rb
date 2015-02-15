@@ -15,6 +15,7 @@ class MenusController < ApplicationController
   # GET /menus/new
   def new
     @menu = Menu.new
+    @menu_recipe = MenuRecipe.new
     @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
   end
@@ -27,6 +28,8 @@ class MenusController < ApplicationController
   # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
+    @menu_recipe = MenuRecipe.new(menu_recipe_params)
+    # @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 })
 
     respond_to do |format|
       if @menu.save
@@ -37,6 +40,16 @@ class MenusController < ApplicationController
         format.json { render json: @menu.errors, status: :unprocessable_entity }
       end
     end
+
+    # respond_to do |format|
+    #   if @main_recipe.save
+    #     format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @menu }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @main_recipe.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /menus/1

@@ -76,7 +76,7 @@
               献立タイトルが入ります
               献立タイトルが入ります
             </a> -->
-            <%= link_to "@name", menu_path(menu_calorie) %>
+            <%= link_to menu_calorie.name, menu_path(menu_calorie) %>
           </div>
 
           <p class="menu-comment">
@@ -101,9 +101,11 @@
              <a href="recipe.html">
               パクチーの香草サラダ
             </a>
-          </li>
-          <li class="author">
-            <a href="#">by つくったひと</a></li>
+            </li>
+            <li class="author">
+              <!-- <a href="#">by つくったひと</a> -->
+
+            </li>
           </ul>
         </div>
 
@@ -139,7 +141,8 @@
               </p>
 
               <div class="author">
-                <a href="#">by つくったひと</a>
+               <!--  <a href="#">by つくったひと</a> -->
+               <%= link_to calorie.name, recipe_path(calorie) %>
               </div>
 
             </div>
