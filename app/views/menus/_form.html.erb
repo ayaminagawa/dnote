@@ -1,0 +1,219 @@
+<%= form_for(@menu) do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- 
+  <div class="actions">
+    <%= f.submit %>
+  </div> -->
+
+<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立を作る</h2>
+
+      <div class="container-full">
+        <div class="gutters row inner-30">
+          <div class="col col-20">
+            <div class="edit-recipe-title-container">
+              <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立のタイトルを入力</div>
+              <div class="edit-area">
+               <form action="#">
+                 <!-- <input type="text" class="edit-field edit-recipe-title" placeholder="献立のタイトルを入力"> -->
+                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'献立のタイトルを入力' %>
+               </form>
+             </div>
+
+           </div>
+         </div>
+       </div>
+
+       <div class="gutters row inner-30 pb-30">
+        <div class="col col-13 menu-img">
+          <div class="sp-head"><i class="icon-s icon-image"></i>
+            献立の写真</div>
+            <div class="edit-recipe-img-container">
+              <div class="edit-recipe-img edit-menu">
+                <form action="" class="form-recipe-img">
+                  <input type="file" class="uploader-recipe-img">
+                </form>
+              </div>
+
+              <div class="centering">
+                <div class="edit-recipe-img-typetext">
+                  <i class="icon-s icon-camera"></i>
+                  <span class="border-b">写真を変更する</span>
+                  <form action="" class="form-recipe-img">
+                    <input type="file" class="uploader-recipe-img-typetext">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-11">
+            <div class="edit-recipe-copy">
+              <div class="sp-head edit-label">
+                <i class="icon-s icon-star"></i>
+                この献立のポイント
+              </div>
+
+              <div class="edit-area">
+                <p>あと60文字</p>
+                <!-- <form action="#" >
+                  <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択してポイントを編集する"></textarea>
+                  
+                </form> -->
+                <%= f.text_field :point, class:'edit-field', placeholder:'選択してポイントを編集する', rows:'2', cols:'30' %>
+                  <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
+
+          <ul class="select-menu-items menu-items sp-off">
+            <li class="menu-item col col-8">
+              <div class="sp-off  menu-role main">
+                <img src="images/main-icon.png" alt="" class="role-icon">
+                主菜
+              </div>
+              <a href="#select-mainmenu-modal">
+                <div class="edit-recipe-img">  
+                </div>
+              </a>
+              <p class="menu-select-text">
+                <a href="#select-mainmenu-modal">クリックしてレシピを追加(必須)</a>
+              </p>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="menu-role sub">
+                <img src="images/sub-icon.png" alt="" class="role-icon">
+                副菜
+              </div>
+              <a href="#select-submenu-modal">
+                <div class="edit-recipe-img">  
+                </div>
+              </a>
+              <p class="menu-select-text">
+                <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
+              </p>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="menu-role sub">
+                <img src="images/sub-icon.png" alt="" class="role-icon">
+                副菜
+              </div>
+              <a href="#select-submenu-modal">
+                <div class="edit-recipe-img">  
+                </div>
+              </a>
+              <p class="menu-select-text">
+                <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
+              </p>
+            </li>
+
+          </ul>
+
+          <!-- <ul class="pc-off select-menu-items">
+            <li class="select-menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+                </div>
+              </div>
+
+              <div class="gutters row">
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="#select-menu-modal">
+                    <div class="edit-recipe-img">  
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  <p class="menu-select-text">
+                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="select-menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+                </div>
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="#select-menu-modal">
+                    <div class="edit-recipe-img">  
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  <p class="menu-select-text">
+                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="select-menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+                </div>
+
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="#select-menu-modal">
+                    <div class="edit-recipe-img">  
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  <p class="menu-select-text">
+                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+
+        <div>
+          <br>
+          <label><%= f.radio_button :category, "1", {:checked => true} %> カロリー表示あり</label>
+          <label><%= f.radio_button :category, "2" %>糖質制限食 </label>
+          <label><%= f.radio_button :category, "3" %>HbA1c、血糖値の安定 </label>
+          <label><%= f.radio_button :category, "4" %>味に自信あり </label>
+          <label><%= f.radio_button :category, "5" %>すぐできるメニュー</label>
+
+        </div>
+
+
+
+        <div class="centering mt-56 pb-30 create-recipe-btn-container">
+          <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
+            <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
+        </div>
+      </div>
+
+<% end %>

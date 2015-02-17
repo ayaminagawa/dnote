@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>d note</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles/css/base.css">
+  <link rel="stylesheet" href="styles/css/grid.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.remodal.js"></script>
+  <script src="scripts/jquery.mobile-menu.js"></script>
+  <script src="scripts/main.js"></script>
+
+</head>
+<body>
+
+
+
+  <div id="wrapper">
+
+    <!-- Header -->
+    <%= render 'layouts/header' %>
+    <!-- Header -->
+
+    <%= render 'recipes/category' %>
+
+<div class="col col-18 menu-recipe-container">
+  <div class="page-title">
+    <a href="#">サラダ</a>
+    <span class="page-title-sub">レシピ</span>
+    <!-- <span class="count">20件</span> -->
+  </div>
+
+  <div class="tab-switch-container">
+    <ul>
+      <li class="tab-switch tab-active">
+        <a href="#menu-container">
+          レシピ
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="tab-box">
+ 
+
+    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
+
+      <!-- レシピひとつ分 -->
+      <li class="gutters row menu">
+        <div class="col col-11 col-xs col-xs-11">
+          <!-- <div class="menu-img">
+            <a href="recipe.html">
+              <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
+            </a>
+          </div> -->
+        </div>
+
+        <% @salads.each do |salad| %>
+
+            <div class="col col-13 col-xs col-xs-13">
+              <div class="menu-title">
+                <!-- <a href="recipe.html">
+                  レシピタイトル
+                </a> -->  
+                <%= link_to "@name", recipe_path(salad) %>
+              </div>
+
+              <p class="menu-comment">
+                <%= salad.description %>
+              </p>
+
+              <div class="author">
+                <a href="#">by つくったひと</a>
+              </div>
+
+            </div>
+
+        <% end %>    
+      <!-- レシピひとつ分 -->
+    </ul>
+  </div>
+
+</div>
+<!-- tab-box -->
+
+</div>
+
+</div><!-- contents end-->
+</div><!-- wrapper end-->
+
+<!-- Footer -->
+<%= render 'layouts/footer' %>
+<!-- Footer -->
+
+
+<!-- ログイン登録用のモーダル -->
+<%= render 'layouts/login' %>
+
+
+<!-- サイドバー -->
+<%= render 'layouts/sidebar'%>
+
+</body>
+</html>
+

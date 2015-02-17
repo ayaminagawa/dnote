@@ -1,0 +1,483 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @recipe.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
+ -->
+
+ <!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>d note</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles/css/base.css">
+  <link rel="stylesheet" href="styles/css/grid.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.remodal.js"></script>
+  <script src="scripts/jquery.mobile-menu.js"></script>
+  <script src="scripts/main.js"></script>
+
+
+</head>
+<body>
+
+  <div id="wrapper">
+
+   <!-- Header -->
+   <%= render 'layouts/header' %>
+  <!-- Header -->
+
+
+  <div class="contents" id="recipe-page">
+    <div class="gutters row">
+      <div class="col col-18 "> 
+        <div class="title-bar">
+          <i class="title-icon icon-cutlery"></i>レシピ
+          <div class="recipe-edit-btn">
+            <!-- <a href="#">レシピを編集する
+            </a> -->
+            <%= link_to "レシピを編集する", edit_recipe_path(@recipe) %>
+          </div>
+        </div>
+
+        <div class="container-full inner-30">
+          <div class=" gutters row">
+            <div class="col col-16 col-xs col-xs-17">
+              <div class="menu-title-large">
+                  <%= @recipe.name %>
+              </div>
+            </div>
+
+            <div class="col col-6 col-xs col-xs-7 pull-right">
+              <div class="button pull-right recipe-save" id="save-btn">
+                <a href="#">
+                  <i class="title-icon icon-star"></i><br>
+                  レシピを<span class="save-btn-text">保存</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="gutters row pb-30">
+            <div class="col col-12">
+              <div class="menu-img">
+                <img src="images/recipe-1.jpg" alt="menu-img" class="photo">
+              </div>
+
+              <p class="menu-comment">
+                <%= @recipe.description %>
+              </p>
+
+              <p class="recipe-author clear">
+                <a href="#" class="recipe-author-name ">
+                  by つくったひと
+                </a>
+              </p>
+
+              <div class="pull-left mt-30">
+                <p class="kcal">
+                  <i class="icon-scales"></i>
+                  <%= @recipe.calorie %>カロリー
+                </p>
+              </div>
+
+            </div>
+
+            <div class="col col-12">
+
+
+              <ul class="ingredients"> 
+                <li class="ingredient-head">材料</li>
+                <li class="ingredient">
+                  <div class="ingredient-name">
+                    鶏肉
+                  </div>
+                  <div class="ingredient-quantity">
+                    100g                      
+                  </div>
+                </li>
+                <li class="ingredient">
+                  <div class="ingredient-name">
+                    チリスープの葉
+                  </div>
+                  <div class="ingredient-quantity">
+                    150g                      
+                  </div>
+                </li>
+
+                <li class="ingredient">
+                  <div class="ingredient-name">
+                    パクチー
+                  </div>
+                  <div class="ingredient-quantity">
+                    3枚                      
+                  </div>
+                </li>
+                <li class="ingredient">
+                  <div class="ingredient-name">
+                    唐辛子
+                  </div>
+                  <div class="ingredient-quantity">
+                    3g                     
+                  </div>
+                </li>
+                <li class="ingredient">
+                  <div class="ingredient-name">
+                    パプリカ
+                  </div>
+                  <div class="ingredient-quantity">
+                    1個                      
+                  </div>
+                </li>
+                <li class="ingredient">
+                  <div class="ingredient-name">
+                   万能ネギ 
+                 </div>
+                 <div class="ingredient-quantity">
+                  少々                 
+                </div>
+              </li>
+              <li class="ingredient">
+                <div class="ingredient-name">
+                  パクチー
+                </div>
+                <div class="ingredient-quantity">
+                  3枚                      
+                </div>
+              </li>
+              <li class="ingredient">
+                <div class="ingredient-name">
+                  塩こしょう
+                </div>
+                <div class="ingredient-quantity">
+                  　お好み              
+                </div>
+              </li>
+              <li class="ingredient">
+                <div class="ingredient-name">
+                  片栗粉
+                </div>
+                <div class="ingredient-quantity">
+                  50g                  
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- recipe-topここまで -->
+
+        <hr>
+
+        <div class="recipe-bottom pt-30 pb-30">
+
+          <ul class="steps row">
+            <li class="step-head pc-off">作り方</li>
+
+            <li class="step col col-6">
+              <div class="gutters row">
+                <div class="step-img col col-xs col-xs-11">
+                  <img src="images/step/step-1.jpg" alt="" class="photo">
+                </div>
+
+                <div class="col col-xs col-xs-12 step-info">
+                  <div class="step-count">1</div>
+                  <p class="step-text">
+                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="step col col-6">
+              <div class="gutters row">
+                <div class="step-img col col-xs col-xs-11">
+                  <img src="images/step/step-1.jpg" alt="" class="photo">
+                </div>
+
+                <div class="col col-xs col-xs-12 step-info">
+                  <div class="step-count">2</div>
+                  <p class="step-text">
+                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="step col col-6">
+              <div class="gutters row">
+                <div class="step-img col col-xs col-xs-11">
+                  <img src="images/step/step-1.jpg" alt="" class="photo">
+                </div>
+
+                <div class="col col-xs col-xs-12 step-info">
+                  <div class="step-count">3</div>
+                  <p class="step-text">
+                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="step col col-6">
+              <div class="gutters row">
+                <div class="step-img col col-xs col-xs-11">
+                  <img src="images/step/step-1.jpg" alt="" class="photo">
+                </div>
+
+                <div class="col col-xs col-xs-12 step-info">
+                  <div class="step-count">4</div>
+                  <p class="step-text">
+                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="step col col-6">
+              <div class="gutters row">
+                <div class="step-img col col-xs col-xs-11">
+                  <img src="images/step/step-1.jpg" alt="" class="photo">
+                </div>
+
+                <div class="col col-xs col-xs-12 step-info">
+                  <div class="step-count">5</div>
+                  <p class="step-text">
+                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="row memo-history-container inner-30">
+            <div class="memo-history recipe-memo col col-12">
+              <h4 class="memo-head"><i class="title-icon icon-star"></i> コツ・ポイント</h4>
+              <p class="memo-history-text">
+                <%= @recipe.tip %>
+              </p>
+            </div>
+
+            <div class="memo-history recipe-history col col-12 sp-off">
+              <h4 class="memo-head">このレシピの生い立ち</h4>
+              <p class="memo-history-text">
+                パンケーキ生地を朝作るのが面倒に思った時・・前日の晩に生地を作って冷蔵庫へ。翌朝焼いてみると・・・んっ？生地が美味しくなってるー！ということを発見。更にカフェで食べたパンケーキに、チーズ入りのメニューがあり参考にしました。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div><!-- recipe-bottom -->
+
+
+      <div class="container-full top-border-green sp-off">
+        <div class="repo-container">
+          <div class="repo-head">
+            <i class="title-icon icon-recipes-1"></i> つくレポ
+          </div>
+
+          <ul class="gutters row repos">
+            <li class="col col-6 repo">
+              <div class="repo-img">
+                <div class="repo-data">
+                  2014/12/13
+                </div>
+                <img src="images/step/step-1.jpg" alt="" class="photo">
+              </div>
+
+              <p class="repo-text">
+                ポイント通りにやってとってもおいしかったです！
+              </p>
+
+              <p class="author pull-right">
+                <a href="menu-recipe.html" class="author-name">by つくったひと</a>
+              </p>
+            </li>
+
+            <li class="col col-6 repo">
+              <div class="repo-img">
+                <div class="repo-data">
+                  2014/12/13
+                </div>
+                <img src="images/step/step-1.jpg" alt="" class="photo">
+              </div>
+
+              <p class="repo-text">
+                ポイント通りにやってとってもおいしかったです！
+              </p>
+
+              <p class="author pull-right">
+                <a href="menu-recipe.html" class="author-name">by つくったひと</a>
+              </p>
+            </li>
+
+            <li class="col col-6 repo">
+              <div class="repo-img">
+                <div class="repo-data">
+                  2014/12/13
+                </div>
+                <img src="images/step/step-1.jpg" alt="" class="photo">
+              </div>
+
+              <p class="repo-text">
+                ポイント通りにやってとってもおいしかったです！
+              </p>
+
+              <p class="author pull-right">
+                <a href="menu-recipe.html" class="author-name">by つくったひと</a>
+              </p>
+            </li>
+
+            <li class="col col-6 repo">
+              <div class="repo-img">
+                <div class="repo-data">
+                  2014/12/13
+                </div>
+                <img src="images/step/step-1.jpg" alt="" class="photo">
+              </div>
+
+              <p class="repo-text">
+                ポイント通りにやってとってもおいしかったです！
+              </p>
+
+              <p class="author pull-right">
+                <a href="menu-recipe.html" class="author-name">by つくったひと</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="read-more-accordion sp-off">
+          <a href="#" class="is-toggle-switch">
+            もっと見る
+            <span class="accordion-arrow">
+              <i class="icon-m green icon-circle-right"></i>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="centering">
+        <div class="button sp-off">
+          <a href="#"><i class="title-icon icon-recipes-2"></i>つくレポを投稿</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-full col col-6 top-border-green recommend-container sp-off">
+      <h4 class="recommend-head">おすすめのレシピ</h4>
+
+      <ul class="recommends inner">
+        <li class="recommend">
+          <div class="recommend-img">
+            <a href="recipe.html">
+              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
+            </a>
+          </div>
+          <p class="menu-title recommend-title">
+            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
+            </a>
+          </p>
+        </li>
+
+        <li class="recommend">
+          <div class="recommend-img">
+            <a href="recipe.html">
+              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
+            </a>
+          </div>
+          <p class="menu-title recommend-title">
+            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
+            </a>
+          </p>
+        </li>
+
+        <li class="recommend">
+          <div class="recommend-img">
+            <a href="recipe.html">
+              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
+            </a>
+          </div>
+          <p class="menu-title recommend-title">
+            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
+            </a>
+          </p>
+        </li>
+
+        <li class="recommend">
+          <div class="recommend-img">
+            <a href="recipe.html">
+              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
+            </a>
+          </div>
+          <p class="menu-title recommend-title">
+            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
+            </a>
+          </p>
+        </li>
+
+        <li class="recommend">
+          <div class="recommend-img">
+            <a href="recipe.html">
+              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
+            </a>
+          </div>
+          <p class="menu-title recommend-title">
+            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
+            </a>
+          </p>
+        </li>
+
+        <li class="recommend">
+          <div class="recommend-img">
+            <a href="recipe.html">
+              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
+            </a>
+          </div>
+          <p class="menu-title recommend-title">
+            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- contents end-->
+</div><!-- wrapper end-->
+
+
+<!-- Footer -->
+<%= render 'layouts/footer' %>
+<!-- Footer -->
+
+
+<!-- ログイン登録用のモーダル -->
+<%= render 'layouts/login' %>
+
+
+<!-- サイドバー -->
+<%= render 'layouts/sidebar' %>
+
+</body>
+</html>

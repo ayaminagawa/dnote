@@ -1,0 +1,299 @@
+ <!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>d note</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles/css/base.css">
+  <link rel="stylesheet" href="styles/css/grid.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.remodal.js"></script>
+  <script src="scripts/jquery.mobile-menu.js"></script>
+  <script src="scripts/main.js"></script>
+
+
+
+</head>
+<body>
+
+  <div id="wrapper">
+
+   <!-- Header -->
+   <%= render 'layouts/header' %> 
+   <!-- Header -->
+
+
+    <div class="contents" id="menu-page">
+      <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立</h2>
+
+      <div class="container-full">
+        <div class="gutters row inner-30">
+          <div class="col col-20 col-xs col-xs-17 menu-title-large">
+            <a href="#">
+              <%= @menu.name %>
+            </a>
+          </div>
+
+          <div class="col col-4 col-xs col-xs-7 pull-right">
+            <div class="button pull-right recipe-save" id="save-btn">
+              <a href="#">
+                <i class="title-icon icon-star"></i><br>
+                献立を<span class="save-btn-text">保存</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="gutters row inner-30 pb-30">
+          <div class="col col-13 menu-img">
+            <img src="images/menu-1.jpg" alt="menu-img" class="photo">
+          </div>
+
+          <div class="col col-11">
+            <p class="menu-comment">
+              <%= @menu.point %>
+            </p>
+
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
+
+          <ul class=" menu-items sp-off">
+            <li class="menu-item col col-8">
+              <div class="sp-off  menu-role main">
+                <img src="images/main-icon.png" alt="" class="role-icon">
+                主菜
+              </div>
+              <div class="menu-title">
+                <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a>
+              </div>
+              <div class="menu-img">
+                <a href="recipe.html">
+                  <img src="images/menu-item-1.jpg" alt="" class="photo">
+                </a>
+              </div>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="menu-role sub">
+                <img src="images/sub-icon.png" alt="" class="role-icon">
+                副菜
+              </div>
+              <div class="menu-title">
+                <a href="recipe.html">芽キャベツのアンチョビオリーブケッパー風味</a>
+              </div>
+              <div class="menu-img">
+                <a href="recipe.html">
+                  <img src="images/menu-item-2.jpg" alt="" class="photo">
+                </a>
+              </div>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="menu-role sub">
+                <img src="images/sub-icon.png" alt="" class="role-icon">
+                副菜
+              </div>
+              <div class="menu-title">
+                <a href="recipe.html">パクチーの香草サラダ かりかりクルトン</a>
+              </div>
+              <div class="menu-img">
+                <a href="recipe.html">
+                  <img src="images/menu-item-3.jpg" alt="" class="photo">
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+          <ul class="pc-off menu-items">
+            <li class="menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+                </div>
+                <div class="col col-xs-20 col-xs menu-title">
+                  <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a>
+                </div>
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="recipe.html">
+                    <img src="images/menu-item-1.jpg" alt="" class="photo">
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-14 menu-text ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolores magni
+                </div>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+                </div>
+                <div class="col col-xs-20 col-xs menu-title">
+                  <a href="recipe.html">芽キャベツのアンチョビオリーブケッパー風味</a>
+                </div>
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="recipe.html">
+                    <img src="images/menu-item-2.jpg" alt="" class="photo">
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-16 menu-text ">
+                  Lorem ipsum dolor sit amet serc consectetur adipisicing elit. Corrupti aperiam ad ex, voluptatibus suscipit vitae, placeat animi vel iste 
+                </div>
+              </div>
+            </li>
+
+            <li class="menu-item">
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-3">
+                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
+                </div>
+                <div class="col col-xs-20 col-xs menu-title">
+                  <a href="recipe.html">パクチーの香草サラダ　かりかりクルトン</a>
+                </div>
+              </div>
+
+              <div class="gutters row"> 
+                <div class="col col-xs col-xs-8 menu-img">
+                  <a href="recipe.html">
+                    <img src="images/menu-item-3.jpg" alt="" class="photo">
+                  </a>
+                </div>
+
+                <div class="col col-xs col-xs-16 menu-text ">
+                  Lorem ipsum dolor sit amet serc consectetur adipisicing elit. Corrupti aperiam ad ex, voluptatibus suscipit vitae, placeat animi vel iste 
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="shopping-list-container inner-30">
+          <div class="shopping-list-head inner-30">
+            <h3 class="head">買い物リスト</h3>
+            <p class="text">1人分の材料になります</p>
+          </div>
+
+          <div class="gutters row shopping-lists">
+            <div class="col col-11">
+              <p class="type">
+                野菜・果実類
+              </p>
+              <ul class="shopping-list">
+                <li class="shopping-item">
+                  <div class="item-name">パクチー</div>
+                  <div class="item-quantity">200g</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">とうもろこし</div>
+                  <div class="item-quantity">50g</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">パプリカ</div>
+                  <div class="item-quantity">20g</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">ピーマン</div>
+                  <div class="item-quantity">20g</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">ねぎ</div>
+                  <div class="item-quantity">10g</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">芽キャベツ</div>
+                  <div class="item-quantity">100g</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">エリンギ</div>
+                  <div class="item-quantity">100g</div>
+                </li>
+              </ul>
+
+              <p class="type">
+                肉類
+              </p>
+              <ul class="shopping-list">
+                <li class="shopping-item">
+                  <div class="item-name">鶏むね肉</div>
+                  <div class="item-quantity">200g</div>
+                </li>
+              </ul>
+
+              <p class="type">
+                卵・乳製品
+              </p>
+              <ul class="shopping-list">
+                <li class="shopping-item">
+                  <div class="item-name">卵</div>
+                  <div class="item-quantity">2個</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">牛乳</div>
+                  <div class="item-quantity">200ml</div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col col-11 pull-right">
+              <p class="type">
+                常備食材
+              </p>
+              <ul class="shopping-list">
+                <li class="shopping-item">
+                  <div class="item-name">こしょう</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">粉チーズ</div>
+                </li>
+                <li class="shopping-item">
+                  <div class="item-name">塩</div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div><!-- shopping-list-container -->
+
+      </div>
+    </div><!-- contents end-->
+  </div><!-- wrapper end-->
+
+
+  <!-- Footer -->
+  <%= render 'layouts/footer' %>
+  <!-- Footer -->
+
+
+  <!-- ログイン登録用のモーダル -->
+  <%= render 'layouts/login' %>
+
+
+  <!-- サイドバー -->
+  <%= render 'layouts/sidebar' %>
+
+
+</body>
+</html>

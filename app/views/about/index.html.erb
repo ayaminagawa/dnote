@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js">
+<head id="head">
+  <meta charset="utf-8">
+  <title>d note</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles/css/base.css">
+  <link rel="stylesheet" href="styles/css/grid.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.remodal.js"></script>
+  <script src="scripts/jquery.mobile-menu.js"></script>
+  <script src="scripts/main.js"></script>
+  
+</head>
+<body>
+
+  <div id="wrapper">
+
+    <%= render 'layouts/header' %>
+
+    <div class="contents">
+
+      <%= render 'layouts/todays_recommended_menu' %>
+      
+      <div class="about-dnote">
+
+        <div class="title-bar title-bar-white is-sp-toggle-switch">
+          <img src="/assets/logo-small.png" alt="Dnote"> とは
+        </div>
+
+        <p class="about-dnote-text is-sp-toggle-box col-16">
+          Ｄノートは糖尿病の食事レシピの共有サイトです。<br>
+          家族に糖尿病の方がいる場合、毎日の食事を考えるのは大変です。<br>
+          <br>
+          あなたのレシピを投稿して、同じ悩みをもち苦労をされている皆さんのために役立てませんか？<br>毎日の負担軽減のために、他の方のレシピを参考にしませんか？<br><br>
+          また管理栄養士をはじめとするプロの方々のレシピも多く掲載されています。<br>
+          Ｄノートをうまく使って、毎日の食卓を楽しく美味しいものにして下さい。
+        </p>
+      </div>
+
+      <%= render 'layouts/nutritionists_recommended_menu' %>
+
+      <div class="centering">
+        <div class="read-more-container">
+          <div class="read-more">
+            <a href="menu-recipe.html">栄養士によるおすすめ献立をもっと見る</a>
+          </div>
+        </div>
+      </div>
+
+      <%= render 'recipes/popularity_recipe' %>
+
+      <div class="read-more-container pc-off">
+        <div class="read-more">
+          <a href="menu-recipe.html">人気のレシピをもっと見る</a>
+        </div>
+      </div>
+
+
+      <h3 class="category-head sp-off">レシピカテゴリ</h3>
+      <%= render 'recipes/recipe_category' %>
+    </div><!-- contents end-->
+  </div><!-- wrapper end-->
+
+
+
+  <!-- Footer -->
+  <%= render 'layouts/footer' %>
+  <!-- Footer -->
+
+
+  <!-- ログイン登録用のモーダル -->
+  <%= render 'layouts/login' %>
+
+
+  <!-- サイドバー -->
+  <%= render 'layouts/sidebar' %>
+
+</body>
+</html>

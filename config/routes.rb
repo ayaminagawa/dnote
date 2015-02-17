@@ -1,4 +1,60 @@
-Rails.application.routes.draw do
+Dnote::Application.routes.draw do
+
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks",
+    :passwords => "users/passwords",
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+  }
+
+  
+ 
+  get "made_report/new"
+  get "made_report/create"
+  get "made_report/destroy"
+  get "made_report/show"
+  resources :menus
+
+
+
+  get "menu/new"
+  get "menu/create"
+  get "menu/destroy"
+  root  'about#index'
+  match '/about', to:'about#index', via:'get'
+
+  get "column/index"
+  get "about/index"
+
+  resources :recipes
+  resources :users
+
+  get '/vagetables', to:'recipes#vagetables'
+  get '/meets', to:'recipes#meets'
+  get '/fishes', to:'recipes#fishes'
+  get '/rices', to:'recipes#rices'
+  get '/pastas', to:'recipes#pastas'
+  get '/noodles', to:'recipes#noodles'
+  get '/salads', to:'recipes#salads'
+  get '/soups', to:'recipes#soups'
+  get '/boxes', to:'recipes#boxes'
+
+  get '/calories', to:'recipes#calories'
+  get '/sugars', to:'recipes#sugars'
+  get '/stabilities', to:'recipes#stabilities'
+  get '/goodtastes', to:'recipes#goodtastes'
+  get '/easies', to:'recipes#easies'
+
+
+  
+  
+  # devise_for :users, :controllers => {
+  # :sessions      => "users/sessions",
+  # :registrations => "users/registrations",
+  # :passwords     => "users/passwords",
+  # :omniauth_callbacks => "users/omniauth_callbacks" 
+  # }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

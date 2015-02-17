@@ -1,0 +1,50 @@
+<div class="signup-modal remodal" data-remodal-id="modal">
+
+    <div class="gutters row">
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title"> ログイン</h4>
+        <p class="modal-head">
+          <i class="icon-circle"></i>
+          すでにユーザー登録されている方
+        </p>
+
+        <form action="#">
+          <input type="email" placeholder="メールアドレス" class="account-form">
+          <input type="text" placeholder="パスワード" class="account-form">
+          <div class="submit-container">
+           <!--  <input type="submit" class="button-b" value="ログイン" > -->
+           <% if user_signed_in? %>
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'button-b'  %>
+           <% else %>
+             <%= link_to "ログイン", new_user_session_path, class:'button-b' %>
+           <% end %>
+          </div>
+        </form>
+
+        <div class="facebook-btn-container">
+          <!-- <a href="" class="facebook-btn">
+            <i class="icon-facebook-square"></i>
+            Facebookでログイン
+          </a> -->
+          <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+          <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
+        </div>
+      </div>
+
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title">新規登録</h4>
+        <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
+        <div class="button-container">
+          <%= link_to "ユーザー登録をする", new_user_registration_path, class:'button-b' %>
+        </div>
+
+        <div class="facebook-btn-container">
+          <!-- <a href="" class="facebook-btn">
+            <i class="icon-facebook-square"></i>
+            Facebookで新規登録
+          </a> -->
+          <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+        </div>
+      </div>
+    </div>
+  </div>

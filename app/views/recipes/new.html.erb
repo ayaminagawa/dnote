@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>d note</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles/css/base.css">
+  <link rel="stylesheet" href="styles/css/grid.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.remodal.js"></script>
+  <script src="scripts/jquery.mobile-menu.js"></script>
+  <script src="scripts/main.js"></script>
+
+</head>
+<body>
+
+
+  <div id="wrapper">
+
+    <!-- Header -->
+    <%= render 'layouts/header' %>
+    <!-- Header -->
+
+    <div class="contents" id="create-recipe-page">
+
+      <div class="gutters row">
+      　<%= render 'form' %>
+
+      <!-- レシピの書き方 -->
+      <div class="col col-7 sp-off">
+        <ul class="recipe-help">
+          <li class="recipe-help-head">レシピの書き方</li>
+          <li class="toggle-list">
+            <a href="#" class="togglable">レシピのタイトル</a>
+            <div class="toggle-block">
+              レシピに合ったタイトルをつけてください。
+            </div>
+          </li>
+          <li class="toggle-list">
+            <a href="#" class="togglable">レシピの写真</a>
+            <div class="toggle-block">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita quasi accusamus dignissimos fugit, nisi perspiciatis 
+            </div>
+          </li>
+          <li class="toggle-list">
+            <a href="#" class="togglable">レシピの紹介文(キャッチコピー)</a>
+            <div class="toggle-block">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita quasi accusamus dignissimos fugit, nisi perspiciatis 
+            </div>
+          </li>
+          <li class="toggle-list">
+            <a href="#" class="togglable">材料・分量</a>
+            <div class="toggle-block">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita quasi accusamus dignissimos fugit, nisi perspiciatis 
+            </div>
+          </li>
+          <li class="toggle-list">
+            <a href="#" class="togglable">作り方</a>
+            <div class="toggle-block">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita quasi accusamus dignissimos fugit, nisi perspiciatis 
+            </div>
+          </li>
+          <li class="toggle-list">
+            <a href="#" class="togglable">コツ・ポイント</a>
+            <div class="toggle-block">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita quasi accusamus dignissimos fugit, nisi perspiciatis 
+            </div>
+          </li>
+
+          <li class="toggle-list">
+            <a href="#" class="togglable">カロリー</a>
+            <div class="toggle-block">
+              レシピのカロリーを計算して入力してください。
+              (必須ではありません)
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </div><!-- contents end-->
+</div><!-- wrapper end-->
+
+<!-- Footer -->
+<%= render 'layouts/footer' %>
+<!-- Footer -->
+
+<!-- 材料追加のmodal -->
+<div class="ingredient-modal remodal" data-remodal-id="ingredient-modal">
+  <h4 class="ingredient-modal-head"><i class="icon-m orange icon-scales"></i>レシピに使う材料の編集</h4>
+  <form action="#">
+    <ul class="inner-30 edit-ingredient-container">
+      <li class="gutters row edit-ingredient-head">
+        <div class="col col-14 col-xs-14 edit-ingredient-item">
+          材料
+        </div>
+        <div class="col col-8 col-xs-8 edit-ingredient-quantity">
+          分量
+        </div>
+      </li>
+      <li class="gutters row edit-ingredient">
+        <div class="col col-14 col-xs-14 edit-ingredient-item">
+          <input type="text" class="edit-ingredient-field" placeholder="例：鳥むね肉">
+        </div>
+        <div class="col col-8 col-xs-8 edit-ingredient-quantity">
+          <input type="text" class="edit-ingredient-field" placeholder="例：100g">
+        </div>
+        <div class="col col-2 col-xs-2 edit-ingredient-delete">
+          <i class="icon-l gray icon-cancel"></i>
+        </div>
+      </li>
+      <li class="gutters row edit-ingredient">
+        <div class="col col-14 col-xs-14 edit-ingredient-item">
+          <input type="text" class="edit-ingredient-field" placeholder="例：キャベツ">
+        </div>
+        <div class="col col-8 col-xs-8 edit-ingredient-quantity">
+          <input type="text" class="edit-ingredient-field" placeholder="例：1/4玉">
+        </div>
+        <div class="col col-2 col-xs-2 edit-ingredient-delete">
+          <i class="icon-l gray icon-cancel"></i>
+        </div>
+      </li>
+      <li class="gutters row edit-ingredient">
+        <div class="col col-14 col-xs-14 edit-ingredient-item">
+          <input type="text" class="edit-ingredient-field" placeholder="例：塩こしょう">
+        </div>
+        <div class="col col-8 col-xs-8 edit-ingredient-quantity">
+          <input type="text" class="edit-ingredient-field" placeholder="例：5g">
+        </div>
+        <div class="col col-2 col-xs-2 edit-ingredient-delete">
+          <i class="icon-l gray icon-cancel"></i>
+        </div>
+      </li>
+
+      <li class="add-ingredient-btn">
+        <div class="step-add-btn">
+          <a href="#">材料を追加する</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="edit-ingredient-submit-container">
+      <input type="submit" value="材料を保存する" class="edit-ingredient-submit">
+    </div>
+  </form>
+</div>
+
+
+<!-- ログイン登録用のモーダル -->
+<%= render 'layouts/login' %>
+
+<!-- サイドバー -->
+<%= render 'layouts/sidebar' %>
+
+</body>
+</html>
