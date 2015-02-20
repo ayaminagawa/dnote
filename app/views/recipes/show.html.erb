@@ -287,16 +287,21 @@
         </div>
       </div><!-- recipe-bottom -->
 
-      <% @made_reports.each do |made_report| %>
 
       <div class="container-full top-border-green sp-off">
         <div class="repo-container">
+
+         
           <div class="repo-head">
             <i class="title-icon icon-recipes-1"></i> つくレポ
           </div>
 
           <ul class="gutters row repos">
+
+            <% @made_reports.each do |made_report| %>
             <li class="col col-6 repo">
+
+              
               <div class="repo-img">
                 <div class="repo-data">
                   <%= made_report.created_at %>
@@ -310,13 +315,15 @@
 
               <p class="author pull-right">
                 <!-- <a href="menu-recipe.html" class="author-name">by つくったひと</a> -->
-                <%= link_to made_report.user_id, user_path, :class => 'author-name'  %>
+                <%= link_to made_report.user_id, '', :class => 'author-name'  %>
               </p>
+
             </li>
+              <% end %>
           </ul>
         </div>
 
-      <% end %>
+
 <!-- 
         <div class="read-more-accordion sp-off">
           <a href="#" class="is-toggle-switch">
