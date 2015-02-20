@@ -30,6 +30,7 @@ Dnote::Application.routes.draw do
   resources :users
   resources :menu_recipes
 
+
   get '/vagetables', to:'recipes#vagetables'
   get '/meets', to:'recipes#meets'
   get '/fishes', to:'recipes#fishes'
@@ -45,6 +46,9 @@ Dnote::Application.routes.draw do
   get '/stabilities', to:'recipes#stabilities'
   get '/goodtastes', to:'recipes#goodtastes'
   get '/easies', to:'recipes#easies'
+
+  get '/menu_recipes', to:'menus#menu_recipes'
+
 
 
 
