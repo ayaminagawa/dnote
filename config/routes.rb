@@ -53,6 +53,8 @@ Dnote::Application.routes.draw do
   get "made_report/create"
   get "made_report/destroy"
 
+  
+
 
 
 
