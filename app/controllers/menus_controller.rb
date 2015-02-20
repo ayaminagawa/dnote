@@ -28,11 +28,17 @@ class MenusController < ApplicationController
   # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
-    @menu_recipe = MenuRecipe.new(main_params)
+
     # @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 })
 
     respond_to do |format|
+      raise
       if @menu.save
+        @menu_recipe = MenuRecipe.new()
+        @menu_recipe.menu_id = @menu.id
+        @menu_recipe.recipe_id = params[:main]
+
+        @menu_recipe.save
         format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
         format.json { render action: 'show', status: :created, location: @menu }
       else
