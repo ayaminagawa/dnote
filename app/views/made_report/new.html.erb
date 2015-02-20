@@ -1,2 +1,17 @@
-<h1>MadeReport#new</h1>
-<p>Find me in app/views/made_report/new.html.erb</p>
+<%= form_for(@made_report) do |f| %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :message, 'メッセージ' %><br>
+    <%= f.text_field :message %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "つくレポを投稿" %>
+  </div>
+
+<% end %>
+

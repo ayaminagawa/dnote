@@ -31,20 +31,29 @@
         </div>
       </div>
 
-      <div class="col col-12 modal-inner">
-        <h4 class="modal-title">新規登録</h4>
-        <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
-        <div class="button-container">
-          <%= link_to "ユーザー登録をする", new_user_registration_path, class:'button-b' %>
-        </div>
 
-        <div class="facebook-btn-container">
-          <!-- <a href="" class="facebook-btn">
+      <% if user_signed_in? %>
+        <div class="col col-12 modal-inner">
+          <h4 class="modal-title">新規登録</h4>
+          <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
+          <div class="button-container">
+            <%= link_to "ユーザー登録をする", new_user_registration_path, class:'button-b' %>
+          </div>
+
+          <div class="facebook-btn-container">
+            <!-- <a href="" class="facebook-btn">
             <i class="icon-facebook-square"></i>
             Facebookで新規登録
-          </a> -->
-          <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+            </a> -->
+            <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <div class="col col-12 modal-inner">
+          <h4 class="modal-title">Myページ</h4>
+           <%= link_to "Myページへ移動", current_user, class:'button-b' %>
+        </div>
+      <% end %>
+      
     </div>
   </div>

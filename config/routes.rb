@@ -1,5 +1,7 @@
 Dnote::Application.routes.draw do
 
+  get "create/destroy"
+  get "create/show"
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
     :passwords => "users/passwords",
@@ -29,6 +31,7 @@ Dnote::Application.routes.draw do
   resources :recipes
   resources :users
   resources :menu_recipes
+  resources :made_reports
 
   get '/vagetables', to:'recipes#vagetables'
   get '/meets', to:'recipes#meets'
@@ -45,6 +48,11 @@ Dnote::Application.routes.draw do
   get '/stabilities', to:'recipes#stabilities'
   get '/goodtastes', to:'recipes#goodtastes'
   get '/easies', to:'recipes#easies'
+
+  get "made_report/new"
+  get "made_report/create"
+  get "made_report/destroy"
+
 
 
 
