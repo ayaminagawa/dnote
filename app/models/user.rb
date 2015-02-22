@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
 	has_many :recipes, dependent: :destroy
 	has_many :menus, dependent: :destroy 
 	# has_secure_password
-    # validates :password, length: { minimum: 6 }
+  # validates :password, length: { minimum: 6 }
+
+  has_many :favorites
+  has_many :favorite_recipes, through: :favorites, source: :recipe
+  has_many :favorite_menus, through: :favorites, source: :menu
 
     def set_image(file)
     if !file.nil?
@@ -57,6 +61,31 @@ class User < ActiveRecord::Base
                           )
       end
       user
+    end
+
+    def favorite_recipe?(recipe)
+      favorites.find_by(recipe_id: recipe.id)
+    
+    end
+
+    def favorite_recipe!(recipe)
+      favorites.create!(recipe_id: recipe.id)
+    end
+
+    def unfavorite_recipe!(recipe)
+      favorites.find_by(recipe_id: recipe.id).destroy
+    end
+
+    def favorite_menu?(menu)
+      favorites.find_by(menu_id: menu.id)
+    end
+
+    def favorite_menu!(menu)
+      favorites.create!(menu_id: menu.id)
+    end
+
+    def unfavorite_menu!(menu)
+      favorites.find_by(menu_id: menu.id).destroy
     end
 
 end

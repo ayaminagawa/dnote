@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215094344) do
+ActiveRecord::Schema.define(version: 20150222053651) do
 
   create_table "contacts", force: true do |t|
     t.string   "email"
@@ -27,12 +27,14 @@ ActiveRecord::Schema.define(version: 20150215094344) do
     t.datetime "updated_at"
   end
 
-  create_table "favorite_recipes", force: true do |t|
+  create_table "favorites", force: true do |t|
     t.integer  "user_id"
     t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "favorites", ["user_id", "recipe_id"], name: "index_favorites_on_user_id_and_recipe_id", unique: true
 
   create_table "feedbacks", force: true do |t|
     t.integer  "user_id"

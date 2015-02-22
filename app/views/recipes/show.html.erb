@@ -70,10 +70,13 @@
 
             <div class="col col-6 col-xs col-xs-7 pull-right">
               <div class="button pull-right recipe-save" id="save-btn">
-                <a href="#">
+                <!-- <a href="#">
                   <i class="title-icon icon-star"></i><br>
                   レシピを<span class="save-btn-text">保存</span>
-                </a>
+                </a> -->
+                <span id="recipe_<%= @recipe.id %>">
+                  <%= render 'favorites/favorite_btn', recipe: @recipe %>
+                </span>
               </div>
 
             </div>
@@ -360,65 +363,6 @@
           </p>
         </li>
 
-        <li class="recommend">
-          <div class="recommend-img">
-            <a href="recipe.html">
-              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
-          </div>
-          <p class="menu-title recommend-title">
-            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
-            </a>
-          </p>
-        </li>
-
-        <li class="recommend">
-          <div class="recommend-img">
-            <a href="recipe.html">
-              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
-          </div>
-          <p class="menu-title recommend-title">
-            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
-            </a>
-          </p>
-        </li>
-
-        <li class="recommend">
-          <div class="recommend-img">
-            <a href="recipe.html">
-              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
-          </div>
-          <p class="menu-title recommend-title">
-            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
-            </a>
-          </p>
-        </li>
-
-        <li class="recommend">
-          <div class="recommend-img">
-            <a href="recipe.html">
-              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
-          </div>
-          <p class="menu-title recommend-title">
-            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
-            </a>
-          </p>
-        </li>
-
-        <li class="recommend">
-          <div class="recommend-img">
-            <a href="recipe.html">
-              <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
-          </div>
-          <p class="menu-title recommend-title">
-            <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
-            </a>
-          </p>
-        </li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,5 @@
+<%= link_to favorite_path(current_user.favorites.find_by(recipe_id: recipe.id)), remote: true, method: :delete, class: 'favorite-link' do %>
+	<i class="title-icon icon-star"></i><br>
+        レシピを<span class="save-btn-text">削除</span>
+  	</i>
+<% end %>

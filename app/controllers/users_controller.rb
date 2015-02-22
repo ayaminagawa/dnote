@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # GET /users
   # GET /users.json
@@ -11,6 +11,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # @title = 'Favorite Recipes'
+    # @recipe = current_user.recipes.build
+    # # @feed_tweets = current_user.favorite_tweets.paginate(page: params[:page])
+    # render template: 'about/index'
   end
 
   # GET /users/new
@@ -65,6 +69,13 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def favorite_recipe
+    @title = 'Favorite Recipes'
+    @recipe = current_user.recipes.build
+    # @feed_tweets = current_user.favorite_tweets.paginate(page: params[:page])
+    render template: 'about/index'
   end
 
 
