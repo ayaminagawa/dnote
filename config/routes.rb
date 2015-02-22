@@ -11,10 +11,10 @@ Dnote::Application.routes.draw do
 
   
  
-  get "made_report/new"
-  get "made_report/create"
-  get "made_report/destroy"
-  get "made_report/show"
+  # get "made_report/new"
+  # get "made_report/create"
+  # get "made_report/destroy"
+  # get "made_report/show"
   resources :menus
 
 
@@ -28,10 +28,11 @@ Dnote::Application.routes.draw do
   get "column/index"
   get "about/index"
 
-  resources :recipes
+  resources :recipes do
+    resource :made_reports
+  end
   resources :users
   resources :menu_recipes
-  resources :made_reports
 
   get '/vagetables', to:'recipes#vagetables'
   get '/meets', to:'recipes#meets'
@@ -52,6 +53,7 @@ Dnote::Application.routes.draw do
   get "made_report/new"
   get "made_report/create"
   get "made_report/destroy"
+
 
   
 

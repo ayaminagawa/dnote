@@ -1,4 +1,4 @@
-<%= form_for(@made_report) do |f| %>
+<%= form_for @made_report, :url => {:action => 'create'} do |f| %>
 
   <div class="field">
     <%= f.label :image %><br>
@@ -8,6 +8,8 @@
     <%= f.label :message, 'メッセージ' %><br>
     <%= f.text_field :message %>
   </div>
+
+  <%= f.hidden_field :recipe_id, :value => @recipe.id %>
 
   <div class="actions">
     <%= f.submit "つくレポを投稿" %>
