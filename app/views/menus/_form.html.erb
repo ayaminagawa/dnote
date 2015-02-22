@@ -1,4 +1,4 @@
-
+<%= form_for(@menu) do |f| %>
   <% if @menu.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
@@ -10,10 +10,7 @@
       </ul>
     </div>
   <% end %>
-<!-- 
-  <div class="actions">
-    <%= f.submit %>
-  </div> -->
+
 
 <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立を作る</h2>
 
@@ -263,9 +260,11 @@
 
 
 
-        <div class="centering mt-56 pb-30 create-recipe-btn-container">
-          <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
-            <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
-        </div>
-      </div>
+  <div class="centering mt-56 pb-30 create-recipe-btn-container">
+         <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
+       <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
+  </div>
+</div>
+
+<% end %>
 

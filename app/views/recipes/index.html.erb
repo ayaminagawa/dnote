@@ -30,11 +30,11 @@
 
   <div class="col col-18 menu-recipe-container">
     <div class="page-title">
-      <a href="#">中性脂肪を抑える</a>
-      <span class="page-title-sub">献立・レシピ</span>
+      レシピ検索一覧
+      <!-- <span class="page-title-sub">献立・レシピ</span> -->
       <!-- <span class="count">20件</span> -->
     </div>
-  
+  <!-- 
     <div class="tab-switch-container">
       <ul>
         <li class="tab-switch tab-active">
@@ -49,15 +49,10 @@
         </li>
       </ul>
     </div>
-
+ -->
   <div id="tab-box">
-    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
-      <!-- 献立ひとつ分 -->
-      <%= render @menus %>
-      <!-- 献立ひとつ分 -->
-    </ul>
 
-    <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
+    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
 
       <!-- レシピひとつ分 -->
       <li class="gutters row menu">
@@ -76,7 +71,7 @@
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
-             <%= link_to "@name", recipe %>
+             <%= link_to recipe.name, recipe %>
            </div>
 
            <p class="menu-comment">
