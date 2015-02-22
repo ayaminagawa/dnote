@@ -31,11 +31,12 @@ class MenusController < ApplicationController
 
     # @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 })
 
-    respond_to do |format|
-      raise
+
+    # respond_to do |format|
+      
       if @menu.save
-        @menu_recipe = MenuRecipe.new()
-        @menu_recipe.menu_id = @menu.id
+        @menu_recipe = @menu.menu_recipes.build
+        # @menu_recipe.menu_id = @menu.id
         @menu_recipe.recipe_id = params[:main]
 
         @menu_recipe.save
@@ -46,7 +47,7 @@ class MenusController < ApplicationController
         format.json { render json: @menu.errors, status: :unprocessable_entity }
       end
 
-    end
+    # end
 
     # respond_to do |format|
     #   if @main_recipe.save
