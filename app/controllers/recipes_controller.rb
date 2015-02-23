@@ -8,8 +8,6 @@ class RecipesController < ApplicationController
     @recipes = Recipe.search(params[:search])
     @menus = Menu.all 
 
-
-
   end
 
   def vagetables
@@ -83,6 +81,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @ingredient = Ingredient.new
   end
 
   # GET /recipes/1/edit
@@ -94,6 +93,7 @@ class RecipesController < ApplicationController
   def create
     # @recipe = Recipe.new(recipe_params)
     @recipe = current_user.recipes.build(recipe_params)
+    @ingredient = Ingredient.new(ingredient_params)
 
     respond_to do |format|
       if @recipe.save

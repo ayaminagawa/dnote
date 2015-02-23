@@ -7,6 +7,7 @@ class Recipe < ActiveRecord::Base
 	has_many :favorites
     has_many :favoriting_users, through: :favorites, source: :user
 	has_many :made_reports, dependent: :destroy
+	has_many :ingredients, dependent: :destroy
 
 	 def self.search(search) #self.でクラスメソッドとしている
     if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索

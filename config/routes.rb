@@ -33,6 +33,7 @@ Dnote::Application.routes.draw do
   end
   resources :users
   resources :menu_recipes
+  resources :ingredients
 
   get '/vagetables', to:'recipes#vagetables'
   get '/meets', to:'recipes#meets'
