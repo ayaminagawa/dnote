@@ -9,6 +9,8 @@ class Recipe < ActiveRecord::Base
 	has_many :made_reports, dependent: :destroy
 	has_many :ingredients, :class_name => "Ingredient", dependent: :destroy
 	accepts_nested_attributes_for :ingredients, :allow_destroy => true
+	has_many :procedures, :class_name => "Procedure", :dependent => :destroy
+  	accepts_nested_attributes_for :procedures, :allow_destroy => true
 
 	def self.search(search) #self.でクラスメソッドとしている
 	    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索

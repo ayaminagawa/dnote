@@ -131,6 +131,7 @@
           <ul class="steps row">
             <li class="step-head pc-off">作り方</li>
 
+            <% @procedures.each do |procedure| %>
             <li class="step col col-6">
               <div class="gutters row">
                 <div class="step-img col col-xs col-xs-11">
@@ -140,71 +141,13 @@
                 <div class="col col-xs col-xs-12 step-info">
                   <div class="step-count">1</div>
                   <p class="step-text">
-                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
+                    <%= procedure.body %>
                   </p>
                 </div>
               </div>
             </li>
+            <% end %>
 
-            <li class="step col col-6">
-              <div class="gutters row">
-                <div class="step-img col col-xs col-xs-11">
-                  <img src="images/step/step-1.jpg" alt="" class="photo">
-                </div>
-
-                <div class="col col-xs col-xs-12 step-info">
-                  <div class="step-count">2</div>
-                  <p class="step-text">
-                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="step col col-6">
-              <div class="gutters row">
-                <div class="step-img col col-xs col-xs-11">
-                  <img src="images/step/step-1.jpg" alt="" class="photo">
-                </div>
-
-                <div class="col col-xs col-xs-12 step-info">
-                  <div class="step-count">3</div>
-                  <p class="step-text">
-                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="step col col-6">
-              <div class="gutters row">
-                <div class="step-img col col-xs col-xs-11">
-                  <img src="images/step/step-1.jpg" alt="" class="photo">
-                </div>
-
-                <div class="col col-xs col-xs-12 step-info">
-                  <div class="step-count">4</div>
-                  <p class="step-text">
-                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="step col col-6">
-              <div class="gutters row">
-                <div class="step-img col col-xs col-xs-11">
-                  <img src="images/step/step-1.jpg" alt="" class="photo">
-                </div>
-
-                <div class="col col-xs col-xs-12 step-info">
-                  <div class="step-count">5</div>
-                  <p class="step-text">
-                    ○印の材料を合わせてホイッパーでぐるぐるとよく混ぜます※または2～3回濾してもOK！
-                  </p>
-                </div>
-              </div>
-            </li>
           </ul>
 
           <div class="row memo-history-container inner-30">

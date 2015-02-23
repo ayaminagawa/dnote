@@ -76,12 +76,14 @@ class RecipesController < ApplicationController
   def show
     @made_reports = MadeReport.find(:all, :conditions => { :recipe_id => params[:id] }) 
     @ingredients = Ingredient.find(:all, :conditions => { :recipe_id => params[:id]})
+    @procedures = Procedure.find(:all, :conditions => { :recipe_id => params[:id]})
   end
 
   # GET /recipes/new
   def new
     @recipe = Recipe.new
     @recipe.ingredients.build
+    @recipe.procedures.build
     # @ingredient = Ingredient.new
   end
 
@@ -140,7 +142,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :tip, :calorie, :kind, :recipe_select, :category, ingredients_attributes: [:name, :volume])
+      params.require(:recipe).permit(:name, :description, :tip, :calorie, :kind, :recipe_select, :category, ingredients_attributes: [:name, :volume], procedures_attributes: [:body])
     end
 
     # def ingredient_params
