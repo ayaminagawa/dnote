@@ -108,85 +108,20 @@
             </div>
 
             <div class="col col-12">
-
-
               <ul class="ingredients"> 
                 <li class="ingredient-head">材料</li>
-                <li class="ingredient">
-                  <div class="ingredient-name">
-                    鶏肉
-                  </div>
-                  <div class="ingredient-quantity">
-                    100g                      
-                  </div>
-                </li>
-                <li class="ingredient">
-                  <div class="ingredient-name">
-                    チリスープの葉
-                  </div>
-                  <div class="ingredient-quantity">
-                    150g                      
-                  </div>
-                </li>
-
-                <li class="ingredient">
-                  <div class="ingredient-name">
-                    パクチー
-                  </div>
-                  <div class="ingredient-quantity">
-                    3枚                      
-                  </div>
-                </li>
-                <li class="ingredient">
-                  <div class="ingredient-name">
-                    唐辛子
-                  </div>
-                  <div class="ingredient-quantity">
-                    3g                     
-                  </div>
-                </li>
-                <li class="ingredient">
-                  <div class="ingredient-name">
-                    パプリカ
-                  </div>
-                  <div class="ingredient-quantity">
-                    1個                      
-                  </div>
-                </li>
-                <li class="ingredient">
-                  <div class="ingredient-name">
-                   万能ネギ 
-                 </div>
-                 <div class="ingredient-quantity">
-                  少々                 
-                </div>
-              </li>
-              <li class="ingredient">
-                <div class="ingredient-name">
-                  パクチー
-                </div>
-                <div class="ingredient-quantity">
-                  3枚                      
-                </div>
-              </li>
-              <li class="ingredient">
-                <div class="ingredient-name">
-                  塩こしょう
-                </div>
-                <div class="ingredient-quantity">
-                  　お好み              
-                </div>
-              </li>
-              <li class="ingredient">
-                <div class="ingredient-name">
-                  片栗粉
-                </div>
-                <div class="ingredient-quantity">
-                  50g                  
-                </div>
-              </li>
-            </ul>
-          </div>
+                <% @ingredients.each do |ingredient| %>
+                  <li class="ingredient">
+                    <div class="ingredient-name">
+                      <%= ingredient.name %>
+                    </div>
+                    <div class="ingredient-quantity">
+                      <%= ingredient.volume %>
+                    </div>
+                  </li>
+                 <% end %>
+              </ul>
+            </div>
         </div><!-- recipe-topここまで -->
 
         <hr>

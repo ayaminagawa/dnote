@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
     # @recipes = Recipe.all
     @recipes = Recipe.search(params[:search])
     @menus = Menu.all 
-
   end
 
   def vagetables
@@ -76,12 +75,14 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @made_reports = MadeReport.find(:all, :conditions => { :recipe_id => params[:id] }) 
+    @ingredients = Ingredient.find(:all, :conditions => { :recipe_id => params[:id]})
   end
 
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-    @ingredient = Ingredient.new
+    @recipe.ingredients.build
+    # @ingredient = Ingredient.new
   end
 
   # GET /recipes/1/edit
@@ -93,16 +94,17 @@ class RecipesController < ApplicationController
   def create
     # @recipe = Recipe.new(recipe_params)
     @recipe = current_user.recipes.build(recipe_params)
-    @ingredient = Ingredient.new(ingredient_params)
+    # @recipe.ingredients.build
 
-    respond_to do |format|
-      if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @recipe }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
+    if @recipe.save
+      # @ingredient = @recipe.ingredients.build
+      # # @menu_recipe.menu_id = @menu.id
+      # # @menu_recipe.recipe_id = params[:main]
+
+      # @ingredient.save
+      redirect_to(recipe_path(@recipe))
+    else
+      render 'new'
     end
   end
 
@@ -138,6 +140,10 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :tip, :calorie, :kind, :recipe_select, :category)
+      params.require(:recipe).permit(:name, :description, :tip, :calorie, :kind, :recipe_select, :category, ingredients_attributes: [:name, :volume])
     end
+
+    # def ingredient_params
+    #   params.require(:ingredient).permit(:name, :volume)
+    # end
 end
