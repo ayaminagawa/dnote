@@ -104,7 +104,7 @@
             </li>
             <li class="author">
               <!-- <a href="#">by つくったひと</a> -->
-
+              
             </li>
           </ul>
         </div>
@@ -142,7 +142,8 @@
 
               <div class="author">
                <!--  <a href="#">by つくったひと</a> -->
-               <%= link_to calorie.name, recipe_path(calorie) %>
+              <!--  <%= link_to calorie.name, recipe_path(calorie) %> -->
+              <%= link_to calorie.user.name, recipe_path(calorie)  %>
               </div>
 
             </div>

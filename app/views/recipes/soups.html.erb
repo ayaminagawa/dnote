@@ -75,7 +75,8 @@
               </p>
 
               <div class="author">
-                <a href="#">by つくったひと</a>
+                <!-- <a href="#">by つくったひと</a> -->
+                <%= link_to soup.user.name, recipe_path(soup)  %>
               </div>
 
             </div>
