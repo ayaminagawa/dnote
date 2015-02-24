@@ -77,7 +77,8 @@
               </p>
 
               <div class="author">
-                <a href="#">by つくったひと</a>
+                <!-- <a href="#">by つくったひと</a> -->
+                <%= link_to box.user.name, recipe_path(box)  %>
               </div>
 
             </div>

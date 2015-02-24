@@ -35,6 +35,7 @@ Dnote::Application.routes.draw do
   resources :menu_recipes
   resources :ingredients
 
+
   get '/vagetables', to:'recipes#vagetables'
   get '/meets', to:'recipes#meets'
   get '/fishes', to:'recipes#fishes'
@@ -56,6 +57,7 @@ Dnote::Application.routes.draw do
   get "made_report/destroy"
   resources :favorites, only: [:create, :destroy]
 
+  get '/menu_recipes', to:'menus#menu_recipes'
 
 
 

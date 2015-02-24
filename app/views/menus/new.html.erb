@@ -18,6 +18,7 @@
 
 </head>
 <body>
+  <%= form_for(@menu) do |f| %>
 
   <div id="wrapper">
     <!-- Header -->
@@ -26,7 +27,7 @@
 
     <div class="contents" id="create-menu-page">
       
-      <%= render 'form'%>
+      <%= render 'form', f: f %>
 
     </div><!-- contents end-->
     
@@ -37,58 +38,8 @@
   <!-- Footer -->
 
   
-  <!-- レシピを選ぶmodal -->
-
-　
-  <div class="select-mainmenu remodal" data-remodal-id="select-mainmenu-modal">
-    <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">主菜</h4>
-
-    <ul class="select-menu-list-container">
-      <li class="gutters row select-menu-list">
-        <div class="col col-4 col col-xs-10 menu-img">
-          <img src="images/menu-item-1.jpg" class="photo">
-        </div>  
-
-        <%= form_for(@menu_recipe) do |f| %>
-        <div class="col col-11 col col-xs-13 menu-title">
-            <% @main_recipes.each do |main_recipe| %>
-              <label><%= f.radio_button :recipe_id, main_recipe.id %><%= main_recipe.name %></label><br>
-            <% end %>
-          
-        </div>
-
-        <div class="col col-6 menu-select-btn-container">
-          <!-- <a href="#" class="menu-select-btn">追加する</a> -->
-          <%= f.submit "追加する", class: 'menu-select-btn' %>
-        </div>
-        <% end %>
-
-      </li>
-    </ul>
-  </div>
-
-  <div class="select-submenu remodal" data-remodal-id="select-submenu-modal">
-    <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">副菜</h4>
-
-    <ul class="select-menu-list-container">
-      <li class="gutters row select-menu-list">
-        <div class="col col-4 col col-xs-10 menu-img">
-          <img src="images/menu-item-1.jpg" class="photo">
-        </div>  
-
-        <div class="col col-11 col col-xs-13 menu-title">
-
-          <% @side_recipes.each do |side_recipe| %>
-          <%= side_recipe.name %>
-          <% end %>
-        </div>
-
-        <div class="col col-6 menu-select-btn-container">
-          <a href="#" class="menu-select-btn">追加する</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+  
+  <% end %>
 
 
   <!-- ログイン登録用のモーダル -->
