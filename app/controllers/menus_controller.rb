@@ -40,11 +40,9 @@ class MenusController < ApplicationController
         @menu_recipe.recipe_id = params[:main]
 
         @menu_recipe.save
-        format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @menu }
+        redirect_to(menu_path(@menu))
       else
-        format.html { render action: 'new' }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
+        render 'new'
       end
 
     # end
