@@ -22,7 +22,7 @@
               <div class="edit-area">
                <form action="#">
                  <!-- <input type="text" class="edit-field edit-recipe-title" placeholder="献立のタイトルを入力"> -->
-                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'献立のタイトルを入力する' %>
+                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'献立のタイトルを入力' %>
                </form>
              </div>
 
@@ -296,7 +296,6 @@
           <img src="images/menu-item-1.jpg" class="photo">
         </div>  
 
-
         <div class="col col-11 col col-xs-13 menu-title">
 
           <% @side_recipes.each do |side_recipe| %>
@@ -306,25 +305,20 @@
 
         <div class="col col-6 menu-select-btn-container">
           <a href="#" class="menu-select-btn">追加する</a>
-        <div class="centering mt-56 pb-30 create-recipe-btn-container">
-          <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
-          <% @main_recipes.each do |main_recipe| %>
-             <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
-          <% end %>
-          <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
-
         </div>
       </li>
     </ul>
   </div>
 
 
+<div class="centering mt-56 pb-30 create-recipe-btn-container">
+          <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
+          <% @main_recipes.each do |main_recipe| %>
+             <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
+          <% end %>
+          <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
 
-
-  <div class="centering mt-56 pb-30 create-recipe-btn-container">
-         <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
-       <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
-  </div>
+  
 </div>
 
 
