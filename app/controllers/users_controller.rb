@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @recipes = Recipe.find(:all, :conditions => { :user_id => current_user.id }) 
     @menus = Menu.find(:all, :conditions => { :user_id => current_user.id})
     @made_reports = MadeReport.find(:all, :conditions => { :user_id => current_user.id})
-    @favorite = Favorite.find(:all, :conditions => {:user_id => current_user})
+    @favorite_recipes = current_user.favorites.map {|favorite| favorite.recipe }
   end
 
   # GET /users/new

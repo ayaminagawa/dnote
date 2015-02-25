@@ -49,6 +49,7 @@ class RecipesController < ApplicationController
   def calories
     @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
     @menu_calories = Menu.find(:all, :conditions => { :category => 1 }) 
+    @menu_recipes = MenuRecipe.find(:all, :conditions => { :menu_id => params[:id] }) 
   end
 
   def sugars

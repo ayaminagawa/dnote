@@ -33,7 +33,7 @@
     <%= render 'layouts/header' %>
     <!-- Header -->
 
-    <%= render 'users/mypage_header' %>
+    
 
     <div class="contents" id="mypage">
 
@@ -175,37 +175,15 @@
 
               <div class="repo-date">
                 <p class="repo-data">
-                  <%= made_report.updated_at %>
+                  <%= made_report.message %>
                 </p>
                 <p class="repo-comment">
-                  <%= made_report.message %>
+                
                 </p>
               </div>
             </li>
             <% end %>
-<!-- 
-          <li class="col col-12 inner">
-            <div class="menu-title">
-             <a href="recipe.html">
-              かりかりジャコと小さなキャベツのアンチョビオリーブソテー
-            </a>
-          </div>
-          <div class="menu-img">
-           <a href="recipe.html">
-            <img src="images/mypage-recipe-2.jpg" alt="" class="photo">
-          </a>
-        </div>
-        <div class="repo-date">
-          <p class="repo-data">
-            14/12/14の投稿
-          </p>
-          <p class="repo-comment">
-            にんにくがいい香りで食欲がでました。焼き時間を間違えて、少し
-            焦げちゃいましたが、美味しく食べられました！ レモンのアクセン
-            トが良かったです♪
-          </p>
-        </div>
-      </li> -->
+
     </ul>
   </div> 
 <!-- 
@@ -355,12 +333,12 @@
 
 
   <ul class="tab-container favorite-menu-container" id="favorite-menu">
-    <% @favorite.each do |favorite|%>
+    <% @favorite_recipes.each do |favorite_recipe|%>
     <li class="col col-8 inner favorite-menu">
       <div class="menu-title">
         <!-- <a href="#"> 
         </a> -->
-        <%= link_to favorite.recipe_id, recipe_path(favorite.recipe_id) %>
+        <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
       </div>
 
       <div class="menu-img">
@@ -368,43 +346,12 @@
       </div>
 
       <div class="menu-comment">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eum, quas numquam inventore et labore odio minima 
+        <%= favorite_recipe.description %>
       </div>
     </li>
     <% end %>
+   
 
-    <!-- <li class="col col-8 inner favorite-menu sp-off">
-      <div class="menu-title">
-        <a href="#">
-          レシピタイトル
-        </a>
-      </div>
-
-      <div class="menu-img">
-        <img src="images/mypage-recipe-1.jpg" class="photo">
-      </div>
-
-      <div class="menu-comment">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eum, quas numquam inventore et labore odio minima 
-      </div>
-
-    </li>
-
-    <li class="col col-8 inner favorite-menu sp-off">
-      <div class="menu-title">
-        <a href="#">
-          レシピタイトル
-        </a>
-      </div>
-
-      <div class="menu-img">
-        <img src="images/mypage-recipe-1.jpg" class="photo">
-      </div>
-
-      <div class="menu-comment">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eum, quas numquam inventore et labore odio minima 
-      </div>
-    </li> -->
   </ul>
 
  <!--  <div class="read-more-accordion pc-off">
