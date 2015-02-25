@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223213349) do
+ActiveRecord::Schema.define(version: 20150225084218) do
 
   create_table "contacts", force: true do |t|
     t.string   "email"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150223213349) do
     t.string   "point"
     t.string   "image"
     t.integer  "category"
+    t.integer  "user_id"
   end
 
   create_table "procedures", force: true do |t|

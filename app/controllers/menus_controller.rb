@@ -31,7 +31,8 @@ class MenusController < ApplicationController
   # POST /menus
   # POST /menus.json
   def create
-    @menu = Menu.new(menu_params)
+    @menu = current_user.menus.build(menu_params)
+    
 
     # @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 })
 

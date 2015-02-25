@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # @title = 'Favorite Recipes'
-    # @recipe = current_user.recipes.build
-    # # @feed_tweets = current_user.favorite_tweets.paginate(page: params[:page])
-    # render template: 'about/index'
+    @recipes = Recipe.find(:all, :conditions => { :user_id => current_user.id }) 
+    @menus = Menu.find(:all, :conditions => { :user_id => current_user.id})
+    @made_reports = MadeReport.find(:all, :conditions => { :user_id => current_user.id})
+    @favorite = Favorite.find(:all, :conditions => {:user_id => current_user})
   end
 
   # GET /users/new
