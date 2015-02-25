@@ -25,6 +25,8 @@ gem 'will_paginate-bootstrap'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'execjs'
 gem 'therubyracer'
+gem 'paperclip'
+gem 'aws-sdk'
 
 
 # irbの上位互換pryを使用

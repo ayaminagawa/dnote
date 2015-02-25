@@ -12,6 +12,19 @@ class Recipe < ActiveRecord::Base
 	accepts_nested_attributes_for :ingredients, :allow_destroy => true
 	has_many :procedures, :class_name => "Procedure", :dependent => :destroy
   	accepts_nested_attributes_for :procedures, :allow_destroy => true
+  	
+
+    
+  	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"
+
+  	validates_attachment :image, presence: true,
+    content_type: { content_type: ["image/jpg", "image/png"] },
+    size: { less_than: 2.megabytes }
+  # validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+ 
+  # def authenticated_image_url(style)
+  #   image.s3_object(style).url_for(:read, :secure => true)
+  # end
 
 	def self.search(search) #self.でクラスメソッドとしている
 	    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索

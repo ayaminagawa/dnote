@@ -4,14 +4,11 @@
         <div class="pickup-menu container gutters row">
           <div class="pickup-menu-info  col col-9">
             <div class="menu-title-large">
-              <!-- <a href="menu.html">
-                ゴロゴロお肉のメキシカンスープと彩りサラダ
-              </a> -->
+            <%= link_to @todays_menu.name, menu_path(@todays_menu)%>
               
             </div>
             <div class="menu-comment sp-off">
-              食べたい時の献立、ボリューム沢山なのに、糖質もoff！
-              皆で楽しいディナーを過ごそう！
+              <%= @todays_menu.point %>
             </div>
 
             <ul class="menu-list sp-off">
@@ -34,14 +31,16 @@
               </a>
             </li>
             <li class="author">
-              <a href="#">by つくったひと</a></li>
+              <% @todays_menu.user.name %>
+            </li>
             </ul>
           </div>
 
           <div class="pickup-menu-img col col-15">
-            <a href="menu.html">
+            <!-- <a href="menu.html">
               <img src="/assets/menu-1.jpg" alt="menu-img" class="photo">
-            </a>
+            </a> -->
+            <%= image_tag @todays_menu.image.url(:thumb) %>
           </div>
         </div>
       </div>

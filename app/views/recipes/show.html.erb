@@ -85,7 +85,7 @@
           <div class="gutters row pb-30">
             <div class="col col-12">
               <div class="menu-img">
-                <img src="images/recipe-1.jpg" alt="menu-img" class="photo">
+                  <%= image_tag @recipe.image.url(:thumb) %>
               </div>
 
               <p class="menu-comment">

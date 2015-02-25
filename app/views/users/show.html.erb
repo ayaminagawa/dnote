@@ -48,7 +48,8 @@
 
         <div class="author-img-sp-container pc-off">
           <div class="author-img-sp">
-            <%= profile_image_for @user %>
+            <%= image_tag(@user.authenticated_image_url(:large)) if @user.image.present? %>
+          <!--   <%= profile_image_for @user %> -->
           </div>
           <!-- <a href="#" class="author-img-edit">
             <i class="icon-star"></i>
