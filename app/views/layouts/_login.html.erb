@@ -34,6 +34,11 @@
 
       <% if user_signed_in? %>
         <div class="col col-12 modal-inner">
+          <h4 class="modal-title">Myページ</h4>
+          <%= link_to "Myページへ移動", current_user, class:'button-b' %>
+        </div>
+      <% else %>
+        <div class="col col-12 modal-inner">
           <h4 class="modal-title">新規登録</h4>
           <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
           <div class="button-container">
@@ -47,11 +52,6 @@
             </a> -->
             <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
           </div>
-        </div>
-      <% else %>
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title">Myページ</h4>
-           <%= link_to "Myページへ移動", current_user, class:'button-b' %>
         </div>
       <% end %>
       

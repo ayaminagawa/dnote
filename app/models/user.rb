@@ -5,15 +5,15 @@ class User < ActiveRecord::Base
          :registerable, :rememberable, :trackable, omniauth_providers: [:twitter, :facebook]
  
  
-	# validates :name, length: { maximum: 15 }, presence: true
+	validates :name, length: { maximum: 15 }, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	# validates :gender, presence: true
-	# validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+	validates :gender, presence: true
+	validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 	has_many :recipes, dependent: :destroy
 	has_many :menus, dependent: :destroy 
   has_many :made_reports, dependent: :destroy
-	# has_secure_password
-  # validates :password, length: { minimum: 6 }
+	has_secure_password
+  validates :password, length: { minimum: 6 }
 
   has_many :favorites
   has_many :favorite_recipes, through: :favorites, source: :recipe
