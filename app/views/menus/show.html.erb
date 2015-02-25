@@ -68,13 +68,15 @@
         <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
 
           <ul class=" menu-items sp-off">
+            <% @menu_recipes.each do |menu_recipe| %>
             <li class="menu-item col col-8">
               <div class="sp-off  menu-role main">
                 <img src="images/main-icon.png" alt="" class="role-icon">
                 主菜
               </div>
               <div class="menu-title">
-                <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a>
+                <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
+                <%= link_to menu_recipe.recipe_id, recipe_path(menu_recipe.recipe_id)%>
               </div>
               <div class="menu-img">
                 <a href="recipe.html">
@@ -82,7 +84,8 @@
                 </a>
               </div>
             </li>
-
+            <% end %>
+<!-- 
             <li class="menu-item col col-8">
               <div class="menu-role sub">
                 <img src="images/sub-icon.png" alt="" class="role-icon">
@@ -110,12 +113,12 @@
                 <a href="recipe.html">
                   <img src="images/menu-item-3.jpg" alt="" class="photo">
                 </a>
-              </div>
+              </div> -->
             </li>
 
           </ul>
 
-          <ul class="pc-off menu-items">
+         <!--  <ul class="pc-off menu-items">
             <li class="menu-item">
               <div class="gutters row"> 
                 <div class="col col-xs col-xs-3">
@@ -185,7 +188,7 @@
               </div>
             </li>
 
-          </ul>
+          </ul> -->
         </div>
 
         <hr>
@@ -206,7 +209,7 @@
                   <div class="item-name">パクチー</div>
                   <div class="item-quantity">200g</div>
                 </li>
-                <li class="shopping-item">
+                <!-- <li class="shopping-item">
                   <div class="item-name">とうもろこし</div>
                   <div class="item-quantity">50g</div>
                 </li>
@@ -229,9 +232,9 @@
                 <li class="shopping-item">
                   <div class="item-name">エリンギ</div>
                   <div class="item-quantity">100g</div>
-                </li>
+                </li> -->
               </ul>
-
+<!-- 
               <p class="type">
                 肉類
               </p>
@@ -273,7 +276,7 @@
                 </li>
               </ul>
 
-            </div>
+            </div> -->
           </div>
         </div><!-- shopping-list-container -->
 

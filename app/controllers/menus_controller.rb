@@ -10,12 +10,16 @@ class MenusController < ApplicationController
   # GET /menus/1
   # GET /menus/1.json
   def show
+    @menu_recipes = MenuRecipe.find(:all, :conditions => { :menu_id => params[:id] }) 
+    
   end
 
   # GET /menus/new
   def new
     @menu = Menu.new
-    @menu_recipe = MenuRecipe.new(params[:main])   
+    @menu_recipe_main = MenuRecipe.new(params[:main])   
+    @menu_recipe_side1 = MenuRecipe.new(params[:side1])   
+    @menu_recipe_side2 = MenuRecipe.new(params[:side2])   
     @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
   end
@@ -35,11 +39,17 @@ class MenusController < ApplicationController
     # respond_to do |format|
       
       if @menu.save
-        @menu_recipe = @menu.menu_recipes.build
+        @menu_recipe_main = @menu.menu_recipes.build
+        @menu_recipe_side1 = @menu.menu_recipes.build
+        @menu_recipe_side2 = @menu.menu_recipes.build
         # @menu_recipe.menu_id = @menu.id
-        @menu_recipe.recipe_id = params[:main]
+        @menu_recipe_main.recipe_id = params[:main]
+        @menu_recipe_main.save
+        @menu_recipe_side1.recipe_id = params[:side1]
+        @menu_recipe_side1.save
+        @menu_recipe_side2.recipe_id = params[:side2]
+        @menu_recipe_side2.save
 
-        @menu_recipe.save
         redirect_to(menu_path(@menu))
       else
         render 'new'
@@ -63,6 +73,8 @@ class MenusController < ApplicationController
   def update
 
   @menu_recipe = MenuRecipe.find(params[:main])
+  @menu_recipe = MenuRecipe.find(params[:side1])
+  @menu_recipe = MenuRecipe.find(params[:side2])
     respond_to do |format|
       if @menu.update(menu_params)
         format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }
