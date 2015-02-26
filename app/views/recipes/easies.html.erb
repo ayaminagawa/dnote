@@ -66,7 +66,7 @@
             <!-- <a href="menu.html">
               <img src="images/menu-item-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag menu_easy.image.url(:thumb) %>
+            <%= image_tag menu_easy.image.url(:thumb), class: "photo" %>
           </div>
         </div>
 
@@ -83,6 +83,11 @@
             <%= menu_easy.point %>
           </p>
 
+          <li class="author">
+                <!-- <a href="#">by つくったひと</a> -->
+                by <%= link_to menu_easy.user.name, user_path(menu_easy.user) %>
+              </li>
+
         <ul class="menu-list sp-off">
               <% @menu_recipes.each do |menu_recipe|%>
               <li>
@@ -94,7 +99,7 @@
 
               <li class="author">
                 <!-- <a href="#">by つくったひと</a> -->
-                <%= menu_calorie.user_id %>
+                 by <%= link_to menu_easy.user.name, user_path(menu_easy.user) %>
               </li>
               <% end %>
             </ul>
@@ -113,7 +118,7 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag easy.image.url(:thumb) %>
+            <%= image_tag easy.image.url(:thumb), class: "photo" %>
           </div>
         </div>
 

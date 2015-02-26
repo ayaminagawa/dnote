@@ -58,7 +58,7 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag meet.image.url(:thumb) %>
+            <%= image_tag meet.image.url(:thumb), class: "photo" %>
           </div>
         </div>
 
@@ -76,7 +76,7 @@
 
               <div class="author">
                 <!-- <a href="#">by つくったひと</a> -->
-                <%= link_to meet.user.name, recipe_path(meet)  %>
+                by <%= link_to meet.user.name, recipe_path(meet)  %>
               </div>
 
             </div>

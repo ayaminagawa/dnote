@@ -73,6 +73,7 @@
             </div>
 
             <div class="col col-6 col-xs col-xs-7 pull-right">
+              <% if current_user?(@recipe.user) %>
               <div class="button pull-right recipe-save" id="save-btn">
                 <!-- <a href="#">
                   <i class="title-icon icon-star"></i><br>
@@ -82,14 +83,14 @@
                   <%= render 'favorites/favorite_btn', recipe: @recipe %>
                 </span>
               </div>
-
+              <% end %>
             </div>
           </div>
 
           <div class="gutters row pb-30">
             <div class="col col-12">
               <div class="menu-img">
-                  <%= image_tag @recipe.image.url(:thumb) %>
+                  <%= image_tag @recipe.image.url(:thumb), class: "photo" %>
               </div>
 
               <p class="menu-comment">
@@ -97,9 +98,10 @@
               </p>
 
               <p class="recipe-author clear">
-                <a href="#" class="recipe-author-name ">
+                <!-- <a href="#" class="recipe-author-name ">
                   by つくったひと
-                </a>
+                </a> -->
+                <%= link_to @recipe.user.name, user_path(@recipe.user)%>
               </p>
 
               <div class="pull-left mt-30">
@@ -140,7 +142,7 @@
               <div class="gutters row">
                 <div class="step-img col col-xs col-xs-11">
                   <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                  <%= image_tag procedure.image.url(:thumb) %>
+                  <%= image_tag procedure.image.url(:thumb), class: "photo" %>
                 </div>
 
                 <div class="col col-xs col-xs-12 step-info">
@@ -193,7 +195,7 @@
                   <%= made_report.created_at %>
                 </div>
                 <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                <%= image_tag made_report.image %>
+                <%= image_tag made_report.image, class: "photo" %>
               </div>
 
               <p class="repo-text">
@@ -224,9 +226,11 @@
       </div>
 
       <div class="centering">
+        <% if current_user?(@recipe.user) %>
         <div class="button sp-off">
           <%= link_to "つくれぽを投稿", new_recipe_made_reports_path(recipe_id: @recipe.id), class:"title-icon icon-recipes-2" %>
         </div>
+        <% end %>
       </div>
     </div>
 
@@ -240,7 +244,7 @@
             <!-- <a href="recipe.html">
               <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
-           <%= image_tag @recommended_recipe.image.url(:thumb) %>
+           <%= image_tag @recommended_recipe.image.url(:thumb), class: "photo" %>
           </div>
           <p class="menu-title recommend-title">
             <!-- <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え

@@ -65,7 +65,7 @@
 
         <div class="container inner-30 mykitchen-container">
           <div class="inner mykitchen-head"> <%= @user.name %>さんの投稿したレシピ</div>
-          <ul class="gutters row ">
+          <ul >
             <% @recipes.each do |recipe| %>
             <li class="col col-12 inner">
               <div class="menu-title">
@@ -76,23 +76,10 @@
                 <!-- <a href="recipe.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= image_tag recipe.image.url(:thumb) %>
+                 <%= image_tag recipe.image.url(:thumb), class: "photo" %>
               </div>
             </li>
             <% end %>
-
-            <!-- <li class="col col-12 inner">
-              <div class="menu-title">
-                <a href="recipe.html">
-                  かりかりジャコと小さなキャベツのアンチョビオリーブソテー
-                </a>
-              </div>
-              <div class="menu-img">
-                <a href="recipe.html">
-                  <img src="images/mypage-recipe-2.jpg" alt="" class="photo">
-                </a>
-              </div>
-            </li> -->
           </ul>
         </div> 
 
@@ -111,7 +98,7 @@
 
         <div class="container inner-30 mykitchen-container">
           <div class="inner mykitchen-head"> <%= @user.name %>さんの投稿した献立</div>
-          <ul class="gutters row ">
+          <ul >
             <% @menus.each do |menu| %>
             <li class="col col-12 inner">
               <div class="menu-title">
@@ -124,7 +111,7 @@
                 <!-- <a href="menu.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= image_tag menu.image.url(:thumb) %>
+                 <%= image_tag menu.image.url(:thumb), class: "photo" %>
               </div>
             </li>
             <% end %>
@@ -160,7 +147,7 @@
 
         <div class="container inner-30 mykitchen-container repo">
           <div class="inner mykitchen-head"> <%= @user.name %>さんが投稿したつくレポ</div>
-          <ul class="gutters row ">
+          <ul >
             <% @made_reports.each do |made_report|%>
             <li class="col col-12 inner repo">
               <div class="menu-title">
@@ -175,7 +162,7 @@
                <!-- <a href="recipe.html">
                 <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                <%= image_tag made_report.image.url(:thumb) %>
+                <%= image_tag made_report.image.url(:thumb) , class: "photo"%>
               </div>
 
               <div class="repo-date">
@@ -277,7 +264,7 @@
 
       <div class="menu-img">
        
-        <%= image_tag favorite_recipe.image.url(:thumb) %>
+        <%= image_tag favorite_recipe.image.url(:thumb), class: "photo" %>
       </div>
 
       <div class="menu-comment">

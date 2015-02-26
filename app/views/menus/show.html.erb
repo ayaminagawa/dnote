@@ -60,7 +60,7 @@
         <div class="gutters row inner-30 pb-30">
           <div class="col col-13 menu-img">
            <!--  <img src="images/menu-1.jpg" alt="menu-img" class="photo"> -->
-             <%= image_tag @menu.image %>
+             <%= image_tag @menu.image, class: "photo" %>
           </div>
 
           <div class="col col-11">
@@ -90,7 +90,7 @@
                 <!-- <a href="recipe.html">
                   <img src="images/menu-item-1.jpg" alt="" class="photo">
                 </a> -->
-                
+                <%= image_tag recipe.image , class: "photo"%>
               </div>
             </li>
             <% end %>
@@ -124,7 +124,7 @@
         </div>
 
         <hr>
-
+<!-- 
         <div class="shopping-list-container inner-30">
           <div class="shopping-list-head inner-30">
             <h3 class="head">買い物リスト</h3>
@@ -140,7 +140,7 @@
                 <li class="shopping-item">
                   <div class="item-name">パクチー</div>
                   <div class="item-quantity">200g</div>
-                </li>
+                </li> -->
                 <!-- <li class="shopping-item">
                   <div class="item-name">とうもろこし</div>
                   <div class="item-quantity">50g</div>
@@ -165,7 +165,7 @@
                   <div class="item-name">エリンギ</div>
                   <div class="item-quantity">100g</div>
                 </li> -->
-              </ul>
+              <!-- </ul> -->
 <!-- 
               <p class="type">
                 肉類
@@ -209,8 +209,8 @@
               </ul>
 
             </div> -->
-          </div>
-        </div><!-- shopping-list-container -->
+         <!--  </div>
+        </div> --><!-- shopping-list-container -->
 
       </div>
     </div><!-- contents end-->

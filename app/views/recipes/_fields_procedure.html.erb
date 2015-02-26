@@ -1,12 +1,12 @@
 <div class="fields gutters row">
   <div class="imgInput">
      <%= f.file_field :image %>
-            <%= image_tag("/assets/no_image.png", :class => "imgView") %>
+     <%= image_tag("/assets/no_image.png", :class => "imgView photo") %>
   </div>
 
   <div class="field col col-xs col-xs-12 edit-step-text-container">
     <div class="edit-area">
-      <br><br><br>
+      <br>
       <%= f.text_field :body ,class: "edit-field",rows: "2" ,cols: "30", placeholder: "選択して編集する" %>
     </div>
   </div>

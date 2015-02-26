@@ -60,7 +60,7 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag @box.image.url(:thumb) %>
+            <%= image_tag @box.image.url(:thumb), class: "photo" %>
           </div>
         </div>
 
@@ -80,7 +80,7 @@
 
               <div class="author">
                 <!-- <a href="#">by つくったひと</a> -->
-                <%= link_to box.user.name, recipe_path(box)  %>
+                by <%= link_to box.user.name, recipe_path(box)  %>
               </div>
 
             </div>

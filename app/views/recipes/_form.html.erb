@@ -47,7 +47,7 @@
                         <input type="file" class="uploader-recipe-img-typetext">
                       </form> -->
                     <%= f.file_field :image %>
-                    <%= image_tag("/assets/no_image.png", :class => "imgView") %>
+                    <%= image_tag("/assets/no_image.png", :class => "imgView ") %>
                 </div>
               </div>
             </div>
@@ -81,13 +81,33 @@
               </a>
             </div>
           </div> -->
-
-          <h4 class="ingredient-modal-head"><i class="icon-m orange icon-scales"></i>レシピに使う材料の編集</h4>
+          <br>
+          <div class="sp-head edit-label">
+              <i class="icon-s icon-scales"></i>&nbsp;材料
+            </div>
 
           <div class="field">
-            <%= f.fields_for :ingredients, @ingredients do |ingredient| %>
-              <%= render 'recipes/fields_ingredient', {:f => ingredient} %>
-            <% end %>
+            <div class="fields">
+            <!-- <div class="ingredient-modal remodal" data-remodal-id="ingredient-modal"> -->
+            <!-- <form action="#"> -->
+              <ul class="inner-30 edit-ingredient-container">
+                <li class="gutters row edit-ingredient-head">
+                  <div class="col col-14 col-xs-14 edit-ingredient-item">
+                    材料
+                  </div>
+                  <div class="col col-8 col-xs-8 edit-ingredient-quantity">
+                    分量
+                  </div>
+                </li>
+                <%= f.fields_for :ingredients, @ingredients do |ingredient| %>
+                <%= render 'recipes/fields_ingredient', {:f => ingredient} %>
+                <% end %>
+                </ul>
+                  <!-- <div class="edit-ingredient-submit-container">
+                    <input type="submit" value="材料を保存する" class="edit-ingredient-submit">
+                  </div> -->
+              <!-- </div> -->
+            </div>
             <div class="step-add-btn">
               <%= link_to_add_fields "新しく材料を追加する", f, :ingredients %>
             </div>   
@@ -106,9 +126,9 @@
 
                 <!-- 作り方 -->
                 <%= f.fields_for :procedures, @procedures do |procedure| %>
-                <li class="step col col-6">
-                      <%= render 'fields_procedure', {:f => procedure} %>
-                </li>
+                  <li class="step col col-6" >
+                        <%= render 'fields_procedure', {:f => procedure} %>
+                  </li>
                 <% end %>
                 <!-- 作り方 -->
               </ul>
@@ -150,11 +170,14 @@
                      <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する (例：400)' %>
                    
                 </div>
-
+                </div>
               </div>
               <div>
-
-                    <p>レシピカテゴリ</p><br><br>
+              
+                   <div class="ml-30 sp-head edit-label">
+                   <p>レシピカテゴリ</p><br>
+                 </div> 
+                    
                   
                     <label><%= f.radio_button :kind, "1", {:checked => true} %> 野菜のおかず</label>
                     <label><%= f.radio_button :kind, "2" %> お肉のおかず</label>
