@@ -29,7 +29,16 @@
 
 
     <div class="contents" id="menu-page">
-      <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立</h2>
+      <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立
+        <% if current_user?(@menu.user) %>
+          <div class="recipe-edit-btn">
+             <%= link_to "献立を編集する", edit_menu_path(@menu) %>
+          <!-- </div>
+          <div class="recipe-edit-btn"> -->
+             <%= link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" } %>
+          </div>  
+        <% end %>
+      </h2>
 
       <div class="container-full">
         <div class="gutters row inner-30">
@@ -50,7 +59,8 @@
 
         <div class="gutters row inner-30 pb-30">
           <div class="col col-13 menu-img">
-            <img src="images/menu-1.jpg" alt="menu-img" class="photo">
+           <!--  <img src="images/menu-1.jpg" alt="menu-img" class="photo"> -->
+             <%= image_tag @menu.image %>
           </div>
 
           <div class="col col-11">
@@ -66,7 +76,7 @@
         <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
 
           <ul class=" menu-items sp-off">
-            <% @menu_recipes.each do |menu_recipe| %>
+            <% @recipes.each do |recipe|%>
             <li class="menu-item col col-8">
               <div class="sp-off  menu-role main">
                 <img src="images/main-icon.png" alt="" class="role-icon">
@@ -74,46 +84,16 @@
               </div>
               <div class="menu-title">
                 <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
-                <%= link_to menu_recipe.recipe_id, recipe_path(menu_recipe.recipe_id)%>
+                <%= recipe.name%>
               </div>
               <div class="menu-img">
-                <a href="recipe.html">
+                <!-- <a href="recipe.html">
                   <img src="images/menu-item-1.jpg" alt="" class="photo">
-                </a>
+                </a> -->
+                
               </div>
             </li>
             <% end %>
-<!-- 
-            <li class="menu-item col col-8">
-              <div class="menu-role sub">
-                <img src="images/sub-icon.png" alt="" class="role-icon">
-                副菜
-              </div>
-              <div class="menu-title">
-                <a href="recipe.html">芽キャベツのアンチョビオリーブケッパー風味</a>
-              </div>
-              <div class="menu-img">
-                <a href="recipe.html">
-                  <img src="images/menu-item-2.jpg" alt="" class="photo">
-                </a>
-              </div>
-            </li>
-
-            <li class="menu-item col col-8">
-              <div class="menu-role sub">
-                <img src="images/sub-icon.png" alt="" class="role-icon">
-                副菜
-              </div>
-              <div class="menu-title">
-                <a href="recipe.html">パクチーの香草サラダ かりかりクルトン</a>
-              </div>
-              <div class="menu-img">
-                <a href="recipe.html">
-                  <img src="images/menu-item-3.jpg" alt="" class="photo">
-                </a>
-              </div> -->
-            </li>
-
           </ul>
 
          <!--  <ul class="pc-off menu-items">
@@ -136,52 +116,6 @@
 
                 <div class="col col-xs col-xs-14 menu-text ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolores magni
-                </div>
-              </div>
-            </li>
-
-            <li class="menu-item">
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-3">
-                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-                </div>
-                <div class="col col-xs-20 col-xs menu-title">
-                  <a href="recipe.html">芽キャベツのアンチョビオリーブケッパー風味</a>
-                </div>
-              </div>
-
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-8 menu-img">
-                  <a href="recipe.html">
-                    <img src="images/menu-item-2.jpg" alt="" class="photo">
-                  </a>
-                </div>
-
-                <div class="col col-xs col-xs-16 menu-text ">
-                  Lorem ipsum dolor sit amet serc consectetur adipisicing elit. Corrupti aperiam ad ex, voluptatibus suscipit vitae, placeat animi vel iste 
-                </div>
-              </div>
-            </li>
-
-            <li class="menu-item">
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-3">
-                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-                </div>
-                <div class="col col-xs-20 col-xs menu-title">
-                  <a href="recipe.html">パクチーの香草サラダ　かりかりクルトン</a>
-                </div>
-              </div>
-
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-8 menu-img">
-                  <a href="recipe.html">
-                    <img src="images/menu-item-3.jpg" alt="" class="photo">
-                  </a>
-                </div>
-
-                <div class="col col-xs col-xs-16 menu-text ">
-                  Lorem ipsum dolor sit amet serc consectetur adipisicing elit. Corrupti aperiam ad ex, voluptatibus suscipit vitae, placeat animi vel iste 
                 </div>
               </div>
             </li>

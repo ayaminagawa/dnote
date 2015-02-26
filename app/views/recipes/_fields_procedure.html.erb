@@ -1,50 +1,16 @@
-<div class="fields">
-  <div class="edit-step-img col col-xs col-xs-11">
-    <!-- <form action="#" class="form-step-img">
-      <input type="file" class="uploader-step-img">
-    </form> -->
-
-    <div class="centering">
-      <div class="edit-step-img-typetext">
-        <i class="icon-s icon-camera"></i>
-        <span class="border-b">変更</span>
-        <form action="#" class="form-step-img">
-          <input type="file" class="uploader-step-img-typetext">
-        </form>
-      </div>
-    </div>
+<div class="fields gutters row">
+  <div class="imgInput">
+     <%= f.file_field :image %>
+            <%= image_tag("/assets/no_image.png", :class => "imgView") %>
   </div>
 
   <div class="field col col-xs col-xs-12 edit-step-text-container">
     <div class="edit-area">
-      <br><br>
-      <%= f.text_field :body ,class: "edit-field"%>
+      <br><br><br>
+      <%= f.text_field :body ,class: "edit-field",rows: "2" ,cols: "30", placeholder: "選択して編集する" %>
     </div>
   </div>
   <div class="step-footer pull-right">
     <%= link_to_remove_fields "削除", f %> 
   </div>
 </div>
-
-
-<!-- <div class="gutters row">
-                    <div class="step-move">
-                      <a href="#" class="step-prev">←</a>
-                      <a href="#" class="step-next">→</a>
-                    </div>
-
-                    <div class="col col-xs col-xs-12 edit-step-text-container">
-                      <div class="step-count">1</div>
-                      <div class="edit-area">
-                        <form action="#" >
-                          <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
-                          <br>
-                        </form>
-                      </div>
-                    </div>
-
-                    <div class="step-footer pull-right">
-                      <a href="#" class="step-remove">削除</a>
-                      <a href="#" class="step-add">追加</a>
-                    </div>
-                  </div> -->

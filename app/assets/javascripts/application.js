@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+
+//= require_tree ../../../vendor/assets/javascripts/.
+//= require_directory .
 
 // application_jquery.js
 function remove_fields(link) {
@@ -25,3 +27,4 @@ function add_fields(link, association, content) {
     var regexp = new RegExp("new_" + association, "g")
     $(link).parent().before(content.replace(regexp, new_id));
 }
+

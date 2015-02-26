@@ -82,6 +82,7 @@ class RecipesController < ApplicationController
     @made_reports = MadeReport.find(:all, :conditions => { :recipe_id => params[:id] }) 
     @ingredients = Ingredient.find(:all, :conditions => { :recipe_id => params[:id]})
     @procedures = Procedure.find(:all, :conditions => { :recipe_id => params[:id]})
+    @recommended_recipe = Recipe.find(32)
   end
 
   # GET /recipes/new
@@ -133,10 +134,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1.json
   def destroy
     @recipe.destroy
-    respond_to do |format|
-      format.html { redirect_to recipes_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
 
   private
@@ -147,10 +145,14 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :tip, :image, :calorie, :kind, :recipe_select, :category, ingredients_attributes: [:name, :volume], procedures_attributes: [:body])
+      params.require(:recipe).permit(:name, :description, :tip, :image, :calorie, :kind, :recipe_select, :category, ingredients_attributes: [:name, :volume], procedures_attributes: [:body, :image])
     end
 
     # def ingredient_params
     #   params.require(:ingredient).permit(:name, :volume)
     # end
+    def correct_user
+      @Recipe = Recipe.find_by(id: params[:id])
+      redirect_to root_url unless current_user?(@recipe.user)
+    end
 end

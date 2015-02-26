@@ -5,37 +5,44 @@ class User < ActiveRecord::Base
          :registerable, :rememberable, :trackable, omniauth_providers: [:twitter, :facebook]
  
  
-	validates :name, length: { maximum: 15 }, presence: true
+	# validates :name, length: { maximum: 15 }, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :gender, presence: true
-	validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-	has_many :recipes, dependent: :destroy
+	# validates :gender, presence: true
+	# validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+	# has_many :recipes, dependent: :destroy
 	has_many :menus, dependent: :destroy 
+  has_many :recipes, dependent: :destroy 
   has_many :made_reports, dependent: :destroy
-	has_secure_password
-  validates :password, length: { minimum: 6 }
+	# has_secure_password
+  # validates :password, length: { minimum: 6 }
 
   has_many :favorites
   has_many :favorite_recipes, through: :favorites, source: :recipe
   has_many :favorite_menus, through: :favorites, source: :menu
 
 
-  has_attached_file :image,
-                    # :styles => {
-                    #     :thumb  => "100x100",
-                    #     :medium => "200x200",
-                    #     :large => "600x400"
-                    # },
-                    :storage => :s3,
-                    :s3_permissions => :private,
-                    :s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :path => ":attachment/:id/:style.:extension"
+  # has_attached_file :image,
+  #                   # :styles => {
+  #                   #     :thumb  => "100x100",
+  #                   #     :medium => "200x200",
+  #                   #     :large => "600x400"
+  #                   # },
+  #                   :storage => :s3,
+  #                   :s3_permissions => :private,
+  #                   :s3_credentials => "#{Rails.root}/config/s3.yml",
+  #                   :path => ":attachment/:id/:style.:extension"
  
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  # validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
  
-  def authenticated_image_url(style)
-    image.s3_object(style).url_for(:read, :secure => true)
-  end
+  # def authenticated_image_url(style)
+  #   image.s3_object(style).url_for(:read, :secure => true)
+  # end
+
+    has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"
+
+    validates_attachment :image, 
+    content_type: { content_type: ["image/jpg", "image/png"] },
+    size: { less_than: 2.megabytes }
 
   
     def set_image(file)

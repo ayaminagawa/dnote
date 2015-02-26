@@ -10,8 +10,9 @@ class MenusController < ApplicationController
   # GET /menus/1
   # GET /menus/1.json
   def show
-    @menu_recipes = MenuRecipe.find(:all, :conditions => { :menu_id => params[:id] }) 
-    
+    @menu_recipes = MenuRecipe.where(:menu_id => params[:id] ) 
+    @recipes = @menu_recipes.map{|recipe_id| recipe_id.recipe}
+
   end
 
   # GET /menus/new
@@ -26,12 +27,16 @@ class MenusController < ApplicationController
 
   # GET /menus/1/edit
   def edit
+    @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
+    @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
   end
 
   # POST /menus
   # POST /menus.json
   def create
     @menu = current_user.menus.build(menu_params)
+     @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
+    @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
     
 
     # @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 })
@@ -89,14 +94,12 @@ class MenusController < ApplicationController
 
   # DELETE /menus/1
   # DELETE /menus/1.json
+  
   def destroy
     @menu.destroy
-    respond_to do |format|
-      format.html { redirect_to menus_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_menu

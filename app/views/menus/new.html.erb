@@ -16,9 +16,83 @@
   <script src="scripts/jquery.mobile-menu.js"></script>
   <script src="scripts/main.js"></script>
 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+  $(function(){
+      var setFileInput = $('.imgInput');
+   
+      setFileInput.each(function(){
+          var selfFile = $(this),
+          selfInput = $(this).find('input[type=file]');
+   
+          selfInput.change(function(){
+              var file = $(this).prop('files')[0],
+              fileRdr = new FileReader(),
+              selfImg = selfFile.find('.imgView');
+   
+              if(!this.files.length){
+                  if(0 < selfImg.size()){
+                      selfImg.remove();
+                      return;
+                  }
+              } else {
+                  if(file.type.match('image.*')){
+                      if(!(0 < selfImg.size())){
+                          selfFile.append('<img alt="" class="imgView">');
+                      }
+                      var prevElm = selfFile.find('.imgView');
+                      fileRdr.onload = function() {
+                          prevElm.attr('src', fileRdr.result);
+                      }
+                      fileRdr.readAsDataURL(file);
+                  } else {
+                      if(0 < selfImg.size()){
+                          selfImg.remove();
+                          return;
+                      }
+                  }
+              }
+          });
+      });
+  });
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+  $(function(){
+      var setFileInput = $('.imgInput'),
+      setFileImg = $('.imgView');
+   
+      setFileInput.each(function(){
+          var selfFile = $(this),
+          selfInput = $(this).find('input[type=file]'),
+          prevElm = selfFile.find(setFileImg),
+          orgPass = prevElm.attr('src');
+   
+          selfInput.change(function(){
+              var file = $(this).prop('files')[0],
+              fileRdr = new FileReader();
+   
+              if (!this.files.length){
+                  prevElm.attr('src', orgPass);
+                  return;
+              } else {
+                  if (!file.type.match('image.*')){
+                      prevElm.attr('src', orgPass);
+                      return;
+                  } else {
+                      fileRdr.onload = function() {
+                          prevElm.attr('src', fileRdr.result);
+                      }
+                      fileRdr.readAsDataURL(file);
+                  }
+              }
+          });
+      });
+  });
+  </script>
+
 </head>
 <body>
-  <%= form_for(@menu) do |f| %>
 
   <div id="wrapper">
     <!-- Header -->
@@ -27,7 +101,7 @@
 
     <div class="contents" id="create-menu-page">
       
-      <%= render 'form', f: f %>
+    <%= render 'form' %>
 
     </div><!-- contents end-->
     
@@ -37,9 +111,6 @@
   <%= render 'layouts/footer' %>
   <!-- Footer -->
 
-  
-  
-  <% end %>
 
 
   <!-- ログイン登録用のモーダル -->

@@ -1,4 +1,4 @@
-
+ <%= form_for(@menu) do |f| %>
   <% if @menu.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
@@ -20,11 +20,11 @@
             <div class="edit-recipe-title-container">
               <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立のタイトルを入力</div>
               <div class="edit-area">
-               <form action="#">
+               <!-- <form action="#"> -->
                  <!-- <input type="text" class="edit-field edit-recipe-title" placeholder="献立のタイトルを入力"> -->
                  <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'献立のタイトルを入力' %>
-               </form>
-             </div>
+             <!--   </form>
+ -->             </div>
 
            </div>
          </div>
@@ -35,21 +35,22 @@
           <div class="sp-head"><i class="icon-s icon-image"></i>
             献立の写真</div>
             <div class="edit-recipe-img-container">
-              <div class="edit-recipe-img edit-menu">
-                <!-- <form action="" class="form-recipe-img">
+              <!-- <div class="edit-recipe-img edit-menu">
+                <form action="" class="form-recipe-img">
                   <input type="file" class="uploader-recipe-img">
-                </form> -->
-                <%= f.label :image %><br />
-                <%= f.file_field :image %>
+                </form>
               </div>
-
+ -->
               <div class="centering">
-                <div class="edit-recipe-img-typetext">
+                <div class="edit-recipe-img-typetext imgInput">
                   <i class="icon-s icon-camera"></i>
-                  <span class="border-b">写真を変更する</span>
+                  <!-- <span class="border-b">写真を変更する</span>
                   <form action="" class="form-recipe-img">
                     <input type="file" class="uploader-recipe-img-typetext">
-                  </form>
+                  </form> -->
+ 
+                   <%= f.file_field :image %>
+                   <%= image_tag("/assets/no_image.png", :class => "imgView") %>
                 </div>
               </div>
             </div>
@@ -85,13 +86,17 @@
                 <img src="images/main-icon.png" alt="" class="role-icon">
                 主菜
               </div>
-              <a href="#select-mainmenu-modal">
+              <!-- <a href="#select-mainmenu-modal">
                 <div class="edit-recipe-img">  
                 </div>
-              </a>
-              <p class="menu-select-text">
+              </a> -->
+              <!-- <p class="menu-select-text">
                 <a href="#select-mainmenu-modal">クリックしてレシピを追加(必須)</a>
-              </p>
+              </p> -->
+              <% @main_recipes.each do |main_recipe| %>
+                <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
+                <%= image_tag main_recipe.image %><br>
+              <% end %>
             </li>
 
             <li class="menu-item col col-8">
@@ -99,13 +104,17 @@
                 <img src="images/sub-icon.png" alt="" class="role-icon">
                 副菜
               </div>
-              <a href="#select-submenu-modal">
+              <!-- <a href="#select-submenu-modal">
                 <div class="edit-recipe-img">  
                 </div>
-              </a>
-              <p class="menu-select-text">
+              </a> -->
+              <!-- <p class="menu-select-text">
                 <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
-              </p>
+              </p> -->
+               <% @side_recipes.each do |side_recipe| %>
+                 <label><%= radio_button_tag :side1, side_recipe.id %><%= side_recipe.name %></label><br>
+                 <%= image_tag side_recipe.image %><br>
+               <% end %>
             </li>
 
             <li class="menu-item col col-8">
@@ -113,13 +122,17 @@
                 <img src="images/sub-icon.png" alt="" class="role-icon">
                 副菜
               </div>
-              <a href="#select-submenu-modal">
+              <!-- <a href="#select-submenu-modal">
                 <div class="edit-recipe-img">  
                 </div>
-              </a>
-              <p class="menu-select-text">
+              </a> -->
+              <!-- <p class="menu-select-text">
                 <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
-              </p>
+              </p> -->
+               <% @side_recipes.each do |side_recipe| %>
+                <label><%= radio_button_tag :side1, side_recipe.id %><%= side_recipe.name %></label><br>
+                <%= image_tag side_recipe.image %><br>
+               <% end %>
             </li>
 
           </ul>
@@ -171,29 +184,7 @@
               </div>
             </li>
 
-            <li class="select-menu-item">
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-3">
-                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-                </div>
-
-              </div>
-
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-8 menu-img">
-                  <a href="#select-menu-modal">
-                    <div class="edit-recipe-img">  
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col col-xs col-xs-14 menu-text ">
-                  <p class="menu-select-text">
-                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
-                  </p>
-                </div>
-              </div>
-            </li>
+            
           </ul>
         </div> -->
 
@@ -289,20 +280,11 @@
 
 <div class="centering mt-56 pb-30 create-recipe-btn-container">
           <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
-          <% @main_recipes.each do |main_recipe| %>
-             <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
-          <% end %>
-          <% @side_recipes.each do |side_recipe| %>
-             <label><%= radio_button_tag :side1, side_recipe.id %><%= side_recipe.name %></label><br>
-          <% end %>
-          <% @side_recipes.each do |side_recipe| %>
-             <label><%= radio_button_tag :side2, side_recipe.id %><%= side_recipe.name %></label><br>
-          <% end %>
 
           <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
-
-  
 </div>
+
+<% end %>
 
 
 

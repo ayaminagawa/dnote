@@ -3,32 +3,32 @@
 
         <div class="col col-11 pickup-menu-nuturition">
           <div class="menu-img">
-            <a href="recipe.html">
+            <!-- <a href="recipe.html">
               <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
+            </a> -->
+             <%= image_tag @nurtrition_menu.image %>
           </div>
           <div class="nuturition gutters row">
             <div class="col col-6 col-xs col-xs-6">
               <div class="nuturition-img">
-                <a href="nuturition.html">
+                <!-- <a href="nuturition.html">
                   <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo">
-                </a>
+                </a> -->
               </div>
             </div>
             <div class="col col-17 col-xs col-xs-17">
               <div class="menu-title">
-                <a href="recipe.html">タイムとレモンでさっぱり☆ふんわり鶏肉の絶品パエリア</a>
+                <!-- <a href="recipe.html">タイムとレモンでさっぱり☆ふんわり鶏肉の絶品パエリア</a> -->
+                <%= link_to @nurtrition_menu.name, menu_path(@nurtrition_menu)%>
               </div>
               <div class="nuturition-name">
-                <a href="nuturition.html">
                   星野真里
-                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col col-11 pickup-menu-nuturition pc-off">
+       <!--  <div class="col col-11 pickup-menu-nuturition pc-off">
           <div class="menu-img">
             <a href="recipe.html">
               <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
@@ -47,13 +47,11 @@
                 <a href="recipe.html">タイムとレモンでさっぱり☆ふんわり鶏肉の絶品パエリア</a>
               </div>
               <div class="nuturition-name">
-                <a href="nuturition.html">
                   星野真里
-                </a>
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="col col-13 nuturition-column-container sp-off">
           <div class=" gutters row column-title-bar">
@@ -66,7 +64,7 @@
 
             <div class="col col-18">
               <div class="author-name">
-                <%= link_to "有村香澄", column_index_path %>
+                <p>有村香澄</p>
               </div>
               <div class="column-title">
                 <%= link_to "糖尿病で気をつけなければいけない事って？", column_index_path %>

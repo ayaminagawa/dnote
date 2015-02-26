@@ -76,6 +76,7 @@
               </a>
             </li>
 
+            <% if user_signed_in? %>
             <li class="post-recipe">
               <!-- <a href="create-recipe.html">
                 <i class="icon-edit"></i>
@@ -88,6 +89,7 @@
             <li class="post-recipe">
               <%= link_to "献立を<br>のせる", new_menu_path, class:'icon-edit post-recipe-text' %>
             </li>
+            <% end %>
           </ul>
         </div>
       </div>

@@ -73,9 +73,10 @@
               </div>
 
               <div class="menu-img">
-                <a href="recipe.html">
+                <!-- <a href="recipe.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-                </a>
+                </a> -->
+                 <%= image_tag recipe.image.url(:thumb) %>
               </div>
             </li>
             <% end %>
@@ -120,9 +121,10 @@
               </div>
 
               <div class="menu-img">
-                <a href="menu.html">
+                <!-- <a href="menu.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-                </a>
+                </a> -->
+                 <%= image_tag menu.image.url(:thumb) %>
               </div>
             </li>
             <% end %>
@@ -165,13 +167,15 @@
                 <!-- <a href="recipe.html">
                   低カロリーチーズのこってりサラダ！ワインといっしょにおいしいよ！
                 </a> -->
-                <%= made_report.recipe_id %>
+
+                <%= made_report.recipe.name %>
               </div>
 
               <div class="menu-img">
-               <a href="recipe.html">
+               <!-- <a href="recipe.html">
                 <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-                </a>
+                </a> -->
+                <%= image_tag made_report.image.url(:thumb) %>
               </div>
 
               <div class="repo-date">
@@ -258,78 +262,7 @@
         </li>
       </ul>
     </li>
-
-   <!--  <li class="col col-8 inner favorite-menu sp-off">
-      <div class="menu-title">
-        <a href="#">
-          献立タイトル
-        </a>
-      </div>
-
-      <div class="menu-img">
-        <img src="images/menu-1.jpg" class="photo">
-      </div>
-
-      <ul class="menu-list">
-        <li>
-          <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
-          <a href="#">
-            ゴロゴロお肉のメキシカンスープ
-          </a>
-        </li>
-        <li>
-          <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-          <a href="#">
-            芽キャベツのアンチョビオリーブパスタ
-          </a>
-        </li>
-        <li>
-          <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-          <a href="#">
-            パクチーの香草サラダ
-          </a>
-        </li>
-        <li class="author">
-          <a href="author-name">by つくったひと</a>
-        </li>
-      </ul>
-    </li> -->
-
-    <!-- <li class="col col-8 inner favorite-menu sp-off">
-      <div class="menu-title">
-        <a href="#">
-          献立タイトル
-        </a>
-      </div>
-
-      <div class="menu-img">
-        <img src="images/menu-1.jpg" class="photo">
-      </div>
-
-      <ul class="menu-list">
-        <li>
-          <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
-          <a href="#">
-            ゴロゴロお肉のメキシカンスープ
-          </a>
-        </li>
-        <li>
-          <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-          <a href="#">
-            芽キャベツのアンチョビオリーブパスタ
-          </a>
-        </li>
-        <li>
-          <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-          <a href="#">
-            パクチーの香草サラダ
-          </a>
-        </li>
-        <li class="author">
-          <a href="author-name">by つくったひと</a>
-        </li>
-      </ul>
-    </li> -->
+ 
   </ul>
 
 
@@ -337,13 +270,14 @@
     <% @favorite_recipes.each do |favorite_recipe|%>
     <li class="col col-8 inner favorite-menu">
       <div class="menu-title">
-        <!-- <a href="#"> 
+        <!--  <a href="#"> 
         </a> -->
         <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
       </div>
 
       <div class="menu-img">
-        <img src="images/mypage-recipe-1.jpg" class="photo">
+       
+        <%= image_tag favorite_recipe.image.url(:thumb) %>
       </div>
 
       <div class="menu-comment">
