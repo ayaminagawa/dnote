@@ -30,7 +30,7 @@
 
   <div class="col col-18 menu-recipe-container">
     <div class="page-title">
-      レシピ検索一覧
+      <span class="page-title-sub">レシピ検索一覧</span>
       <!-- <span class="page-title-sub">献立・レシピ</span> -->
       <!-- <span class="count">20件</span> -->
     </div>
@@ -79,7 +79,8 @@
            </p>
 
            <div class="author">
-             <a href="#">by つくったひと</a>
+            <!--  <a href="#">by つくったひと</a> -->
+            <%= link_to recipe.user.name, user_path(recipe.user) %>
            </div>
 
           </div>

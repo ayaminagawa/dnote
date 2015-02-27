@@ -43,7 +43,7 @@
       <div class="container-full">
         <div class="gutters row inner-30">
           <div class="col col-20 col-xs col-xs-17 menu-title-large">
-              <%= @menu.name %>
+            <%= link_to @menu.name, menu_path(@menu) %> 
           </div>
 
           <div class="col col-4 col-xs col-xs-7 pull-right">
@@ -80,11 +80,10 @@
             <li class="menu-item col col-8">
               <div class="sp-off  menu-role main">
                 <img src="images/main-icon.png" alt="" class="role-icon">
-                主菜
               </div>
               <div class="menu-title">
                 <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
-                <%= recipe.name%>
+                <%= link_to recipe.name, recipe_path(recipe) %>
               </div>
               <div class="menu-img">
                 <!-- <a href="recipe.html">

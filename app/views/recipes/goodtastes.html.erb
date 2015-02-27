@@ -60,53 +60,53 @@
 
     <ul class="inner pt-30 tab-container menu-container" id="menu-container">
       <!-- 献立ひとつ分 -->
-    <% @menu_goodtastes.each do |menu_goodtaste| %>
-    <li class="gutters row menu">
-        <div class="col col-11 col-xs col-xs-11">
-          <div class="menu-img">
-           <!--  <a href="menu.html">
-              <img src="images/menu-item-1.jpg" alt="" class="photo">
-            </a> -->
-            <%= image_tag menu_goodtaste.image.url(:thumb), class: "photo" %>
-          </div>
-        </div>
-
-        <div class="col col-13 col-xs col-xs-13">
-          <div class="menu-title">
-            <!-- <a href="menu.html">
-              献立タイトルが入ります
-              献立タイトルが入ります
-            </a> -->
-            <%= link_to menu_goodtaste.name, menu_path(menu_goodtaste) %>
+      <% @menu_goodtastes.each do |menu_goodtaste| %>
+      <li class="gutters row menu">
+          <div class="col col-11 col-xs col-xs-11">
+            <div class="menu-img">
+             <!--  <a href="menu.html">
+                <img src="images/menu-item-1.jpg" alt="" class="photo">
+              </a> -->
+              <%= image_tag menu_goodtaste.image.url(:thumb), class: "photo" %>
+            </div>
           </div>
 
-          <p class="menu-comment">
-            <%= menu_goodtaste.point %>
-          </p>
+          <div class="col col-13 col-xs col-xs-13">
+            <div class="menu-title">
+              <!-- <a href="menu.html">
+                献立タイトルが入ります
+                献立タイトルが入ります
+              </a> -->
+              <%= link_to menu_goodtaste.name, menu_path(menu_goodtaste) %>
+            </div>
 
-          <li class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-            by <%= link_to menu_goodtaste.user.name, user_path(menu_goodtaste.user) %>
-          </li>
+            <p class="menu-comment">
+              <%= menu_goodtaste.point %>
+            </p>
 
-          <ul class="menu-list sp-off">
-              <% @menu_recipes.each do |menu_recipe|%>
-              <li>
-               <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
-               <!-- <a href="recipe.html">
-                ゴロゴロお肉のメキシカンスープ</a> -->
-                <%= menu_recipe.recipe_id %>
-              </li>
+            <li class="author">
+                  <!-- <a href="#">by つくったひと</a> -->
+              by <%= link_to menu_goodtaste.user.name, user_path(menu_goodtaste.user) %>
+            </li>
 
-              <li class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-                by <%= link_to menu_goodtaste.user.name, user_path(menu_goodtaste.user) %>
-              </li>
-              <% end %>
-            </ul>
-        </div>
-      </li>
-      <% end %>
+            <ul class="menu-list sp-off">
+                <% @menu_recipes.each do |menu_recipe|%>
+                <li>
+                 <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+                 <!-- <a href="recipe.html">
+                  ゴロゴロお肉のメキシカンスープ</a> -->
+                  <%= menu_recipe.recipe_id %>
+                </li>
+
+                <li class="author">
+                  <!-- <a href="#">by つくったひと</a> -->
+                  by <%= link_to menu_goodtaste.user.name, user_path(menu_goodtaste.user) %>
+                </li>
+                <% end %>
+              </ul>
+          </div>
+        </li>
+        <% end %>
     </ul>
  
 
@@ -142,7 +142,7 @@
               </div>
 
             </div>
-        </li>
+          </li>
         <% end %>    
       <!-- レシピひとつ分 -->
     </ul>

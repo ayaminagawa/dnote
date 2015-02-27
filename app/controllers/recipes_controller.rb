@@ -88,8 +88,8 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-    @recipe.ingredients.build
-    @recipe.procedures.build
+    3.times{@recipe.ingredients.build}
+    4.times{@recipe.procedures.build}
     # @ingredient = Ingredient.new
   end
 
