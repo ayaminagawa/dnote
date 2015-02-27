@@ -55,11 +55,11 @@
             </li>
 
             <% if user_signed_in? %>
-              <li class="post-recipe">
-                <%= link_to "レシピを<br>のせる", new_recipe_path, class:'icon-edit post-recipe-text' %>
+              <li class="signup">
+                <%= link_to "レシピをのせる", new_recipe_path, class:'icon-edit post-recipe-text' %>
               </li>
-              <li class="post-recipe">
-                <%= link_to "献立を<br>のせる", new_menu_path, class:'icon-edit post-recipe-text' %>
+              <li class="signup">
+                <%= link_to "献立をのせる", new_menu_path, class:'icon-edit post-recipe-text' %>
               </li>
             <% end %>
           </ul>

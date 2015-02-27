@@ -136,6 +136,19 @@
             </li>
 
           </ul>
+              <hr>
+              <br>
+              <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>
+
+              <div>
+                <label><%= f.radio_button :category, 1, {:checked => true} %>カロリー表示あり</label>
+                <label><%= f.radio_button :category, 2 %>糖質制限食 </label>
+                <label><%= f.radio_button :category, 3 %>HbA1c、血糖値の安定 </label>
+                <label><%= f.radio_button :category, 4 %>味に自信あり </label>
+                <label><%= f.radio_button :category, 5 %>すぐできるメニュー</label>
+
+              </div>
+
         </div>
 
           <!-- <ul class="pc-off select-menu-items">
@@ -188,21 +201,7 @@
             
           </ul>
         </div> -->
-
-        <div>
-
-            <div class="ml-30 sp-head edit-label">
-             <p>献立カテゴリ</p><br>
-            </div> 
-          <br>
-          <label><%= f.radio_button :category, 1, {:checked => true} %> カロリー表示あり</label>
-          <label><%= f.radio_button :category, 2 %>糖質制限食 </label>
-          <label><%= f.radio_button :category, 3 %>HbA1c、血糖値の安定 </label>
-          <label><%= f.radio_button :category, 4 %>味に自信あり </label>
-          <label><%= f.radio_button :category, 5 %>すぐできるメニュー</label>
-
-        </div>
-
+         
         <!-- レシピを選ぶmodal -->
  
 　

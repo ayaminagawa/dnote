@@ -83,31 +83,30 @@
 
           <p class="menu-comment">
             <%= menu_sugar.point %>
-          </p>
-
-          <li class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-            by <%= link_to menu_sugar.user.name, user_path(menu_sugar.user) %>
-          </li>
+          </p> 
 
          <ul class="menu-list sp-off">
-              <% @menu_recipes.each do |menu_recipe|%>
-              <li>
+            
+              <!-- <li>
                <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
-               <!-- <a href="recipe.html">
-                ゴロゴロお肉のメキシカンスープ</a> -->
-                <%= menu_recipe.recipe_id %>
+               <a href="recipe.html">
+                ゴロゴロお肉のメキシカンスープ</a>
+                
               </li>
 
-              <li class="author">
+              <li class="author"> -->
+                <!-- <a href="#">by つくったひと</a>
+               
+              <!-- </li> -->
+            <li class="author">
                 <!-- <a href="#">by つくったひと</a> -->
-                by <%= menu_calorie.user_id %>
-              </li>
-              <% end %>
-          </ul>
+            by <%= link_to menu_sugar.user.name, user_path(menu_sugar.user) %>
+            </li>
+              
+          </ul> 
         </div>
-        </li>
-        <% end %>
+    </li>
+    <% end %>
     </ul>
  
 

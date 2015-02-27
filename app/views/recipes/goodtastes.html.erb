@@ -21,7 +21,7 @@
 
 
 
-  <div id="wrapper">
+<div id="wrapper">
 
     <!-- Header -->
     <%= render 'layouts/header' %>
@@ -92,10 +92,11 @@
             <ul class="menu-list sp-off">
                 <% @menu_recipes.each do |menu_recipe|%>
                 <li>
-                 <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+                 <!-- <img src="images/menu-main-icon.png" alt="" class="menu-list-icon"> -->
+                 <%= image_tag menu_recipe.image %>
                  <!-- <a href="recipe.html">
                   ゴロゴロお肉のメキシカンスープ</a> -->
-                  <%= menu_recipe.recipe_id %>
+                  <%= menu_recipe.recipe.name %>
                 </li>
 
                 <li class="author">
@@ -109,49 +110,46 @@
         <% end %>
     </ul>
  
-
-    <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
+      <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
 
       <!-- レシピひとつ分 -->
         <% @goodtastes.each do |goodtaste| %>
-      <li class="gutters row menu">
-        <div class="col col-11 col-xs col-xs-11">
-          <div class="menu-img">
-            <!-- <a href="recipe.html">
-              <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-            </a> -->
-            <%= image_tag goodtaste.image.url(:thumb), class: "photo" %>
-          </div>
-        </div>
-
-            <div class="col col-13 col-xs col-xs-13">
-              <div class="menu-title">
+          <li class="gutters row menu">
+            <div class="col col-11 col-xs col-xs-11">
+              <div class="menu-img">
                 <!-- <a href="recipe.html">
-                  レシピタイトル
-                </a> -->  
-                <%= link_to goodtaste.name, recipe_path(goodtaste) %>
+                  <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
+                </a> -->
+                <%= image_tag goodtaste.image.url(:thumb), class: "photo" %>
               </div>
-
-              <p class="menu-comment">
-                <%= goodtaste.description %>
-              </p>
-
-              <div class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-                by <%= link_to goodtaste.user.name, recipe_path(goodtaste)  %>
-              </div>
-
             </div>
-          </li>
+
+                <div class="col col-13 col-xs col-xs-13">
+                  <div class="menu-title">
+                    <!-- <a href="recipe.html">
+                      レシピタイトル
+                    </a> -->  
+                    <%= link_to goodtaste.name, recipe_path(goodtaste) %>
+                  </div>
+
+                  <p class="menu-comment">
+                    <%= goodtaste.description %>
+                  </p>
+
+                  <div class="author">
+                    <!-- <a href="#">by つくったひと</a> -->
+                    by <%= link_to goodtaste.user.name, recipe_path(goodtaste)  %>
+                  </div>
+
+                </div>
+              </li>
         <% end %>    
       <!-- レシピひとつ分 -->
     </ul>
   </div>
-
-</div>
 <!-- tab-box -->
 
-</div>
+
 
 </div><!-- contents end-->
 </div><!-- wrapper end-->
