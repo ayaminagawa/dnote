@@ -128,11 +128,12 @@
                 <ul class="steps row" id="step-list">
                   <li class="step-head pc-off">作り方</li>
 
-                  <li class="step-add-btn"><%= link_to_add_fields "レシピを追加する", f, :procedures %></li>
                   <!-- 作り方 -->
                   <%= f.fields_for :procedures, @procedures do |procedure| %>  
                           <%= render 'fields_procedure', {:f => procedure} %>
                   <% end %>
+
+                  <li class="step-add-btn"><%= link_to_add_fields "レシピを追加する", f, :procedures %></li>
                   
                   <!-- 作り方 -->
                 </ul>
