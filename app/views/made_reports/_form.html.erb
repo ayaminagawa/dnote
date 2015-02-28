@@ -1,28 +1,33 @@
+<div class="col col-17 "> 
+
+
 <%= form_for @made_report, :url => {:action => 'create'} do |f| %>
 
 <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>つくれぽを作る</h2>
 
 <div class="container-full inner-30">
-  <div class="col col-12 inner">
-     <div class="edit-recipe-copy">
-        <div class="sp-head edit-label">
-          <i class="icon-s icon-pencil"></i>コメント
+  <div class=" gutters row">
+        <div class="col col-12">
+          <div class="edit-recipe-title-container">
+            <div class="sp-head "> <i class="icon-s icon-pencil"></i>コメント</div>
+            <div class="edit-area imgInput">  
+              <%= f.text_field :message, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>          
+            </div>
+          </div>
         </div>
 
-        <div class="edit-area">
-          <p>あと60文字</p>          
-          <%= f.text_field :message, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>              
+        <div class="centering">
+        <div class="edit-recipe-img-typetext imgInput">
+                    <%= f.file_field :image %>
+                    <%= image_tag("/assets/no_image.png", :class => "imgView ") %>
         </div>
       </div>
-
   
-    <div class="sp-head ">   
-      <div class="field imgInput">
-        <%= f.file_field :image %>
-         <%= image_tag("/assets/no_image.png", :class => "imgView") %>
       </div>
-    </div>
   
+
+
+      
 
     <%= f.hidden_field :recipe_id, :value => @recipe.id %>
 
@@ -34,3 +39,5 @@
 </div>
 
 <% end %>
+
+</div>

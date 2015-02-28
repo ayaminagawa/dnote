@@ -10,9 +10,9 @@ class MenusController < ApplicationController
   # GET /menus/1
   # GET /menus/1.json
   def show
-    @menu_recipes = MenuRecipe.where(:menu_id => params[:id] ) 
+    @id = params[:id]
+    @menu_recipes = MenuRecipe.find(:all, :conditions => { :menu_id => @id})
     @recipes = @menu_recipes.map{|recipe_id| recipe_id.recipe}
-
   end
 
   # GET /menus/new
@@ -21,14 +21,14 @@ class MenusController < ApplicationController
     @menu_recipe_main = MenuRecipe.new(params[:main])   
     @menu_recipe_side1 = MenuRecipe.new(params[:side1])   
     @menu_recipe_side2 = MenuRecipe.new(params[:side2])   
-    @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
-    @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
+    @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
+    @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
   end
 
   # GET /menus/1/edit
   def edit
-    @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
-    @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
+    @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
+    @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
   end
 
   # POST /menus

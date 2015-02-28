@@ -5,4 +5,5 @@ class MadeReport < ActiveRecord::Base
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { less_than: 2.megabytes }
     belongs_to :recipe
+    validates :message, presence: true
 end

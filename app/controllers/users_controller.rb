@@ -11,10 +11,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @recipes = Recipe.find(:all, :conditions => { :user_id => current_user.id }) 
-    @menus = Menu.find(:all, :conditions => { :user_id => current_user.id})
-    @made_reports = MadeReport.find(:all, :conditions => { :user_id => current_user.id})
-    @favorite_recipes = current_user.favorites.map {|favorite| favorite.recipe }
+    @id = params[:id]
+    @recipes = Recipe.find(:all, :conditions => { :user_id => @id }) 
+    @menus = Menu.find(:all, :conditions => { :user_id => @id})
+    @made_reports = MadeReport.find(:all, :conditions => { :user_id => @id})
+    @user = User.find(@id)
+    @favorite_recipes = @user.favorites.map {|favorite| favorite.recipe }
   end
 
   # GET /users/new

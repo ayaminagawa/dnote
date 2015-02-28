@@ -130,7 +130,7 @@
                 <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
               </p> -->
                <% @side_recipes.each do |side_recipe| %>
-                <label><%= radio_button_tag :side1, side_recipe.id %><%= side_recipe.name %></label><br>
+                <label><%= radio_button_tag :side2, side_recipe.id %><%= side_recipe.name %></label><br>
                 <%= image_tag side_recipe.image %><br>
                <% end %>
             </li>

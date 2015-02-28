@@ -83,25 +83,25 @@
             <%= menu_easy.point %>
           </p>
 
-          <li class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-                by <%= link_to menu_easy.user.name, user_path(menu_easy.user) %>
-              </li>
-
         <ul class="menu-list sp-off">
-              <% @menu_recipes.each do |menu_recipe|%>
-              <li>
-               <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+             
+             <!--  <li>
+               <img src="images/menu-main-icon.png" alt="" class="menu-list-icon"> -->
                <!-- <a href="recipe.html">
                 ゴロゴロお肉のメキシカンスープ</a> -->
-                <%= menu_recipe.recipe_id %>
+              <!--   
               </li>
+ -->
+             <!--  <li class="author"> -->
+                <!-- <a href="#">by つくったひと</a> -->
+              
+             <!--  </li> -->
+             
 
               <li class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-                 by <%= link_to menu_easy.user.name, user_path(menu_easy.user) %>
+                    <!-- <a href="#">by つくったひと</a> -->
+                by <%= link_to menu_easy.user.name, user_path(menu_easy.user) %>
               </li>
-              <% end %>
             </ul>
         </div>
       </li>

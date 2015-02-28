@@ -4,4 +4,5 @@ class Procedure < ActiveRecord::Base
   	validates_attachment :image, presence: true,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { less_than: 2.megabytes }
+    validates :body, presence: true
 end

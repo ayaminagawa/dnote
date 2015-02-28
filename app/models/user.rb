@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
          :registerable, :rememberable, :trackable, omniauth_providers: [:twitter, :facebook]
  
  
-	# validates :name, length: { maximum: 15 }, presence: true
+	validates :name, length: { maximum: 15 }, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	# validates :gender, presence: true
-	# validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-	# has_many :recipes, dependent: :destroy
+	validates :gender, presence: true
+	validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+
 	has_many :menus, dependent: :destroy 
   has_many :recipes, dependent: :destroy 
   has_many :made_reports, dependent: :destroy
@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
     validates_attachment :image, 
     content_type: { content_type: ["image/jpg", "image/png"] },
     size: { less_than: 2.megabytes }
+
+
 
   
     def set_image(file)

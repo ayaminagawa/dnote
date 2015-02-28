@@ -4,6 +4,7 @@ class AboutController < ApplicationController
   	@todays_menu = Menu.find(1)
   	@menu_recipes = MenuRecipe.where(menu_id: 1 ) 
   	@recipes = @menu_recipes.map{|menu_recipe| menu_recipe.recipe}
-  	@nurtrition_menu = Menu.find(42)
+  	@nurtrition_menu = Menu.find(2)
+  	
   end
 end

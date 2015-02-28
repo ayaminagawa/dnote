@@ -80,7 +80,7 @@ class RecipesController < ApplicationController
     @made_reports = MadeReport.find(:all, :conditions => { :recipe_id => params[:id] }) 
     @ingredients = Ingredient.find(:all, :conditions => { :recipe_id => params[:id]})
     @procedures = Procedure.find(:all, :conditions => { :recipe_id => params[:id]})
-    @recommended_recipe = Recipe.find(32)
+    @recommended_recipe = Recipe.find(1)
   end
 
   # GET /recipes/new

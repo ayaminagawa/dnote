@@ -73,7 +73,7 @@
             </div>
 
             <div class="col col-6 col-xs col-xs-7 pull-right">
-              <% if current_user?(@recipe.user) %>
+              
               <div class="button pull-right recipe-save" id="save-btn">
                 <!-- <a href="#">
                   <i class="title-icon icon-star"></i><br>
@@ -83,7 +83,7 @@
                   <%= render 'favorites/favorite_btn', recipe: @recipe %>
                 </span>
               </div>
-              <% end %>
+              
             </div>
           </div>
 
@@ -204,8 +204,11 @@
 
               <p class="author pull-right">
                 <!-- <a href="menu-recipe.html" class="author-name">by つくったひと</a> -->
-                <%= link_to made_report.user_id, '', :class => 'author-name'  %>
+                
               </p>
+          
+               <p><%= link_to "つくれぽを削除する", @made_report, method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
+              
 
             </li>
               <% end %>
@@ -226,7 +229,7 @@
       </div>
 
       <div class="centering">
-        <% if current_user?(@recipe.user) %>
+        <% if user_signed_in? %>
         <div class="button sp-off">
           <%= link_to "つくれぽを投稿", new_recipe_made_reports_path(recipe_id: @recipe.id), class:"title-icon icon-recipes-2" %>
         </div>

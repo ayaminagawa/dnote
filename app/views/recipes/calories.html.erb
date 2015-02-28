@@ -79,25 +79,20 @@
               <%= menu_calorie.point %>
             </p>
 
-            <li class="author">
-                <!-- <a href="#">by つくったひと</a> -->
-                by <%= link_to menu_calorie.user.name, user_path(menu_calorie.user) %>
-              </li>
-
             <ul class="menu-list sp-off">
-              <% @menu_recipes.each do |menu_recipe|%>
+             <!-- 
               <li>
-               <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
+               <img src="images/menu-main-icon.png" alt="" class="menu-list-icon"> -->
                <!-- <a href="recipe.html">
                 ゴロゴロお肉のメキシカンスープ</a> -->
-                <%= menu_recipe.recipe_id %>
-              </li>
+                
+             <!--  </li> -->
 
               <li class="author">
                 <!-- <a href="#">by つくったひと</a> -->
                 by <%= link_to menu_calorie.user.name, user_path(menu_calorie.user) %>
               </li>
-              <% end %>
+              
             </ul>
           </div>
         </li>

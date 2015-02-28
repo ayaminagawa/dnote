@@ -12,12 +12,13 @@ class Recipe < ActiveRecord::Base
 	accepts_nested_attributes_for :ingredients, :allow_destroy => true
 	has_many :procedures, :class_name => "Procedure", :dependent => :destroy
   	accepts_nested_attributes_for :procedures, :allow_destroy => true
+  	validates :tip, presence: true
   	
 
     
   	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"
 
-  	validates_attachment :image, presence: true,
+  	validates_attachment :image,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { less_than: 2.megabytes }
   # validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
