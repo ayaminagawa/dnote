@@ -1,4 +1,4 @@
-<%= form_for(@menu) do |f| %>
+
   <% if @menu.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
@@ -10,10 +10,7 @@
       </ul>
     </div>
   <% end %>
-<!-- 
-  <div class="actions">
-    <%= f.submit %>
-  </div> -->
+
 
 <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立を作る</h2>
 
@@ -25,7 +22,7 @@
               <div class="edit-area">
                <form action="#">
                  <!-- <input type="text" class="edit-field edit-recipe-title" placeholder="献立のタイトルを入力"> -->
-                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'献立のタイトルを入力' %>
+                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'献立のタイトルを入力する' %>
                </form>
              </div>
 
@@ -200,20 +197,75 @@
 
         <div>
           <br>
-          <label><%= f.radio_button :category, "1", {:checked => true} %> カロリー表示あり</label>
-          <label><%= f.radio_button :category, "2" %>糖質制限食 </label>
-          <label><%= f.radio_button :category, "3" %>HbA1c、血糖値の安定 </label>
-          <label><%= f.radio_button :category, "4" %>味に自信あり </label>
-          <label><%= f.radio_button :category, "5" %>すぐできるメニュー</label>
+          <label><%= f.radio_button :category, 1, {:checked => true} %> カロリー表示あり</label>
+          <label><%= f.radio_button :category, 2 %>糖質制限食 </label>
+          <label><%= f.radio_button :category, 3 %>HbA1c、血糖値の安定 </label>
+          <label><%= f.radio_button :category, 4 %>味に自信あり </label>
+          <label><%= f.radio_button :category, 5 %>すぐできるメニュー</label>
 
         </div>
+
+        <!-- レシピを選ぶmodal -->
+ 
+　
+  <div class="select-mainmenu remodal" data-remodal-id="select-mainmenu-modal">
+    <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">主菜</h4>
+
+    <ul class="select-menu-list-container">
+      <li class="gutters row select-menu-list">
+        <div class="col col-4 col col-xs-10 menu-img">
+          <img src="images/menu-item-1.jpg" class="photo">
+        </div>  
+
+        
+        <div class="col col-11 col col-xs-13 menu-title">
+            <% @main_recipes.each do |main_recipe| %>
+              <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
+            <% end %>
+        </div>
+
+        <div class="col col-6 menu-select-btn-container">
+          <!-- <a href="#" class="menu-select-btn">追加する</a> -->
+          <%= link_to "追加する", "", class: 'menu-select-btn' %>
+        </div>
+       
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="select-submenu remodal" data-remodal-id="select-submenu-modal">
+    <h4 class="select-menu-head">あなたの投稿したレシピ&nbsp;<span class="bold orange">副菜</h4>
+
+    <ul class="select-menu-list-container">
+      <li class="gutters row select-menu-list">
+        <div class="col col-4 col col-xs-10 menu-img">
+          <img src="images/menu-item-1.jpg" class="photo">
+        </div>  
+
+        <div class="col col-11 col col-xs-13 menu-title">
+
+          <% @side_recipes.each do |side_recipe| %>
+            <%= side_recipe.name %>
+          <% end %>
+        </div>
+
+        <div class="col col-6 menu-select-btn-container">
+          <a href="#" class="menu-select-btn">追加する</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
 
 
 
         <div class="centering mt-56 pb-30 create-recipe-btn-container">
           <!-- <a href="#" class="create-recipe-btn">献立を公開する</a> -->
-            <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
+          <% @main_recipes.each do |main_recipe| %>
+             <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
+          <% end %>
+          <%= f.submit "献立を公開する", class: 'create-recipe-btn' %>
         </div>
       </div>
 
-<% end %>

@@ -15,6 +15,7 @@ class MenusController < ApplicationController
   # GET /menus/new
   def new
     @menu = Menu.new
+    @menu_recipe = MenuRecipe.new(params[:main])   
     @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
   end
@@ -28,20 +29,42 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
 
-    respond_to do |format|
+    # @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 })
+
+
+    # respond_to do |format|
+      
       if @menu.save
+        @menu_recipe = @menu.menu_recipes.build
+        # @menu_recipe.menu_id = @menu.id
+        @menu_recipe.recipe_id = params[:main]
+
+        @menu_recipe.save
         format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
         format.json { render action: 'show', status: :created, location: @menu }
       else
         format.html { render action: 'new' }
         format.json { render json: @menu.errors, status: :unprocessable_entity }
       end
-    end
+
+    # end
+
+    # respond_to do |format|
+    #   if @main_recipe.save
+    #     format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @menu }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @main_recipe.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /menus/1
   # PATCH/PUT /menus/1.json
   def update
+
+  @menu_recipe = MenuRecipe.find(params[:main])
     respond_to do |format|
       if @menu.update(menu_params)
         format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }

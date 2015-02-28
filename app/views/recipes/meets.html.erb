@@ -67,7 +67,7 @@
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
-                <%= link_to "@name", recipe_path(meet) %>
+                <%= link_to meet.name, recipe_path(meet) %>
               </div>
 
               <p class="menu-comment">
@@ -75,7 +75,8 @@
               </p>
 
               <div class="author">
-                <a href="#">by つくったひと</a>
+                <!-- <a href="#">by つくったひと</a> -->
+                <%= link_to meet.user.name, recipe_path(meet)  %>
               </div>
 
             </div>

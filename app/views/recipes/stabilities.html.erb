@@ -77,7 +77,7 @@
               献立タイトルが入ります
               献立タイトルが入ります
             </a> -->
-            <%= link_to "@name", menu_path(menu_stability) %>
+            <%= link_to menu_stability.name, menu_path(menu_stability) %>
           </div>
 
           <p class="menu-comment">
@@ -133,7 +133,7 @@
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
-                <%= link_to "@name", recipe_path(stability) %>
+                <%= link_to stability.name, recipe_path(stability) %>
               </div>
 
               <p class="menu-comment">
@@ -141,7 +141,8 @@
               </p>
 
               <div class="author">
-                <a href="#">by つくったひと</a>
+                <!-- <a href="#">by つくったひと</a> -->
+                <%= link_to stability.user.name, recipe_path(stability)  %>
               </div>
 
             </div>
