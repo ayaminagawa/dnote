@@ -63,7 +63,7 @@
                         <input type="file" class="uploader-recipe-img-typetext">
                       </form> -->
                     <%= f.file_field :image %>
-                    <%= image_tag("/assets/no_image.png", :class => "imgView ") %>
+                    <%= image_tag("no_image.png", :class => "imgView ") %>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@
                           <%= render 'fields_procedure', {:f => procedure} %>
                   <% end %>
 
-                  <li class="step-add-btn"><%= link_to_add_fields "レシピを追加する", f, :procedures %></li>
+                  <li class="step-add-btn"><%= link_to_add_fields "作り方を追加する", f, :procedures %></li>
                   
                   <!-- 作り方 -->
                 </ul>
