@@ -10,6 +10,18 @@
 
 /* Setting
 ================================================================================*/
+.contain {
+    display: inline-block;
+    background-color: #ccc;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background-size: contain;
+}
+
 $dark-orange:#d15d14; // 各見出しに使われている暗めのオレンジ 
 $light-orange:#f6ac1d; // ロゴに使われている明るめオレンジ 
 $green:#1d6613; // 料理のタイトル名などの緑 

@@ -12,7 +12,7 @@ class Recipe < ActiveRecord::Base
 	accepts_nested_attributes_for :ingredients, :allow_destroy => true
 	has_many :procedures, :class_name => "Procedure", :dependent => :destroy
   	accepts_nested_attributes_for :procedures, :allow_destroy => true
-  	validates :tip, presence: true
+  	
   	
 
     
@@ -36,4 +36,5 @@ class Recipe < ActiveRecord::Base
 	      Recipe.all #全て表示。
 	    end
   	end
+
 end

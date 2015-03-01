@@ -80,10 +80,13 @@
 
         <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
 
+           <div class="sp-head "> <i class="icon-s icon-pencil"></i>主菜は１つ、副菜は２つ必ず選択してください</div><br>
+
           <ul class="select-menu-items menu-items sp-off">
             <li class="menu-item col col-8">
               <div class="sp-off  menu-role main">
-                <img src="images/main-icon.png" alt="" class="role-icon">
+                <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
+                <%= image_tag("main-icon.png" ,:alt => "" ,:class => "role-icon") %>
                 主菜
               </div>
               <!-- <a href="#select-mainmenu-modal">
@@ -101,7 +104,8 @@
 
             <li class="menu-item col col-8">
               <div class="menu-role sub">
-                <img src="images/sub-icon.png" alt="" class="role-icon">
+                <!-- <img src="images/sub-icon.png" alt="" class="role-icon"> -->
+                <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
                 副菜
               </div>
               <!-- <a href="#select-submenu-modal">
@@ -119,7 +123,7 @@
 
             <li class="menu-item col col-8">
               <div class="menu-role sub">
-                <img src="images/sub-icon.png" alt="" class="role-icon">
+               <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
                 副菜
               </div>
               <!-- <a href="#select-submenu-modal">
