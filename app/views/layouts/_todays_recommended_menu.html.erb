@@ -14,7 +14,8 @@
             <ul class="menu-list sp-off">
              <% @recipes.each do |recipe|%>
               <li>
-               <img src="/assets/menu-main-icon.png" alt="" class="menu-list-icon">
+              <!--  <img src="/assets/menu-main-icon.png" alt="" class="menu-list-icon"> -->
+              <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
                <!-- <a href="recipe.html">
                 ゴロゴロお肉のメキシカンスープ</a> -->
                <%= link_to recipe.name, recipe_path(recipe) %>
