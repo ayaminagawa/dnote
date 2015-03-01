@@ -24,7 +24,7 @@ production:
   adapter: mysql2
   reconnect: false
   encoding: utf8
-  database: DB名
+  database: app_development
   pool: 5
   username: dnote
   password: zeroxone
