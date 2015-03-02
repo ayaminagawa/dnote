@@ -44,10 +44,16 @@
       </div>
 
       <div class="sidemenu-search-container">
-        <form action="#">
+        <!-- <form action="#">
           <input type="text" class="search-bar">
           <button class="search-submit"><i class="icon-search icon-m"></i></button>
-        </form>
+        </form> -->
+        <%= form_tag recipes_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] , class: "search-bar"%>
+              <%= submit_tag "S", class: 'search-submit' %>
+            </p>
+          <% end %>
       </div>
 
       <ul class="sidemenu" id="sidemenu">

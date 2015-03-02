@@ -10,7 +10,7 @@
 
       <ul class="search-container">
         <li class="keyword-search">
-          <%= form_tag recipes_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+          <%= form_tag recipes_path, :method => 'get' do %>
             <p>
               <%= text_field_tag :search, params[:search] , class: "search-bar"%>
               <%= submit_tag "S", class: 'search-submit' %>
