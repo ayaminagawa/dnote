@@ -3,10 +3,11 @@
       <div class="gutters row sidemenu-account" id="slidemenu_list">
         <div class="col col-xs col-xs-8">
           <div class="user-name">
-            ゲストさん
+            <%= current_user.name %>さん
           </div>
           <div class="account-img">
-            <i class="icon-user"></i>
+           <!--  <i class="icon-user"></i> -->
+           <%= image_tag(current_user.image)%>
           </div>
         </div>
 

@@ -74,9 +74,10 @@
           </div>
 
           <div class="sp-logo-container">
-            <a href="index.html">
-              <img src="/assets/logo.png" alt="dnote" class="logo">
-            </a>
+            <!-- <a href="index.html"> -->
+              <!-- <img src="/assets/logo.png" alt="dnote" class="logo"> -->
+              <%= link_to image_tag("logo.png"), about_path, class: "logo", alt: "dnote" %>
+            <!-- </a> -->
           </div>
 
           <div class="account-btn">
