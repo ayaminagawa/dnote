@@ -90,7 +90,11 @@
           <div class="account-btn">
             <a href="#modal">
               <i class="icon-login"></i><br>
-              ログイン
+              <% if user_signed_in? %>
+                ログイン
+              <% else %>
+                ログアウト
+              <% end %>
             </a> 
           </div>
         </div>
