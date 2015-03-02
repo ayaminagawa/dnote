@@ -55,17 +55,19 @@
     <ul class="inner pt-30 tab-container menu-container" id="menu-container">
 
       <!-- レシピひとつ分 -->
+      <% @recipes.each do |recipe| %>
+
       <li class="gutters row menu">
         <div class="col col-11 col-xs col-xs-11">
-          <!-- <div class="menu-img">
-            <a href="recipe.html">
+          <div class="menu-img">
+            <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-            </a>
-          </div> -->
+            </a> -->
+            <%= image_tag(recipe.image, :alt => "", :class =>"photo") %>
+          </div>
         </div>
 
-        <% @recipes.each do |recipe| %>
-
+        
         <div class="col col-13 col-xs col-xs-13">
            <div class="menu-title">
                 <!-- <a href="recipe.html">
@@ -84,6 +86,8 @@
            </div>
 
           </div>
+
+        </li>
 
         <% end %>    
       <!-- レシピひとつ分 -->
