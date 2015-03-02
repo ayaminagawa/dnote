@@ -74,7 +74,7 @@
                 <!-- <a href="recipe.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= image_tag recipe.image.url(:thumb), class: "photo" %>
+                 <%= image_tag recipe.image, class: "photo" %>
               </div>
             </li>
             <% end %>
@@ -109,7 +109,7 @@
                 <!-- <a href="menu.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= image_tag menu.image.url(:thumb), class: "photo" %>
+                 <%= image_tag menu.image, class: "photo" %>
               </div>
             </li>
             <% end %>
@@ -160,7 +160,7 @@
                <!-- <a href="recipe.html">
                 <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                <%= image_tag made_report.image.url(:thumb) , class: "photo"%>
+                <%= image_tag made_report.image, class: "photo"%>
               </div>
 
               <div class="repo-date">
@@ -262,7 +262,7 @@
 
       <div class="menu-img">
        
-        <%= image_tag favorite_recipe.image.url(:thumb), class: "photo" %>
+        <%= image_tag favorite_recipe.image, class: "photo" %>
       </div>
 
       <div class="menu-comment">
