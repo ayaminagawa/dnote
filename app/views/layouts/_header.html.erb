@@ -61,6 +61,13 @@
               <li class="signup">
                 <%= link_to "献立をのせる", new_menu_path, class:'icon-edit post-recipe-text' %>
               </li>
+            <% else %>
+              <li class="signup">
+                <%= link_to "レシピをのせる", new_user_registration_path, class:'icon-edit post-recipe-text' %>
+              </li>
+              <li class="signup">
+                <%= link_to "献立をのせる", new_user_registration_path, class:'icon-edit post-recipe-text' %>
+              </li>
             <% end %>
           </ul>
     </div>

@@ -21,15 +21,23 @@
         <div class="col col-xs col-xs-16 centering">
           <div class="button sidemenu-post-recipe">
             <!-- <a href="create-recipe.html"> -->
-              <i class="icon-edit"></i>
+            <i class="icon-edit"></i>
+            <% if user_signed_in? %>
               <%= link_to "レシピをのせる", new_recipe_path %>
+            <% else %>
+              <%= link_to "レシピをのせる", new_user_registration_path %>
+            <% end %>
             <!-- </a> -->
           </div>
           <div class="line"></div>
           <div class="button sidemenu-post-repo">
             <!-- <a href="#"> -->
-              <i class="icon-recipes-1"></i>
+            <i class="icon-recipes-1"></i>
+            <% if user_signed_in? %>
               <%= link_to "献立を投稿", new_menu_path %>
+            <% else %>
+              <%= link_to "献立を投稿", new_user_registration_path %>
+            <% end %>
            <!--  </a> -->
           </div>
         </div>

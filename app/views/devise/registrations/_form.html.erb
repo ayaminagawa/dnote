@@ -94,7 +94,12 @@
   <div class="actions centering mt-56 create-recipe-btn-container" >       
     <%= f.submit "新規登録する", class: 'create-recipe-btn' %>
   </div>
-  
+
+  <div class="centering">
+   <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+   <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
+  </div>
+
 </div>
 <% end %>
 </div>
