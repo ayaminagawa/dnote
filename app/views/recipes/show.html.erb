@@ -90,7 +90,7 @@
           <div class="gutters row pb-30">
             <div class="col col-12">
               <div class="menu-img">
-                  <%= image_tag @recipe.image.url(:thumb), class: "photo" %>
+                  <%= image_tag @recipe.image, class: "photo" %>
               </div>
 
               <p class="menu-comment">
@@ -143,7 +143,7 @@
               <div class="gutters row">
                 <div class="step-img col col-xs col-xs-11">
                   <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                  <%= image_tag procedure.image.url(:thumb), class: "photo" %>
+                  <%= image_tag procedure.image, class: "photo" %>
                 </div>
 
                 <div class="col col-xs col-xs-12 step-info">
@@ -248,7 +248,7 @@
             <!-- <a href="recipe.html">
               <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
-           <%= image_tag @recommended_recipe.image.url(:thumb), class: "photo" %>
+           <%= image_tag @recommended_recipe.image, class: "photo" %>
           </div>
           <p class="menu-title recommend-title">
             <!-- <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
