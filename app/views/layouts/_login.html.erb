@@ -58,6 +58,7 @@
             Facebookで新規登録
             </a> -->
             <%= link_to "Facebookで新規登録", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+            <%= link_to "Twitterで新規登録",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
           </div>
         </div>
       <% end %>
