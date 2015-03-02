@@ -3,14 +3,14 @@
       <div class="gutters row sidemenu-account" id="slidemenu_list">
         <div class="col col-xs col-xs-8">
           <div class="user-name">
-            <% if user_sined_in? %>
+            <% if user_signed_in? %>
               <%= current_user.name %>さん
             <% else %>
               ゲストさん
             <% end %> 
           </div>
           <div class="account-img">
-            <% if user_sined_in? %>
+            <% if user_signed_in? %>
               <%= image_tag(current_user.image)%>
             <% else %>
               <i class="icon-user"></i>
