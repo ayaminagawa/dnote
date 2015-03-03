@@ -40,6 +40,11 @@
       <div class="title-bar">
         <i class="title-icon icon-nife-fork-2"></i>
         マイページ
+        <% if @user == current_user %>
+          <div class="recipe-edit-btn">
+              <%= link_to "プロフィールを編集する", edit_user_registration_path(@user) %>
+          </div>
+        <% end %>
       </div>
 
       <div class="mypage-content">

@@ -1,0 +1,79 @@
+<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>プロフィール編集</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+<div class="container-full inner-30">
+     <div class="container-full inner-30">
+  
+    <div class="gutters row pb-30 pt-30">
+        <div class="col col-12 inner">
+          <br>
+          <div class="sp-head edit-label">
+               <i class="icon-s icon-play"></i>&nbsp;メールアドレス
+          </div>
+          <div class="field">
+            <div class="fields">
+              <ul class="inner-30 edit-ingredient-container">
+                   <%= f.email_field :email, autofocus: true, class:'edit-field edit-recipe-title' %>
+              </ul>
+            </div>  
+          </div>
+        
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>メールアドレスを確認しています: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+      
+
+          <br>
+          <div class="sp-head edit-label">
+               <i class="icon-s icon-play"></i>&nbsp;新しいパスワード(変更させない場合は空欄にしてください)
+          </div>
+          <div class="field">
+            <div class="fields">
+              <ul class="inner-30 edit-ingredient-container">
+                   <% if @validatable %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off",class:'edit-field edit-recipe-title' %> 
+              </ul>
+            </div>  
+          </div>
+          <br>
+          <div class="sp-head edit-label">
+              <i class="icon-s icon-play"></i>&nbsp;パスワード確認
+          </div>
+          <div class="field">
+            <div class="fields">
+              <ul class="inner-30 edit-ingredient-container">
+                   <%= f.password_field :password_confirmation, autocomplete: "off",class:'edit-field edit-recipe-title' %>
+              </ul>
+            </div>  
+          </div>
+    
+          <br>
+          <div class="sp-head edit-label">
+               <i class="icon-s icon-play"></i>&nbsp;古いパスワード
+          </div>
+          <div class="field">
+            <div class="fields">
+              <ul class="inner-30 edit-ingredient-container">
+                  <%= f.password_field :current_password, autocomplete: "off",class:'edit-field edit-recipe-title' %> 
+              </ul>
+            </div>  
+          </div>
+          <div class="actions centering mt-56 create-recipe-btn-container" >       
+          <%= f.submit "プロフィルを変更する", class: 'create-recipe-btn' %>
+        </div>
+        </div>
+
+    </div> 
+
+  <p> <%= button_to "アカウントを消す", registration_path(resource_name), data: { confirm: "本当に消しますか?" }, method: :delete %></p>
+  <br>
+
+</div>
+<% end %>
+</div>
