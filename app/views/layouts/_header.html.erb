@@ -63,10 +63,14 @@
               </li>
             <% else %>
               <li class="signup">
-                <%= link_to "レシピをのせる", new_user_registration_path, class:'icon-edit post-recipe-text' %>
+                <a href="#modal" >
+                  <i class='icon-edit post-recipe-text'></i>レシピをのせる
+                </a>
               </li>
               <li class="signup">
-                <%= link_to "献立をのせる", new_user_registration_path, class:'icon-edit post-recipe-text' %>
+                <a href="#modal" >
+                  <i class='icon-edit post-recipe-text'></i>献立をのせる
+                </a>
               </li>
             <% end %>
           </ul>

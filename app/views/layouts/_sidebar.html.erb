@@ -25,7 +25,11 @@
             <% if user_signed_in? %>
               <%= link_to "レシピをのせる", new_recipe_path %>
             <% else %>
-              <%= link_to "レシピをのせる", new_user_registration_path %>
+              <li class="signup">
+                <a href="#modal" >
+                  <i class='icon-edit post-recipe-text'></i>レシピをのせる
+                </a>
+              </li>
             <% end %>
             <!-- </a> -->
           </div>
@@ -36,7 +40,11 @@
             <% if user_signed_in? %>
               <%= link_to "献立を投稿", new_menu_path %>
             <% else %>
-              <%= link_to "献立を投稿", new_user_registration_path %>
+              <li class="signup">
+                <a href="#modal" >
+                  <i class='icon-edit post-recipe-text'></i>献立をのせる
+                </a>
+              </li>
             <% end %>
            <!--  </a> -->
           </div>
