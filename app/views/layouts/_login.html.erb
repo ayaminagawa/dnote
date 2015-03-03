@@ -18,15 +18,11 @@
             すでにユーザー登録されている方
           </p>
 
-        <form action="#">
-          <input type="email" placeholder="メールアドレス" class="account-form">
-          <input type="text" placeholder="パスワード" class="account-form">
-          <div class="submit-container">
-           <!--  <input type="submit" class="button-b" value="ログイン" > -->
-             <%= link_to "ログイン", new_user_session_path, class:'button-b' %>
+          <div>
+            <%= link_to "ログイン", new_user_session_path , class:"button-b" %>
           </div>
-        </form>
 
+        
         <div class="facebook-btn-container">
           <!-- <a href="" class="facebook-btn">
             <i class="icon-facebook-square"></i>

@@ -5,6 +5,5 @@ class AboutController < ApplicationController
   	@menu_recipes = MenuRecipe.where(menu_id: 3) 
   	@recipes = @menu_recipes.map{|menu_recipe| menu_recipe.recipe}
   	@nurtrition_menu = Menu.find(3)
-  	
   end
 end

@@ -37,16 +37,16 @@
 
     <div class="contents" id="mypage">
 
-      <div class="title-bar pc-off">
+      <div class="title-bar">
         <i class="title-icon icon-nife-fork-2"></i>
         マイページ
       </div>
 
       <div class="mypage-content">
 
-        <div class="author-img-sp-container pc-off">
+        <div class="author-img-sp-container">
           <div class="author-img-sp">
-            <%= image_tag(@user.authenticated_image_url(:large)) if @user.image.present? %>
+            <%= image_tag @user.image  %>
           <!--   <%= profile_image_for @user %> -->
           </div>
           <!-- <a href="#" class="author-img-edit">
