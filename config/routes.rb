@@ -45,6 +45,10 @@ Dnote::Application.routes.draw do
   get '/salads', to:'recipes#salads'
   get '/soups', to:'recipes#soups'
   get '/boxes', to:'recipes#boxes'
+  get '/pans', to:'recipes#pans'
+  get '/snacks', to:'recipes#snacks'
+  get '/hospitalities', to:'recipes#hospitalities'
+
 
   get '/calories', to:'recipes#calories'
   get '/sugars', to:'recipes#sugars'

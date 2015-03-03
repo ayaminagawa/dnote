@@ -46,6 +46,18 @@ class RecipesController < ApplicationController
     @boxes = Recipe.find(:all, :conditions => { :kind => 9 }) 
   end
 
+  def hospitalities
+    @hospitalities = Recipe.find(:all, :conditions => { :kind => 10 }) 
+  end
+
+  def snacks
+    @snacks = Recipe.find(:all, :conditions => { :kind => 11 }) 
+  end
+
+  def pans
+    @pans = Recipe.find(:all, :conditions => { :kind => 12 }) 
+  end
+
   def calories
     @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
     @menu_calories = Menu.find(:all, :conditions => { :category => 1 }) 

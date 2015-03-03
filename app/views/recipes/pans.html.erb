@@ -32,7 +32,7 @@
 
 <div class="col col-18 menu-recipe-container">
   <div class="page-title">
-    <a href="#">お弁当</a>
+    <a href="#">パン</a>
     <span class="page-title-sub">レシピ</span>
     <!-- <span class="count">20件</span> -->
   </div>
@@ -53,14 +53,14 @@
     <ul class="inner pt-30 tab-container menu-container" id="menu-container">
 
       <!-- レシピひとつ分 -->
-       <% @boxes.each do |box| %>
+       <% @pans.each do |pan| %>
       <li class="gutters row menu">
         <div class="col col-11 col-xs col-xs-11">
           <div class="menu-img">
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag box.image, class: "photo" %>
+            <%= image_tag pan.image, class: "photo" %>
           </div>
         </div>
 
@@ -71,16 +71,16 @@
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
-                <%= link_to box.name, recipe_path(box) %>
+                <%= link_to pan.name, recipe_path(pan) %>
               </div>
 
               <p class="menu-comment">
-                <%= box.description %>
+                <%= pan.description %>
               </p>
 
               <div class="author">
                 <!-- <a href="#">by つくったひと</a> -->
-                by <%= link_to box.user.name, recipe_path(box)  %>
+                by <%= link_to pan.user.name, recipe_path(pan)  %>
               </div>
 
             </div>

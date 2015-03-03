@@ -3,10 +3,10 @@
         <ul class="recipe-categories">
           <!-- <li>
             <a href="menu-recipe.html">
-              <img src="/assets/category-icon/yasai.png" alt="野菜のおかず"  class="category-icon">
-              野菜のおかず
-            </a>
-          </li> -->
+              <img src="/assets/category-icon/yasai.png" alt="野菜のおかず"  class="category-icon">　-->
+              <%= image_tag("category-icon/yasai.png" ,:class => "category-icon") %>
+              <%= link_to '野菜のおかず', vagetables_path %>
+          </li> 
           <li>
             <!-- <a href="menu-recipe.html">
               <img src="/assets/category-icon/oniku.png" alt="お肉のおかず" class="category-icon">
@@ -80,24 +80,25 @@
              <%= image_tag("category-icon/obento.png" ,:class => "category-icon") %>
             <%= link_to 'お弁当', boxes_path %>
           </li>
-          <!-- <li>
-            <a href="menu-recipe.html">
-              <img src="/assets/category-icon/omotenashi.png" alt="おもてなし料理"  class="category-icon">
-              おもてなし料理
-            </a>
+          <li>
+            <!-- <a href="menu-recipe.html">
+              <img src="/assets/category-icon/omotenashi.png" alt="おもてなし料理"  class="category-icon">--> 
+              <%= image_tag("category-icon/omotenashi.png" ,:class => "category-icon")%>
+              <%= link_to 'おもてなし料理', hospitalities_path %>
           </li>
           <li>
-            <a href="menu-recipe.html">
-              <img src="/assets/category-icon/okashi.png" alt="お菓子" class="category-icon">
-              お菓子
-            </a>
+            <!-- <a href="menu-recipe.html">
+              <img src="/assets/category-icon/okashi.png" alt="お菓子" class="category-icon"> -->
+              <%= image_tag('category-icon/okashi.png' ,:class => "category-icon") %>
+              <%= link_to 'お菓子', snacks_path %>
           </li>
           <li>
-            <a href="menu-recipe.html">
+           <!--  <a href="menu-recipe.html">
               <img src="/assets/category-icon/pan.png" alt="パン" class="category-icon">
-              パン
-            </a>
-          </li> -->
+              パン -->
+              <%= image_tag("category-icon/pan.png" ,:class => "category-icon") %>
+              <%= link_to "パン" , pans_path %>
+          </li> 
 
         </ul>
       </div>
