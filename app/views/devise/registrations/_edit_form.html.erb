@@ -9,6 +9,31 @@
     <div class="gutters row pb-30 pt-30">
         <div class="col col-12 inner">
           <br>
+          <div class=" gutters row">
+            <div class="col col-20">
+              <div class="edit-recipe-title-container">
+                <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前</div>
+                <div class="edit-area">  
+                    <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'お名前を入力', rows:'2' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="sp-head"><br><br><br><i class="icon-s icon-image"></i>写真</div>
+            <div class="edit-recipe-img-container">    
+              <div class="centering">
+                 <div class="edit-recipe-img-typetext imgInput">
+                    <%= f.file_field :image %>
+                    <%= image_tag("no_image.png", :class => "imgView") %>
+                 </div>
+              </div>
+            </div>
+
+            <br>
+
           <div class="sp-head edit-label">
                <i class="icon-s icon-play"></i>&nbsp;メールアドレス
           </div>
@@ -65,7 +90,7 @@
             </div>  
           </div>
           <div class="actions centering mt-56 create-recipe-btn-container" >       
-          <%= f.submit "プロフィルを変更する", class: 'create-recipe-btn' %>
+          <%= f.submit "プロフィールを変更する", class: 'create-recipe-btn' %>
         </div>
         </div>
 
