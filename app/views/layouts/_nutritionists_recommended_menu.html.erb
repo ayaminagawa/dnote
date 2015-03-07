@@ -7,7 +7,7 @@
               <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
             <%= link_to menu_path(@nurtrition_menu) do %>
-              <div class="recommended-image" style="background-image: url('/system/menus/images/000/000/0<%= @nurtrition_menu.id %>/original/<%= @nurtrition_menu.image_file_name %>');">
+              <div class="recommended-image" style="background-image: url(/system/menus/images/000/000/0<%= @nurtrition_menu.id %>/original/<%= @nurtrition_menu.image_file_name %>);">
               </div>
             <% end %>
             
