@@ -60,7 +60,9 @@
         <div class="gutters row inner-30 pb-30">
           <div class="col col-13 menu-img">
            <!--  <img src="images/menu-1.jpg" alt="menu-img" class="photo"> -->
-             <%= image_tag @menu.image, class: "photo" %>
+           <div class="recommended-image" style="background-image: url('/system/menus/images/000/000/0<%= @menu.id %>/original/<%= @menu.image_file_name %>');">
+              </div>
+       
           </div>
 
           <div class="col col-11">

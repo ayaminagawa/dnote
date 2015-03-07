@@ -6,7 +6,11 @@
             <!-- <a href="recipe.html">
               <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
-            <%= link_to image_tag(@nurtrition_menu.image, :class => "photo"), menu_path(@nurtrition_menu) %>
+            <%= link_to menu_path(@nurtrition_menu) do %>
+              <div class="recommended-image" style="background-image: url('/system/menus/images/000/000/0<%= @nurtrition_menu.id %>/original/<%= @nurtrition_menu.image_file_name %>');">
+              </div>
+            <% end %>
+            
           </div>
           <div class="nuturition gutters row">
             <div class="col col-6 col-xs col-xs-6">
