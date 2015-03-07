@@ -23,13 +23,13 @@
             <!-- <a href="create-recipe.html"> -->
             <i class="icon-edit"></i>
             <% if user_signed_in? %>
-              <%= link_to "レシピを投稿", new_recipe_path %>
+              <%= link_to "レシピをのせる", new_recipe_path %>
             <% else %>
-              <li class="signup">
+              <div class="signup">
                 <a href="#modal" >
-                 <%= link_to "レシピを投稿", about_path %>
+                  レシピをのせる
                 </a>
-              </li>
+              </div>
             <% end %>
             <!-- </a> -->
           </div>
@@ -40,18 +40,16 @@
             <% if user_signed_in? %>
               <%= link_to "献立を投稿", new_menu_path %>
             <% else %>
-              <li class="signup">
+              <div class="signup">
                 <a href="#modal" >
-               　　</i><%= link_to "献立を投稿", about_path %>
+                  献立をのせる
                 </a>
-              </li>
+              </div>
             <% end %>
            <!--  </a> -->
           </div>
         </div>
       </div>
-
-
 
       <div class="sidemenu-search-container">
         <!-- <form action="#">
