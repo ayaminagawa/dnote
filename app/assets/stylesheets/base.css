@@ -366,7 +366,7 @@ body {
   padding-top: 1rem;
   padding-bottom: 20px;
   border-top: solid 1px #ddd1d1;
-  background: #fff url('pickup-bg.png');
+  background: #fff url('/pickup-bg.png');
 }
 
 .footer-logo {
