@@ -51,6 +51,7 @@ class UsersController < ApplicationController
   def update
     file = params[:user][:image]
     @user.set_image(file)
+    raise
 
     respond_to do |format|
       if @user.update(user_params)
