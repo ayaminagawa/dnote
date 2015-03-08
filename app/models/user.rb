@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :recipes, dependent: :destroy 
   has_many :made_reports, dependent: :destroy
 	# has_secure_password
-  # validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
 
   has_many :favorites
   has_many :favorite_recipes, through: :favorites, source: :recipe

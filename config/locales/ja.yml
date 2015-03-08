@@ -192,10 +192,28 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
-  attributes:
-    recipe:
-      name: 名前
-      description: キャッチコピー
-      ingredients: 材料の
-      procedures: 作り方の
-      body: 内容
+
+  activerecord:
+    attributes:
+      recipe:
+        name: レシピ名
+        description: キャッチコピー
+      ingredients:
+        name: 材料の名前
+      procedures: 
+        body: 作り方の内容
+      menu:
+        name: 献立名
+        point: ポイント
+      user:
+        name: 名前
+        password: パスワード
+      made_report:
+        message: コメント
+        image: 写真のファイル
+
+    models:
+      user: ユーザー
+      recipe: レシピ
+      menu: 献立
+      made_report: つくれぽ

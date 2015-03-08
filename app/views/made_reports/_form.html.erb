@@ -3,6 +3,19 @@
 
 <%= form_for @made_report, :url => {:action => 'create'} do |f| %>
 
+ <% if @made_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@made_report.errors.count, "error") %> prohibited this made_report from being saved:</h2>
+
+      <ul>
+      <% @made_report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
 <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>つくれぽを作る</h2>
 
 <div class="container-full inner-30">
