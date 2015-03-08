@@ -11,7 +11,7 @@ Devise.setup do |config|
     config.omniauth :facebook, "1407581469552162", "eb129520033df6ca0720c4bdb79e8d96"
     config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
   else
-    config.omniauth :facebook, "1407581469552162", "eb129520033df6ca0720c4bdb79e8d96"
+    config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca"
     config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
   end
 
@@ -26,28 +26,28 @@ Devise.setup do |config|
 # "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y",
 # {:image_size => 'original', :display => 'popup'} )
 
- if Rails.env.production?
-    config.omniauth( :facebook,
-                   “296639803850370”,
-                   “5fb208a1d610b0f181edac761263e5f4”,
-                   {:scope => ‘email’} )
+ # if Rails.env.production?
+ #    config.omniauth( :facebook,
+ #                   “296639803850370”,
+ #                   “5fb208a1d610b0f181edac761263e5f4”,
+ #                   {:scope => ‘email’} )
 
-    config.omniauth( :twitter,
-                   “1vxs3aaEZ5XRsKpPlOoUFPlja”,
-                   “KhH6ZWSXsJoe9YLURlEFNQdbJ2Ntce2IkHZyhyXg0EoumwiIoz”,
-                   {:image_size => ‘original’, :display => ‘popup’} )
-  elsif Rails.env.environment?
-    config.omniauth( :facebook,
-                   “251217685088177”,
-                   “e592f899712dee1f2dd948567c7c54a3”,
-                   {:scope => ‘email’} )
+ #    config.omniauth( :twitter,
+ #                   “1vxs3aaEZ5XRsKpPlOoUFPlja”,
+ #                   “KhH6ZWSXsJoe9YLURlEFNQdbJ2Ntce2IkHZyhyXg0EoumwiIoz”,
+ #                   {:image_size => ‘original’, :display => ‘popup’} )
+ #  elsif Rails.env.environment?
+ #    config.omniauth( :facebook,
+ #                   “251217685088177”,
+ #                   “e592f899712dee1f2dd948567c7c54a3”,
+ #                   {:scope => ‘email’} )
 
-    config.omniauth( :twitter,
-                   “vG0RxqWBz5Jz2ayuz7hp8DeQX”,
-                   “Q3CBR6w52mfk3hxG0kk8PmUciNn9gOrBl3kHQKBWELMNgWkzMi”,
-                   {:image_size => ‘original’, :display => ‘popup’} )
+ #    config.omniauth( :twitter,
+ #                   “vG0RxqWBz5Jz2ayuz7hp8DeQX”,
+ #                   “Q3CBR6w52mfk3hxG0kk8PmUciNn9gOrBl3kHQKBWELMNgWkzMi”,
+ #                   {:image_size => ‘original’, :display => ‘popup’} )
  
-  end
+ #  end
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
