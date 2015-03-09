@@ -8,11 +8,11 @@ Devise.setup do |config|
 
 # API key
   if Rails.env.production?     
-    config.omniauth :facebook, "1407581469552162", "eb129520033df6ca0720c4bdb79e8d96",{:scope => ‘email’, :image_size => 'square'}
+    config.omniauth :facebook, "1407581469552162", "eb129520033df6ca0720c4bdb79e8d96"
     config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
   else
-    config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca",{:scope => ‘email’, :image_size => 'square'}
-    config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y", {:image_size => ‘original’, :display => ‘popup’}
+    config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca"
+    config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
   end
 
  # if Rails.env.production?
