@@ -15,7 +15,6 @@ Devise.setup do |config|
     config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y", {:image_size => ‘original’, :display => ‘popup’} )
   end
 
-
  # if Rails.env.production?
  #    config.omniauth( :facebook,
  #                   “296639803850370”,
