@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   #   image.s3_object(style).url_for(:read, :secure => true)
   # end
 
-    has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"
+    has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },:url => "/images/:class/:attachment/:id_partition/:style/:filename", default_url: "/system/missing/:style/missing.jpg"
 
     validates_attachment :image, 
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },

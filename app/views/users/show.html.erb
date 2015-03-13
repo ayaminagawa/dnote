@@ -26,7 +26,7 @@
 
 </head>
 <body>
-<%= form_for(@user) do |f| %>
+
 
   <div id="wrapper">
     <!-- Header -->
@@ -53,8 +53,11 @@
           <div class="inner mykitchen-head"> <%= @user.name %>さん</div>
           <ul >
           <div class="author-img-sp">
-            <%= image_tag(@user.image_file_name)   %>
-            <%= image_tag(@user.image) %>
+            <% if @user.provider = 'twitter' %>
+              <%= image_tag(@user.image) %>
+            <% else %>
+              <%= image_tag(@user.image_file_name)   %>
+            <% end %>
           <!--   <%= profile_image_for @user %> -->
           </div>
           <!-- <a href="#" class="author-img-edit">
@@ -310,4 +313,3 @@
 <!-- サイドバー -->
 <%= render 'layouts/sidebar' %>
 
-<% end %>
