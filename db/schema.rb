@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226082454) do
+ActiveRecord::Schema.define(version: 20150313071449) do
+
+  create_table "category_selects", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "menu_id"
+    t.integer  "category_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category"
+    t.integer  "category_number2"
+    t.integer  "category_number3"
+    t.integer  "category_number4"
+    t.integer  "category_number5"
+  end
 
   create_table "contacts", force: true do |t|
     t.string   "email"
@@ -81,7 +94,6 @@ ActiveRecord::Schema.define(version: 20150226082454) do
     t.string   "name"
     t.string   "point"
     t.string   "image"
-    t.integer  "category"
     t.integer  "user_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -112,12 +124,12 @@ ActiveRecord::Schema.define(version: 20150226082454) do
     t.string   "image"
     t.integer  "recipe_select"
     t.integer  "favorite_number"
-    t.integer  "category"
     t.integer  "kind"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "category"
   end
 
   create_table "users", force: true do |t|

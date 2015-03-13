@@ -1,0 +1,33 @@
+<h1>Listing categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Recipe</th>
+      <th>Menu</th>
+      <th>Category number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.id %></td>
+        <td><%= category.recipe_id %></td>
+        <td><%= category.menu_id %></td>
+        <td><%= category.category_number %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>

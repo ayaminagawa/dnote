@@ -145,12 +145,11 @@
               <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>
 
               <div>
-                <label><%= f.radio_button :category, 1, {:checked => true} %>カロリー表示あり</label>
-                <label><%= f.radio_button :category, 2 %>糖質制限食 </label>
-                <label><%= f.radio_button :category, 3 %>HbA1c、血糖値の安定 </label>
-                <label><%= f.radio_button :category, 4 %>味に自信あり </label>
-                <label><%= f.radio_button :category, 5 %>すぐできるメニュー</label>
-
+                <label><%= f.check_box :category, 1, {:checked => true} %>カロリー表示あり</label>
+                <label><%= f.check_box :category, 2 %>糖質制限食 </label>
+                <label><%= f.check_box :category, 3 %>HbA1c、血糖値の安定 </label>
+                <label><%= f.check_box :category, 4 %>味に自信あり </label>
+                <label><%= f.check_box :category, 5 %>すぐできるメニュー</label>
               </div>
 
         </div>

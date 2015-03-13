@@ -1,0 +1,9 @@
+<span >
+
+    <% if current_user.favorite_recipe?(recipe) %>
+      <%= render 'categories/destroy', recipe: recipe %>
+    <% else %>
+      <%= render 'categories/create', recipe: recipe %>
+    <% end %>
+
+</span>
