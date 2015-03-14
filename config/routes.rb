@@ -1,5 +1,7 @@
 Dnote::Application.routes.draw do
 
+  resources :categories
+
   get "create/destroy"
   get "create/show"
   devise_for :users, controllers: {

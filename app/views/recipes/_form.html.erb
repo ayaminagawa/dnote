@@ -198,16 +198,37 @@
                     <label><%= f.radio_button :kind, "12" %> パン</label>
               </div>
               <br>
-              <div class="radio-button">
-                    <label><%= f.radio_button :category, "1", {:checked => true} %> カロリー表示あり</label>
-                    <label><%= f.radio_button :category, "2" %>糖質制限食 </label>
-                    <label><%= f.radio_button :category, "3" %>HbA1c、血糖値の安定 </label>
-                    <label><%= f.radio_button :category, "4" %>味に自信あり </label>
-                    <label><%= f.radio_button :category, "5" %>すぐできるメニュー</label>
-              </div>
+     
+                <ul>
+                  <%= f.fields_for :category_selects, @category_selects do |f| %>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number2 %>
+                        糖質制限食
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number3 %>
+                        HbA1c、血糖値の安定
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number4 %>
+                        味に自信あり
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number5 %>
+                        すぐできるメニュー
+                      </lavel>
+                    </li>                                                            
+                  <% end %>
+                </ul>
 
             </div>
-           
 
             <div class="centering mt-56 create-recipe-btn-container" >
 <!--          <a href="#" class="create-recipe-btn">レシピを公開する</a> -->          

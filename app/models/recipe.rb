@@ -12,6 +12,8 @@ class Recipe < ActiveRecord::Base
 	accepts_nested_attributes_for :ingredients, :allow_destroy => true
 	has_many :procedures, :class_name => "Procedure", :dependent => :destroy
   	accepts_nested_attributes_for :procedures, :allow_destroy => true
+  	has_many :category_selects, :class_name => "CategorySelect", :dependent => :destroy
+  	accepts_nested_attributes_for :category_selects
   	
   	
 

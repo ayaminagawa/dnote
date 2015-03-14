@@ -23,6 +23,7 @@ class MenusController < ApplicationController
     @menu_recipe_side2 = MenuRecipe.new(params[:side2])   
     @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
+    @menu.category_selects.build
   end
 
   # GET /menus/1/edit
@@ -35,7 +36,7 @@ class MenusController < ApplicationController
   # POST /menus.json
   def create
     @menu = current_user.menus.build(menu_params)
-     @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
+    @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
     
 
@@ -108,6 +109,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:name, :point, :category, :image)
+      params.require(:menu).permit(:name, :point, :category, :image, category_selects_attributes: [:category_number2, :category_number3, :category_number4, :category_number5])
     end
 end
