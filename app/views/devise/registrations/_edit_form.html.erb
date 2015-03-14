@@ -50,45 +50,9 @@
           <div>メールアドレスを確認しています: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-      
-
           <br>
-          <div class="sp-head edit-label">
-               <i class="icon-s icon-play"></i>&nbsp;新しいパスワード
-          </div>
-          <div class="field">
-            <div class="fields">
-              <ul class="inner-30 edit-ingredient-container">
-                   <% if @validatable %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-                  <% end %><br />
-                  <%= f.password_field :password, autocomplete: "off",class:'edit-field edit-recipe-title' %> 
-              </ul>
-            </div>  
-          </div>
-          <br>
-          <div class="sp-head edit-label">
-              <i class="icon-s icon-play"></i>&nbsp;パスワード確認
-          </div>
-          <div class="field">
-            <div class="fields">
-              <ul class="inner-30 edit-ingredient-container">
-                   <%= f.password_field :password_confirmation, autocomplete: "off",class:'edit-field edit-recipe-title' %>
-              </ul>
-            </div>  
-          </div>
-    
-          <br>
-          <div class="sp-head edit-label">
-               <i class="icon-s icon-play"></i>&nbsp;古いパスワード
-          </div>
-          <div class="field">
-            <div class="fields">
-              <ul class="inner-30 edit-ingredient-container">
-                  <%= f.password_field :current_password, autocomplete: "off",class:'edit-field edit-recipe-title' %> 
-              </ul>
-            </div>  
-          </div>
+         
+          
           <div class="actions centering mt-56 create-recipe-btn-container" >       
           <%= f.submit "プロフィールを変更する", class: 'create-recipe-btn' %>
         </div>
