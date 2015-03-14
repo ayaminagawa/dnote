@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    current_user.favorite_recipe!(@recipe)]
+    current_user.favorite_recipe!(@recipe)
   end
 
   def destroy
