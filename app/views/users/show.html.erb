@@ -53,11 +53,8 @@
           <div class="inner mykitchen-head"> <%= @user.name %>さん</div>
           <ul >
           <div class="author-img-sp">
-            <% if @user.provider = 'twitter' %>
-              <%= image_tag(@user.image) %>
-            <% else %>
-              <%= image_tag(@user.image_file_name)   %>
-            <% end %>
+              <div class="recommended-image" style="background-image: url('<%= @user.image.url %>');">
+              </div>
           <!--   <%= profile_image_for @user %> -->
           </div>
           <!-- <a href="#" class="author-img-edit">
@@ -85,7 +82,10 @@
                 <!-- <a href="recipe.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= image_tag recipe.image, class: "photo" %>
+                 <%= link_to recipe_path(recipe) do %>
+                    <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url %>');">
+                    </div>
+                  <% end %>
               </div>
             </li>
             <% end %>
@@ -120,7 +120,11 @@
                 <!-- <a href="menu.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= image_tag menu.image, class: "photo" %>
+                 
+                  <%= link_to menu_path(menu) do %>
+                    <div class="recommended-image photo" style="background-image: url('<%= menu.image.url %>');">
+                    </div>
+                  <% end %>
               </div>
             </li>
             <% end %>
@@ -171,7 +175,8 @@
                <!-- <a href="recipe.html">
                 <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                <%= image_tag made_report.image, class: "photo"%>
+                <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url %>');">
+                </div>
               </div>
 
               <div class="repo-date">
@@ -272,8 +277,10 @@
       </div>
 
       <div class="menu-img">
-       
-        <%= image_tag favorite_recipe.image, class: "photo" %>
+        <%= link_to recipe_path(favorite_recipe) do %>
+          <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
+          </div>
+        <% end %>
       </div>
 
       <div class="menu-comment">
