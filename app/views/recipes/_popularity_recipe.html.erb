@@ -17,7 +17,10 @@
               <!-- <a href="recipe.html">
                 <img src="/assets/recipe-2.jpg" alt="" class="photo">
               </a> -->
-              <%= link_to image_tag(favorite_recipe.image , class: "photo"), recipe_path(favorite_recipe) %>
+              <%= link_to recipe_path(favorite_recipe) do %>
+              <div class="photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
+              </div>
+            <% end %>
             </div>
             <p class="menu-title">
               <!-- <a href="recipe.html">チーズのこってりサラダ！ワインといっしょにおいしいよ！</a> -->
