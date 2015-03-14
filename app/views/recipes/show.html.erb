@@ -90,7 +90,10 @@
           <div class="gutters row pb-30">
             <div class="col col-12">
               <div class="menu-img">
-                  <%= image_tag @recipe.image, class: "photo" %>
+                  <%= link_to recipe_path(@recipe) do %>
+                    <div class="recommended-image photo" style="background-image: url('<%= @recipe.image.url %>');">
+                    </div>
+                  <% end %>
               </div>
 
               <p class="menu-comment">
@@ -145,7 +148,8 @@
               <div class="gutters row">
                 <div class="step-img col col-xs col-xs-11">
                   <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                  <%= image_tag procedure.image, class: "photo" %>
+                    <div class="recommended-image photo" style="background-image: url('<%= procedure.image.url %>');">
+                    </div>
                 </div>
 
                 <div class="col col-xs col-xs-12 step-info">
