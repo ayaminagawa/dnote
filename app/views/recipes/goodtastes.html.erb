@@ -67,7 +67,7 @@
              <!--  <a href="menu.html">
                 <img src="images/menu-item-1.jpg" alt="" class="photo">
               </a> -->
-              <%= image_tag menu_goodtaste.image, class: "photo" %>
+               <div class="recommended-image photo" style="background-image: url('<%= menu_goodtaste.image.url %>');">
             </div>
           </div>
 
@@ -119,7 +119,7 @@
                 <!-- <a href="recipe.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                <%= image_tag goodtaste.image, class: "photo" %>
+                <div class="recommended-image photo" style="background-image: url('<%= goodtaste.image.url %>');">
               </div>
             </div>
 

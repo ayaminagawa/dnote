@@ -64,25 +64,38 @@ class RecipesController < ApplicationController
   end
 
   def sugars
-    @sugars = Recipe.find(:all, :conditions => { :category => 2 }) 
-    @menu_sugars = Menu.find(:all, :conditions => { :category => 2 }) 
+    @category_selects = CategorySelect.find(:all, :conditions => { :category_number2 => 1, :menu_id => nil})
+    @sugars = @category_selects.map{|category_select| category_select.recipe}
+    # @sugars = Recipe.find(:all, :conditions => { :category => 2 }) 
+    # @menu_sugars = Menu.find(:all, :conditions => { :category => 2 }) 
+    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number2 => 1, :recipe_id => nil})
+    @menu_sugars = @category_menu_selects.map{|category_select| category_select.menu}
   end
 
   def stabilities
-    @stabilities = Recipe.find(:all, :conditions => { :category => 3 }) 
-    @menu_stabilities = Menu.find(:all, :conditions => { :category => 3 }) 
+    @category_selects = CategorySelect.find(:all, :conditions => { :category_number3 => 1, :menu_id => nil})
+    @stabilities = @category_selects.map{|category_select| category_select.recipe}
+    # @menu_stabilities = Menu.find(:all, :conditions => { :category => 3 }) 
+    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number3 => 1, :recipe_id => nil})
+    @menu_stabilities = @category_menu_selects.map{|category_select| category_select.menu}
    
   end
 
   def goodtastes
-    @goodtastes = Recipe.find(:all, :conditions => { :category => 4 }) 
-    @menu_goodtastes = Menu.find(:all, :conditions => { :category => 4 }) 
+    @category_selects = CategorySelect.find(:all, :conditions => { :category_number4 => 1, :menu_id => nil})
+    @goodtastes = @category_selects.map{|category_select| category_select.recipe}
+    # @menu_goodtastes = Menu.find(:all, :conditions => { :category => 4 }) 
+    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number4 => 1, :recipe_id => nil})
+    @menu_goodtastes = @category_menu_selects.map{|category_select| category_select.menu}
     
   end
 
   def easies
-    @easies = Recipe.find(:all, :conditions => { :category => 5 }) 
-    @menu_easies = Menu.find(:all, :conditions => { :category => 5 }) 
+    @category_selects = CategorySelect.find(:all, :conditions => { :category_number5 => 1, :menu_id => nil})
+    @easies = @category_selects.map{|category_select| category_select.recipe}
+    # @menu_easies = Menu.find(:all, :conditions => { :category => 5 }) 
+    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number5 => 1, :recipe_id => nil})
+    @menu_easies = @category_menu_selects.map{|category_select| category_select.menu}
     
   end
 
@@ -100,7 +113,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     3.times{@recipe.ingredients.build}
     4.times{@recipe.procedures.build}
-    4.times{@recipe.category_selects.build}
+    @recipe.category_selects.build
     # @ingredient = Ingredient.new
     # @category_select = CategorySelect.new(params[:category])  
   end
@@ -159,7 +172,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :tip, :image, :calorie, :kind, category_selects_attributes: [:category_number2, :apply2, :category_number3, :apply3, :category_number4, :apply4, :category_number5, :apply5], ingredients_attributes: [:name, :volume], procedures_attributes: [:body, :image])
+      params.require(:recipe).permit(:name, :description, :recipe_select, :tip, :image, :calorie, :kind, category_selects_attributes: [:category_number2, :category_number3, :category_number4, :category_number5], ingredients_attributes: [:name, :volume], procedures_attributes: [:body, :image])
     end
 
     # def ingredient_params
