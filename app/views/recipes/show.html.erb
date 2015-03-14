@@ -202,7 +202,8 @@
                   <%= made_report.created_at %>
                 </div>
                 <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                <%= image_tag made_report.image, class: "photo" %>
+                <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url %>');">
+                </div>
               </div>
 
               <p class="repo-text">
@@ -254,7 +255,10 @@
             <!-- <a href="recipe.html">
               <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
-           <%= image_tag @recommended_recipe.image, class: "photo" %>
+           <%= link_to recipe_path(@recommended_recipe) do %>
+              <div class="recommended-image photo" style="background-image: url('<%= @recommended_recipe.image.url %>');">
+              </div>
+           <% end %>
           </div>
           <p class="menu-title recommend-title">
             <!-- <a href="recipe.html">サーモンのクリーム煮たっぷり香草和え
