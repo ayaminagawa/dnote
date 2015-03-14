@@ -55,14 +55,14 @@
     
       <ul class="inner pt-30 tab-container menu-container" id="menu-container">
         <!-- 献立ひとつ分 -->
-        <% @menu_calories.each do |menu_calorie| %>
+        
         <li class="gutters row menu">
           <div class="col col-11 col-xs col-xs-11">
             <div class="menu-img">
               <!-- <a href="menu.html">
                 <img src="images/menu-item-1.jpg" alt="" class="photo">
               </a> -->
-              <%= image_tag menu_calorie.image, class: "photo" %>
+              
             </div>
           </div>
 
@@ -72,11 +72,11 @@
                 献立タイトルが入ります
                 献立タイトルが入ります
               </a> -->
-              <%= link_to menu_calorie.name, menu_path(menu_calorie) %>
+             
             </div>
 
             <p class="menu-comment">
-              <%= menu_calorie.point %>
+             
             </p>
 
             <ul class="menu-list sp-off">
@@ -90,13 +90,13 @@
 
               <li class="author">
                 <!-- <a href="#">by つくったひと</a> -->
-                by <%= link_to menu_calorie.user.name, user_path(menu_calorie.user) %>
+                
               </li>
               
             </ul>
           </div>
         </li>
-        <% end %>
+       
         <!-- 献立ひとつ分 -->
       </ul>
 
