@@ -61,7 +61,7 @@ class RecipesController < ApplicationController
   def calories
     # @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
     # @menu_calories = Menu.find(:all, :conditions => { :category => 1 }) 
-    @calories = Recipe.find(:all, :conditions => ["calorie NOT ?", nil])
+    @calories = Recipe.where.not(calorie: nil)
   end
 
   def sugars
