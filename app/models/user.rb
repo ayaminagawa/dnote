@@ -54,30 +54,39 @@ class User < ActiveRecord::Base
     end
 
 
-    def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    def self.find_for_facebook_oauth(auth)
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
       unless user
-        user = User.create!(name:     auth.extra.raw_info.name,
+        # file = open("http://graph.facebook.com/#{@user.facebook_id}/picture")
+        # image_data = file.read
+        # file_size = file.length
+        # mime_type = "image/jpeg" #fb photos always are jpg
+        user = User.new(name:    auth.extra.raw_info.name,
                            provider: auth.provider,
                            uid:      auth.uid,
                            email:    auth.info.email,
                            password: Devise.friendly_token[0,20],
-                           image:    auth.info.image
                           )
+        # paperclip用に画像を扱う
+        user.image = URI.parse(User.process_uri(auth.info.image)) if auth.info.image?
+        user.save!
       end
       user
     end
 
+
     def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
       unless user
-        user = User.create(name:     auth.info.nickname,
+        user = User.new(name:     auth.info.nickname,
                            provider: auth.provider,
                            uid:      auth.uid,
                            email:    User.create_unique_email,
                            password: Devise.friendly_token[0,20],
-                           image:    auth.info.image
                           )
+        # paperclip用に画像を扱う
+        user.image = URI.parse(User.process_uri(auth.info.image)) if auth.info.image?
+        user.save!
       end
       user
     end
@@ -106,6 +115,15 @@ class User < ActiveRecord::Base
 
     def unfavorite_menu!(menu)
       favorites.find_by(menu_id: menu.id).destroy
+    end
+
+    # Facebook, Twitterの画像を扱う
+    def User.process_uri(uri)
+      require 'open-uri'
+      require 'open_uri_redirections'
+      open(uri, :allow_redirections => :safe) do |r|
+        r.base_uri.to_s
+      end
     end
 
 end
