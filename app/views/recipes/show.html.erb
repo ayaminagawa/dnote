@@ -104,13 +104,14 @@
                 <%= link_to @recipe.user.name, user_path(@recipe.user)%>
               </p>
 
-              <div class="pull-left mt-30">
-                
-                <p class="kcal">
-                  <i class="icon-scales"></i>
-                  <%= @recipe.calorie %>Kcal
-                </p>
-              </div>
+              <% if @recipe.calorie.present? %>
+                <div class="pull-left mt-30">
+                  <p class="kcal">
+                    <i class="icon-scales"></i>
+                    <%= @recipe.calorie %>Kcal
+                  </p>
+                </div>
+              <% end %>
 
             </div>
 
