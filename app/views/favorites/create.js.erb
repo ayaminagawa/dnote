@@ -1,2 +1,2 @@
-$('#recipe_<%= @recipe.id %>').html('<%= escape_javascript(render("favorites/favorite_btn", recipe: @recipe)) %>')
-$('#favorites').text('<%= current_user.favorites.count %>')
+$('#recipe_<%= @recipe.id %>').html('<%= escape_javascript(render("favorites/favorite_btn", recipe: @recipe)) %>');
+$('#favorites').text('<%= current_user.favorites.count %>');

@@ -89,6 +89,7 @@ class User < ActiveRecord::Base
 
     def favorite_recipe!(recipe)
       favorites.create!(recipe_id: recipe.id)
+      raise
     end
 
     def unfavorite_recipe!(recipe)
