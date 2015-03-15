@@ -12,7 +12,6 @@ module ApplicationHelper
     link_to_function(name, raw("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end
 
-
   #current_userの存在の確認
   def current_user?(user)
     user == current_user
