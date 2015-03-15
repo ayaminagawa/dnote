@@ -58,7 +58,10 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag soup.image, class: "photo" %>
+            <%= link_to recipe_path(soup) do %>
+                <div class="recommended-image photo" style="background-image: url('<%= soup.image.url %>');">
+                </div>
+             <% end %>
           </div>
         </div>
 

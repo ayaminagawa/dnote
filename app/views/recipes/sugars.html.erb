@@ -68,8 +68,10 @@
             <!-- <a href="menu.html">
               <img src="images/menu-item-1.jpg" alt="" class="photo">
             </a> -->
+            <%= link_to menu_path(menu_sugar) do %>
              <div class="recommended-image photo" style="background-image: url('<%= menu_sugar.image.url %>');">
-          </div>
+             </div>
+             <% end %>
         </div>
 
         <div class="col col-13 col-xs col-xs-13">
@@ -120,8 +122,10 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
+            <%= link_to recipe_path(sugar) do %>
              <div class="recommended-image photo" style="background-image: url('<%= sugar.image.url %>');">
-          </div>
+             </div>
+            <% end %>
         </div>
         
 

@@ -58,7 +58,10 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag meet.image, class: "photo" %>
+            <%= link_to recipe_path(meet) do %>
+                <div class="recommended-image photo" style="background-image: url('<%= meet.image.url %>');">
+                </div>
+            <% end %>
           </div>
         </div>
 

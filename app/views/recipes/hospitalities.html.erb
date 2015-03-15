@@ -60,7 +60,10 @@
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-            <%= image_tag hospitality.image, class: "photo" %>
+            <%= link_to recipe_path(hospitality) do %>
+                <div class="recommended-image photo" style="background-image: url('<%= hospitality.image.url %>');">
+                </div>
+            <% end %>
           </div>
         </div>
 
