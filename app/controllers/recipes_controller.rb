@@ -162,7 +162,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1.json
   def destroy
     @recipe.destroy
-    redirect_to root_url
+    redirect_to '/about'
   end
 
   private
