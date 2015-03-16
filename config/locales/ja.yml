@@ -202,6 +202,7 @@ ja:
         name: 材料の名前
       procedures: 
         body: 作り方の内容
+        image: 作り方の画像のファイル
       menu:
         name: 献立名
         point: ポイント
