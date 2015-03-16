@@ -74,6 +74,7 @@
               </a> -->
              
             </div>
+          </div>
 
             <p class="menu-comment">
              
@@ -114,8 +115,9 @@
               <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url %>');">
               </div>
              <% end %>
-
+            </div>
         </div>
+
 
         <div class="col col-13 col-xs col-xs-13">
           <div class="menu-title">
@@ -124,6 +126,7 @@
                 </a> -->  
             <%= link_to calorie.name, recipe_path(calorie) %>
           </div>
+
 
           <p class="menu-comment">
             <%= calorie.description %>
@@ -140,7 +143,7 @@
       <% end %>    
       <!-- レシピひとつ分 -->
     </ul>
-  </div>
+
 
 </div>
 <!-- tab-box -->
