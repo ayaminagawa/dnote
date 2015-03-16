@@ -111,9 +111,10 @@
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
              <%= link_to recipe_path(calorie) do %>
-               <div class="recommended-image photo" style="background-image: calorie.image.url %>');">
-               </div>
+              <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url %>');">
+              </div>
              <% end %>
+
         </div>
 
         <div class="col col-13 col-xs col-xs-13">
