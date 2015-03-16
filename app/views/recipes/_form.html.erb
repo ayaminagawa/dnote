@@ -124,7 +124,7 @@
               <div class="sp-head edit-label">
                 <i class="icon-s icon-scales"></i>&nbsp;作り方
               </div>
-              <div class="field centering">
+              <div class="field">
                 <ul class="steps row" id="step-list">
                   <li class="step-head pc-off">作り方</li>
 
@@ -133,11 +133,15 @@
                           <%= render 'fields_procedure', {:f => procedure} %>
                   <% end %>
 
-                  <li class="step-add-btn"><%= link_to_add_fields "作り方を追加する", f, :procedures, id: "add-proc" %></li>
-                  
-                  <!-- 作り方 -->
+                      <div class="step-add-btn centering" style="clear:left;">
+                        <%= link_to_add_fields "作り方を追加する", f, :procedures, id: "add-proc" %>
+                      </div>
                 </ul>
               </div>
+                
+                  
+                  <!-- 作り方 -->
+            
               
               <div class="row edit-memo-history-container inner-30">
                 <div class="memo-history memo-head recipe-memo col col-12">
