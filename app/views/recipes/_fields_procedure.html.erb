@@ -1,36 +1,19 @@
 
 <li class="step col col-6">
-                  <div class="gutters row fields">
-                    
-                      <!-- <form action="#" class="form-step-img">
-                        <input type="file" class="uploader-step-img">
-                      </form> -->
-                      <div class="imgInput">
-                         <%= image_tag("no_image.png", :class => "imgView photo") %>
-                         <%= f.file_field :image %>
-                      </div>                      
-
-                      <!-- <div class="centering">
-                        <div class="edit-step-img-typetext">
-                          <i class="icon-s icon-camera"></i>
-                          <span class="border-b">変更</span>
-                          <form action="#" class="form-step-img">
-                            <input type="file" class="uploader-step-img-typetext">
-                          </form>
-                        </div>
-                      </div> -->
-                 
-
-                    <div class="col col-xs col-xs-12 edit-step-text-container">
-                      <div class="step-count"></div>
-                      <div class="edit-area">
-                        <%= f.text_area :body ,class: "edit-field",rows: "2" ,cols: "30", placeholder: "選択して編集する", style: "font-size: 1.25rem" %>
-                        <br>
-                      </div>
-                    </div>
-
-                    <div class="step-footer pull-right">
-                      <%= link_to_remove_fields "削除", f %> 
-                    </div>
-                  </div>
-                </li>
+  <div class="gutters row fields">
+    <div class="imgInput step-img col col-xs col-xs-11">
+      <%= image_tag("no_image.png", :class => "imgView photo") %>
+      <%= f.file_field :image %>
+    </div>                      
+    <div class="col col-xs col-xs-12 step-info">
+      <div class="step-count"></div>
+      <div class="edit-area">
+        <%= f.text_area :body ,class: "edit-field",rows: "2" ,cols: "30", placeholder: "選択して編集する", style: "font-size: 1.25rem" %>
+        <br>
+      </div>
+    </div>
+    <div class="step-footer pull-right">
+      <%= link_to_remove_fields "削除", f %> 
+    </div>
+  </div>
+</li>
