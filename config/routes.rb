@@ -26,6 +26,7 @@ Dnote::Application.routes.draw do
   get "menu/destroy"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
+  get "company", to: "about#company"
 
   get "column/index"
   get "about/index"
