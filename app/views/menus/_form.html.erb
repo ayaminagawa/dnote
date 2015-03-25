@@ -98,7 +98,9 @@
               </p> -->
               <% @main_recipes.each do |main_recipe| %>
                 <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
-                <%= image_tag main_recipe.image %><br>
+                <div class="recommended-image photo" style="background-image: url('<%= main_recipe.image.url %>');">
+                </div>
+               　<br>
               <% end %>
             </li>
 
@@ -117,7 +119,8 @@
               </p> -->
                <% @side_recipes.each do |side_recipe| %>
                  <label><%= radio_button_tag :side1, side_recipe.id %><%= side_recipe.name %></label><br>
-                 <%= image_tag side_recipe.image %><br>
+                 <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url %>');">
+                　</div><br>
                <% end %>
             </li>
 
@@ -135,7 +138,8 @@
               </p> -->
                <% @side_recipes.each do |side_recipe| %>
                 <label><%= radio_button_tag :side2, side_recipe.id %><%= side_recipe.name %></label><br>
-                <%= image_tag side_recipe.image %><br>
+                <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url %>');">
+                </div><br>
                <% end %>
             </li>
 
