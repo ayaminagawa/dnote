@@ -270,7 +270,7 @@
   <ul class="tab-container favorite-menu-container" id="favorite-menu">
     <% @favorite_recipes.each do |favorite_recipe|%>
     <li class="col col-8 inner favorite-menu" style="margin-left: 0">
-      <div class="menu-title">
+      <div class="menu-title" style="height: 40px">
         <!--  <a href="#"> 
         </a> -->
         <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
