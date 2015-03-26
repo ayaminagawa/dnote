@@ -97,7 +97,7 @@
                 <a href="#select-mainmenu-modal">クリックしてレシピを追加(必須)</a>
               </p> -->
               <% @main_recipes.each do |main_recipe| %>
-                <label><%= radio_button_tag :main, main_recipe.id %><%= main_recipe.name %></label><br>
+                <label><%= radio_button_tag :main, main_recipe.id , true %><%= main_recipe.name %></label><br>
                 <div class="recommended-image photo" style="background-image: url('<%= main_recipe.image.url %>');">
                 </div>
                　<br>
@@ -118,7 +118,7 @@
                 <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
               </p> -->
                <% @side_recipes.each do |side_recipe| %>
-                 <label><%= radio_button_tag :side1, side_recipe.id %><%= side_recipe.name %></label><br>
+                 <label><%= radio_button_tag :side1, side_recipe.id, true %><%= side_recipe.name %></label><br>
                  <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url %>');">
                 　</div><br>
                <% end %>
@@ -137,7 +137,7 @@
                 <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
               </p> -->
                <% @side_recipes.each do |side_recipe| %>
-                <label><%= radio_button_tag :side2, side_recipe.id %><%= side_recipe.name %></label><br>
+                <label><%= radio_button_tag :side2, side_recipe.id, true %><%= side_recipe.name %></label><br>
                 <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url %>');">
                 </div><br>
                <% end %>
