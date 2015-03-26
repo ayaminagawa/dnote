@@ -90,7 +90,8 @@
 ================================================*/
 .menu-title {
   margin: 0.5rem 0;
-  text-align: left; }
+  text-align: left;
+  height: 40px; }
 
 .menu-title a {
   color: #1d6613;
