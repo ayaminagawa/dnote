@@ -60,7 +60,7 @@
         <div class="gutters row inner-30 pb-30">
           <div class="col col-13 menu-img">
            <!--  <img src="images/menu-1.jpg" alt="menu-img" class="photo"> -->
-           <div class="recommended-image" style="background-image: url('<%= @menu.image.url %>');">
+           <div class="recommended-image photo" style="background-image: url('<%= @menu.image.url %>');">
            </div>
        
           </div>
@@ -79,7 +79,6 @@
  
 
           <ul class="menu-items">
-            <% @recipes.each do |recipe|%>
             <li class="menu-item col col-8">
               <div class="sp-off  menu-role main">
                 <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
@@ -87,16 +86,52 @@
               </div>
               <div class="menu-title">
                 <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
-                <%= link_to recipe.name, recipe_path(recipe) %>
+                <%= link_to @main_recipe.name, recipe_path(@main_recipe) %>
               </div>
               <div class="menu-img">
                 <!-- <a href="recipe.html">
                   <img src="images/menu-item-1.jpg" alt="" class="photo">
                 </a> -->
-                <%= image_tag recipe.image , class: "photo"%>
+                <div class="recommended-image photo" style="background-image: url('<%= @main_recipe.image.url %>');">
+                </div>
               </div>
             </li>
-            <% end %>
+
+            <li class="menu-item col col-8">
+              <div class="sp-off  menu-role main">
+                <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
+                <%= image_tag("main-icon.png", :alt => "", :class => "role-icon")%>
+              </div>
+              <div class="menu-title">
+                <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
+                <%= link_to @side1_recipe.name, recipe_path(@side1_recipe) %>
+              </div>
+              <div class="menu-img">
+                <!-- <a href="recipe.html">
+                  <img src="images/menu-item-1.jpg" alt="" class="photo">
+                </a> -->
+                <div class="recommended-image photo" style="background-image: url('<%= @side1_recipe.image.url %>');">
+                </div>
+              </div>
+            </li>
+
+            <li class="menu-item col col-8">
+              <div class="sp-off  menu-role main">
+                <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
+                <%= image_tag("main-icon.png", :alt => "", :class => "role-icon")%>
+              </div>
+              <div class="menu-title">
+                <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
+                <%= link_to @side2_recipe.name, recipe_path(@side2_recipe) %>
+              </div>
+              <div class="menu-img">
+                <!-- <a href="recipe.html">
+                  <img src="images/menu-item-1.jpg" alt="" class="photo">
+                </a> -->
+                <div class="recommended-image photo" style="background-image: url('<%= @side2_recipe.image.url %>');">
+                </div>
+              </div>
+            </li>
           </ul>
 
          <!--  <ul class="pc-off menu-items">

@@ -9,6 +9,7 @@ class Menu < ActiveRecord::Base
 	validates :point, presence: true
 	has_many :category_selects, :class_name => "CategorySelect", :dependent => :destroy
   	accepts_nested_attributes_for :category_selects
+  	accepts_nested_attributes_for :menu_recipes
 
 	
   	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"

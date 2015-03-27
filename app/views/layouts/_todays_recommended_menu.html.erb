@@ -12,15 +12,27 @@
             </div>
 
             <ul class="menu-list sp-off">
-             <% @recipes.each do |recipe|%>
               <li>
               <!--  <img src="/assets/menu-main-icon.png" alt="" class="menu-list-icon"> -->
               <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
                <!-- <a href="recipe.html">
                 ゴロゴロお肉のメキシカンスープ</a> -->
-               <%= link_to recipe.name, recipe_path(recipe) %>
+               <%= link_to @main_recipe.name, recipe_path(@main_recipe) %>
               </li>
-             <% end %>
+              <li>
+              <!--  <img src="/assets/menu-main-icon.png" alt="" class="menu-list-icon"> -->
+              <%= image_tag("menu-sub-icon.png", :alt => "", :class => "menu-list-icon")%>
+               <!-- <a href="recipe.html">
+                ゴロゴロお肉のメキシカンスープ</a> -->
+               <%= link_to @side1_recipe.name, recipe_path(@side1_recipe) %>
+              </li>
+              <li>
+              <!--  <img src="/assets/menu-main-icon.png" alt="" class="menu-list-icon"> -->
+              <%= image_tag("menu-sub-icon.png", :alt => "", :class => "menu-list-icon")%>
+               <!-- <a href="recipe.html">
+                ゴロゴロお肉のメキシカンスープ</a> -->
+               <%= link_to @side2_recipe.name, recipe_path(@side2_recipe) %>
+              </li>
 
               <li class="author">
                  by <%= link_to @todays_menu.user.name, user_path(@todays_menu.user) %>

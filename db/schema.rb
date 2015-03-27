@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313071449) do
+ActiveRecord::Schema.define(version: 20150326064607) do
 
   create_table "category_selects", force: true do |t|
     t.integer  "recipe_id"
@@ -84,6 +84,9 @@ ActiveRecord::Schema.define(version: 20150313071449) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "select_flag"
+    t.integer  "main"
+    t.integer  "side1"
+    t.integer  "side2"
   end
 
   add_index "menu_recipes", ["recipe_id", "menu_id"], name: "index_menu_recipes_on_recipe_id_and_menu_id", unique: true
