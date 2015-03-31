@@ -2,6 +2,8 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
+  config.scoped_views = true
+
    # API key   
     # config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca"
     # config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"

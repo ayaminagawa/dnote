@@ -71,26 +71,23 @@
 
             <div class="col col-18">
               <div class="author-name">
-                <p>有村香澄</p>
+                <p><%= @column.nutritionist.name %></p>
               </div>
               <div class="column-title">
-                <%= link_to "糖尿病で気をつけなければいけない事って？", column_index_path %>
+                <%= link_to @column.title, columns_path %>
                 <!-- <a href="column.html">糖尿病で気をつけなければいけない事って？</a> -->
               </div>
             </div>
           </div>
 
           <div class="column-content">
-            <div class="column-heading">
+            <!-- <div class="column-heading">
               大事なのはバランスのとれた食事
-            </div>
+            </div> -->
             <p class="column-text">
-              健康診断で「糖尿病のケがありますね」と指摘される人、多いですよね。<br>
-              そんなときは、大いに危機感を持って、絶対糖尿病にならない決<br>
-              意のもと、努力を開始して欲しい！というのが先回の要点でした。<br>
-              覚えておいてほしいポイントは・・・<br>
+              <%= @column.body %>
             </p>
-            <div class="column-heading">
+            <!-- <div class="column-heading">
               なんとしても習慣化！！
             </div>
             <p class="column-text">
@@ -101,7 +98,7 @@
               ・規則正しい生活は、肥満を防ぎ、糖尿病を遠ざける<br>
 
               基本は、食生活を見直し、運動する習慣をつけることです。<br>
-            </p>
+            </p> -->
           </div>
         </div>  
       </div>

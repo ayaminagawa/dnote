@@ -1,5 +1,16 @@
 Dnote::Application.routes.draw do
 
+  get "column/new"
+  get "column/create"
+  get "column/destroy"
+  get "column/update"
+  get "column/index"
+  resources :columns
+  
+  devise_for :nutritionists, controllers: {
+   :sessions => "nutritionists/sessions",
+   :registrations => "nutritionists/registrations"
+  }
   resources :categories
 
   get "create/destroy"
@@ -28,7 +39,6 @@ Dnote::Application.routes.draw do
   match '/about', to:'about#index', via:'get'
   get "company", to: "about#company"
 
-  get "column/index"
   get "about/index"
 
   resources :recipes do

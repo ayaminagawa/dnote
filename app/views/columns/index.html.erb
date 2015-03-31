@@ -21,7 +21,6 @@
   <div id="wrapper">
     <!-- Header -->
     <%= render 'layouts/header' %>
-    <!-- Header -->
 
     <div class="contents" id="nuturition-page">
 
@@ -33,33 +32,18 @@
 
         <div class="gutters row container inner-30">
           <div class="col col-8 nuturition-img-container">
-           
-              <!-- <img src="images/nuturition/nuturition-1.jpg" alt="" class="photo"> -->
-              <%= image_tag("nuturition/nuturition-1.jpg", :alt => "", :class => "photo")%>
-            
-           
+            <a href="nuturition.html">
+              <img src="images/nuturition/nuturition-1.jpg" alt="" class="photo">
+            </a>
           </div>
 
           <div class="col col-16 nuturition-date">
             <div class="nuturition-name">
-              <!-- <a href="nuturition.html"> -->
-                石原さとみ
-              <!-- </a> -->
+              <%= @column.nutritionist.name %>
             </div>
             <p class="nuturition-description sp-off">
-              2002年、第27回ホリプロタレントスカウトキャラバン『ピュアガール2002』
-              グランプリ受賞を経て本格的に女優活動を始めた。同オーデション参加以前にも、
-              現在の所属芸能事務所であるホリプロ系列の俳優養成所であるホリプロ・
-              インプルーブメント・アカデミーに所属（5期生）し、石神 国子（いしがみ くにこ）
-              名義で映画『ホ・ギ・ラ・ラ』『船を降りたら彼女の島』へ出演しており、
-              芸能活動の経験がある（公式には"石原さとみ名義"で初出演した
-              『わたしのグランパ』をもってデビュー作品としている）。
-              <br>
-              <br>
-              2003年、『きみはペット』（TBS系）の澁澤ルミ役で連続ドラマ初出演。<br>
-              2005年、NHK大河ドラマ『義経』に静御前役として出演。<br>
-              2006年、『Ns'あおい』（フジテレビ系）で民放連続ドラマ初主演。<br>
-              <p/>
+              <%= @column.nutritionist.description %>
+            <p/>
 
             </div>
           </div>
@@ -73,45 +57,20 @@
             </div>
 
             <div class="inner-30 column-title-large">
-              糖尿病で気をつけなければいけない事って？
+              <%= @column.title %>
             </div>
 
             <div class="inner-30 main-column-content">
-              <div class="column-sub-title">
+              <!-- <div class="column-sub-title">
                 大事なのはバランスのとれた食事
-              </div>
+              </div> -->
 
               <p class="column-text">
-                健康診断で「糖尿病のケがありますね」と指摘される人、多いですよね。
-                そんなときは、大いに危機感を持って、絶対糖尿病にならない決意のもと、
-                努力を開始して欲しい！というのが先回の要点でした。
-                覚えておいてほしいポイントは…健康診断で「糖尿病のケがありますね」
-                と指摘される人、多いですよね。
-                <br>
-                <br>
-                ■そんなときは、大いに危機感を
-                持って、絶対糖尿病にならない決意のもと、努力を開始して欲しい！というのが
-                先回の要点でした。
-                覚えておいてほしいポイント健康診断で「糖尿病のケがありますね」と
-                指摘される人、多いですよね。
-                そんなときは、大いに危機感を持って、絶対糖尿病にならない決意のもと、
-                努力を開始して欲しい！というのが先回の要点でした。覚えておいてほしい
-                ポイントは健康診断で「糖尿病のケがありますね」と指摘される人、
-                多いですよね。そんなときは、大いに危機感を持って、絶対糖尿病にならない
-                決意のもと、努力を開始して欲しい！というのが前回の要点でした。
-                <br>
-                <br>
-                ■健康診断で「糖尿病のケがありますね」と指摘される人、多いですよね。
-                そんなときは、大いに危機感を持って、絶対糖尿病にならない決意のもと、
-                努力を開始して欲しい！というのが先回の要点でした。
-                覚えておいてほしいポイントは健康診断で「糖尿病のケがありますね」
-                と指摘される人、多いですよね。そんなときは、大いに危機感を持って、
-                絶対糖尿病にならない決意のもと、努力を開始して欲しい！
-                というのが先回の要点でした。覚えておいてほしいポイントは
+                <%= @column.body %>
               </p>
             </div>
 
-            <!-- <ul class="column-footer">
+            <ul class="column-footer">
               <li class="column-link prev-column">
                 <a href="column.html"><i class="icon-s icon-triangle-left red"></i>前のコラム</a>
               </li>
@@ -123,7 +82,7 @@
               <li class="column-link next-column">
                 <a href="column.html">次のコラム<i class="icon-s icon-triangle-right red"></i></a>
               </li>
-            </ul> -->
+            </ul>
           </div>
 
           <div class="col col-8 container-full top-border-red">
@@ -153,9 +112,9 @@
 
 
               <div class="all-show">
-                <!-- <a href="column.html">
+                <a href="column.html">
                   全部見る
-                </a> -->
+                </a>
               </div>
             </li>
 
@@ -178,9 +137,9 @@
 
 
               <div class="all-show">
-               <!-- <a href="column.html">
+               <a href="column.html">
                 全部見る
-              </a> -->
+              </a>
             </div>
           </li>
 
@@ -203,9 +162,9 @@
 
 
             <div class="all-show">
-              <!-- <a href="column.html">
+              <a href="column.html">
                 全部見る
-              </a> -->
+              </a>
             </div>
           </li>
         </ul>
@@ -215,9 +174,9 @@
 
 
     <div class="read-more-container pc-off">
-      <!-- <div class="read-more">
+      <div class="read-more">
         <a href="column.html">栄養士コラムをもっと見る</a>
-      </div> -->
+      </div>
     </div>
 
   </div><!-- contents end-->
@@ -230,10 +189,11 @@
 
 
 <!-- ログイン登録用のモーダル -->
- <%= render 'layouts/login' %>
-<!-- サイドバー -->
-  <%= render 'layouts/sidebar' %>
+  <%= render 'layouts/login' %>
 
+
+  <!-- サイドバー -->
+  <%= render 'layouts/sidebar' %>
 
 </body>
 </html>

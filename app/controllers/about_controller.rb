@@ -10,6 +10,7 @@ class AboutController < ApplicationController
     @side1_recipe = @side1_recipe.first
     @side2_recipe = @side2_recipe.first
   	@nurtrition_menu = Menu.find(3)
+    @column = Column.find(:last)
 
   	require "date"
 

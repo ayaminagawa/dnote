@@ -1,11 +1,6 @@
 require 'test_helper'
 
-class ColumnControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
-
+class NutritionistControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
