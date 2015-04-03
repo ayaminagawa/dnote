@@ -48,7 +48,7 @@ Dnote::Application.routes.draw do
   resources :menu_recipes
   resources :ingredients
 
-
+  get '/kinds', to:'recipes#recipe_kinds'
   get '/vagetables', to:'recipes#vagetables'
   get '/meets', to:'recipes#meets'
   get '/fishes', to:'recipes#fishes'

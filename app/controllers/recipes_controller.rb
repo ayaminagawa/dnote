@@ -9,53 +9,9 @@ class RecipesController < ApplicationController
     @menus = Menu.all 
   end
 
-  def vagetables
-    @vagetables = Recipe.find(:all, :conditions => { :kind => 1 }) 
-    # @user = @vagetables.user(@vagetables.user_id)
-  end
-
-  def meets
-    @meets = Recipe.find(:all, :conditions => { :kind => 2 }) 
-  end
-
-  def fishes
-    @fishes = Recipe.find(:all, :conditions => { :kind => 3 }) 
-  end
-
-  def rices
-    @rices = Recipe.find(:all, :conditions => { :kind => 4 }) 
-  end
-
-  def pastas
-    @pastas = Recipe.find(:all, :conditions => { :kind => 5 }) 
-  end
-
-  def noodles
-    @noodles = Recipe.find(:all, :conditions => { :kind => 6 }) 
-  end
-
-  def salads
-    @salads = Recipe.find(:all, :conditions => { :kind => 7 }) 
-  end
-
-  def soups
-    @soups = Recipe.find(:all, :conditions => { :kind => 8 }) 
-  end
-
-  def boxes
-    @boxes = Recipe.find(:all, :conditions => { :kind => 9 }) 
-  end
-
-  def hospitalities
-    @hospitalities = Recipe.find(:all, :conditions => { :kind => 10 }) 
-  end
-
-  def snacks
-    @snacks = Recipe.find(:all, :conditions => { :kind => 11 }) 
-  end
-
-  def pans
-    @pans = Recipe.find(:all, :conditions => { :kind => 12 }) 
+  def recipe_kinds
+    @recipe_kind = params[:r_kind]
+    @kinds = Recipe.where(:kind => @recipe_kind)
   end
 
   def calories
