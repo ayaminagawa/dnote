@@ -14,9 +14,6 @@ class Recipe < ActiveRecord::Base
   	accepts_nested_attributes_for :procedures, :allow_destroy => true
   	has_many :category_selects, :class_name => "CategorySelect", :dependent => :destroy
   	accepts_nested_attributes_for :category_selects
-  	
-  	
-
     
   	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"
 
@@ -38,5 +35,22 @@ class Recipe < ActiveRecord::Base
 	      Recipe.all #全て表示。
 	    end
   	end
+
+  	def self.kinds
+		{
+			1 => "野菜のおかず",
+			2 => "お肉のおかず",
+			3 => "魚介のおかず",
+			4 => "ごはんもの",
+			5 => "パスタ・グラタン",
+			6 => "麺類",
+			7 => "サラダ",
+			8 => "スープ・汁物",
+			9 => "お弁当",
+			10 => "おもてなし料理",
+			11 => "お菓子",
+			12 => "パン"
+		}
+	end
 
 end
