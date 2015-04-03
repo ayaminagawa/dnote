@@ -6,7 +6,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def new
+    render :layout => "preview_layout"
+  end
+
+  def create
+     render :layout => "preview_layout"
+  end
+
+  def edit
+    render :layout => "preview_layout"
+  end
+
   def update
+    render :layout => "preview_layout"
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
  
@@ -37,6 +50,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         u.permit(:name, :image, :gender, :email, :password, :password_confirmation, :current_password)
       end
     end
+
+
 
 
 

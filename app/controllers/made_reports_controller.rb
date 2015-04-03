@@ -2,6 +2,7 @@ class MadeReportsController < ApplicationController
   def new
   	 @made_report = MadeReport.new
      @recipe = Recipe.find(params[:recipe_id])
+     render :layout => "preview_layout"
   end
 
   def create
@@ -28,6 +29,15 @@ class MadeReportsController < ApplicationController
     else
       render 'new'
     end
+    render :layout => "preview_layout"
+  end
+
+  def update
+     render :layout => "preview_layout"
+  end
+
+  def edit
+    render :layout => "preview_layout" 
   end
 
   def destroy

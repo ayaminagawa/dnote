@@ -1,40 +1,3 @@
-<!doctype html>
-<html class="no-js">
-<head>
-  <meta charset="utf-8">
-  <title>d note</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <link rel="shortcut icon" href="/favicon.ico">
-
-  <link rel="stylesheet" href="styles/css/base.css">
-  <link rel="stylesheet" href="styles/css/grid.css">
-  <link rel="stylesheet" href="styles/css/main.css">
-
-  <script src="scripts/jquery.min.js"></script>
-  <script src="scripts/jquery.remodal.js"></script>
-  <script src="scripts/jquery.mobile-menu.js"></script>
-  <script src="scripts/jquery.sticky.js"></script>
-  <script src="scripts/main.js"></script>
-
-  <script type="text/javascript">
-    $(function(){
-      // mypageのheader
-      $("#sticker").sticky({ topSpacing: 0, center:true});
-    });
-  </script>
-
-</head>
-<body>
-
-
-  <div id="wrapper">
-    <!-- Header -->
-    <%= render 'layouts/header' %>
-    <!-- Header -->
-
-    
-
     <div class="contents" id="mypage">
 
       <div class="title-bar">
@@ -302,17 +265,3 @@
 
 
 </div><!-- contents end-->
-</div><!-- wrapper end-->
-
-<!-- Footer -->
-<%= render 'layouts/footer' %>
-<!-- Footer -->
-
-
-<!-- ログイン登録用のモーダル -->
-<%= render 'layouts/login' %>
-
-
-<!-- サイドバー -->
-<%= render 'layouts/sidebar' %>
-
