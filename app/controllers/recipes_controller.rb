@@ -10,8 +10,8 @@ class RecipesController < ApplicationController
   end
 
   def recipe_kinds
-    @recipe_kinds = params[:r_kind]
-    @kinds = Recipe.where(:kind => @recipe_kinds)
+    @recipe_kind = params[:r_kind]
+    @kinds = Recipe.where(:kind => @recipe_kind)
   end
 
   def calories
