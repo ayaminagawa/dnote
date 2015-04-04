@@ -27,12 +27,14 @@ class MenusController < ApplicationController
     @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
     @menu.category_selects.build
+    render :layout => "preview_layout"
   end
 
   # GET /menus/1/edit
   def edit
     @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
+    render :layout => "preview_layout"
   end
 
   # POST /menus
@@ -49,6 +51,7 @@ class MenusController < ApplicationController
       else
         render 'new'
       end
+    render :layout => "preview_layout"
 
   end
 
@@ -56,6 +59,7 @@ class MenusController < ApplicationController
   # PATCH/PUT /menus/1.json
   def update
     respond_to do |format|
+    render :layout => "preview_layout"
       
       if @menu.update(menu_params)
         format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }
