@@ -7,11 +7,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def new
+    @user = User.new
     render :layout => "preview_layout"
-  end
-
-  def create
-     render :layout => "preview_layout"
   end
 
   def edit
@@ -19,7 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    render :layout => "preview_layout"
+   
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
  

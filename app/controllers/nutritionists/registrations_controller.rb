@@ -23,12 +23,10 @@ class Nutritionists::RegistrationsController < Devise::RegistrationsController
 
 
   def new
+    @nutritionist = Nutritionist.new
     render :layout => "preview_layout"
   end
 
-  def create
-     render :layout => "preview_layout"
-  end
 
   def edit
     render :layout => "preview_layout"
