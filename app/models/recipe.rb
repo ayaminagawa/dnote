@@ -4,7 +4,6 @@ class Recipe < ActiveRecord::Base
 	has_many :menus
 	has_many :menu_recipes
 	validates :name, presence: true
-	validates :description, presence: true
 	has_many :favorites
     has_many :favoriting_users, through: :favorites, source: :user
 	has_many :made_reports, dependent: :destroy
