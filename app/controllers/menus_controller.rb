@@ -51,8 +51,6 @@ class MenusController < ApplicationController
       else
         render 'new'
       end
-    render :layout => "preview_layout"
-
   end
 
   # PATCH/PUT /menus/1
