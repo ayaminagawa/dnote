@@ -28,3 +28,34 @@ function add_fields(link, association, content) {
     $(link).parent().before(content.replace(regexp, new_id));
 }
 
+$(function() {
+  $(document).on("keypress", "input:not(.allow_submit)", function(event) {
+    return event.which !== 13;
+  });
+});
+
+$(function() {
+$("input:text").keypress(function(e) {
+if (e.which == 13) { // Enterキーの場合
+// input type="text"の配列を作成
+var textArry = $("input:text");
+for (var i = 0 ; i < textArry.length ; ++i) {
+
+
+// Enterキーが押されたテキストボックスだった場合
+if (this == textArry[i]) {
+
+var tab_index = 0; //テキストボックス配列のインデックス
+// イベントが起きたテキストボックスが配列の最後以外の場合
+if (i + 1 != textArry.length) {
+tab_index = i + 1; // インデックスをプラス1する
+}
+
+// フォーカスを移動
+textArry[tab_index].focus();
+return;
+}
+}
+}
+});
+});
