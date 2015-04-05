@@ -122,12 +122,16 @@
               </p>
             </div>
 
-            <!-- <div class="memo-history recipe-history col col-12 sp-off">
-              <h4 class="memo-head">このレシピの生い立ち</h4>
+            <div class="memo-history recipe-history col col-12 sp-off">
+              <h4 class="memo-head">レシピのカテゴリー</h4>
               <p class="memo-history-text">
-                パンケーキ生地を朝作るのが面倒に思った時・・前日の晩に生地を作って冷蔵庫へ。翌朝焼いてみると・・・んっ？生地が美味しくなってるー！ということを発見。更にカフェで食べたパンケーキに、チーズ入りのメニューがあり参考にしました。
+                <% Recipe.kinds2.each do |key, value| %>
+                  <% if key == @recipe.kind %>
+                    <%=  link_to value, kinds_path(:r_kind => key) %>
+                  <% end %>
+                <% end %>
               </p>
-            </div> -->
+            </div>
           </div>
         </div>
       </div><!-- recipe-bottom -->
