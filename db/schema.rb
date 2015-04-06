@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331054136) do
+ActiveRecord::Schema.define(version: 20150405170657) do
 
   create_table "category_selects", force: true do |t|
     t.integer  "recipe_id"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 20150331054136) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category"
+    t.integer  "people"
   end
 
   create_table "users", force: true do |t|

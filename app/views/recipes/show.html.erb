@@ -70,7 +70,12 @@
 
             <div class="col col-12">
               <ul class="ingredients"> 
-                <li class="ingredient-head">材料</li>
+                <li class="ingredient-head">材料
+                  <% if @recipe.people == nil %>
+                  <% else %>
+                    <%= @recipe.people %>人分
+                  <% end %>
+                </li>
                 <% @ingredients.each do |ingredient| %>
                   <li class="ingredient">
                     <div class="ingredient-name">
