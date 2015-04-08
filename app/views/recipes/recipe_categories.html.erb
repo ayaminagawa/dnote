@@ -1,0 +1,131 @@
+
+    <%= render 'recipes/category' %>
+       
+
+<div class="col col-18 menu-recipe-container">
+  <div class="page-title">
+    <span class="page-title-sub"><%= Recipe.categories[@recipe_category]%>レシピ・献立</span>
+    <!-- <span class="count">20件</span> -->
+  </div>
+  
+  
+  
+  <div class="tab-switch-container">
+    <ul>
+      <li class="tab-switch tab-active">
+        <a href="#menu-container">
+          献立
+        </a>
+      </li>
+      <li class="tab-switch">
+        <a href="#recipe-container">
+          レシピ
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div id="tab-box">
+
+    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
+      <!-- 献立ひとつ分 -->
+      <% @menu_categories.each do |menu_category| %>
+      <li class="gutters row menu">
+          <div class="col col-11 col-xs col-xs-11">
+            <div class="menu-img">
+             <!--  <a href="menu.html">
+                <img src="images/menu-item-1.jpg" alt="" class="photo">
+              </a> -->
+              <%= link_to menu_path(menu_category) do %>
+                <div class="recommended-image photo" style="background-image: url('<%= menu_category.image.url %>');">
+                </div>
+              <% end %>
+          </div>
+        </div>
+
+          <div class="col col-13 col-xs col-xs-13">
+            <div class="menu-title">
+              <!-- <a href="menu.html">
+                献立タイトルが入ります
+                献立タイトルが入ります
+              </a> -->
+              <%= link_to menu_category.name, menu_path(menu_category) %>
+            </div>
+
+            <p class="menu-comment">
+              <%= menu_category.point %>
+            </p>
+
+            <ul class="menu-list sp-off">
+                
+                <!-- <li> -->
+                 <!-- <img src="images/menu-main-icon.png" alt="" class="menu-list-icon"> -->
+                 
+                 <!-- <a href="recipe.html">
+                  ゴロゴロお肉のメキシカンスープ</a> -->
+               <!--   
+                </li>
+
+                <li class="author"> -->
+                  <!-- <a href="#">by つくったひと</a> -->
+                 
+               <!--  </li> -->
+                
+                <li class="author">
+                  <!-- <a href="#">by つくったひと</a> -->
+                  by <%= link_to menu_category.user.name, user_path(menu_category.user) %>
+                </li>
+              </ul>
+          </div>
+        </li>
+        <% end %>
+    </ul>
+ 
+      <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
+
+      <!-- レシピひとつ分 -->
+        <% @categories.each do |goodtaste| %>
+          <li class="gutters row menu">
+            <div class="col col-11 col-xs col-xs-11">
+              <div class="menu-img">
+                <!-- <a href="recipe.html">
+                  <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
+                </a> -->
+                 <%= link_to recipe_path(goodtaste) do %>
+                    <div class="recommended-image photo" style="background-image: url('<%= goodtaste.image.url %>');">
+                    </div>
+                  <% end %>
+              </div>
+            </div>
+
+                <div class="col col-13 col-xs col-xs-13">
+                  <div class="menu-title">
+                    <!-- <a href="recipe.html">
+                      レシピタイトル
+                    </a> -->  
+                    <%= link_to goodtaste.name, recipe_path(goodtaste) %>
+                  </div>
+
+                  <p class="menu-comment">
+                    <%= goodtaste.description %>
+                  </p>
+
+                  <div class="author">
+                    <!-- <a href="#">by つくったひと</a> -->
+                    by <%= link_to goodtaste.user.name, recipe_path(goodtaste)  %>
+                  </div>
+
+                </div>
+              </li>
+        <% end %>    
+      <!-- レシピひとつ分 -->
+    </ul>
+  </div>
+<!-- tab-box -->
+
+
+
+</div><!-- contents end-->
+
+

@@ -11,7 +11,7 @@ Dnote::Application.routes.draw do
    :sessions => "nutritionists/sessions",
    :registrations => "nutritionists/registrations"
   }
-  resources :categories
+  
 
   get "create/destroy"
   get "create/show"
@@ -22,15 +22,7 @@ Dnote::Application.routes.draw do
     :registrations => "users/registrations",
   }
 
-  
- 
-  # get "made_report/new"
-  # get "made_report/create"
-  # get "made_report/destroy"
-  # get "made_report/show"
   resources :menus
-
-
 
   get "menu/new"
   get "menu/create"
@@ -49,25 +41,8 @@ Dnote::Application.routes.draw do
   resources :ingredients
 
   get '/kinds', to:'recipes#recipe_kinds'
-  get '/vagetables', to:'recipes#vagetables'
-  get '/meets', to:'recipes#meets'
-  get '/fishes', to:'recipes#fishes'
-  get '/rices', to:'recipes#rices'
-  get '/pastas', to:'recipes#pastas'
-  get '/noodles', to:'recipes#noodles'
-  get '/salads', to:'recipes#salads'
-  get '/soups', to:'recipes#soups'
-  get '/boxes', to:'recipes#boxes'
-  get '/pans', to:'recipes#pans'
-  get '/snacks', to:'recipes#snacks'
-  get '/hospitalities', to:'recipes#hospitalities'
-
-
+  get '/categories', to:'recipes#recipe_categories'
   get '/calories', to:'recipes#calories'
-  get '/sugars', to:'recipes#sugars'
-  get '/stabilities', to:'recipes#stabilities'
-  get '/goodtastes', to:'recipes#goodtastes'
-  get '/easies', to:'recipes#easies'
 
   get "made_report/new"
   get "made_report/create"
@@ -75,18 +50,6 @@ Dnote::Application.routes.draw do
   resources :favorites, only: [:create, :destroy]
 
   get '/menu_recipes', to:'menus#menu_recipes'
-
-
-
-
-  
-  
-  # devise_for :users, :controllers => {
-  # :sessions      => "users/sessions",
-  # :registrations => "users/registrations",
-  # :passwords     => "users/passwords",
-  # :omniauth_callbacks => "users/omniauth_callbacks" 
-  # }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

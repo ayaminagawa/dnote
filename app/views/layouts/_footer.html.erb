@@ -14,18 +14,11 @@
         <li class="category-item"> 
           <%= link_to 'カロリー表示あり', calories_path %>
         </li>
-        <li class="category-item">
-          <%= link_to '糖質制限食', sugars_path %>  
-        </li>
-        <li class="category-item">
-          <%= link_to 'HbA1c、血糖値の安定', stabilities_path %>   
-        </li>
-        <li class="category-item">
-          <%= link_to '味に自信あり', goodtastes_path %>     
-        </li>
-        <li class="category-item">
-          <%= link_to 'すぐできるメニュー', easies_path %>  
-        </li>
+        <% Recipe.categories.each do |key, value| %>
+          <li class="category-item">
+            <%= link_to value, categories_path(:r_category => key)%>
+              </li>
+        <% end %>
       </ul>
 
       <!-- <ul class="social-list">

@@ -66,106 +66,26 @@
           <!-- <a href="menu-recipe.html"> -->
            <%= link_to "カロリー表示あり", calories_path %>
          <!-- </a>  -->   
-       </li>
-       <li class="sidemenu-item">
-        <!-- <a href="menu-recipe.html"> -->
-         <%= link_to "糖質制限食", sugars_path %>
-        <!-- </a>    --> 
-      </li>
-      <li class="sidemenu-item">
-        <!-- <a href="menu-recipe.html"> -->
-         <%= link_to "HbA1c、血糖値の安定", stabilities_path %>
-       <!-- </a>    --> 
-     </li>
-     <li class="sidemenu-item">
-      <!-- <a href="menu-recipe.html"> -->
-       <%= link_to "味に自信あり", goodtastes_path %>
-     <!-- </a>     -->
-   </li>
-   <li class="sidemenu-item">
-    <!-- <a href="menu-recipe.html"> -->
-      <%= link_to "すぐできるメニュー", easies_path %>
-    <!-- </a>     -->
-  </li>
+         </li>
+         <% Recipe.categories.each do |key, value| %>
+          <li class="sidemenu-item">
+            <%= link_to value, categories_path(:r_category => key)%>
+          </li>
+        <% end %>
 
-  <li class="sidemenu-item menu-sub-title">
-    <i class="icon-cutlery"></i>
-    レシピカテゴリ
-  </li>
+        <li class="sidemenu-item menu-sub-title">
+          <i class="icon-cutlery"></i>
+          レシピカテゴリ
+        </li>
 
-  <!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-      <%= link_to "野菜のおかず", vagetables_path %>
-</li>
- <!-- ひとつのカテゴリ -->
-
- <!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "お肉のおかず", meets_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "魚介のおかず", fishes_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-       <%= link_to "ご飯物", rices_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "パスタ・グラタン", pastas_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "麺", noodles_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "サラダ", salads_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "スープ・汁物", soups_path %>
- <!-- </ul> -->
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "お弁当", boxes_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "おもてなし料理", hospitalities_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "お菓子", snacks_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-
-<!-- ひとつのカテゴリ -->
-<li class="sidemenu-item menu-accordion-container">
-        <%= link_to "パン", pans_path %>
-</li>
-<!-- ひとつのカテゴリ -->
-</ul>
+          <!-- ひとつのカテゴリ -->
+        <% Recipe.kinds.each do |key, value| %>
+          <li class="sidemenu-item menu-accordion-container">
+            <%= link_to value, kinds_path(:r_kind => key)%>
+          </li>
+        <% end %>
+        <!-- ひとつのカテゴリ -->
+      </ul>
 
 </div>
 </nav>
