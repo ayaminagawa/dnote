@@ -14,47 +14,37 @@ class RecipesController < ApplicationController
     @kinds = Recipe.where(:kind => @recipe_kind)
   end
 
+  def recipe_categories
+    @category = params[:r_category]
+    @category2 = CategorySelect.where(:category_number2 => "1", :menu_id => nil)
+    @menu_category2 = CategorySelect.where(:category_number2 => "1", :recipe_id => nil)
+    @category3 = CategorySelect.where(:category_number3 => "1", :menu_id => nil)
+    @menu_category3 = CategorySelect.where(:category_number3 => "1", :recipe_id => nil)
+    @category4 = CategorySelect.where(:category_number4 => "1", :menu_id => nil)
+    @menu_category4 = CategorySelect.where(:category_number4 => "1", :recipe_id => nil)
+    @category5 = CategorySelect.where(:category_number5 => "1", :menu_id => nil)
+    @menu_category5 = CategorySelect.where(:category_number5 => "1", :recipe_id => nil)
+    if @category == "2"
+      @categories = @category2.map{|category2|category2.recipe}
+      @menu_categories = @menu_category2.map{|menu_category2|menu_category2.menu}
+      elsif @category == "3"
+        @categories = @category3.map{|category3|category3.recipe}
+        @menu_categories = @menu_category3.map{|menu_category3|menu_category3.menu}
+      elsif @category == "4"
+        @categories = @category4.map{|category4|category4.recipe}
+        @menu_categories = @menu_category4.map{|menu_category4|menu_category4.menu}
+      elsif @category == "5"
+        @categories = @category5.map{|category5|category5.recipe}
+        @menu_categories = @menu_category5.map{|menu_category5|menu_category5.menu}          
+    end
+  end
+
   def calories
     # @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
     # @menu_calories = Menu.find(:all, :conditions => { :category => 1 }) 
     @calories = Recipe.where.not(calorie: nil)
   end
 
-  def sugars
-    @category_selects = CategorySelect.find(:all, :conditions => { :category_number2 => 1, :menu_id => nil})
-    @sugars = @category_selects.map{|category_select| category_select.recipe}
-    # @sugars = Recipe.find(:all, :conditions => { :category => 2 }) 
-    # @menu_sugars = Menu.find(:all, :conditions => { :category => 2 }) 
-    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number2 => 1, :recipe_id => nil})
-    @menu_sugars = @category_menu_selects.map{|category_select| category_select.menu}
-  end
-
-  def stabilities
-    @category_selects = CategorySelect.find(:all, :conditions => { :category_number3 => 1, :menu_id => nil})
-    @stabilities = @category_selects.map{|category_select| category_select.recipe}
-    # @menu_stabilities = Menu.find(:all, :conditions => { :category => 3 }) 
-    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number3 => 1, :recipe_id => nil})
-    @menu_stabilities = @category_menu_selects.map{|category_select| category_select.menu}
-   
-  end
-
-  def goodtastes
-    @category_selects = CategorySelect.find(:all, :conditions => { :category_number4 => 1, :menu_id => nil})
-    @goodtastes = @category_selects.map{|category_select| category_select.recipe}
-    # @menu_goodtastes = Menu.find(:all, :conditions => { :category => 4 }) 
-    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number4 => 1, :recipe_id => nil})
-    @menu_goodtastes = @category_menu_selects.map{|category_select| category_select.menu}
-    
-  end
-
-  def easies
-    @category_selects = CategorySelect.find(:all, :conditions => { :category_number5 => 1, :menu_id => nil})
-    @easies = @category_selects.map{|category_select| category_select.recipe}
-    # @menu_easies = Menu.find(:all, :conditions => { :category => 5 }) 
-    @category_menu_selects = CategorySelect.find(:all, :conditions => { :category_number5 => 1, :recipe_id => nil})
-    @menu_easies = @category_menu_selects.map{|category_select| category_select.menu}
-    
-  end
 
   # GET /recipes/1
   # GET /recipes/1.json
@@ -100,7 +90,7 @@ class RecipesController < ApplicationController
     else
       render 'new'
     end
-    render :layout => "preview_layout"
+    
   end
 
   # PATCH/PUT /recipes/1

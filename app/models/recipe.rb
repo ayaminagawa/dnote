@@ -52,4 +52,13 @@ class Recipe < ActiveRecord::Base
 		}
 	end
 
+  def self.categories
+    {
+      "2" => "糖質制限色",
+      "3" => "HbA1c、血糖値の安定",
+      "4" => "味に自信あり",
+      "5" => "すぐできるメニュー"
+    }
+  end
+
 end

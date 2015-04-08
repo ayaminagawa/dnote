@@ -17,38 +17,17 @@
                 </a>    --> 
                <%= link_to 'カロリー表示あり', calories_path %>
               </li>
-              <li class="sidemenu-item">
-                <!-- <a href="menu-recipe.html">
-                 糖質制限食
-                </a>  --> 
-                <%= link_to '糖質制限食', sugars_path %>  
-              </li>
-              <li class="sidemenu-item">
-                <!-- <a href="menu-recipe.html">
-                  HbA1c、血糖値の安定
-                </a>   --> 
-                <%= link_to 'HbA1c、血糖値の安定', stabilities_path %>   
-              </li>
-              <li class="sidemenu-item">
-                <!-- <a href="menu-recipe.html">
-                 味に自信あり
-                </a>  -->
-                <%= link_to '味に自信あり', goodtastes_path %>     
-              </li>
-              <li class="sidemenu-item">
-                <!-- <a href="menu-recipe.html">
-                 すぐできるメニュー
-                </a>     -->
-                <%= link_to 'すぐできるメニュー', easies_path %>  
-              </li>
 
+              <% Recipe.categories.each do |key, value| %>
+                <li class="sidemenu-item">
+                  <%= link_to value, categories_path(:r_category => key)%>
+                </li>
+              <% end %>
 
               <li class="sidemenu-item menu-sub-title">
                 <i class="icon-cutlery"></i>
                 レシピカテゴリ
               </li>
-
-              
 
               <% Recipe.kinds.each do |key, value| %>
                 <li class="sidemenu-item menu-accordion-container">
