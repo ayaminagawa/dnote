@@ -18,14 +18,14 @@
 
 // application_jquery.js
 function remove_fields(link) {
-    $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").remove();
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").remove();
 }
 
 function add_fields(link, association, content) {
-    var new_id = new Date().getTime();
-    var regexp = new RegExp("new_" + association, "g")
-    $(link).parent().before(content.replace(regexp, new_id));
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().before(content.replace(regexp, new_id));
 }
 
 $(function() {
@@ -35,27 +35,27 @@ $(function() {
 });
 
 $(function() {
-$("input:text").keypress(function(e) {
-if (e.which == 13) { // Enterキーの場合
-// input type="text"の配列を作成
-var textArry = $("input:text");
-for (var i = 0 ; i < textArry.length ; ++i) {
+  $("input:text").keypress(function(e) {
+    if (e.which == 13) { // Enterキーの場合
+      // input type="text"の配列を作成
+      var textArry = $("input:text");
+      for (var i = 0 ; i < textArry.length ; ++i) {
 
 
-// Enterキーが押されたテキストボックスだった場合
-if (this == textArry[i]) {
+        // Enterキーが押されたテキストボックスだった場合
+        if (this == textArry[i]) {
 
-var tab_index = 0; //テキストボックス配列のインデックス
-// イベントが起きたテキストボックスが配列の最後以外の場合
-if (i + 1 != textArry.length) {
-tab_index = i + 1; // インデックスをプラス1する
-}
+          var tab_index = 0; //テキストボックス配列のインデックス
+          // イベントが起きたテキストボックスが配列の最後以外の場合
+          if (i + 1 != textArry.length) {
+            tab_index = i + 1; // インデックスをプラス1する
+          }
 
-// フォーカスを移動
-textArry[tab_index].focus();
-return;
-}
-}
-}
-});
+          // フォーカスを移動
+          textArry[tab_index].focus();
+          return;
+        }
+      }
+    }
+  });
 });

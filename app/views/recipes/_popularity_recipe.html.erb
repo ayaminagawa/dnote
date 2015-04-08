@@ -1,33 +1,31 @@
 
-      <div class="recipe-ranking-container">
-        <h2 class="title-bar"><i class="title-icon icon-trophy"></i>人気のレシピ</h2>
-        <ul class="row gutters container inner-30 recipe-ranking">
+<div class="recipe-ranking-container">
+  <h2 class="title-bar"><i class="title-icon icon-trophy"></i>人気のレシピ</h2>
+  <ul class="row gutters container inner-30 recipe-ranking">
 
-          <% i = 0 %>
+    <% i = 0 %>
 
-          <% @favorite_recipes.each do |favorite_recipe| %>
-          <% i += 1 %>
-          <li class="col col-8">
+    <% @favorite_recipes.each do |favorite_recipe| %>
+    <% i += 1 %>
+    <li class="col col-8">
 
-            <div class="ranking rank-1">
-              人気ランキング<%= @d.month %>月 第<%= i %>位
-              <span class="tri-over"></span>
-            </div>
-            <div class="recipe-img">
-              <!-- <a href="recipe.html">
-                <img src="/assets/recipe-2.jpg" alt="" class="photo">
-              </a> -->
-              <%= link_to recipe_path(favorite_recipe) do %>
-                <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
-                </div>
-              <% end %>
-            </div>
-            <p class="menu-title">
-              <!-- <a href="recipe.html">チーズのこってりサラダ！ワインといっしょにおいしいよ！</a> -->
-              <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
-            </p>
-          </li>
-          <% end %>
-
-        </ul>
+      <div class="ranking rank-1">
+        人気ランキング<%= @d.month %>月 第<%= i %>位
+        <span class="tri-over"></span>
       </div>
+      <div class="recipe-img">
+        
+        <%= link_to recipe_path(favorite_recipe) do %>
+        <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
+        </div>
+        <% end %>
+      </div>
+      <p class="menu-title">
+       
+        <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
+      </p>
+    </li>
+    <% end %>
+
+  </ul>
+</div>

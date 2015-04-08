@@ -1,14 +1,14 @@
 <div class="nuturition-container container-full row">
-        <h2 class="title-bar"><i class="title-icon icon-nife-fork"></i>管理栄養士によるおすすめ献立</h2>
+  <h2 class="title-bar"><i class="title-icon icon-nife-fork"></i>管理栄養士によるおすすめ献立</h2>
 
-        <div class="col col-11 pickup-menu-nuturition">
-          <div class="menu-img">
+  <div class="col col-11 pickup-menu-nuturition">
+    <div class="menu-img">
             <!-- <a href="recipe.html">
               <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
             <%= link_to menu_path(@nurtrition_menu) do %>
-              <div class="recommended-image" style="background-image: url('<%= @nurtrition_menu.image.url %>');">
-              </div>
+            <div class="recommended-image" style="background-image: url('<%= @nurtrition_menu.image.url %>');">
+            </div>
             <% end %>
             
           </div>
@@ -27,7 +27,7 @@
                 <%= link_to @nurtrition_menu.name, menu_path(@nurtrition_menu)%>
               </div>
               <div class="nuturition-name">
-                  星野真里
+                星野真里
               </div>
             </div>
           </div>
@@ -63,8 +63,8 @@
           <div class=" gutters row column-title-bar">
             <p class="vertical pull-left">コラム</p>
             <div class="col col-4 nuturition-img">
-                <!-- <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo"> -->
-                <div class="recommended-image photo" style="background-image: url('<%= @column.nutritionist.image.url %>');height:70px;">
+              <!-- <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo"> -->
+              <div class="recommended-image photo" style="background-image: url('<%= @column.nutritionist.image.url %>');height:70px;">
               </div>
             </div>
 

@@ -1,64 +1,53 @@
-    <div class="contents" id="menu-page">
-      <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立
-        <% if current_user?(@menu.user) %>
-          <div class="recipe-edit-btn">
-             <%= link_to "献立を編集する", edit_menu_path(@menu) %>
-          <!-- </div>
-          <div class="recipe-edit-btn"> -->
-             <%= link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" } %>
-          </div>  
-        <% end %>
-      </h2>
+<div class="contents" id="menu-page">
+  <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立
+    <% if current_user?(@menu.user) %>
+    <div class="recipe-edit-btn">
+     <%= link_to "献立を編集する", edit_menu_path(@menu) %>
+     <%= link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" } %>
+   </div>  
+   <% end %>
+ </h2>
 
-      <div class="container-full">
-        <div class="gutters row inner-30">
-          <div class="col col-20 col-xs col-xs-17 menu-title-large">
-            <%= link_to @menu.name, menu_path(@menu) %> 
-          </div>
+ <div class="container-full">
+  <div class="gutters row inner-30">
+    <div class="col col-20 col-xs col-xs-17 menu-title-large">
+      <%= link_to @menu.name, menu_path(@menu) %> 
+    </div>
 
-         <!--  <div class="col col-4 col-xs col-xs-7 pull-right">
-            <div class="button pull-right recipe-save" id="save-btn">
-              <a href="#">
-                <i class="title-icon icon-star"></i><br>
-                献立を<span class="save-btn-text">保存</span>
-              </a>
-            </div>
+  </div>
 
-          </div> -->
-        </div>
+  <div class="gutters row inner-30 pb-30">
+    <div class="col col-13 menu-img">
+     <!--  <img src="images/menu-1.jpg" alt="menu-img" class="photo"> -->
+     <div class="recommended-image photo" style="background-image: url('<%= @menu.image.url %>');">
+     </div>
 
-        <div class="gutters row inner-30 pb-30">
-          <div class="col col-13 menu-img">
-           <!--  <img src="images/menu-1.jpg" alt="menu-img" class="photo"> -->
-           <div class="recommended-image photo" style="background-image: url('<%= @menu.image.url %>');">
-           </div>
-       
-          </div>
+   </div>
 
-          <div class="col col-11">
-            <p class="menu-comment">
-              <%= @menu.point %>
-            </p>
+   <div class="col col-11">
+    <p class="menu-comment">
+      <%= @menu.point %>
+    </p>
 
-          </div>
-        </div>
+  </div>
+</div>
 
-        <hr>
+<hr>
 
-        <div class="gutters row inner-30 pt-30 pb-30 menu-items-container"> 
- 
+<div class="gutters row inner-30 pt-30 pb-30 menu-items-container"> 
 
-          <ul class="menu-items">
-            <li class="menu-item col col-8">
-              <div class="sp-off  menu-role main">
-                <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
-                <%= image_tag("main-icon.png", :alt => "", :class => "role-icon")%>
-              </div>
-              <div class="menu-title">
-                <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
-                <%= link_to @main_recipe.name, recipe_path(@main_recipe) %>
-              </div>
-              <div class="menu-img">
+
+  <ul class="menu-items">
+    <li class="menu-item col col-8">
+      <div class="sp-off  menu-role main">
+        <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
+        <%= image_tag("main-icon.png", :alt => "", :class => "role-icon")%>
+      </div>
+      <div class="menu-title">
+        <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
+        <%= link_to @main_recipe.name, recipe_path(@main_recipe) %>
+      </div>
+      <div class="menu-img">
                 <!-- <a href="recipe.html">
                   <img src="images/menu-item-1.jpg" alt="" class="photo">
                 </a> -->
@@ -173,7 +162,7 @@
                   <div class="item-name">エリンギ</div>
                   <div class="item-quantity">100g</div>
                 </li> -->
-              <!-- </ul> -->
+                <!-- </ul> -->
 <!-- 
               <p class="type">
                 肉類
@@ -218,8 +207,7 @@
 
             </div> -->
          <!--  </div>
-        </div> --><!-- shopping-list-container -->
+       </div> --><!-- shopping-list-container -->
 
-      </div>
-    </div><!-- contents end-->
- 
+     </div>
+   </div><!-- contents end-->

@@ -66,7 +66,7 @@ class RecipesController < ApplicationController
     3.times{@recipe.ingredients.build}
     4.times{@recipe.procedures.build}
     @recipe.category_selects.build
-     render :layout => "preview_layout"
+    render :layout => "preview_layout"
     # @ingredient = Ingredient.new
     # @category_select = CategorySelect.new(params[:category])  
   end
@@ -137,4 +137,4 @@ class RecipesController < ApplicationController
       @Recipe = Recipe.find_by(id: params[:id])
       redirect_to root_url unless current_user?(@recipe.user)
     end
-end
+  end

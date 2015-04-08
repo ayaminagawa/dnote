@@ -4,9 +4,9 @@
         <i class="title-icon icon-nife-fork-2"></i>
         マイページ
         <% if @user == current_user %>
-          <div class="recipe-edit-btn">
-              <%= link_to "プロフィールを編集する", edit_user_registration_path(@user) %>
-          </div>
+        <div class="recipe-edit-btn">
+          <%= link_to "プロフィールを編集する", edit_user_registration_path(@user) %>
+        </div>
         <% end %>
       </div>
 
@@ -15,11 +15,11 @@
         <div class="author-img-sp-container">
           <div class="inner mykitchen-head"> <%= @user.name %>さん</div>
           <ul >
-          <div class="author-img-sp">
+            <div class="author-img-sp">
               <div class="profile-image" style="background-image: url('<%= @user.image.url %>');">
               </div>
-          <!--   <%= profile_image_for @user %> -->
-          </div>
+              <!--   <%= profile_image_for @user %> -->
+            </div>
           <!-- <a href="#" class="author-img-edit">
             <i class="icon-star"></i>
             あなたの写真を変更する
@@ -38,17 +38,17 @@
             <% @recipes.each do |recipe| %>
             <li class="col col-12 inner">
               <div class="menu-title">
-                  <%= link_to recipe.name, recipe_path(recipe) %>
+                <%= link_to recipe.name, recipe_path(recipe) %>
               </div>
 
               <div class="menu-img">
                 <!-- <a href="recipe.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 <%= link_to recipe_path(recipe) do %>
-                    <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url %>');">
-                    </div>
-                  <% end %>
+                <%= link_to recipe_path(recipe) do %>
+                <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url %>');">
+                </div>
+                <% end %>
               </div>
             </li>
             <% end %>
@@ -83,11 +83,11 @@
                 <!-- <a href="menu.html">
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
-                 
-                  <%= link_to menu_path(menu) do %>
-                    <div class="recommended-image photo" style="background-image: url('<%= menu.image.url %>');">
-                    </div>
-                  <% end %>
+                
+                <%= link_to menu_path(menu) do %>
+                <div class="recommended-image photo" style="background-image: url('<%= menu.image.url %>');">
+                </div>
+                <% end %>
               </div>
             </li>
             <% end %>
@@ -137,24 +137,24 @@
               <div class="menu-img">
                <!-- <a href="recipe.html">
                 <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-                </a> -->
-                <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url %>');">
-                </div>
+              </a> -->
+              <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url %>');">
               </div>
+            </div>
 
-              <div class="repo-date">
-                <p class="repo-data">
-                  <%= made_report.message %>
-                </p>
-                <p class="repo-comment">
+            <div class="repo-date">
+              <p class="repo-data">
+                <%= made_report.message %>
+              </p>
+              <p class="repo-comment">
                 
-                </p>
-              </div>
-            </li>
-            <% end %>
+              </p>
+            </div>
+          </li>
+          <% end %>
 
-    </ul>
-  </div> 
+        </ul>
+      </div> 
 <!-- 
   <div class="centering">
     <div class="read-more-container">
@@ -226,7 +226,7 @@
         </li>
       </ul>
     </li>
- 
+    
   </ul>
 
 
@@ -235,21 +235,21 @@
     <li class="col col-8 inner favorite-menu" style="margin-left: 0">
       <div class="menu-title" style="height: 40px">
         <!--  <a href="#"> 
-        </a> -->
-        <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
-      </div>
+      </a> -->
+      <%= link_to favorite_recipe.name, recipe_path(favorite_recipe) %>
+    </div>
 
-      <div class="menu-img">
-        <%= link_to recipe_path(favorite_recipe) do %>
-          <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
-          </div>
-        <% end %>
+    <div class="menu-img">
+      <%= link_to recipe_path(favorite_recipe) do %>
+      <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
       </div>
-    </li>
-    <% end %>
-   
+      <% end %>
+    </div>
+  </li>
+  <% end %>
+  
 
-  </ul>
+</ul>
 
  <!--  <div class="read-more-accordion pc-off">
     <a href="#" class="is-toggle-switch">

@@ -1,38 +1,38 @@
 
-    <%= render 'recipes/category' %>
-    
+<%= render 'recipes/category' %>
 
-  <div class="col col-18 menu-recipe-container">
-    <div class="page-title">
-      <a href="#">カロリー表示あり</a>
-      <span class="page-title-sub">レシピ・献立</span>
-      <!-- <span class="count">20件</span> -->
-    </div>
+
+<div class="col col-18 menu-recipe-container">
+  <div class="page-title">
+    <a href="#">カロリー表示あり</a>
+    <span class="page-title-sub">レシピ・献立</span>
+    <!-- <span class="count">20件</span> -->
+  </div>
   
-    <div class="tab-switch-container">
-      <ul>
-        <li class="tab-switch tab-active">
-          <a href="#menu-container">
-            献立
-          </a>
-        </li>
-        <li class="tab-switch">
-          <a href="#recipe-container">
-            レシピ
-          </a>
-        </li>
-      </ul>
-    </div>
+  <div class="tab-switch-container">
+    <ul>
+      <li class="tab-switch tab-active">
+        <a href="#menu-container">
+          献立
+        </a>
+      </li>
+      <li class="tab-switch">
+        <a href="#recipe-container">
+          レシピ
+        </a>
+      </li>
+    </ul>
+  </div>
 
 
-    <div id="tab-box">
+  <div id="tab-box">
     
-      <ul class="inner pt-30 tab-container menu-container" id="menu-container">
-        <!-- 献立ひとつ分 -->
-        
-        <li class="gutters row menu">
-          <div class="col col-11 col-xs col-xs-11">
-            <div class="menu-img">
+    <ul class="inner pt-30 tab-container menu-container" id="menu-container">
+      <!-- 献立ひとつ分 -->
+      
+      <li class="gutters row menu">
+        <div class="col col-11 col-xs col-xs-11">
+          <div class="menu-img">
               <!-- <a href="menu.html">
                 <img src="images/menu-item-1.jpg" alt="" class="photo">
               </a> -->
@@ -46,24 +46,24 @@
                 献立タイトルが入ります
                 献立タイトルが入ります
               </a> -->
-             
+              
             </div>
           </div>
 
-            <p class="menu-comment">
-             
-            </p>
+          <p class="menu-comment">
+           
+          </p>
 
-            <ul class="menu-list sp-off">
+          <ul class="menu-list sp-off">
              <!-- 
               <li>
                <img src="images/menu-main-icon.png" alt="" class="menu-list-icon"> -->
                <!-- <a href="recipe.html">
-                ゴロゴロお肉のメキシカンスープ</a> -->
-                
-             <!--  </li> -->
+               ゴロゴロお肉のメキシカンスープ</a> -->
+               
+               <!--  </li> -->
 
-              <li class="author">
+               <li class="author">
                 <!-- <a href="#">by つくったひと</a> -->
                 
               </li>
@@ -71,25 +71,25 @@
             </ul>
           </div>
         </li>
-       
+        
         <!-- 献立ひとつ分 -->
       </ul>
 
-    <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
+      <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
 
-      <!-- レシピひとつ分 -->
-      <% @calories.each do |calorie| %>
-      <li class="gutters row menu">
-        <div class="col col-11 col-xs col-xs-11">
-          <div class="menu-img">
+        <!-- レシピひとつ分 -->
+        <% @calories.each do |calorie| %>
+        <li class="gutters row menu">
+          <div class="col col-11 col-xs col-xs-11">
+            <div class="menu-img">
             <!-- <a href="recipe.html">
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
-             <%= link_to recipe_path(calorie) do %>
-              <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url %>');">
-              </div>
-             <% end %>
+            <%= link_to recipe_path(calorie) do %>
+            <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url %>');">
             </div>
+            <% end %>
+          </div>
         </div>
 
 
@@ -98,30 +98,30 @@
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
-            <%= link_to calorie.name, recipe_path(calorie) %>
-          </div>
+                <%= link_to calorie.name, recipe_path(calorie) %>
+              </div>
 
 
-          <p class="menu-comment">
-            <%= calorie.description %>
-          </p>
+              <p class="menu-comment">
+                <%= calorie.description %>
+              </p>
 
-          <div class="author">
+              <div class="author">
                <!--  <a href="#">by つくったひと</a> -->
-              <!--  <%= link_to calorie.name, recipe_path(calorie) %> -->
-           by <%= link_to calorie.user.name, recipe_path(calorie)  %>
-          </div>
+               <!--  <%= link_to calorie.name, recipe_path(calorie) %> -->
+               by <%= link_to calorie.user.name, recipe_path(calorie)  %>
+             </div>
 
-        </div>
-      </li>
-      <% end %>    
-      <!-- レシピひとつ分 -->
-    </ul>
+           </div>
+         </li>
+         <% end %>    
+         <!-- レシピひとつ分 -->
+       </ul>
 
 
-</div>
-<!-- tab-box -->
+     </div>
+     <!-- tab-box -->
 
-</div>
+   </div>
 
-</div><!-- contents end-->
+ </div><!-- contents end-->

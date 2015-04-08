@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
- 
+  
 
   # GET /users
   # GET /users.json
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
         # format.html { render action: 'new' }
         # format.json { render json: @user.errors, status: :unprocessable_entity }
         raise
-         render 'new'
+        render 'new'
       end
     end
   end
@@ -103,4 +103,4 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
-end
+  end

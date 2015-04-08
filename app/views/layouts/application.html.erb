@@ -18,33 +18,33 @@
 
 </head>
 <body>
-   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+ <%= stylesheet_link_tag    'application', media: 'all' %>
+ <%= javascript_include_tag 'application' %>
+ <%= csrf_meta_tags %>
 
 
 
-  <div id="wrapper">
+ <div id="wrapper">
 
-    <!-- Header -->
-    <%= render 'layouts/header' %>
-    <!-- Header -->
+  <!-- Header -->
+  <%= render 'layouts/header' %>
+  <!-- Header -->
 
-    <%= yield %>
+  <%= yield %>
 
-  </div><!-- wrapper end-->
+</div><!-- wrapper end-->
 
-  <!-- Footer -->
-  <%= render 'layouts/footer' %>
-  <!-- Footer -->
-
-
-  <!-- ログイン登録用のモーダル -->
-  <%= render 'layouts/login' %>
+<!-- Footer -->
+<%= render 'layouts/footer' %>
+<!-- Footer -->
 
 
-  <!-- サイドバー -->
-  <%= render 'layouts/sidebar'%>
+<!-- ログイン登録用のモーダル -->
+<%= render 'layouts/login' %>
+
+
+<!-- サイドバー -->
+<%= render 'layouts/sidebar'%>
 
 </body>
 </html>

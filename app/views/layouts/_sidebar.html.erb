@@ -1,59 +1,59 @@
 <nav id="main-nav">
-    <div class="sidebar" id="slidemenu_contents">
-      <div class="gutters row sidemenu-account" id="slidemenu_list">
-        <div class="col col-xs col-xs-8">
-          <div class="user-name">
-            <% if user_signed_in? %>
-              <%= current_user.name %>さん
-            <% else %>
-              ゲストさん
-            <% end %> 
-          </div>
-          <div class="account-img">
-            <% if user_signed_in? %>
-              <%= image_tag(current_user.image)%>
-            <% else %>
-              <i class="icon-user"></i>
-            <% end %>
-          </div>
+  <div class="sidebar" id="slidemenu_contents">
+    <div class="gutters row sidemenu-account" id="slidemenu_list">
+      <div class="col col-xs col-xs-8">
+        <div class="user-name">
+          <% if user_signed_in? %>
+          <%= current_user.name %>さん
+          <% else %>
+          ゲストさん
+          <% end %> 
         </div>
-
-        <div class="col col-xs col-xs-16 centering">
-          <div class="button sidemenu-post-recipe">
-            <!-- <a href="create-recipe.html"> -->
-            <i class="icon-edit"></i>
-            <% if user_signed_in? %>
-              <%= link_to "レシピをのせる", new_recipe_path %>
-            <% else %>
-              <%= link_to "レシピをのせる", new_user_registration_path %>
-            <% end %>
-            <!-- </a> -->
-          </div>
-          <div class="line"></div>
-          <div class="button sidemenu-post-repo">
-            <!-- <a href="#"> -->
-            <i class="icon-recipes-1"></i>
-            <% if user_signed_in? %>
-              <%= link_to "献立を投稿", new_menu_path %>
-            <% else %>
-              <%= link_to "献立をのせる", new_user_registration_path %>
-            <% end %>
-           <!--  </a> -->
-          </div>
+        <div class="account-img">
+          <% if user_signed_in? %>
+          <%= image_tag(current_user.image)%>
+          <% else %>
+          <i class="icon-user"></i>
+          <% end %>
         </div>
       </div>
 
-      <div class="sidemenu-search-container">
+      <div class="col col-xs col-xs-16 centering">
+        <div class="button sidemenu-post-recipe">
+          <!-- <a href="create-recipe.html"> -->
+          <i class="icon-edit"></i>
+          <% if user_signed_in? %>
+          <%= link_to "レシピをのせる", new_recipe_path %>
+          <% else %>
+          <%= link_to "レシピをのせる", new_user_registration_path %>
+          <% end %>
+          <!-- </a> -->
+        </div>
+        <div class="line"></div>
+        <div class="button sidemenu-post-repo">
+          <!-- <a href="#"> -->
+          <i class="icon-recipes-1"></i>
+          <% if user_signed_in? %>
+          <%= link_to "献立を投稿", new_menu_path %>
+          <% else %>
+          <%= link_to "献立をのせる", new_user_registration_path %>
+          <% end %>
+          <!--  </a> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="sidemenu-search-container">
         <!-- <form action="#">
           <input type="text" class="search-bar">
           <button class="search-submit"><i class="icon-search icon-m"></i></button>
         </form> -->
         <%= form_tag recipes_path, :method => 'get' do %>
-            <p>
-              <%= text_field_tag :search, params[:search] , class: "search-bar"%>
-              <%= button_tag '<i class="icon-search icon-m"></i>'.html_safe, :type => "submit", :class =>"btn btn-default btn-s-md search-submit" %>
-            </p>
-          <% end %>
+        <p>
+          <%= text_field_tag :search, params[:search] , class: "search-bar"%>
+          <%= button_tag '<i class="icon-search icon-m"></i>'.html_safe, :type => "submit", :class =>"btn btn-default btn-s-md search-submit" %>
+        </p>
+        <% end %>
       </div>
 
       <ul class="sidemenu" id="sidemenu">
@@ -64,13 +64,13 @@
 
         <li class="sidemenu-item">
           <!-- <a href="menu-recipe.html"> -->
-           <%= link_to "カロリー表示あり", calories_path %>
-         <!-- </a>  -->   
-         </li>
-         <% Recipe.categories.each do |key, value| %>
-          <li class="sidemenu-item">
-            <%= link_to value, categories_path(:r_category => key)%>
-          </li>
+          <%= link_to "カロリー表示あり", calories_path %>
+          <!-- </a>  -->   
+        </li>
+        <% Recipe.categories.each do |key, value| %>
+        <li class="sidemenu-item">
+          <%= link_to value, categories_path(:r_category => key)%>
+        </li>
         <% end %>
 
         <li class="sidemenu-item menu-sub-title">
@@ -78,14 +78,14 @@
           レシピカテゴリ
         </li>
 
-          <!-- ひとつのカテゴリ -->
+        <!-- ひとつのカテゴリ -->
         <% Recipe.kinds.each do |key, value| %>
-          <li class="sidemenu-item menu-accordion-container">
-            <%= link_to value, kinds_path(:r_kind => key)%>
-          </li>
+        <li class="sidemenu-item menu-accordion-container">
+          <%= link_to value, kinds_path(:r_kind => key)%>
+        </li>
         <% end %>
         <!-- ひとつのカテゴリ -->
       </ul>
 
-</div>
-</nav>
+    </div>
+  </nav>

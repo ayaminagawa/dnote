@@ -11,12 +11,12 @@ class AboutController < ApplicationController
     # @main_recipe = @main_recipes.first
     # @side1_recipe = @side1_recipes.first
     # @side2_recipe = @side2_recipes.first
-  	@nurtrition_menu = Menu.find(3)
+    @nurtrition_menu = Menu.find(3)
     @column = Column.find(:last)
 
 
-  	require "date"
+    require "date"
 
-  	@d = Date.today
+    @d = Date.today
   end
 end
