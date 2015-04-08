@@ -195,11 +195,50 @@
               <label><%= f.radio_button :kind, "6" %> 麺</label>
               <label><%= f.radio_button :kind, "7" %> サラダ</label>
               <br>
+<<<<<<< .merge_file_yIBAN6
+     
+                <ul>
+                  <%= f.fields_for :category_selects, @category_selects do |f| %>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number2 %>
+                        糖質制限食
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number3 %>
+                        HbA1c、血糖値の安定
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number4 %>
+                        味に自信あり
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number5 %>
+                        すぐできるメニュー
+                      </lavel>
+                    </li>  
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number6 %>
+                        その他
+                      </lavel>
+                    </li>                                                                
+                  <% end %>
+                </ul>
+
+=======
               <label><%= f.radio_button :kind, "8" %> スープ・汁物</label>
               <label><%= f.radio_button :kind, "9" %> お弁当</label>
               <label><%= f.radio_button :kind, "10" %> おもてなし料理</label>
               <label><%= f.radio_button :kind, "11" %> お菓子</label>
               <label><%= f.radio_button :kind, "12" %> パン</label>
+>>>>>>> .merge_file_sRE8DR
             </div>
             <br>
             

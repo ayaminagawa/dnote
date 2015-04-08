@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405170657) do
+ActiveRecord::Schema.define(version: 20150408151100) do
 
   create_table "category_selects", force: true do |t|
     t.integer  "recipe_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150405170657) do
     t.integer  "category_number3"
     t.integer  "category_number4"
     t.integer  "category_number5"
+    t.integer  "category_number6"
   end
 
   create_table "columns", force: true do |t|

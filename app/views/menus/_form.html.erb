@@ -143,40 +143,46 @@
                 </div><br>
                 <% end %>
               </li>
-              <% end %>
-            </ul>
-            <hr>
-            <br>
-            <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>
+            <% end %>
+          </ul>
+              <hr>
+              <br>
+              <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>
 
-            <ul>
-              <%= f.fields_for :category_selects, @category_selects do |f| %>
-              <li>
-                <label>
-                  <%= f.check_box :category_number2 %>
-                  糖質制限食
-                </lavel>
-              </li>
-              <li>
-                <label>
-                  <%= f.check_box :category_number3 %>
-                  HbA1c、血糖値の安定
-                </lavel>
-              </li>
-              <li>
-                <label>
-                  <%= f.check_box :category_number4 %>
-                  味に自信あり
-                </lavel>
-              </li>
-              <li>
-                <label>
-                  <%= f.check_box :category_number5 %>
-                  すぐできるメニュー
-                </lavel>
-              </li>                                                            
-              <% end %>
-            </ul>
+             <ul>
+                  <%= f.fields_for :category_selects, @category_selects do |f| %>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number2 %>
+                        糖質制限食
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number3 %>
+                        HbA1c、血糖値の安定
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number4 %>
+                        味に自信あり
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number5 %>
+                        すぐできるメニュー
+                      </lavel>
+                    </li>  
+                    <li>
+                      <label>
+                        <%= f.check_box :category_number6 %>
+                        その他
+                      </lavel>
+                    </li>                                                                
+                  <% end %>
+                </ul>
 
           </div>
 
