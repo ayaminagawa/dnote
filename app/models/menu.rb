@@ -6,7 +6,6 @@ class Menu < ActiveRecord::Base
     has_many :favoriting_users, through: :favorites, source: :user
 	has_many :menu_recipes
 	validates :name, presence: true
-	validates :point, presence: true
 	has_many :category_selects, :class_name => "CategorySelect", :dependent => :destroy
   	accepts_nested_attributes_for :category_selects
   	accepts_nested_attributes_for :menu_recipes
