@@ -2,38 +2,38 @@
 
 <%= form_for(@column) do |f| %>
 
- <div class="col col-12 inner">
-    <br>
-    <div class="sp-head edit-label">
-      <i class="icon-s icon-play"></i>&nbsp;コラムの表題
-    </div>
-    <div class="field">
-      <div class="fields">
-        <ul class="inner-30 edit-ingredient-container">
-          <%= f.text_field :title, class:'edit-field edit-recipe-title' %>
-        </ul>
-      </div>  
-    </div>
+<div class="col col-12 inner">
+  <br>
+  <div class="sp-head edit-label">
+    <i class="icon-s icon-play"></i>&nbsp;コラムの表題
   </div>
-
-
-  <div class="col col-12 inner">
-    <br>
-    <div class="sp-head edit-label">
-      <i class="icon-s icon-play"></i>&nbsp;コラムの内容
-    </div>
-    <div class="field">
-      <div class="fields">
-        <ul class="inner-30 edit-ingredient-container">
-          <%= f.text_area :body,class:'edit-field', rows:'50', cols:'30', style:'height:150px'%>
-        </ul>
-      </div>  
-    </div>
+  <div class="field">
+    <div class="fields">
+      <ul class="inner-30 edit-ingredient-container">
+        <%= f.text_field :title, class:'edit-field edit-recipe-title' %>
+      </ul>
+    </div>  
   </div>
+</div>
 
-   <%= f.hidden_field :nutritionist_id, :value => current_nutritionist.id %>
 
-   <%= f.submit "コラムを公開する", class: 'create-recipe-btn' %>
+<div class="col col-12 inner">
+  <br>
+  <div class="sp-head edit-label">
+    <i class="icon-s icon-play"></i>&nbsp;コラムの内容
+  </div>
+  <div class="field">
+    <div class="fields">
+      <ul class="inner-30 edit-ingredient-container">
+        <%= f.text_area :body,class:'edit-field', rows:'50', cols:'30', style:'height:150px'%>
+      </ul>
+    </div>  
+  </div>
+</div>
+
+<%= f.hidden_field :nutritionist_id, :value => current_nutritionist.id %>
+
+<%= f.submit "コラムを公開する", class: 'create-recipe-btn' %>
 
 <% end %>
 

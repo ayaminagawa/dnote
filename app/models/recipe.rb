@@ -5,16 +5,16 @@ class Recipe < ActiveRecord::Base
 	has_many :menu_recipes
 	validates :name, presence: true
 	has_many :favorites
-    has_many :favoriting_users, through: :favorites, source: :user
-	has_many :made_reports, dependent: :destroy
-	has_many :ingredients, :class_name => "Ingredient", dependent: :destroy
-	accepts_nested_attributes_for :ingredients, :allow_destroy => true, :reject_if => :reject_ingredient
+  has_many :favoriting_users, through: :favorites, source: :user
+  has_many :made_reports, dependent: :destroy
+  has_many :ingredients, :class_name => "Ingredient", dependent: :destroy
+  accepts_nested_attributes_for :ingredients, :allow_destroy => true, :reject_if => :reject_ingredient
 
   def reject_ingredient(attributed)
     attributed['name'].blank?
   end
 
-	has_many :procedures, :class_name => "Procedure", :dependent => :destroy
+  has_many :procedures, :class_name => "Procedure", :dependent => :destroy
   accepts_nested_attributes_for :procedures, :allow_destroy => true, :reject_if => :reject_procedure
 
   def reject_procedure(attributed)
@@ -22,14 +22,14 @@ class Recipe < ActiveRecord::Base
   end
   has_many :category_selects, :class_name => "CategorySelect", :dependent => :destroy
   accepts_nested_attributes_for :category_selects
-    
+  
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/missing/:style/missing.jpg"
 
   validates_attachment :image,
-    content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
-    size: { less_than: 2.megabytes }
+  content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
+  size: { less_than: 2.megabytes }
   # validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
- 
+  
   # def authenticated_image_url(style)
   #   image.s3_object(style).url_for(:read, :secure => true)
   # end
@@ -42,49 +42,49 @@ class Recipe < ActiveRecord::Base
 	    else
 	      Recipe.all #全て表示。
 	    end
-  	end
+   end
 
-  	def self.kinds
-		{
-			"1" => "野菜のおかず",
-			"2" => "お肉のおかず",
-			"3" => "魚介のおかず",
-			"4" => "ごはんもの",
-			"5" => "パスタ・グラタン",
-			"6" => "麺類",
-			"7" => "サラダ",
-			"8" => "スープ・汁物",
-			"9" => "お弁当",
-			"10" => "おもてなし料理",
-			"11" => "お菓子",
-			"12" => "パン"
-		}
-	end
-
-  def self.categories
+   def self.kinds
     {
-      "2" => "糖質制限色",
-      "3" => "HbA1c、血糖値の安定",
-      "4" => "味に自信あり",
-      "5" => "すぐできるメニュー"
-    }
-  end
+     "1" => "野菜のおかず",
+     "2" => "お肉のおかず",
+     "3" => "魚介のおかず",
+     "4" => "ごはんもの",
+     "5" => "パスタ・グラタン",
+     "6" => "麺類",
+     "7" => "サラダ",
+     "8" => "スープ・汁物",
+     "9" => "お弁当",
+     "10" => "おもてなし料理",
+     "11" => "お菓子",
+     "12" => "パン"
+   }
+ end
 
-  def self.kinds2
-    {
-      1 => "野菜のおかず",
-      2 => "お肉のおかず",
-      3 => "魚介のおかず",
-      4 => "ごはんもの",
-      5 => "パスタ・グラタン",
-      6 => "麺類",
-      7 => "サラダ",
-      8 => "スープ・汁物",
-      9 => "お弁当",
-      10 => "おもてなし料理",
-      11 => "お菓子",
-      12 => "パン"
-    }
-  end
+ def self.categories
+  {
+    "2" => "糖質制限色",
+    "3" => "HbA1c、血糖値の安定",
+    "4" => "味に自信あり",
+    "5" => "すぐできるメニュー"
+  }
+end
+
+def self.kinds2
+  {
+    1 => "野菜のおかず",
+    2 => "お肉のおかず",
+    3 => "魚介のおかず",
+    4 => "ごはんもの",
+    5 => "パスタ・グラタン",
+    6 => "麺類",
+    7 => "サラダ",
+    8 => "スープ・汁物",
+    9 => "お弁当",
+    10 => "おもてなし料理",
+    11 => "お菓子",
+    12 => "パン"
+  }
+end
 
 end

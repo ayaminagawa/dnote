@@ -71,4 +71,4 @@ class CategorySelectsController < ApplicationController
     def category_params
       params.require(:category).permit(:id, :recipe_id, :menu_id, :category_number)
     end
-end
+  end

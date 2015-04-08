@@ -1,14 +1,14 @@
 <div class="container recipe-categories-container sp-off">
 
-        <ul class="recipe-categories">
+  <ul class="recipe-categories">
 
-          <% Recipe.kinds.each do |key, value| %>
-          <li>
-            <%= link_to value, kinds_path(:r_kind => key)%>
-          </li>
-          <% end %>
+    <% Recipe.kinds.each do |key, value| %>
+    <li>
+      <%= link_to value, kinds_path(:r_kind => key)%>
+    </li>
+    <% end %>
 
 
 
-        </ul>
-      </div>
+  </ul>
+</div>

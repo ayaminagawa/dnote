@@ -1,54 +1,54 @@
 <div class="col col-17 "> 
-<%= form_for(@recipe) do |f| %>
+  <%= form_for(@recipe) do |f| %>
   <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-      <ul>
-        <% @recipe.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div id="error_explanation">
+    <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+    <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
-    
-    <h2 class="title-bar"><i class="title-icon icon-edit"></i>レシピをのせる</h2>
+  
+  <h2 class="title-bar"><i class="title-icon icon-edit"></i>レシピをのせる</h2>
 
-    <div class="container-full inner-30">
-      <div class=" gutters row">
-        <div class="col col-20">
-          <div class="edit-recipe-title-container">
-            <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピのタイトルを入力</div>
-            <div class="edit-area imgInput">
-              <!-- <form action="#"> -->
-                <!-- <textarea class="edit-field edit-recipe-title" rows="2" placeholder="レシピのタイトルを入力"></textarea> -->    
-                <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'レシピのタイトルを入力', rows:'2' %>
-              <!-- </form>   -->  
-            </div>
+  <div class="container-full inner-30">
+    <div class=" gutters row">
+      <div class="col col-20">
+        <div class="edit-recipe-title-container">
+          <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピのタイトルを入力</div>
+          <div class="edit-area imgInput">
+            <!-- <form action="#"> -->
+            <!-- <textarea class="edit-field edit-recipe-title" rows="2" placeholder="レシピのタイトルを入力"></textarea> -->    
+            <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'レシピのタイトルを入力', rows:'2' %>
+            <!-- </form>   -->  
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="gutters row pb-30 pt-30">
-        <div class="col col-12">
-            <div class="edit-recipe-copy">
-              <div class="sp-head edit-label">
-                <i class="icon-s icon-pencil"></i>キャッチコピー
-              </div>
+    <div class="gutters row pb-30 pt-30">
+      <div class="col col-12">
+        <div class="edit-recipe-copy">
+          <div class="sp-head edit-label">
+            <i class="icon-s icon-pencil"></i>キャッチコピー
+          </div>
 
-              <div class="edit-area">
-                <p>あと60文字</p>
+          <div class="edit-area">
+            <p>あと60文字</p>
                       <!-- <form action="#" >
                         <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
                         <br>
                       </form> -->
                       
-                <%= f.text_area :description, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>              
-              </div>
-            </div>
+                      <%= f.text_area :description, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>              
+                    </div>
+                  </div>
 
 
-          <div class="sp-head"><br><i class="icon-s icon-image"></i>写真</div>
-            <div class="edit-recipe-img-container">
+                  <div class="sp-head"><br><i class="icon-s icon-image"></i>写真</div>
+                  <div class="edit-recipe-img-container">
               <!-- <div class="edit-recipe-img">
                 <form action="" class="form-recipe-img">
                   <input type="file" class="uploader-recipe-img">
@@ -58,19 +58,19 @@
               <div class="centering">
                 <div class="edit-recipe-img-typetext imgInput">
                   <!-- <i class="icon-s icon-camera"></i> -->
-                      <!-- <span class="border-b">写真を変更する</span> -->
+                  <!-- <span class="border-b">写真を変更する</span> -->
                       <!-- <form action="" class="form-recipe-img">
                         <input type="file" class="uploader-recipe-img-typetext">
                       </form> -->
-                    <%= f.file_field :image %>
-                    <%= image_tag("no_image.png", :class => "imgView ") %>
+                      <%= f.file_field :image %>
+                      <%= image_tag("no_image.png", :class => "imgView ") %>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-        </div>
 
-        <div class="col col-12 inner">
-          
+              <div class="col col-12 inner">
+                
           <!-- <div class="mt-30 edit-recipe-ingredient">
             <div class="sp-head edit-label">
               <i class="icon-s icon-scales"></i>&nbsp;材料
@@ -84,13 +84,13 @@
           </div> -->
           <br>
           <div class="sp-head edit-label">
-              <i class="icon-s icon-scales"></i>&nbsp;材料  <%= f.text_field :people, rows:'2', cols:'1' %>人分
-            </div>
+            <i class="icon-s icon-scales"></i>&nbsp;材料  <%= f.text_field :people, rows:'2', cols:'1' %>人分
+          </div>
 
           <div class="field">
             <div class="fields">
-            <!-- <div class="ingredient-modal remodal" data-remodal-id="ingredient-modal"> -->
-            <!-- <form action="#"> -->
+              <!-- <div class="ingredient-modal remodal" data-remodal-id="ingredient-modal"> -->
+              <!-- <form action="#"> -->
               <ul class="inner-30 edit-ingredient-container">
                 <li class="gutters row edit-ingredient-head">
                   <div class="col col-14 col-xs-14 edit-ingredient-item">
@@ -101,7 +101,7 @@
                   </div>
                 </li>
                 <%= f.fields_for :ingredients, @ingredients do |ingredient| %>
-                  <%= render 'recipes/fields_ingredient', {:f => ingredient} %>
+                <%= render 'recipes/fields_ingredient', {:f => ingredient} %>
                 <% end %>
                 <div class="step-add-btn">
                   <%= link_to_add_fields "新しく材料を追加する", f, :ingredients %>
@@ -110,53 +110,53 @@
                   <!-- <div class="edit-ingredient-submit-container">
                     <input type="submit" value="材料を保存する" class="edit-ingredient-submit">
                   </div> -->
-              <!-- </div> -->
-            </div>  
-          </div>
-        </div>
-      </div><!-- recipe-topここまで -->
-      
-  
-
-      <hr>
-
-            <div class="recipe-bottom pt-30 pb-30">
-              <div class="sp-head edit-label">
-                <i class="icon-s icon-scales"></i>&nbsp;作り方
+                  <!-- </div> -->
+                </div>  
               </div>
-              <div class="field">
-                <ul class="steps row" id="step-list">
-                  <li class="step-head pc-off">作り方</li>
+            </div>
+          </div><!-- recipe-topここまで -->
+          
+          
 
-                  <!-- 作り方 -->
-                  <%= f.fields_for :procedures, @procedures do |procedure| %>  
-                          <%= render 'fields_procedure', {:f => procedure} %>
-                  <% end %>
+          <hr>
 
-                      <div class="step-add-btn centering" style="clear:left;">
-                        <%= link_to_add_fields "作り方を追加する", f, :procedures, id: "add-proc" %>
-                      </div>
-                </ul>
-              </div>
-                
-                  
-                  <!-- 作り方 -->
+          <div class="recipe-bottom pt-30 pb-30">
+            <div class="sp-head edit-label">
+              <i class="icon-s icon-scales"></i>&nbsp;作り方
+            </div>
+            <div class="field">
+              <ul class="steps row" id="step-list">
+                <li class="step-head pc-off">作り方</li>
+
+                <!-- 作り方 -->
+                <%= f.fields_for :procedures, @procedures do |procedure| %>  
+                <%= render 'fields_procedure', {:f => procedure} %>
+                <% end %>
+
+                <div class="step-add-btn centering" style="clear:left;">
+                  <%= link_to_add_fields "作り方を追加する", f, :procedures, id: "add-proc" %>
+                </div>
+              </ul>
+            </div>
             
-              
-              <div class="row edit-memo-history-container inner-30">
-                <div class="memo-history memo-head recipe-memo col col-12">
-                  <div class="sp-head edit-label ">
-                    <i class="icon-star pc-off"></i>
-                    コツ・ポイント
-                  </div>
+            
+            <!-- 作り方 -->
+            
+            
+            <div class="row edit-memo-history-container inner-30">
+              <div class="memo-history memo-head recipe-memo col col-12">
+                <div class="sp-head edit-label ">
+                  <i class="icon-star pc-off"></i>
+                  コツ・ポイント
+                </div>
 
-                  <div class="edit-area">
+                <div class="edit-area">
                     <!-- <form action="#" >
                       <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
                       <br>
                     </form> -->
                     
-                       <%= f.text_area :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30', style: "font-size: 1.25rem" %>
+                    <%= f.text_area :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30', style: "font-size: 1.25rem" %>
                     
                   </div>
                 </div>
@@ -170,77 +170,77 @@
                   <!-- <form action="#" >
                     <textarea class="edit-field edit-kcal" placeholder="選択して編集する (例：400)"></textarea>
                   </form> -->
-                     <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する (例：400)', style: "font-size: 1.25rem" %>
-                     <div class="ml-30 sp-head edit-label">Kcal</div>
+                  <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する (例：400)', style: "font-size: 1.25rem" %>
+                  <div class="ml-30 sp-head edit-label">Kcal</div>
                 </div>
-                </div>
               </div>
-
-              <br>
-              <hr>
-              <br>
-              <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピカテゴリの選択</div><br>
-
-              <div class="radio-button">
-                    <label><%= f.radio_button :recipe_select, "1", {:checked => true} %> 主菜</label>
-                    <label><%= f.radio_button :recipe_select, "2" %> 副菜</label>
-              </div>
-              <br>
-              <div class="radio-button">    
-                    <label><%= f.radio_button :kind, "1", {:checked => true} %> 野菜のおかず</label>
-                    <label><%= f.radio_button :kind, "2" %> お肉のおかず</label>
-                    <label><%= f.radio_button :kind, "3" %> 魚介のおかず</label>
-                    <label><%= f.radio_button :kind, "4" %> ごはんもの</label>
-                    <label><%= f.radio_button :kind, "5" %> パスタ・グラタン</label>
-                    <label><%= f.radio_button :kind, "6" %> 麺</label>
-                    <label><%= f.radio_button :kind, "7" %> サラダ</label>
-                    <br>
-                    <label><%= f.radio_button :kind, "8" %> スープ・汁物</label>
-                    <label><%= f.radio_button :kind, "9" %> お弁当</label>
-                    <label><%= f.radio_button :kind, "10" %> おもてなし料理</label>
-                    <label><%= f.radio_button :kind, "11" %> お菓子</label>
-                    <label><%= f.radio_button :kind, "12" %> パン</label>
-              </div>
-              <br>
-     
-                <ul>
-                  <%= f.fields_for :category_selects, @category_selects do |f| %>
-                    <li>
-                      <label>
-                        <%= f.check_box :category_number2 %>
-                        糖質制限食
-                      </lavel>
-                    </li>
-                    <li>
-                      <label>
-                        <%= f.check_box :category_number3 %>
-                        HbA1c、血糖値の安定
-                      </lavel>
-                    </li>
-                    <li>
-                      <label>
-                        <%= f.check_box :category_number4 %>
-                        味に自信あり
-                      </lavel>
-                    </li>
-                    <li>
-                      <label>
-                        <%= f.check_box :category_number5 %>
-                        すぐできるメニュー
-                      </lavel>
-                    </li>                                                            
-                  <% end %>
-                </ul>
-
             </div>
 
-            <div class="centering mt-56 create-recipe-btn-container" >
-<!--          <a href="#" class="create-recipe-btn">レシピを公開する</a> -->          
-              <%= f.submit "レシピを公開する", class: 'create-recipe-btn' %>
+            <br>
+            <hr>
+            <br>
+            <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピカテゴリの選択</div><br>
+
+            <div class="radio-button">
+              <label><%= f.radio_button :recipe_select, "1", {:checked => true} %> 主菜</label>
+              <label><%= f.radio_button :recipe_select, "2" %> 副菜</label>
             </div>
+            <br>
+            <div class="radio-button">    
+              <label><%= f.radio_button :kind, "1", {:checked => true} %> 野菜のおかず</label>
+              <label><%= f.radio_button :kind, "2" %> お肉のおかず</label>
+              <label><%= f.radio_button :kind, "3" %> 魚介のおかず</label>
+              <label><%= f.radio_button :kind, "4" %> ごはんもの</label>
+              <label><%= f.radio_button :kind, "5" %> パスタ・グラタン</label>
+              <label><%= f.radio_button :kind, "6" %> 麺</label>
+              <label><%= f.radio_button :kind, "7" %> サラダ</label>
+              <br>
+              <label><%= f.radio_button :kind, "8" %> スープ・汁物</label>
+              <label><%= f.radio_button :kind, "9" %> お弁当</label>
+              <label><%= f.radio_button :kind, "10" %> おもてなし料理</label>
+              <label><%= f.radio_button :kind, "11" %> お菓子</label>
+              <label><%= f.radio_button :kind, "12" %> パン</label>
+            </div>
+            <br>
+            
+            <ul>
+              <%= f.fields_for :category_selects, @category_selects do |f| %>
+              <li>
+                <label>
+                  <%= f.check_box :category_number2 %>
+                  糖質制限食
+                </lavel>
+              </li>
+              <li>
+                <label>
+                  <%= f.check_box :category_number3 %>
+                  HbA1c、血糖値の安定
+                </lavel>
+              </li>
+              <li>
+                <label>
+                  <%= f.check_box :category_number4 %>
+                  味に自信あり
+                </lavel>
+              </li>
+              <li>
+                <label>
+                  <%= f.check_box :category_number5 %>
+                  すぐできるメニュー
+                </lavel>
+              </li>                                                            
+              <% end %>
+            </ul>
 
           </div>
-<% end %>
 
-</div>
-</div>
+          <div class="centering mt-56 create-recipe-btn-container" >
+            <!--          <a href="#" class="create-recipe-btn">レシピを公開する</a> -->          
+            <%= f.submit "レシピを公開する", class: 'create-recipe-btn' %>
+          </div>
+
+        </div>
+        <% end %>
+
+      </div>
+    </div>

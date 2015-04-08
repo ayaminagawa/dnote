@@ -1,35 +1,35 @@
 <div class="signup-modal remodal" data-remodal-id="modal">
 
-    <div class="gutters row">
-      <% if user_signed_in? %>
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title"> ログアウト</h4>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'button-b'  %>
-          <div class="facebook-btn-container">
-            <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
-            <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
-         </div>  
-        </div>
-      <% elsif nutritionist_signed_in? %>
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title"> ログアウト</h4>
-          <%= link_to "ログアウト", destroy_nutritionist_session_path, method: :delete, :class => 'button-b'  %>
-        </div>
-      <% else %>
+  <div class="gutters row">
+    <% if user_signed_in? %>
+    <div class="col col-12 modal-inner">
+      <h4 class="modal-title"> ログアウト</h4>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'button-b'  %>
+      <div class="facebook-btn-container">
+        <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+        <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
+      </div>  
+    </div>
+    <% elsif nutritionist_signed_in? %>
+    <div class="col col-12 modal-inner">
+      <h4 class="modal-title"> ログアウト</h4>
+      <%= link_to "ログアウト", destroy_nutritionist_session_path, method: :delete, :class => 'button-b'  %>
+    </div>
+    <% else %>
 
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title"> ログイン</h4>
-          <p class="modal-head">
-            <i class="icon-circle"></i>
-            すでにユーザー登録されている方
-          </p>
+    <div class="col col-12 modal-inner">
+      <h4 class="modal-title"> ログイン</h4>
+      <p class="modal-head">
+        <i class="icon-circle"></i>
+        すでにユーザー登録されている方
+      </p>
 
-          <div>
-            <%= link_to "ログイン", new_user_session_path , class:"button-b" %>
-          </div>
+      <div>
+        <%= link_to "ログイン", new_user_session_path , class:"button-b" %>
+      </div>
 
-        
-        <div class="facebook-btn-container">
+      
+      <div class="facebook-btn-container">
           <!-- <a href="" class="facebook-btn">
             <i class="icon-facebook-square"></i>
             Facebookでログイン
@@ -43,45 +43,45 @@
           <%= link_to "栄養管理士用ログイン", new_nutritionist_session_path , class:"button-b" %>
         </div>
       </div>
-       <% end %>
+      <% end %>
 
 
       <% if user_signed_in? %>
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title">Myページ</h4>
-          <%= link_to "Myページへ移動", current_user, class:'button-b' %>
-        </div>
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title">Myページ</h4>
+        <%= link_to "Myページへ移動", current_user, class:'button-b' %>
+      </div>
       <% elsif nutritionist_signed_in? %>
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title">コラムの投稿</h4>
-          <% if current_nutritionist.permission == 0 %>
-            <p>コラムを投稿するには管理人の許可が必要です</p>
-          <% else %>
-            <%= link_to "コラムを投稿する", new_column_path, class:'button-b' %>
-          <% end %>
-        </div>
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title">コラムの投稿</h4>
+        <% if current_nutritionist.permission == 0 %>
+        <p>コラムを投稿するには管理人の許可が必要です</p>
+        <% else %>
+        <%= link_to "コラムを投稿する", new_column_path, class:'button-b' %>
+        <% end %>
+      </div>
       <% else %>
-        <div class="col col-12 modal-inner">
-          <h4 class="modal-title">新規登録</h4>
-          <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
-          <div class="button-container">
-            <%= link_to "ユーザー登録をする", new_user_registration_path, class:'button-b' %>
-          </div>
+      <div class="col col-12 modal-inner">
+        <h4 class="modal-title">新規登録</h4>
+        <p class="modal-head"><i class="icon-circle"></i>ユーザー登録されていない方</p>
+        <div class="button-container">
+          <%= link_to "ユーザー登録をする", new_user_registration_path, class:'button-b' %>
+        </div>
 
-          <div class="facebook-btn-container">
+        <div class="facebook-btn-container">
             <!-- <a href="" class="facebook-btn">
             <i class="icon-facebook-square"></i>
             Facebookで新規登録
-            </a> -->
-            <%= link_to "Facebookで新規登録", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
-            <%= link_to "Twitterで新規登録",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
-          </div>
-
-          <br><hr><br>
-          <div class="button-container">
-            <%= link_to "栄養管理士のユーザー登録をする", new_nutritionist_registration_path, class:'button-b' %>
-          </div>
+          </a> -->
+          <%= link_to "Facebookで新規登録", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+          <%= link_to "Twitterで新規登録",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
         </div>
+
+        <br><hr><br>
+        <div class="button-container">
+          <%= link_to "栄養管理士のユーザー登録をする", new_nutritionist_registration_path, class:'button-b' %>
+        </div>
+      </div>
       <% end %>
       
     </div>
