@@ -3,50 +3,50 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
- <div class="col col-12 inner">
-          <br>
-          <div class="sp-head edit-label">
-               <i class="icon-s icon-play"></i>&nbsp;メールアドレス
-          </div>
-          <div class="field">
-            <div class="fields">
-              <ul class="inner-30 edit-ingredient-container">
-                   <%= f.email_field :email, autofocus: true, class:'edit-field edit-recipe-title' %>
-              </ul>
-            </div>  
-          </div>
-        </div>
+<div class="col col-12 inner">
+  <br>
+  <div class="sp-head edit-label">
+   <i class="icon-s icon-play"></i>&nbsp;メールアドレス
+ </div>
+ <div class="field">
+  <div class="fields">
+    <ul class="inner-30 edit-ingredient-container">
+     <%= f.email_field :email, autofocus: true, class:'edit-field edit-recipe-title' %>
+   </ul>
+ </div>  
+</div>
+</div>
 
 
- <div class="col col-12 inner">
-          <br>
-          <div class="sp-head edit-label">
-               <i class="icon-s icon-play"></i>&nbsp;パスワード
-          </div>
-          <div class="field">
-            <div class="fields">
-              <ul class="inner-30 edit-ingredient-container">
-                   <%= f.password_field :password, autocomplete: "off",class:'edit-field edit-recipe-title' %>
-              </ul>
-            </div>  
-          </div>
-        </div>
+<div class="col col-12 inner">
+  <br>
+  <div class="sp-head edit-label">
+   <i class="icon-s icon-play"></i>&nbsp;パスワード
+ </div>
+ <div class="field">
+  <div class="fields">
+    <ul class="inner-30 edit-ingredient-container">
+     <%= f.password_field :password, autocomplete: "off",class:'edit-field edit-recipe-title' %>
+   </ul>
+ </div>  
+</div>
+</div>
 
-  
-    <div class="col col-12 inner">
-      <br>
-      <% if devise_mapping.rememberable? -%>
-      <div class="sp-head edit-label">
-        <i class="icon-s icon-play"></i>　<%= f.check_box :remember_me %>&nbsp;パスワードを記憶させる
-      </div>
-      <% end -%>
-       <div class="actions centering mt-56 create-recipe-btn-container" >       
-        <%= f.submit "ログインする", class: 'create-recipe-btn' %>
-      </div>
-    </div>
-  
 
-   
+<div class="col col-12 inner">
+  <br>
+  <% if devise_mapping.rememberable? -%>
+  <div class="sp-head edit-label">
+    <i class="icon-s icon-play"></i>　<%= f.check_box :remember_me %>&nbsp;パスワードを記憶させる
+  </div>
+  <% end -%>
+  <div class="actions centering mt-56 create-recipe-btn-container" >       
+    <%= f.submit "ログインする", class: 'create-recipe-btn' %>
+  </div>
+</div>
+
+
+
 
 <% end %>
 

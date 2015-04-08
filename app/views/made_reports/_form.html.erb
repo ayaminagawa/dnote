@@ -1,46 +1,46 @@
 <div class="col col-17 "> 
 
 
-<%= form_for @made_report, :url => {:action => 'create'} do |f| %>
+  <%= form_for @made_report, :url => {:action => 'create'} do |f| %>
 
- <% if @made_report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@made_report.errors.count, "error") %> prohibited this made_report from being saved:</h2>
+  <% if @made_report.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@made_report.errors.count, "error") %> prohibited this made_report from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @made_report.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
 
-<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>つくれぽを作る</h2>
+  <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>つくれぽを作る</h2>
 
-<div class="container-full inner-30">
-  <div class=" gutters row">
-        <div class="col col-12">
-          <div class="edit-recipe-title-container">
-            <div class="sp-head "> <i class="icon-s icon-pencil"></i>コメント</div>
-            <div class="edit-area imgInput">  
-              <%= f.text_area :message, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>          
-            </div>
+  <div class="container-full inner-30">
+    <div class=" gutters row">
+      <div class="col col-12">
+        <div class="edit-recipe-title-container">
+          <div class="sp-head "> <i class="icon-s icon-pencil"></i>コメント</div>
+          <div class="edit-area imgInput">  
+            <%= f.text_area :message, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>          
           </div>
         </div>
+      </div>
 
-        <div class="centering">
+      <div class="centering">
         <div class="edit-recipe-img-typetext imgInput">
-                    <%= f.file_field :image %>
-                    <%= image_tag("no_image.png", :class => "imgView ") %>
+          <%= f.file_field :image %>
+          <%= image_tag("no_image.png", :class => "imgView ") %>
         </div>
       </div>
-  
-      </div>
-  
-
-
       
+    </div>
+    
+
+
+    
 
     <%= f.hidden_field :recipe_id, :value => @recipe.id %>
 

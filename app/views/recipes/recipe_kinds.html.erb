@@ -1,5 +1,5 @@
 
-    <%= render 'recipes/category' %>
+<%= render 'recipes/category' %>
 
 <div class="col col-18 menu-recipe-container">
   <div class="page-title">
@@ -18,12 +18,12 @@
   </div>
 
   <div id="tab-box">
- 
+   
 
     <ul class="inner pt-30 tab-container menu-container" id="menu-container">
 
       <!-- レシピひとつ分 -->
-       <% @kinds.each do |box| %>
+      <% @kinds.each do |box| %>
       <li class="gutters row menu">
         <div class="col col-11 col-xs col-xs-11">
           <div class="menu-img">
@@ -32,16 +32,16 @@
             </a> -->
             
             <%= link_to recipe_path(box) do %>
-              <div class="recommended-image photo" style="background-image: box.image.url %>');">
-              </div>
+            <div class="recommended-image photo" style="background-image: box.image.url %>');">
+            </div>
             <% end %>
           </div>
         </div>
 
-       
+        
 
-            <div class="col col-13 col-xs col-xs-13">
-              <div class="menu-title">
+        <div class="col col-13 col-xs col-xs-13">
+          <div class="menu-title">
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
@@ -59,10 +59,10 @@
 
             </div>
           </li>
-        <% end %>    
-      <!-- レシピひとつ分 -->
-    </ul>
-  </div>
+          <% end %>    
+          <!-- レシピひとつ分 -->
+        </ul>
+      </div>
 
-</div>
+    </div>
 <!-- tab-box -->

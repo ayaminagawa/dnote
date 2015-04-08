@@ -1,8 +1,8 @@
 class MadeReportsController < ApplicationController
   def new
-  	 @made_report = MadeReport.new
-     @recipe = Recipe.find(params[:recipe_id])
-     render :layout => "preview_layout"
+    @made_report = MadeReport.new
+    @recipe = Recipe.find(params[:recipe_id])
+    render :layout => "preview_layout"
   end
 
   def create
@@ -33,25 +33,25 @@ class MadeReportsController < ApplicationController
   end
 
   def update
-     render :layout => "preview_layout"
-  end
+   render :layout => "preview_layout"
+ end
 
-  def edit
-    render :layout => "preview_layout" 
-  end
+ def edit
+  render :layout => "preview_layout" 
+end
 
-  def destroy
-  	@made_report.destroy
-    respond_to do |format|
-      format.html { redirect_to made_reports_url }
-      format.json { head :no_content }
-    end
-  end
+def destroy
+ @made_report.destroy
+ respond_to do |format|
+  format.html { redirect_to made_reports_url }
+  format.json { head :no_content }
+end
+end
 
-  def show
-  end
+def show
+end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_made_report
       @made_report = MadeReport.find(params[:id])
@@ -62,4 +62,4 @@ class MadeReportsController < ApplicationController
       params.require(:made_report).permit(:message, :image, :recipe_id)
     end
 
-end
+  end

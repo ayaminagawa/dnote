@@ -27,15 +27,15 @@ class RecipesController < ApplicationController
     if @category == "2"
       @categories = @category2.map{|category2|category2.recipe}
       @menu_categories = @menu_category2.map{|menu_category2|menu_category2.menu}
-      elsif @category == "3"
-        @categories = @category3.map{|category3|category3.recipe}
-        @menu_categories = @menu_category3.map{|menu_category3|menu_category3.menu}
-      elsif @category == "4"
-        @categories = @category4.map{|category4|category4.recipe}
-        @menu_categories = @menu_category4.map{|menu_category4|menu_category4.menu}
-      elsif @category == "5"
-        @categories = @category5.map{|category5|category5.recipe}
-        @menu_categories = @menu_category5.map{|menu_category5|menu_category5.menu}          
+    elsif @category == "3"
+      @categories = @category3.map{|category3|category3.recipe}
+      @menu_categories = @menu_category3.map{|menu_category3|menu_category3.menu}
+    elsif @category == "4"
+      @categories = @category4.map{|category4|category4.recipe}
+      @menu_categories = @menu_category4.map{|menu_category4|menu_category4.menu}
+    elsif @category == "5"
+      @categories = @category5.map{|category5|category5.recipe}
+      @menu_categories = @menu_category5.map{|menu_category5|menu_category5.menu}          
     end
   end
 
@@ -61,7 +61,7 @@ class RecipesController < ApplicationController
     3.times{@recipe.ingredients.build}
     4.times{@recipe.procedures.build}
     @recipe.category_selects.build
-     render :layout => "preview_layout"
+    render :layout => "preview_layout"
     # @ingredient = Ingredient.new
     # @category_select = CategorySelect.new(params[:category])  
   end
@@ -132,4 +132,4 @@ class RecipesController < ApplicationController
       @Recipe = Recipe.find_by(id: params[:id])
       redirect_to root_url unless current_user?(@recipe.user)
     end
-end
+  end

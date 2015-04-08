@@ -11,11 +11,11 @@ class ColumnsController < ApplicationController
   def create
     @column = Column.new(column_params)
 
-      if @column.save
-        redirect_to(about_index_path)
-      else
-        render 'new'
-      end
+    if @column.save
+      redirect_to(about_index_path)
+    else
+      render 'new'
+    end
     
   end
 
@@ -35,4 +35,4 @@ class ColumnsController < ApplicationController
     def column_params
       params.require(:column).permit(:title, :body, :nutritionist_id)
     end
-end
+  end

@@ -1,5 +1,5 @@
 <% if current_user.favorite?(recipe) %>
-    <%= render 'favorites/destroy', recipe: recipe %>
+<%= render 'favorites/destroy', recipe: recipe %>
 <% else %>
-    <%= render 'favorites/create', recipe: recipe %>
+<%= render 'favorites/create', recipe: recipe %>
 <% end %>

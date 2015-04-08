@@ -1,12 +1,12 @@
 
-    <%= render 'recipes/category' %>
+<%= render 'recipes/category' %>
 
-  <div class="col col-18 menu-recipe-container">
-    <div class="page-title">
-      <span class="page-title-sub">レシピ検索一覧</span>
-      <!-- <span class="page-title-sub">献立・レシピ</span> -->
-      <!-- <span class="count">20件</span> -->
-    </div>
+<div class="col col-18 menu-recipe-container">
+  <div class="page-title">
+    <span class="page-title-sub">レシピ検索一覧</span>
+    <!-- <span class="page-title-sub">献立・レシピ</span> -->
+    <!-- <span class="count">20件</span> -->
+  </div>
   <!-- 
     <div class="tab-switch-container">
       <ul>
@@ -22,7 +22,7 @@
         </li>
       </ul>
     </div>
- -->
+  -->
   <div id="tab-box">
 
     <ul class="inner pt-30 tab-container menu-container" id="menu-container">
@@ -42,35 +42,35 @@
 
         
         <div class="col col-13 col-xs col-xs-13">
-           <div class="menu-title">
+         <div class="menu-title">
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
-             <%= link_to recipe.name, recipe %>
-           </div>
+                <%= link_to recipe.name, recipe %>
+              </div>
 
-           <p class="menu-comment">
-            <%= recipe.description %>
-           </p>
+              <p class="menu-comment">
+                <%= recipe.description %>
+              </p>
 
-           <div class="author">
-            <!--  <a href="#">by つくったひと</a> -->
-            <%= link_to recipe.user.name, user_path(recipe.user) %>
-           </div>
+              <div class="author">
+                <!--  <a href="#">by つくったひと</a> -->
+                <%= link_to recipe.user.name, user_path(recipe.user) %>
+              </div>
 
-          </div>
+            </div>
 
-        </li>
+          </li>
 
-        <% end %>    
-      <!-- レシピひとつ分 -->
-    </ul>
+          <% end %>    
+          <!-- レシピひとつ分 -->
+        </ul>
+      </div>
+
+    </div>
+    <!-- tab-box -->
+
   </div>
-
-</div>
-<!-- tab-box -->
-
-</div>
 
 </div><!-- contents end-->
 

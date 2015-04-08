@@ -10,46 +10,46 @@ Dnote::Application.routes.draw do
   devise_for :nutritionists, controllers: {
    :sessions => "nutritionists/sessions",
    :registrations => "nutritionists/registrations"
-  }
-  
+ }
+ 
 
-  get "create/destroy"
-  get "create/show"
-  devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks",
-    :passwords => "users/passwords",
-    :sessions      => "users/sessions",
-    :registrations => "users/registrations",
-  }
+ get "create/destroy"
+ get "create/show"
+ devise_for :users, controllers: {
+  omniauth_callbacks: "users/omniauth_callbacks",
+  :passwords => "users/passwords",
+  :sessions      => "users/sessions",
+  :registrations => "users/registrations",
+}
 
-  resources :menus
+resources :menus
 
-  get "menu/new"
-  get "menu/create"
-  get "menu/destroy"
-  root  'about#index'
-  match '/about', to:'about#index', via:'get'
-  get "company", to: "about#company"
+get "menu/new"
+get "menu/create"
+get "menu/destroy"
+root  'about#index'
+match '/about', to:'about#index', via:'get'
+get "company", to: "about#company"
 
-  get "about/index"
+get "about/index"
 
-  resources :recipes do
-    resource :made_reports
-  end
-  resources :users
-  resources :menu_recipes
-  resources :ingredients
+resources :recipes do
+  resource :made_reports
+end
+resources :users
+resources :menu_recipes
+resources :ingredients
 
-  get '/kinds', to:'recipes#recipe_kinds'
-  get '/categories', to:'recipes#recipe_categories'
-  get '/calories', to:'recipes#calories'
+get '/kinds', to:'recipes#recipe_kinds'
+get '/categories', to:'recipes#recipe_categories'
+get '/calories', to:'recipes#calories'
 
-  get "made_report/new"
-  get "made_report/create"
-  get "made_report/destroy"
-  resources :favorites, only: [:create, :destroy]
+get "made_report/new"
+get "made_report/create"
+get "made_report/destroy"
+resources :favorites, only: [:create, :destroy]
 
-  get '/menu_recipes', to:'menus#menu_recipes'
+get '/menu_recipes', to:'menus#menu_recipes'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

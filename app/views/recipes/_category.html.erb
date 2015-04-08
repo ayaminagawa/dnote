@@ -1,39 +1,39 @@
 
-    <div class="contents" id="menu-recipe-page">
-      <h2 class="title-bar"><i class="title-icon icon-cutlery"></i>
-        献立・レシピ一覧</h2>
+<div class="contents" id="menu-recipe-page">
+  <h2 class="title-bar"><i class="title-icon icon-cutlery"></i>
+    献立・レシピ一覧</h2>
 
-        <div class="container-full row pt-30">
-          <div class="col col-6 sidemenu-container sp-off" id="sidebar-container">
-            <ul class="sidemenu" id="sidemenu">
-              <li class="sidemenu-item menu-sub-title">
-                <i class="icon-list-ul"></i>
-                カテゴリから探す
-              </li>
+    <div class="container-full row pt-30">
+      <div class="col col-6 sidemenu-container sp-off" id="sidebar-container">
+        <ul class="sidemenu" id="sidemenu">
+          <li class="sidemenu-item menu-sub-title">
+            <i class="icon-list-ul"></i>
+            カテゴリから探す
+          </li>
 
-              <li class="sidemenu-item">
+          <li class="sidemenu-item">
                 <!-- <a href="menu-recipe.html">
                  カロリー表示あり
-                </a>    --> 
+               </a>    --> 
                <%= link_to 'カロリー表示あり', calories_path %>
-              </li>
+             </li>
 
-              <% Recipe.categories.each do |key, value| %>
-                <li class="sidemenu-item">
-                  <%= link_to value, categories_path(:r_category => key)%>
-                </li>
-              <% end %>
+             <% Recipe.categories.each do |key, value| %>
+             <li class="sidemenu-item">
+              <%= link_to value, categories_path(:r_category => key)%>
+            </li>
+            <% end %>
 
-              <li class="sidemenu-item menu-sub-title">
-                <i class="icon-cutlery"></i>
-                レシピカテゴリ
-              </li>
+            <li class="sidemenu-item menu-sub-title">
+              <i class="icon-cutlery"></i>
+              レシピカテゴリ
+            </li>
 
-              <% Recipe.kinds.each do |key, value| %>
-                <li class="sidemenu-item menu-accordion-container">
-                  <%= link_to value, kinds_path(:r_kind => key)%>
-                </li>
-              <% end %>
+            <% Recipe.kinds.each do |key, value| %>
+            <li class="sidemenu-item menu-accordion-container">
+              <%= link_to value, kinds_path(:r_kind => key)%>
+            </li>
+            <% end %>
 
-      </ul>
-</div>
+          </ul>
+        </div>

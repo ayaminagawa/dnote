@@ -1,25 +1,25 @@
  <!-- フッター -->
  <footer id="footer">
-    <div class="full pc-footer footer-container">
-      <div class="footer-logo">
-        <!-- <img src="/assets/logo.png" alt="Dnote" class="photo"> -->
-        <%= image_tag("logo.png" ,:alt => "Dnote", :class => "photo") %>
-      </div>
+  <div class="full pc-footer footer-container">
+    <div class="footer-logo">
+      <!-- <img src="/assets/logo.png" alt="Dnote" class="photo"> -->
+      <%= image_tag("logo.png" ,:alt => "Dnote", :class => "photo") %>
+    </div>
 
-      <div class="footer-head">
-        症状で探す
-      </div>
+    <div class="footer-head">
+      症状で探す
+    </div>
 
-      <ul class="footer-category-list">
-        <li class="category-item"> 
-          <%= link_to 'カロリー表示あり', calories_path %>
-        </li>
-        <% Recipe.categories.each do |key, value| %>
-          <li class="category-item">
-            <%= link_to value, categories_path(:r_category => key)%>
-              </li>
-        <% end %>
-      </ul>
+    <ul class="footer-category-list">
+      <li class="category-item"> 
+        <%= link_to 'カロリー表示あり', calories_path %>
+      </li>
+      <% Recipe.categories.each do |key, value| %>
+      <li class="category-item">
+        <%= link_to value, categories_path(:r_category => key)%>
+      </li>
+      <% end %>
+    </ul>
 
       <!-- <ul class="social-list">
         <li>
