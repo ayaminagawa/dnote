@@ -27,14 +27,12 @@ class MenusController < ApplicationController
     @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
     @menu.category_selects.build
-    render :layout => "preview_layout"
   end
 
   # GET /menus/1/edit
   def edit
     @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
     @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
-    render :layout => "preview_layout"
   end
 
   # POST /menus
@@ -56,6 +54,10 @@ class MenusController < ApplicationController
   # PATCH/PUT /menus/1
   # PATCH/PUT /menus/1.json
   def update
+<<<<<<< .merge_file_Tm6kjj
+=======
+    respond_to do |format|
+>>>>>>> .merge_file_ZDuX0d
       
       if @menu.update(menu_params)
         redirect_to(menu_path(@menu))

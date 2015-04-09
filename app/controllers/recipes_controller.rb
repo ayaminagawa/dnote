@@ -63,17 +63,15 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-    3.times{@recipe.ingredients.build}
+    6.times{@recipe.ingredients.build}
     4.times{@recipe.procedures.build}
     @recipe.category_selects.build
-    render :layout => "preview_layout"
     # @ingredient = Ingredient.new
     # @category_select = CategorySelect.new(params[:category])  
   end
 
   # GET /recipes/1/edit
   def edit
-    render :layout => "preview_layout"
   end
 
   # POST /recipes
@@ -109,7 +107,6 @@ class RecipesController < ApplicationController
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
-    render :layout => "preview_layout"
   end
 
   # DELETE /recipes/1

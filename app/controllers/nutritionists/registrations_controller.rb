@@ -1,7 +1,6 @@
 class Nutritionists::RegistrationsController < Devise::RegistrationsController
 
   def update
-    render :layout => "preview_layout"
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
     
@@ -24,12 +23,10 @@ class Nutritionists::RegistrationsController < Devise::RegistrationsController
 
   def new
     @nutritionist = Nutritionist.new
-    render :layout => "preview_layout"
   end
 
 
   def edit
-    render :layout => "preview_layout"
   end
 
 

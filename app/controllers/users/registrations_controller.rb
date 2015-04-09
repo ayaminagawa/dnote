@@ -8,11 +8,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
-    render :layout => "preview_layout"
   end
 
   def edit
-    render :layout => "preview_layout"
   end
 
   def update
