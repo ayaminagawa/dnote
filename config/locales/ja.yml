@@ -212,9 +212,14 @@ ja:
       made_report:
         message: コメント
         image: 写真のファイル
+      nutritionist:
+        email: メールアドレス
+        password: パスワード
+        name: 名前
 
     models:
       user: ユーザー
       recipe: レシピ
       menu: 献立
       made_report: つくれぽ
+      nutritionist: 栄養管理士
