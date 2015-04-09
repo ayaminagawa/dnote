@@ -4,6 +4,8 @@ class Nutritionist < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  validates :name, presence: true
+
   has_many :columns
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },:url => "/images/:class/:attachment/:id_partition/:style/:filename", default_url: "/system/missing/:style/missing.jpg"
