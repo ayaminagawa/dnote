@@ -54,10 +54,6 @@ class MenusController < ApplicationController
   # PATCH/PUT /menus/1
   # PATCH/PUT /menus/1.json
   def update
-<<<<<<< .merge_file_Tm6kjj
-=======
-    respond_to do |format|
->>>>>>> .merge_file_ZDuX0d
       
       if @menu.update(menu_params)
         redirect_to(menu_path(@menu))

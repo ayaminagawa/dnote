@@ -35,7 +35,8 @@ $(function() {
 });
 
 $(function() {
-  $("input:text").keypress(function(e) {
+  $(document).on("keypress", "input:text", function (e) {
+  // $("input:text").keypress(function(e) {
     if (e.which == 13) { // Enterキーの場合
       // input type="text"の配列を作成
       var textArry = $("input:text");
