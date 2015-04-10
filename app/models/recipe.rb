@@ -88,4 +88,22 @@ def self.kinds2
   }
 end
 
+def self.arr
+      [ 
+        [ "1", "category-icon/yasai.png", "野菜のおかず" ],
+        [ "2", "category-icon/oniku.png", "お肉のおかず" ],
+        [ "3", "category-icon/gyokai.png", "魚介のおかず" ],
+        [ "4", "category-icon/gohanmono.png", "ごはんもの" ],
+        [ "5", "category-icon/gyokai.png", "パスタ・グラタン" ],
+        [ "6", "category-icon/pasta.png", "麺類" ],
+        [ "7", "category-icon/salada.png", "サラダ" ],
+        [ "8", "category-icon/soup.png", "スープ・汁物" ],
+        [ "9", "category-icon/obento.png", "お弁当" ],
+        [ "10", "category-icon/omotenashi.png", "おもてなし料理" ],
+        [ "11", "category-icon/okashi.png", "お菓子" ],
+        [ "12", "category-icon/pan.png", "パン" ]
+       ]
+end
+
+
 end

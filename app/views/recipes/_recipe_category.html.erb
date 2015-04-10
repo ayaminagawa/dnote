@@ -2,9 +2,10 @@
 
   <ul class="recipe-categories">
 
-    <% Recipe.kinds.each do |key, value| %>
+    <% Recipe.arr.each do |key, image, name| %>
     <li>
-      <%= link_to value, kinds_path(:r_kind => key)%>
+      <%= image_tag image %>
+      <%= link_to name, kinds_path(:r_kind => key)%>
     </li>
     <% end %>
 
