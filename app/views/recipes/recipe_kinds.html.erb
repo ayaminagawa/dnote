@@ -32,7 +32,7 @@
             </a> -->
             
             <%= link_to recipe_path(box) do %>
-            <div class="recommended-image photo" style="background-image: box.image.url %>');">
+            <div class="recommended-image photo" style="background-image: url('<%= box.image.url %>');">
             </div>
             <% end %>
           </div>
