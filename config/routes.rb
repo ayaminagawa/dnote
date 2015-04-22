@@ -1,5 +1,6 @@
 Dnote::Application.routes.draw do
 
+  get '/nutritionist_mypage', to:'nutritionists#mypage'
   get "nutritionists/show"
   get "column/new"
   get "column/create"
