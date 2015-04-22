@@ -56,18 +56,29 @@
         <li class="signup">
           <%= link_to "献立をのせる", new_menu_path, class:'icon-edit post-recipe-text' %>
         </li>
+        <% elsif nutritionist_signed_in? %>
+          <li class="signup">
+            <%= link_to "レシピをのせる", new_recipe_path, class:'icon-edit post-recipe-text' %>
+          </li>
+          <li class="signup">
+            <%= link_to "献立をのせる", new_menu_path, class:'icon-edit post-recipe-text' %>
+          </li>
+          <li class="signup">
+              <%= link_to "コラムを投稿する", new_column_path, class:'icon-edit post-recipe-text' %>
+          </li>
         <% else %>
-        <li class="signup">
-          <a href="#modal" >
-            <i class='icon-edit post-recipe-text'></i>レシピをのせる
-          </a>
-        </li>
-        <li class="signup">
-          <a href="#modal" >
-            <i class='icon-edit post-recipe-text'></i>献立をのせる
-          </a>
-        </li>
+          <li class="signup">
+            <a href="#modal" >
+              <i class='icon-edit post-recipe-text'></i>レシピをのせる
+            </a>
+          </li>
+          <li class="signup">
+            <a href="#modal" >
+              <i class='icon-edit post-recipe-text'></i>献立をのせる
+            </a>
+          </li>
         <% end %>
+
       </ul>
     </div>
   </div>
