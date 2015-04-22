@@ -1,5 +1,6 @@
 Dnote::Application.routes.draw do
 
+  get "nutritionists/show"
   get "column/new"
   get "column/create"
   get "column/destroy"
