@@ -70,7 +70,7 @@
 
             <div class="col col-18">
               <div class="author-name">
-                <p><%= @column.nutritionist.name %></p>
+                <%= link_to @column.nutritionist.name, nutritionists_show_path(@column.nutritionist, :id => @column.nutritionist.id) %>
               </div>
               <div class="column-title">
                 <%= link_to @column.title, columns_path %>
