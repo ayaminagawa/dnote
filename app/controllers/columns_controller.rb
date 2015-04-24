@@ -4,6 +4,11 @@ class ColumnsController < ApplicationController
     @column = Column.find(:last) 
   end
 
+  def show
+    @id = params[:id]
+    @column = Column.find(@id)
+  end
+
   def new
   	@column = Column.new
   end
