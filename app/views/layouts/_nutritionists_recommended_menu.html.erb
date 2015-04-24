@@ -70,7 +70,7 @@
 
             <div class="col col-18">
               <div class="author-name">
-                <p><%= @column.nutritionist.name %></p>
+                <%= link_to @column.nutritionist.name, @column.nutritionist %>
               </div>
               <div class="column-title">
                 <%= link_to @column.title, @column %>
