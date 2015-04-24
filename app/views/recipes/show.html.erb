@@ -103,8 +103,10 @@
                 <div class="gutters row">
                   <div class="step-img col col-xs col-xs-11">
                     <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                    <div class="recommended-image photo" style="background-image: url('<%= procedure.image.url %>');">
-                    </div>
+                    <% if procedure.image_file_name != nil %>
+                      <div class="recommended-image photo" style="background-image: url('<%= procedure.image.url %>');">
+                      </div>
+                    <% end %>
                   </div>
 
                   <div class="col col-xs col-xs-12 step-info">
