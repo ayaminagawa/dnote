@@ -1,7 +1,7 @@
 class ColumnsController < ApplicationController
 
   def index
-    @column = Column.find(:last) 
+    @columns = Column.all
   end
 
   def show
