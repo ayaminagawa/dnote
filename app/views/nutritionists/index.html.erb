@@ -1,0 +1,31 @@
+<div class="contents" id="nuturition-page">
+
+<div class="nuturition-container">
+   <div class="title-bar">
+      <i class="title-icon icon-nife-fork-2"></i>
+      管理栄養士一覧ページ
+    </div>
+
+        <div class="gutters row container inner-30">
+          <ul >
+            <% @nutritionists.each do |nutritionist| %>
+               <li class="col col-12 inner repo">
+                  <div class="author-img-sp">
+                    <div class="profile-image" style="background-image: url('<%= nutritionist.image.url %>');">
+                    </div>
+                  </div>
+
+                  <div class="col col-16 nuturition-date">
+                    <div class="nuturition-name">
+                      <%= link_to nutritionist.name, nutritionists_show_path(nutritionist) %>
+                    </div>
+                      <p class="nuturition-description sp-off">
+                        <%= nutritionist.description %>
+                      <p/>
+                  </div>
+               </li>
+            <% end %>
+          </ul>
+
+</div>
+</div><!-- contents end-->
