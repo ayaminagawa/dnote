@@ -12,7 +12,9 @@ class AboutController < ApplicationController
     # @side1_recipe = @side1_recipes.first
     # @side2_recipe = @side2_recipes.first
     @nurtrition_menu = Menu.find(3)
-    @column = Column.find(:last)
+
+    @permission_columns = Column.where(permission: 1)
+    @column = @permission_columns.find(:last)
 
 
     require "date"
