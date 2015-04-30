@@ -8,7 +8,8 @@ Dnote::Application.routes.draw do
   get "column/destroy"
   get "column/update"
   get "column/index"
-  resources :columns, :nutritionists, :menus, :users, :menu_recipes, :ingredients
+  resources :columns
+  resources :nutritionists
   
   devise_for :nutritionists, controllers: {
    :sessions => "nutritionists/sessions",
@@ -25,6 +26,8 @@ Dnote::Application.routes.draw do
   :registrations => "users/registrations",
 }
 
+resources :menus
+
 get "menu/new"
 get "menu/create"
 get "menu/destroy"
@@ -37,6 +40,9 @@ get "about/index"
 resources :recipes do
   resource :made_reports
 end
+resources :users
+resources :menu_recipes
+resources :ingredients
 
 get '/kinds', to:'recipes#recipe_kinds'
 get '/categories', to:'recipes#recipe_categories'
