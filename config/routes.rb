@@ -1,14 +1,14 @@
 Dnote::Application.routes.draw do
 
   get "nutritionists/index"
+  get 'nutritionists/show/:id' => 'nutritionists#show'
   get 'columns/show/:id' => 'columns#show'
-  get "nutritionists/show"
   get "column/new"
   get "column/create"
   get "column/destroy"
   get "column/update"
   get "column/index"
-  resources :columns
+  resources :columns, :nutritionists, :menus, :users, :menu_recipes, :ingredients
   
   devise_for :nutritionists, controllers: {
    :sessions => "nutritionists/sessions",
@@ -25,8 +25,6 @@ Dnote::Application.routes.draw do
   :registrations => "users/registrations",
 }
 
-resources :menus
-
 get "menu/new"
 get "menu/create"
 get "menu/destroy"
@@ -39,9 +37,6 @@ get "about/index"
 resources :recipes do
   resource :made_reports
 end
-resources :users
-resources :menu_recipes
-resources :ingredients
 
 get '/kinds', to:'recipes#recipe_kinds'
 get '/categories', to:'recipes#recipe_categories'
