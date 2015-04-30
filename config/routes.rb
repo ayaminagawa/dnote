@@ -2,6 +2,7 @@ Dnote::Application.routes.draw do
 
   get "nutritionists/index"
   get 'nutritionists/show/:id' => 'nutritionists#show'
+  get 'nutritionists/show'
   get 'columns/show/:id' => 'columns#show'
   get "column/new"
   get "column/create"
