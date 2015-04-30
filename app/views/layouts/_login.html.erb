@@ -54,7 +54,7 @@
       <% elsif nutritionist_signed_in? %>
       <div class="col col-12 modal-inner">
         <h4 class="modal-title">Myページ</h4>
-        <%= link_to "管理栄養士Myページへ移動", nutritionists_show_path(current_nutritionist), class:'button-b' %>
+        <%= link_to "管理栄養士Myページへ移動", nutritionist_path(current_nutritionist), class:'button-b' %>
       </div>
       <% else %>
       <div class="col col-12 modal-inner">
