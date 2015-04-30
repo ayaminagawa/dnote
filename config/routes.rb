@@ -9,7 +9,6 @@ Dnote::Application.routes.draw do
   get "column/update"
   get "column/index"
   resources :columns
-  resources :nutritionists
   
   devise_for :nutritionists, controllers: {
    :sessions => "nutritionists/sessions",
@@ -54,6 +53,7 @@ get "made_report/destroy"
 resources :favorites, only: [:create, :destroy]
 
 get '/menu_recipes', to:'menus#menu_recipes'
+ resources :nutritionists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
