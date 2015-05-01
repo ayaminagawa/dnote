@@ -1,8 +1,8 @@
 Dnote::Application.routes.draw do
 
   get "nutritionists/index"
+  get 'nutritionists/show/:id' => 'nutritionists#show'
   get 'columns/show/:id' => 'columns#show'
-  get "nutritionists/show"
   get "column/new"
   get "column/create"
   get "column/destroy"
@@ -53,6 +53,7 @@ get "made_report/destroy"
 resources :favorites, only: [:create, :destroy]
 
 get '/menu_recipes', to:'menus#menu_recipes'
+ resources :nutritionists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

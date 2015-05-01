@@ -32,7 +32,7 @@
             <% @columns.each do |column|%>
             <li class="col col-12 inner repo">
               <div class="menu-title">
-                <%= column.title %>
+                <%= link_to column.title, column %>
               </div>
               <div class="repo-date">
                 <p class="repo-data">
