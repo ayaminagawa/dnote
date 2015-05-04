@@ -16,7 +16,7 @@
           <div class="inner mykitchen-head"> <%= @user.name %>さん</div>
           <ul >
             <div class="author-img-sp">
-              <div class="profile-image" style="background-image: url('<%= @user.image.url %>');">
+              <div class="profile-image" style="background-image: url('<%= @user.image.url(:original) %>');">
               </div>
               <!--   <%= profile_image_for @user %> -->
             </div>
@@ -46,7 +46,7 @@
                   <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
                 </a> -->
                 <%= link_to recipe_path(recipe) do %>
-                <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url %>');">
+                <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url(:original) %>');">
                 </div>
                 <% end %>
               </div>
@@ -85,7 +85,7 @@
                 </a> -->
                 
                 <%= link_to menu_path(menu) do %>
-                <div class="recommended-image photo" style="background-image: url('<%= menu.image.url %>');">
+                <div class="recommended-image photo" style="background-image: url('<%= menu.image.url(:original) %>');">
                 </div>
                 <% end %>
               </div>
@@ -138,7 +138,7 @@
                <!-- <a href="recipe.html">
                 <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
               </a> -->
-              <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url %>');">
+              <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url(:original) %>');">
               </div>
             </div>
 
@@ -241,7 +241,7 @@
 
     <div class="menu-img">
       <%= link_to recipe_path(favorite_recipe) do %>
-      <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url %>');">
+      <div class="recommended-image photo" style="background-image: url('<%= favorite_recipe.image.url(:original) %>');">
       </div>
       <% end %>
     </div>

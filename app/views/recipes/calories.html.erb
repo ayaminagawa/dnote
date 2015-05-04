@@ -85,7 +85,7 @@
               <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
             </a> -->
             <%= link_to recipe_path(calorie) do %>
-            <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url %>');">
+            <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url(:original) %>');">
             </div>
             <% end %>
           </div>

@@ -11,7 +11,7 @@
             <% @nutritionists.each do |nutritionist| %>
                <li class="col col-12 inner repo">
                   <div class="author-img-sp">
-                    <div class="profile-image" style="background-image: url('<%= nutritionist.image.url %>');">
+                    <div class="profile-image" style="background-image: url('<%= nutritionist.image.url(:original) %>');">
                     </div>
                   </div>
 

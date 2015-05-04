@@ -38,7 +38,7 @@
                 <img src="images/menu-item-1.jpg" alt="" class="photo">
               </a> -->
               <%= link_to menu_path(menu_category) do %>
-              <div class="recommended-image photo" style="background-image: url('<%= menu_category.image.url %>');">
+              <div class="recommended-image photo" style="background-image: url('<%= menu_category.image.url(:original) %>');">
               </div>
               <% end %>
             </div>

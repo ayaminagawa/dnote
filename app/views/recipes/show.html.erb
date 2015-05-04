@@ -104,7 +104,7 @@
                   <div class="step-img col col-xs col-xs-11">
                     <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
                     <% if procedure.image_file_name != nil %>
-                      <div class="recommended-image photo" style="background-image: url('<%= procedure.image.url %>');">
+                      <div class="recommended-image photo" style="background-image: url('<%= procedure.image.url(:original) %>');">
                       </div>
                     <% end %>
                   </div>
@@ -217,7 +217,7 @@
               <img src="images/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
             <%= link_to recipe_path(@recommended_recipe) do %>
-            <div class="recommended-image photo" style="background-image: url('<%= @recommended_recipe.image.url %>');">
+            <div class="recommended-image photo" style="background-image: url('<%= @recommended_recipe.image.url(:original) %>');">
             </div>
             <% end %>
           </div>

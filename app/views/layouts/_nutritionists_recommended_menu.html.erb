@@ -7,7 +7,7 @@
               <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
             </a> -->
             <%= link_to menu_path(@nurtrition_menu) do %>
-            <div class="recommended-image" style="background-image: url('<%= @nurtrition_menu.image.url %>');">
+            <div class="recommended-image" style="background-image: url('<%= @nurtrition_menu.image.url(:original) %>');">
             </div>
             <% end %>
             
@@ -64,7 +64,7 @@
             <p class="vertical pull-left">コラム</p>
             <div class="col col-4 nuturition-img">
               <!-- <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo"> -->
-              <div class="recommended-image photo" style="background-image: url('<%= @column.nutritionist.image.url %>');height:70px;">
+              <div class="recommended-image photo" style="background-image: url('<%= @column.nutritionist.image.url(:original) %>');height:70px;">
               </div>
             </div>
 
