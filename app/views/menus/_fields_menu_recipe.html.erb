@@ -1,0 +1,18 @@
+
+ <li class="gutters row edit-ingredient">
+  <div class="fields">
+    <div class="menu-role sub">
+      <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
+      副菜
+    </div>
+    <div class="col col-14 col-xs-14 edit-ingredient-item field">
+       <% @side_recipes.each do |side_recipe| %>
+          <label><%= f.radio_button :recipe_id, side_recipe.id, {:checked => true} %><%= side_recipe.name %></label><br>
+          <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url %>');">
+          </div><br>
+       <% end %>
+    </div>
+    
+    <%= link_to_remove_fields "削除", f %>
+  </div>
+</li>
