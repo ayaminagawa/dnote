@@ -16,7 +16,7 @@
           <div class="inner mykitchen-head"> <%= @nutritionist.name %>さん</div>
           <ul >
             <div class="author-img-sp">
-              <div class="profile-image" style="background-image: url('<%= @nutritionist.image.url %>');">
+              <div class="profile-image" style="background-image: url('<%= @nutritionist.image.url(:original) %>');">
               </div>
             </div>
 
