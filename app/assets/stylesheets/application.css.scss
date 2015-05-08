@@ -144,6 +144,39 @@ body {
   }
 }
 
+// contact
+
+.contact{
+  position: fixed !important;  
+  position: absolute;  
+  bottom: 0;  
+  right: 0;  
+   
+  height: 42px;
+} 
+
+.contact_btn {
+  background: #FEE52A;
+  background: -moz-linear-gradient(top, #FEE52A 0%, #FEE52A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FEE52A), color-stop(100%, #FEE52A));
+  background: -webkit-linear-gradient(top, #FEE52A 0%, #FEE52A 100%);
+  background: -o-linear-gradient(top, #FEE52A 0%, #FEE52A 100%);
+  background: -ms-linear-gradient(top,#FEE52A 0%, #FEE52A 100%);
+  background: linear-gradient(to bottom, #FEE52A 0%, #FEE52A 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEE52A', endColorstr='#FEE52A',GradientType=0 );
+  width: 85%;
+  height: 40px;
+  max-width: 150px;
+  display: inline-block;
+  padding: 0.8rem 0;
+  border: solid 1px #ddd;
+  border-radius: 4px;
+  color: #555;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
 /* @@Header
 ================================================== */
 

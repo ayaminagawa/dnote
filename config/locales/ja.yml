@@ -216,6 +216,9 @@ ja:
         email: メールアドレス
         password: パスワード
         name: 名前
+      contact:
+        email: メールアドレス
+        body: メッセージ
 
     models:
       user: ユーザー
