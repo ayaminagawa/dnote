@@ -1,5 +1,8 @@
 Dnote::Application.routes.draw do
 
+
+  get "contacts/new"
+  post "contacts/create"
   get "nutritionists/index"
   get 'nutritionists/show/:id' => 'nutritionists#show'
   get 'columns/show/:id' => 'columns#show'
@@ -15,9 +18,6 @@ Dnote::Application.routes.draw do
    :registrations => "nutritionists/registrations"
  }
  
-
- get "create/destroy"
- get "create/show"
  devise_for :users, controllers: {
   omniauth_callbacks: "users/omniauth_callbacks",
   :passwords => "users/passwords",
