@@ -1,23 +1,20 @@
+<div class="contents">
 
-<%= render 'recipes/category' %>
+<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>コラム一覧</h2>
 
-<div class="col col-18 menu-recipe-container">
-  <div class="page-title">
-    <span class="page-title-sub">レシピ検索一覧</span>
-  </div>
-  
-  <div id="tab-box">
+  <div class="container-full inner-30">
+   <div class="container-full inner-30">
 
     <ul class="inner pt-30 tab-container menu-container" id="menu-container">
 
-      <!-- レシピひとつ分 -->
-      <% @columns.each do |column| %>
+          <!-- レシピひとつ分 -->
+          <% @columns.each do |column| %>
 
-      <li class="gutters row menu">
+          <li class="gutters row menu">
 
-        
-        <div class="col col-13 col-xs col-xs-13">
-         <div class="menu-title">
+            
+            <div class="col col-13 col-xs col-xs-13">
+             <div class="menu-title">
                 <!-- <a href="recipe.html">
                   レシピタイトル
                 </a> -->  
@@ -40,13 +37,6 @@
           <% end %>    
           <!-- レシピひとつ分 -->
         </ul>
-      </div>
-
     </div>
-    <!-- tab-box -->
-
   </div>
-
-</div><!-- contents end-->
-
-
+</div>  
