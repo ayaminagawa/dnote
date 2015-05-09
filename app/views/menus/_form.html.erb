@@ -102,15 +102,12 @@
                 　<br>
                 <% end %>
               </li>
-
-                <%= render 'menus/fields_menu_recipe', {:f => f} %>
-
-               <div class="step-add-btn">
-              <!--  -->
-               </div> 
-
             <% end %>
-          </ul>
+
+            <div class="step-add-btn">
+              <%= link_to_add_fields "副菜を追加する", f, :menu_recipes %>
+            </div> 
+         </ul>
               <hr>
               <br>
               <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>

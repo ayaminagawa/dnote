@@ -1,7 +1,7 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :menu
-	has_many :menus
+	has_many :menus, as: :menu_recipes
 	has_many :menu_recipes, :class_name => "MenuRecipe", dependent: :destroy
 	validates :name, presence: true
 	has_many :favorites
@@ -9,6 +9,7 @@ class Recipe < ActiveRecord::Base
   has_many :made_reports, dependent: :destroy
   has_many :ingredients, :class_name => "Ingredient", dependent: :destroy
   accepts_nested_attributes_for :ingredients, :allow_destroy => true, :reject_if => :reject_ingredient
+
 
   def reject_ingredient(attributed)
     attributed['name'].blank?
