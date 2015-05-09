@@ -22,23 +22,23 @@ class MenusController < ApplicationController
   def new
     @menu = Menu.new
     @menu.menu_recipes.build 
-    @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
-    @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
+    @main_recipes = current_user.recipes.where(recipe_select: 1 ) 
+    @side_recipes = current_user.recipes.where(recipe_select: 2 )
     @menu.category_selects.build
   end
 
   # GET /menus/1/edit
   def edit
-    @main_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 1 }) 
-    @side_recipes = current_user.recipes.find(:all, :conditions => { :recipe_select => 2 })
+    @main_recipes = current_user.recipes.where(recipe_select: 1 ) 
+    @side_recipes = current_user.recipes.where(recipe_select: 2 )
   end
 
   # POST /menus
   # POST /menus.json
   def create
     @menu = current_user.menus.build(menu_params)
-    @main_recipes = Recipe.find(:all, :conditions => { :recipe_select => 1 }) 
-    @side_recipes = Recipe.find(:all, :conditions => { :recipe_select => 2 })
+    @main_recipes = current_user.recipes.where(recipe_select: 1 ) 
+    @side_recipes = current_user.recipes.where(recipe_select: 2 )
     # respond_to do |format|
     
     if @menu.save
