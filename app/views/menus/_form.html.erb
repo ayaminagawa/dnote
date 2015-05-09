@@ -78,7 +78,7 @@
 
         <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
 
-         <div class="sp-head "> <i class="icon-s icon-pencil"></i>主菜は１つ、副菜は２つ必ず選択してください</div>
+         <div class="sp-head "> <i class="icon-s icon-pencil"></i>主菜は１つ必ず選択してください</div>
 
          <ul class="select-menu-items menu-items">
           <%= f.fields_for :menu_recipes, @menu_recipes do |f| %>
@@ -102,47 +102,12 @@
                 　<br>
                 <% end %>
               </li>
-
-              <li class="menu-item col col-8">
-                <div class="menu-role sub">
-                  <!-- <img src="images/sub-icon.png" alt="" class="role-icon"> -->
-                  <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
-                  副菜１
-                </div>
-                <!-- <a href="#select-submenu-modal">
-                  <div class="edit-recipe-img">  
-                  </div>
-                </a> -->
-                <!-- <p class="menu-select-text">
-                  <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
-                </p> -->
-                <% @side_recipes.each do |side_recipe| %>
-                <label><%= f.radio_button :side1, side_recipe.id, {:checked => true} %><%= side_recipe.name %></label><br>
-                <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url(:original) %>');">
-                　</div><br>
-                <% end %>
-              </li>
-
-              <li class="menu-item col col-8">
-                <div class="menu-role sub">
-                 <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
-                 副菜２
-               </div>
-                <!-- <a href="#select-submenu-modal">
-                  <div class="edit-recipe-img">  
-                  </div>
-                </a> -->
-                <!-- <p class="menu-select-text">
-                  <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
-                </p> -->
-                <% @side_recipes.each do |side_recipe| %>
-                <label><%= f.radio_button :side2, side_recipe.id, {:checked => true} %><%= side_recipe.name %></label><br>
-                <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url(:original) %>');">
-                </div><br>
-                <% end %>
-              </li>
             <% end %>
-          </ul>
+
+            <div class="step-add-btn">
+              <%= link_to_add_fields "副菜を追加する", f, :menu_recipes %>
+            </div> 
+         </ul>
               <hr>
               <br>
               <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>

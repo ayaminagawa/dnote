@@ -13,11 +13,9 @@ class MenusController < ApplicationController
     @id = params[:id]
     @menu_recipe = MenuRecipe.where(menu_id: @id)
     @main_recipe = Recipe.find(@menu_recipe.map{|menu_recipe| menu_recipe.main})
-    @side1_recipe = Recipe.find(@menu_recipe.map{|menu_recipe| menu_recipe.side1})
-    @side2_recipe = Recipe.find(@menu_recipe.map{|menu_recipe| menu_recipe.side2})
+    @side_recipes2 = @menu_recipe.map{|menu_recipe| menu_recipe.recipe}
     @main_recipe = @main_recipe.first
-    @side1_recipe = @side1_recipe.first
-    @side2_recipe = @side2_recipe.first
+    @side_recipes = @side_recipes2.compact
   end
 
   # GET /menus/new
@@ -80,6 +78,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:name, :point, :category, :image, category_selects_attributes: [:id, :category_number2, :category_number3, :category_number4, :category_number5, :category_number6], menu_recipes_attributes: [:id, :main, :side1, :side2])
+      params.require(:menu).permit(:name, :point, :category, :image, category_selects_attributes: [:id, :category_number2, :category_number3, :category_number4, :category_number5, :category_number6], menu_recipes_attributes: [:id, :main, :recipe_id])
     end
   end
