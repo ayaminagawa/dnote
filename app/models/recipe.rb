@@ -10,7 +10,6 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, :class_name => "Ingredient", dependent: :destroy
   accepts_nested_attributes_for :ingredients, :allow_destroy => true, :reject_if => :reject_ingredient
 
-
   def reject_ingredient(attributed)
     attributed['name'].blank?
   end
@@ -35,17 +34,25 @@ class Recipe < ActiveRecord::Base
   #   image.s3_object(style).url_for(:read, :secure => true)
   # end
 
-	def self.search(search) #self.でクラスメソッドとしている
-	    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
-	      # Recipe.where(['name LIKE ?', "%#{search}%"])
-	      # Recipe.where(['tip LIKE ?', "%#{search}%"])
-	      Recipe.where(['name LIKE ? or tip LIKE ? or description LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
-	    else
-	      Recipe.all #全て表示。
-	    end
-   end
+  def main?
+    recipe_select == 1
+  end
 
-   def self.kinds
+  def sub?
+    recipe_select == 2
+  end
+
+	def self.search(search) #self.でクラスメソッドとしている
+    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
+      # Recipe.where(['name LIKE ?', "%#{search}%"])
+      # Recipe.where(['tip LIKE ?', "%#{search}%"])
+      Recipe.where(['name LIKE ? or tip LIKE ? or description LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      Recipe.all #全て表示。
+    end
+  end
+
+  def self.kinds
     {
      "1" => "野菜のおかず",
      "2" => "お肉のおかず",
@@ -60,51 +67,51 @@ class Recipe < ActiveRecord::Base
      "11" => "お菓子",
      "12" => "パン"
    }
- end
-
- def self.categories
-  {
-    "2" => "糖質制限食",
-    "3" => "HbA1c、血糖値の安定",
-    "4" => "味に自信あり",
-    "5" => "すぐできるメニュー",
-    "6" => "その他"
-  }
   end
 
-def self.kinds2
-  {
-    1 => "野菜のおかず",
-    2 => "お肉のおかず",
-    3 => "魚介のおかず",
-    4 => "ごはんもの",
-    5 => "パスタ・グラタン",
-    6 => "麺類",
-    7 => "サラダ",
-    8 => "スープ・汁物",
-    9 => "お弁当",
-    10 => "おもてなし料理",
-    11 => "お菓子",
-    12 => "パン"
-  }
-end
+  def self.categories
+    {
+      "2" => "糖質制限食",
+      "3" => "HbA1c、血糖値の安定",
+      "4" => "味に自信あり",
+      "5" => "すぐできるメニュー",
+      "6" => "その他"
+    }
+  end
 
-def self.arr
-      [ 
-        [ "1", "category-icon/yasai.png", "野菜のおかず" ],
-        [ "2", "category-icon/oniku.png", "お肉のおかず" ],
-        [ "3", "category-icon/gyokai.png", "魚介のおかず" ],
-        [ "4", "category-icon/gohanmono.png", "ごはんもの" ],
-        [ "5", "category-icon/gyokai.png", "パスタ・グラタン" ],
-        [ "6", "category-icon/pasta.png", "麺類" ],
-        [ "7", "category-icon/salada.png", "サラダ" ],
-        [ "8", "category-icon/soup.png", "スープ・汁物" ],
-        [ "9", "category-icon/obento.png", "お弁当" ],
-        [ "10", "category-icon/omotenashi.png", "おもてなし料理" ],
-        [ "11", "category-icon/okashi.png", "お菓子" ],
-        [ "12", "category-icon/pan.png", "パン" ]
-       ]
-end
+  def self.kinds2
+    {
+      1 => "野菜のおかず",
+      2 => "お肉のおかず",
+      3 => "魚介のおかず",
+      4 => "ごはんもの",
+      5 => "パスタ・グラタン",
+      6 => "麺類",
+      7 => "サラダ",
+      8 => "スープ・汁物",
+      9 => "お弁当",
+      10 => "おもてなし料理",
+      11 => "お菓子",
+      12 => "パン"
+    }
+  end
+
+  def self.arr
+    [ 
+      [ "1", "category-icon/yasai.png", "野菜のおかず" ],
+      [ "2", "category-icon/oniku.png", "お肉のおかず" ],
+      [ "3", "category-icon/gyokai.png", "魚介のおかず" ],
+      [ "4", "category-icon/gohanmono.png", "ごはんもの" ],
+      [ "5", "category-icon/gyokai.png", "パスタ・グラタン" ],
+      [ "6", "category-icon/pasta.png", "麺類" ],
+      [ "7", "category-icon/salada.png", "サラダ" ],
+      [ "8", "category-icon/soup.png", "スープ・汁物" ],
+      [ "9", "category-icon/obento.png", "お弁当" ],
+      [ "10", "category-icon/omotenashi.png", "おもてなし料理" ],
+      [ "11", "category-icon/okashi.png", "お菓子" ],
+      [ "12", "category-icon/pan.png", "パン" ]
+    ]
+  end
 
 
 end

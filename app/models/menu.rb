@@ -1,7 +1,8 @@
 class Menu < ActiveRecord::Base
 	belongs_to :user
 	# validates :name, presence: true
-	has_many :recipes, as: :menu_recipes
+	# has_many :recipes, as: :menu_recipes
+  has_many :recipes, through: :menu_recipes
 	has_many :favorites
   has_many :favoriting_users, through: :favorites, source: :user
   has_many :menu_recipes, :class_name => "MenuRecipe", dependent: :destroy

@@ -1,12 +1,12 @@
 <div class="contents" id="menu-page">
   <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立
     <% if current_user?(@menu.user) %>
-    <div class="recipe-edit-btn">
-     <%= link_to "献立を編集する", edit_menu_path(@menu) %>
-     <%= link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" } %>
-   </div>  
-   <% end %>
- </h2>
+      <div class="recipe-edit-btn">
+        <%= link_to "献立を編集する", edit_menu_path(@menu) %>
+        <%= link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" } %>
+      </div>  
+    <% end %>
+  </h2>
 
  <div class="container-full">
   <div class="gutters row inner-30">

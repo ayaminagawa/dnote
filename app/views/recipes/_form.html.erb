@@ -129,7 +129,7 @@
 
                 <!-- 作り方 -->
                 <%= f.fields_for :procedures, @procedures do |procedure| %>  
-                <%= render 'fields_procedure', {:f => procedure} %>
+                  <%= render 'fields_procedure', {:f => procedure} %>
                 <% end %>
 
                 <div class="step-add-btn centering" style="clear:left;">
