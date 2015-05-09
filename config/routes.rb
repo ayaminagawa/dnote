@@ -33,6 +33,8 @@ get "menu/destroy"
 root  'about#index'
 match '/about', to:'about#index', via:'get'
 get "company", to: "about#company"
+get "security_information", to: "about#security_information"
+get "privacy_policy", to: "about#privacy_policy"
 
 get "about/index"
 
