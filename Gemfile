@@ -7,7 +7,7 @@ gem 'rails', '4.0.5'
 #declare constants
 gem 'rails_config'
 
-
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
