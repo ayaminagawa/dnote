@@ -75,47 +75,10 @@
       </ul>
 
       <ul class="inner pt-30 tab-container menu-container" id="recipe-container">
-
         <!-- レシピひとつ分 -->
-        <% @calories.each do |calorie| %>
-        <li class="gutters row menu">
-          <div class="col col-11 col-xs col-xs-11">
-            <div class="menu-img">
-            <!-- <a href="recipe.html">
-              <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-            </a> -->
-            <%= link_to recipe_path(calorie) do %>
-            <div class="recommended-image photo" style="background-image: url('<%= calorie.image.url(:original) %>');">
-            </div>
-            <% end %>
-          </div>
-        </div>
-
-
-        <div class="col col-13 col-xs col-xs-13">
-          <div class="menu-title">
-                <!-- <a href="recipe.html">
-                  レシピタイトル
-                </a> -->  
-                <%= link_to calorie.name, recipe_path(calorie) %>
-              </div>
-
-
-              <p class="menu-comment">
-                <%= calorie.description %>
-              </p>
-
-              <div class="author">
-               <!--  <a href="#">by つくったひと</a> -->
-               <!--  <%= link_to calorie.name, recipe_path(calorie) %> -->
-               by <%= link_to calorie.user.name, recipe_path(calorie)  %>
-             </div>
-
-           </div>
-         </li>
-         <% end %>    
+        <%= render @calorie %>   
          <!-- レシピひとつ分 -->
-       </ul>
+      </ul>
 
 
      </div>
