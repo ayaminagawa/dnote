@@ -4,14 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+
   def after_sign_in_path_for(resource)
-    if params[:controller] == "nutritionists/registrations" || params[:controller] == "nutritionists/sessions"
-       nutritionist_path(current_nutritionist)
-      else
-       user_path(current_user)
-    end
-   
+    admin_dashboard_path
   end
+
   
   protected
   
@@ -21,4 +18,7 @@ class ApplicationController < ActionController::Base
    end
 
  end
+
+
+
 end
