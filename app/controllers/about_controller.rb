@@ -17,7 +17,6 @@ class AboutController < ApplicationController
     @permission_columns = Column.where(permission: 1)
     @column = @permission_columns.find(:last)
 
-
     require "date"
 
     @d = Date.today

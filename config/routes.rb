@@ -1,6 +1,6 @@
 Dnote::Application.routes.draw do
 
-
+  get "/nutritionist_show" ,to: "users#nutritionist_show"
   get "contacts/new"
   post "contacts/create"
   # get "nutritionists/index"

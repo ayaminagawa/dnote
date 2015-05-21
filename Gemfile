@@ -28,6 +28,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'mysql2'
 
 
 # irbの上位互換pryを使用
