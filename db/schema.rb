@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422154618) do
+ActiveRecord::Schema.define(version: 20150519095650) do
 
   create_table "category_selects", force: true do |t|
     t.integer  "recipe_id"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20150422154618) do
     t.datetime "updated_at"
   end
 
-  add_index "favorites", ["user_id", "recipe_id"], name: "index_favorites_on_user_id_and_recipe_id", unique: true
+  add_index "favorites", ["user_id", "recipe_id"], name: "index_favorites_on_user_id_and_recipe_id", unique: true, using: :btree
 
   create_table "feedbacks", force: true do |t|
     t.integer  "user_id"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150422154618) do
     t.integer  "side2"
   end
 
-  add_index "menu_recipes", ["recipe_id", "menu_id"], name: "index_menu_recipes_on_recipe_id_and_menu_id", unique: true
+  add_index "menu_recipes", ["recipe_id", "menu_id"], name: "index_menu_recipes_on_recipe_id_and_menu_id", unique: true, using: :btree
 
   create_table "menus", force: true do |t|
     t.datetime "created_at"
@@ -136,8 +136,8 @@ ActiveRecord::Schema.define(version: 20150422154618) do
     t.datetime "image_updated_at"
   end
 
-  add_index "nutritionists", ["email"], name: "index_nutritionists_on_email", unique: true
-  add_index "nutritionists", ["reset_password_token"], name: "index_nutritionists_on_reset_password_token", unique: true
+  add_index "nutritionists", ["email"], name: "index_nutritionists_on_email", unique: true, using: :btree
+  add_index "nutritionists", ["reset_password_token"], name: "index_nutritionists_on_reset_password_token", unique: true, using: :btree
 
   create_table "procedures", force: true do |t|
     t.integer  "recipe_id"
@@ -177,27 +177,30 @@ ActiveRecord::Schema.define(version: 20150422154618) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "image"
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",       default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",            default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "uid",                    default: "", null: false
-    t.string   "provider",               default: "", null: false
+    t.string   "uid",                      default: "", null: false
+    t.string   "provider",                 default: "", null: false
     t.string   "name"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "password_digest"
+    t.integer  "nutritionist_id"
+    t.string   "nutritionist_description"
+    t.string   "permission"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", using: :btree
 
 end

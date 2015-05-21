@@ -45,7 +45,7 @@ gem 'hirb-unicode'
 gem 'quiet_assets'
 
 group :development, :test do
-gem 'sqlite3', '1.3.8'
+gem 'mysql2'
 end
 
 group :doc do
