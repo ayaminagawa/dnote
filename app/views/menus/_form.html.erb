@@ -1,16 +1,16 @@
  <%= form_for(@menu) do |f| %>
- <% if @menu.errors.any? %>
- <div id="error_explanation">
-  <ul>
-    <% @menu.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+   <% if @menu.errors.any? %>
+   <div id="error_explanation">
+    <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 
 
-<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立を作る</h2>
+  <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>献立を作る</h2>
 
 <div class="container-full">
   <div class="gutters row inner-30">
@@ -78,71 +78,32 @@
 
         <div class="gutters row inner-30 pt-30 pb-30 menu-items-container">
 
-         <div class="sp-head "> <i class="icon-s icon-pencil"></i>主菜は１つ、副菜は２つ必ず選択してください</div>
+        <div class="sp-head "> <i class="icon-s icon-pencil"></i>主菜は１つ必ず選択してください</div>
 
-         <ul class="select-menu-items menu-items">
-          <%= f.fields_for :menu_recipes, @menu_recipes do |f| %>
+        <ul class="select-menu-items menu-items">
           <li class="menu-item col col-8">
             <div class="menu-role main">
               <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
               <%= image_tag("main-icon.png" ,:alt => "" ,:class => "role-icon") %>
               主菜
             </div>
-                <!-- <a href="#select-mainmenu-modal">
-                  <div class="edit-recipe-img">  
-                  </div>
-                </a> -->
-                <!-- <p class="menu-select-text">
-                  <a href="#select-mainmenu-modal">クリックしてレシピを追加(必須)</a>
-                </p> -->
-                <% @main_recipes.each do |main_recipe| %>
-                <label><%= f.radio_button :main, main_recipe.id , {:checked => true} %><%= main_recipe.name %></label><br>
-                <div class="recommended-image photo" style="background-image: url('<%= main_recipe.image.url %>');">
-                </div>
-                　<br>
-                <% end %>
-              </li>
-
-              <li class="menu-item col col-8">
-                <div class="menu-role sub">
-                  <!-- <img src="images/sub-icon.png" alt="" class="role-icon"> -->
-                  <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
-                  副菜１
-                </div>
-                <!-- <a href="#select-submenu-modal">
-                  <div class="edit-recipe-img">  
-                  </div>
-                </a> -->
-                <!-- <p class="menu-select-text">
-                  <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
-                </p> -->
-                <% @side_recipes.each do |side_recipe| %>
-                <label><%= f.radio_button :side1, side_recipe.id, {:checked => true} %><%= side_recipe.name %></label><br>
-                <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url(:original) %>');">
-                　</div><br>
-                <% end %>
-              </li>
-
-              <li class="menu-item col col-8">
-                <div class="menu-role sub">
-                 <%= image_tag("sub-icon.png" ,:alt => "" ,:class => "role-icon") %>
-                 副菜２
-               </div>
-                <!-- <a href="#select-submenu-modal">
-                  <div class="edit-recipe-img">  
-                  </div>
-                </a> -->
-                <!-- <p class="menu-select-text">
-                  <a href="#select-submenu-modal">クリックしてレシピを追加(必須)</a>
-                </p> -->
-                <% @side_recipes.each do |side_recipe| %>
-                <label><%= f.radio_button :side2, side_recipe.id, {:checked => true} %><%= side_recipe.name %></label><br>
-                <div class="recommended-image photo" style="background-image: url('<%= side_recipe.image.url(:original) %>');">
-                </div><br>
-                <% end %>
-              </li>
+            <% @main_recipes.each do |main_recipe| %>
+              <label><%= radio_button_tag "menu[menu_recipes_attributes][#{@main_menu_recipe_id}][recipe_id]", main_recipe.id , {:checked => true} %><%= main_recipe.name %></label><br>
+              <div class="recommended-image photo" style="background-image: url('<%= main_recipe.image.url %>');">
+              </div>
+            　<br>
             <% end %>
-          </ul>
+          </li>
+          <%= f.fields_for :menu_recipes, @menu_recipes do |f_sub| %>
+            <% if f_sub.object.recipe.try('sub?') %>
+              <%= render 'fields_menu_recipe', {:f => f_sub} %>
+            <% end %>
+          <% end %>
+
+          <div class="step-add-btn">
+            <%= link_to_add_fields "副菜を追加する", f, :menu_recipes %>
+          </div> 
+        </ul>
               <hr>
               <br>
               <div class="sp-head "> <i class="icon-s icon-pencil"></i>献立カテゴリの選択</div><br>
@@ -184,57 +145,7 @@
 
           </div>
 
-          <!-- <ul class="pc-off select-menu-items">
-            <li class="select-menu-item">
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-3">
-                  <img src="images/menu-main-icon.png" alt="" class="menu-list-icon">
-                </div>
-              </div>
-
-              <div class="gutters row">
-                <div class="col col-xs col-xs-8 menu-img">
-                  <a href="#select-menu-modal">
-                    <div class="edit-recipe-img">  
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col col-xs col-xs-14 menu-text ">
-                  <p class="menu-select-text">
-                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="select-menu-item">
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-3">
-                  <img src="images/menu-sub-icon.png" alt="" class="menu-list-icon">
-                </div>
-              </div>
-
-              <div class="gutters row"> 
-                <div class="col col-xs col-xs-8 menu-img">
-                  <a href="#select-menu-modal">
-                    <div class="edit-recipe-img">  
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col col-xs col-xs-14 menu-text ">
-                  <p class="menu-select-text">
-                    <a href="#select-menu-modal">クリックしてレシピを追加(必須)</a>
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            
-          </ul>
-        </div> -->
-        
+      
         <!-- レシピを選ぶmodal -->
         
         　
