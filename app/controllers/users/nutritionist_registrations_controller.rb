@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class Users::NutritionistRegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters
 
   def build_resource(hash=nil)
@@ -38,12 +38,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:name, :image, :gender, :email, :password, :password_confirmation)
-    end
-    devise_parameter_sanitizer.for(:nutritionist_sign_up) do |u|
-      u.permit(:name, :image, :description, :permission, :email, :password, :password_confirmation)
-    end
     devise_parameter_sanitizer.for(:account_update) do |u|
       u.permit(:name, :image, :gender, :email, :password, :password_confirmation, :current_password)
     end

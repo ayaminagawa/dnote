@@ -3,8 +3,8 @@ Dnote::Application.routes.draw do
 
   get "contacts/new"
   post "contacts/create"
-  get "nutritionists/index"
-  get 'nutritionists/show/:id' => 'nutritionists#show'
+  # get "nutritionists/index"
+  # get 'nutritionists/show/:id' => 'nutritionists#show'
   get 'columns/show/:id' => 'columns#show'
   get "column/new"
   get "column/create"
@@ -14,16 +14,24 @@ Dnote::Application.routes.draw do
   resources :columns
   
   devise_for :nutritionists, controllers: {
-   :sessions => "nutritionists/sessions",
-   :registrations => "nutritionists/registrations"
+   :sessions => "users/sessions",
+   :registrations => "users/registrations"
  }
  
  devise_for :users, controllers: {
   omniauth_callbacks: "users/omniauth_callbacks",
   :passwords => "users/passwords",
-  :sessions      => "users/sessions",
   :registrations => "users/registrations",
-}
+  :sessions => "users/sessions"
+  }
+
+# devise_scope :users do
+#   get "nutritionist_sign_in", :to => 'user/sessions#new'
+# end
+# devise_for :users, :controllers => { :sessions => "sessions" } do
+#   get 'nutritionist/sign_in',   :to => 'nutritionist/sessions#new'
+#   post 'nutritionist/sign_in',   :to => 'nutritionist/sessions#create'
+# end
 
 resources :menus
 
