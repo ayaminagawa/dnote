@@ -1,6 +1,9 @@
 Dnote::Application.routes.draw do
 
   get "/nutritionist_show" ,to: "users#nutritionist_show"
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  
   get "contacts/new"
   post "contacts/create"
   # get "nutritionists/index"
