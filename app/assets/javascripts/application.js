@@ -23,9 +23,12 @@ function remove_fields(link) {
 }
 
 function add_fields(link, association, content) {
-  var new_id = new Date().getTime();
+  $fields = $("." + association).find(".fields")
+  // console.log($fields.filter(":last").find(".step-count").text());
+  var new_id = $fields[0] ? $fields.filter(":last").find(".step-count").text() : new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
+  // $(link).parents("." + association).find(".step-count").text(new_id + 1);
 }
 
 $(function() {
@@ -131,3 +134,5 @@ $(function(){
     });
   });
 });
+
+

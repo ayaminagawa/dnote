@@ -6,7 +6,7 @@
       <%= f.file_field :image %>
     </div>                      
     <div class="col col-xs col-xs-12 edit-step-text-container">
-      <div class="step-count"></div>
+      <div class="step-count"><%= 1+f.index.to_i %></div>
       <div class="edit-area">
         <%= f.text_area :body ,class: "edit-field",rows: "2" ,cols: "30", placeholder: "選択して編集する", style: "font-size: 1.25rem" %>
         <br>
