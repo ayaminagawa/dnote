@@ -5,13 +5,17 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
 
+  # def after_sign_in_path_for(resource)
+  #   admin_dashboard_path
+  # end
+
   def after_sign_in_path_for(resource)
     if current_user.permission != nil
        nutritionist_show_path(current_user)
       else
        user_path(current_user)
     end
-   
+  end
 
   
   protected
