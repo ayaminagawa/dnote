@@ -17,8 +17,9 @@ class AboutController < ApplicationController
     @permission_columns = Column.where(permission: 2)
     @column = @permission_columns.find(:last)
 
-    @permission = current_user.permission
-
+    if user_signed_in?
+      @permission = current_user.permission
+    end
     require "date"
 
     @d = Date.today

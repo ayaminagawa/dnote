@@ -9,14 +9,13 @@ class ApplicationController < ActionController::Base
   #   admin_dashboard_path
   # end
 
-
-  def after_sign_in_path_for(resource)
-    if current_user.permission != nil
-       nutritionist_show_path(current_user)
-      else
-       user_path(current_user)
-    end
-  end
+  # def after_sign_in_path_for(resource)
+  #   if　current_user.present? && current_user.permission == nil
+  #      nutritionist_show_path(current_user)
+  #     elsif current_user.present?
+  #      user_path(current_user)
+  #   end
+  # end
 
   
   protected
