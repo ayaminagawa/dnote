@@ -1,29 +1,31 @@
-<h1>Listing users</h1>
+<div class="contents" id="nuturition-page">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Gender</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="nuturition-container">
+   <div class="title-bar">
+      <i class="title-icon icon-nife-fork-2"></i>
+      管理栄養士一覧ページ
+    </div>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.gender %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="gutters row container inner-30">
+          <ul >
+            <% @nutritionists.each do |nutritionist| %>
+               <li class="col col-12 inner repo">
+                  <div class="author-img-sp">
+                    <div class="profile-image" style="background-image: url('<%= nutritionist.image.url(:original) %>');">
+                    </div>
+                  </div>
 
-<br>
+                  <div class="col col-16 nuturition-date">
+                    <div class="nuturition-name">
+                      <%= link_to nutritionist.name, nutritionist %>
+                    </div>
+                      <p class="nuturition-description sp-off">
+                        <%= nutritionist.nutritionist_description %>
+                      <p/>
+                  </div>
+               </li>
+            <% end %>
+          </ul>
 
-<%= link_to 'New User', new_user_path %>
+</div>
+</div><!-- contents end-->
