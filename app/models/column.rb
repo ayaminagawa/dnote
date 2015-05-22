@@ -1,3 +1,3 @@
 class Column < ActiveRecord::Base
-	belongs_to :nutritionist
+	belongs_to :user
 end

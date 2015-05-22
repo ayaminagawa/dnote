@@ -31,10 +31,10 @@
   </div>
 </div>
 
-<%= f.hidden_field :nutritionist_id, :value => current_nutritionist.id %>
-<%= f.hidden_field :permission, :value => 0 %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
+<%= f.hidden_field :permission, :value => 1 %>
 
-<%= f.submit "コラムを公開する", class: 'create-recipe-btn' %>
+<%= f.submit "コラムの掲載を申請する", class: 'create-recipe-btn' %>
 
 <% end %>
 

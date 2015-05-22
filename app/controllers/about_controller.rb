@@ -14,8 +14,10 @@ class AboutController < ApplicationController
     @nurtrition_menu = Menu.find(18)
     @nutritionist = User.find(8)
 
-    @permission_columns = Column.where(permission: 1)
+    @permission_columns = Column.where(permission: 2)
     @column = @permission_columns.find(:last)
+
+    @permission = current_user.permission
 
     require "date"
 
