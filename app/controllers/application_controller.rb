@@ -5,8 +5,17 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
 
+  # def after_sign_in_path_for(resource)
+  #   admin_dashboard_path
+  # end
+
   def after_sign_in_path_for(resource)
-    admin_dashboard_path
+    if params[:controller] == "nutritionists/registrations" || params[:controller] == "nutritionists/sessions"
+       nutritionist_path(current_nutritionist)
+      else
+       user_path(current_user)
+    end
+   
   end
 
   
