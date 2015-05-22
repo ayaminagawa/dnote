@@ -7,7 +7,7 @@ gem 'rails', '4.0.5'
 #declare constants
 gem 'rails_config'
 
-
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -28,6 +28,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'mysql2'
 
 
 # irbの上位互換pryを使用
