@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @nutritionists = User.where(:permission => "0")
   end
 
   # GET /users/1
@@ -17,6 +17,11 @@ class UsersController < ApplicationController
     @made_reports = MadeReport.find(:all, :conditions => { :user_id => @id})
     @user = User.find(@id)
     @favorite_recipes = @user.favorites.map {|favorite| favorite.recipe }
+  end
+
+  def nutritonist_show
+    @user = current_user
+    @columns = Column.where(:user_id => params[:id])
   end
 
   # GET /users/new

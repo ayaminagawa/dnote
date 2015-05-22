@@ -6,49 +6,53 @@
  <div class="container-full inner-30">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>  
-  <div class="gutters row pb-30 pt-30">
-    <div class="col col-12 inner">
-      <br>
-      <div class=" gutters row">
-        <div class="col col-20">
-          <div class="edit-recipe-title-container">
-            <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前</div>
-            <div class="edit-area">  
-              <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'お名前を入力', rows:'2' %>
+
+    <% if id == "1" %>
+      
+    <% end %>
+      <div class="gutters row pb-30 pt-30">
+        <div class="col col-12 inner">
+          <br>
+          <div class=" gutters row">
+            <div class="col col-20">
+              <div class="edit-recipe-title-container">
+                <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前</div>
+                <div class="edit-area">  
+                  <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'お名前を入力', rows:'2' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="sp-head"><i class="icon-s icon-image"></i>写真</div>
+          <div class="edit-recipe-img-container">    
+            <div class="centering">
+             <div class="edit-recipe-img-typetext imgInput">
+              <%= f.file_field :image %>
+              <%= image_tag("no_image.png", :class => "imgView") %>
             </div>
           </div>
         </div>
-      </div>
 
-      <br>
+        <br>
 
-      <div class="sp-head"><i class="icon-s icon-image"></i>写真</div>
-      <div class="edit-recipe-img-container">    
-        <div class="centering">
-         <div class="edit-recipe-img-typetext imgInput">
-          <%= f.file_field :image %>
-          <%= image_tag("no_image.png", :class => "imgView") %>
-        </div>
-      </div>
-    </div>
+        <div class="sp-head edit-label">
+         <i class="icon-s icon-play"></i>&nbsp;メールアドレス
+       </div>
+       <div class="field">
+        <div class="fields">
+          <ul class="inner-30 edit-ingredient-container">
+           <%= f.email_field :email, autofocus: true, class:'edit-field edit-recipe-title' %>
+         </ul>
+       </div>  
+     </div>
+     
 
-    <br>
-
-    <div class="sp-head edit-label">
-     <i class="icon-s icon-play"></i>&nbsp;メールアドレス
-   </div>
-   <div class="field">
-    <div class="fields">
-      <ul class="inner-30 edit-ingredient-container">
-       <%= f.email_field :email, autofocus: true, class:'edit-field edit-recipe-title' %>
-     </ul>
-   </div>  
- </div>
- 
-
- <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
- <div>メールアドレスを確認しています: <%= resource.unconfirmed_email %></div>
- <% end %>
+     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+     <div>メールアドレスを確認しています: <%= resource.unconfirmed_email %></div>
+     <% end %>
 
  <br>
  
