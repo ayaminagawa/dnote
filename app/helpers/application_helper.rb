@@ -20,5 +20,10 @@ module ApplicationHelper
   def current_nutritionist?(nutritionist)
     nutritionist == current_nutritionist
   end
+
+  # 改行文字を<br>に変換する
+  def br(str)
+    html_escape(str).gsub(/\r\n|\r|\n/, "<br />").html_safe
+  end
   
 end
