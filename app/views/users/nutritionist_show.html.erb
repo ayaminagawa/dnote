@@ -1,0 +1,53 @@
+    <div class="contents" id="mypage">
+
+      <div class="title-bar">
+        <i class="title-icon icon-nife-fork-2"></i>
+        管理栄養士用マイページ
+        <% if @user == current_user %>
+        <div class="recipe-edit-btn">
+          <%= link_to "プロフィールを編集する", edit_user_registration_path(current_user) %>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="mypage-content">
+
+        <div class="author-img-sp-container">
+          <div class="inner mykitchen-head"> <%= current_user.name %>さん</div>
+          <ul >
+            <div class="author-img-sp">
+              <div class="profile-image" style="background-image: url('<%= current_user.image.url(:original) %>');">
+              </div>
+            </div>
+
+        </div>
+        <h2 class="title-bar">
+          <i class="icon-recipes-1 title-icon"></i>
+          MYコラム
+        </h2>
+
+        <% @columns = Column.where(user_id: current_user.id) %>
+
+        <div class="container inner-30 mykitchen-container repo">
+          <div class="inner mykitchen-head"> <%= current_user.name %>さんが投稿したコラム</div>
+          <ul >
+            <% @columns.each do |column|%>
+            <li class="col col-12 inner repo">
+              <div class="menu-title">
+                <%= link_to column.title, column %>
+              </div>
+              <div class="repo-date">
+                <p class="repo-data">
+                  <%= column.body %>
+                </p>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+         </div> 
+
+
+</div>
+
+
+</div><!-- contents end-->
