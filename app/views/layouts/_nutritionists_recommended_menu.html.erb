@@ -66,13 +66,13 @@
             <p class="vertical pull-left">コラム</p>
             <div class="col col-4 nuturition-img">
               <!-- <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo"> -->
-              <div class="recommended-image photo" style="background-image: url('<%= @column.nutritionist.image.url(:original) %>');height:70px;">
+              <div class="recommended-image photo" style="background-image: url('<%= @column.user.image.url(:original) %>');height:70px;">
               </div>
             </div>
 
             <div class="col col-18">
               <div class="author-name">
-                <p><%= @column.nutritionist.name %></p>
+                <p><%= @column.user.name %></p>
               </div>
               <div class="column-title">
                 <%= link_to @column.title, @column %>

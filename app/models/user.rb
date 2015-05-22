@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
   size: { less_than: 2.megabytes }
 
+  has_many :columns
+
 
 
 

@@ -11,16 +11,16 @@
             <!-- <a href="nuturition.html">
               <img src="images/nuturition/nuturition-1.jpg" alt="" class="photo">
             </a> -->
-            <div class="recommended-image photo" style="background-image: url('<%= @column.nutritionist.image.url(:original) %>');">
+            <div class="recommended-image photo" style="background-image: url('<%= @column.user.image.url(:original) %>');">
             </div>
           </div>
 
           <div class="col col-16 nuturition-date">
             <div class="nuturition-name">
-              <%= @column.nutritionist.name %>
+              <%= @column.user.name %>
             </div>
             <p class="nuturition-description sp-off">
-              <%= @column.nutritionist.description %>
+              <%= @column.user.nutritionist_description %>
               <p/>
 
             </div>

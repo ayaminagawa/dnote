@@ -56,17 +56,10 @@
         <li class="signup">
           <%= link_to "献立をのせる", new_menu_path, class:'icon-edit post-recipe-text' %>
         </li>
-        <% elsif nutritionist_signed_in? %>
           <li class="signup">
-            <%= link_to "レシピをのせる", new_recipe_path, class:'icon-edit post-recipe-text' %>
-          </li>
-          <li class="signup">
-            <%= link_to "献立をのせる", new_menu_path, class:'icon-edit post-recipe-text' %>
-          </li>
-          <li class="signup">
-            <% if current_nutritionist.permission == 0 %>
+            <% if @permission == "1" %>
               <%= link_to "コラムを投稿する", about_path, class:'icon-edit post-recipe-text',data: { confirm: "コラムを投稿するには管理人の許可が必要です" } %>
-            <% else %>
+            <% elsif @permission == "2" %>
               <%= link_to "コラムを投稿する", new_column_path, class:'icon-edit post-recipe-text' %>
             <% end %>
           </li>
