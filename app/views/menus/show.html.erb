@@ -40,11 +40,9 @@
   <ul class="menu-items">
     <li class="menu-item col col-8">
       <div class="sp-off  menu-role main">
-        <!-- <img src="images/main-icon.png" alt="" class="role-icon"> -->
         <%= image_tag("main-icon.png", :alt => "", :class => "role-icon")%>主菜
       </div>
       <div class="menu-title">
-        <!-- <a href="recipe.html">ゴロゴロお肉のメキシカンスープトマト煮込み</a> -->
         <%= link_to @main_recipe.name, recipe_path(@main_recipe) %>
       </div>
       <div class="menu-img">
