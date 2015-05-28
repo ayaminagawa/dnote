@@ -12,19 +12,25 @@
       </div>
 
       <ul class="menu-list sp-off">
-    
-            <li>
-            <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
-            <%= link_to @todays_recipes.name, recipe_path(@todays_recipes) %>
-          </li>
-          
-             
+        <li>
+          <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
+          <%= link_to @main_recipe.name, recipe_path(@main_recipe) %>
+        </li>
+        <% @side_recipes.each do |recipe| %>
+             <li>
+              <%= image_tag("menu-sub-icon.png", :alt => "", :class => "menu-list-icon")%>
+               <%= link_to recipe.name, recipe_path(recipe) %>
+             </li>
+             <li>
+        <% end %>
+
         <li class="author">
           by <%= link_to @todays_menu.user.name, user_path(@todays_menu.user) %>
         </li>
+
       </ul>
            
-    </div>
+         </div>
 
          <div class="pickup-menu-img col col-15">
             <!-- <a href="menu.html">
