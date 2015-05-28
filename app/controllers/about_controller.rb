@@ -5,9 +5,7 @@ class AboutController < ApplicationController
 
   	@menu_recipe = MenuRecipe.find_by(menu_id: @todays_menu.id)
 
-  	@main_recipe = Recipe.find(@menu_recipe.main)
-    @side1_recipe = Recipe.find(@menu_recipe.side1)
-    @side2_recipe = Recipe.find(@menu_recipe.side2)
+  	@recipes = Recipe.where(@menu_recipe.recipe_id)
     # @main_recipe = @main_recipes.first
     # @side1_recipe = @side1_recipes.first
     # @side2_recipe = @side2_recipes.first
