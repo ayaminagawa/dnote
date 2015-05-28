@@ -22,8 +22,8 @@ class MenusController < ApplicationController
     @menu = Menu.new
     @menu.menu_recipes.build 
     @main_menu_recipe_id = MenuRecipe.last.id + 1
-    @main_recipes = current_user.recipes.where(recipe_select: 1 ) 
-    @side_recipes = current_user.recipes.where(recipe_select: 2 )
+    @main_recipes = current_user.recipes.where(recipe_select: 1 ).where.not(pre_save: 1)
+    @side_recipes = current_user.recipes.where(recipe_select: 2 ).where.not(pre_save: 1)
     @menu.category_selects.build
   end
 
@@ -40,8 +40,8 @@ class MenusController < ApplicationController
   def create
     @menu = current_user.menus.build(menu_params)
     @main_menu_recipe_id = MenuRecipe.last.id + 1
-    @main_recipes = current_user.recipes.where(recipe_select: 1 ) 
-    @side_recipes = current_user.recipes.where(recipe_select: 2 )
+    @main_recipes = current_user.recipes.where(recipe_select: 1 ).where.not(pre_save: 1)
+    @side_recipes = current_user.recipes.where(recipe_select: 2 ).where.not(pre_save: 1)
     # respond_to do |format|
     if @menu.save
         # @menu_recipe.menu_id = @menu.id

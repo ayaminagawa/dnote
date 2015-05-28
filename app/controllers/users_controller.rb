@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @id = params[:id]
-    @recipes = Recipe.find(:all, :conditions => { :user_id => @id }) 
+    @recipes = Recipe.find(:all, :conditions => { :user_id => @id })
     @menus = Menu.find(:all, :conditions => { :user_id => @id})
     @made_reports = MadeReport.find(:all, :conditions => { :user_id => @id})
     @user = User.find(@id)
