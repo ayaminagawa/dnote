@@ -12,11 +12,18 @@
       </div>
 
       <ul class="menu-list sp-off">
-        <% @todays_recipes.each do |recipe| %>
-        <li>
-          <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
-          <%= link_to recipe.name, recipe_path(recipe) %>
-        </li>
+        <% if @todays_recipes.count == 1 %>
+            <li>
+            <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
+            <%= link_to @todays_recipes.name, recipe_path(@todays_recipes) %>
+          </li>
+          <% else %>
+            <% @todays_recipes.each do |recipe| %>
+            <li>
+              <%= image_tag("menu-main-icon.png", :alt => "", :class => "menu-list-icon")%>
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            </li>
+          <% end %>
         <% end %>
              
         <li class="author">
