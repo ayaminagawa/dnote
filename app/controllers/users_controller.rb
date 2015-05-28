@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @nutritionists = User.where(:permission => "0")
+    @nutritionists = User.where(:permission => 1..2)
   end
 
   # GET /users/1
