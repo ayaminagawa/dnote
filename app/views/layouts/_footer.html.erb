@@ -45,7 +45,7 @@
           <a href="#">利用規約</a>
         </li>
         <li>
-          <%= link_to "運営会社", company_path %>
+          <%= link_to "会社概要", company_path %>
         </li>
         <li>
           <a href="#">個人情報保護方針</a>
@@ -68,16 +68,23 @@
 
       <ul class="footer-menu">
         <li>
+          <a href="#">利用規約</a>
+        </li>
+        <li>
           <%= link_to "会社概要", company_path %>
         </li>
         <li>
-          <a href="#">個人情報保護方針</a>
+          <%= link_to "プライバシーポリシー", privacy_policy_path  %>
+          
         </li>
         <li>
           <%= link_to "情報セキュリティ基本方針", security_information_path %>
         </li>
         <li>
-          <%= link_to "プライバシーポリシー", privacy_policy_path  %>
+          <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
+        </li>
+        <li>
+          <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
         </li>
       </ul>
     </div>
