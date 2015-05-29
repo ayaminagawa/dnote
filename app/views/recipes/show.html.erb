@@ -23,24 +23,18 @@
         <div class=" gutters row">
           <div class="col col-16 col-xs col-xs-17">
             <div class="menu-title-large">
-              <%= @recipe.name %>
+              <%= link_to @recipe.name, recipe_path(@recipe) %>
             </div>
           </div>
 
           <div class="col col-6 col-xs col-xs-7 pull-right">
-            
             <div class="button pull-right recipe-save" id="save-btn">
-                <!-- <a href="#">
-                  <i class="title-icon icon-star"></i><br>
-                  レシピを<span class="save-btn-text">保存</span>
-                </a> -->
-                <span id="recipe_<%= @recipe.id %>">
-                  <%= render 'favorites/favorite_btn', recipe: @recipe %>
-                </span>
-              </div>
-              
-            </div>
+              <span id="recipe_<%= @recipe.id %>">
+                <%= render 'favorites/favorite_btn', recipe: @recipe %>
+              </span>
+            </div>  
           </div>
+        </div>
 
           <div class="gutters row pb-30">
             <div class="col col-12">
