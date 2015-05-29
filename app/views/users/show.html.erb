@@ -36,21 +36,36 @@
           <div class="inner mykitchen-head"> <%= @user.name %>さんの投稿したレシピ</div>
           <ul >
             <% @recipes.each do |recipe| %>
-            <li class="col col-12 inner">
-              <div class="menu-title">
-                <%= link_to recipe.name, recipe_path(recipe) %>
-              </div>
-
-              <div class="menu-img">
-                <!-- <a href="recipe.html">
-                  <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-                </a> -->
-                <%= link_to recipe_path(recipe) do %>
-                <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url(:original) %>');">
+            <% if @user == current_user %>
+              <li class="col col-12 inner">
+                <div class="menu-title">
+                  <%= link_to recipe.name, recipe_path(recipe) %>
+                  <% if recipe.pre_save == 1 %>
+                    (制作中、未公開)
+                  <% end %>
                 </div>
-                <% end %>
-              </div>
-            </li>
+
+                <div class="menu-img">
+                  <%= link_to recipe_path(recipe) do %>
+                  <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url(:original) %>');">
+                  </div>
+                  <% end %>
+                </div>
+              </li>
+            <% elsif recipe.pre_save != 1 %>
+              <li class="col col-12 inner">
+                <div class="menu-title">
+                  <%= link_to recipe.name, recipe_path(recipe) %>
+                </div>
+
+                <div class="menu-img">
+                  <%= link_to recipe_path(recipe) do %>
+                  <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url(:original) %>');">
+                  </div>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
             <% end %>
           </ul>
         </div> 

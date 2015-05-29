@@ -47,7 +47,7 @@ class RecipesController < ApplicationController
   def calories
     # @calories = Recipe.find(:all, :conditions => { :category => 1 }) 
     # @menu_calories = Menu.find(:all, :conditions => { :category => 1 }) 
-    @calories = Recipe.where.not(calorie: nil)
+    @calories = Recipe.where.not(calorie: nil, pre_save: 1)
   end
 
 
@@ -57,7 +57,8 @@ class RecipesController < ApplicationController
     @made_reports = MadeReport.find(:all, :conditions => { :recipe_id => params[:id] }) 
     @ingredients = Ingredient.find(:all, :conditions => { :recipe_id => params[:id]})
     @procedures = Procedure.find(:all, :conditions => { :recipe_id => params[:id]})
-    @recommended_recipe = Recipe.find(:last)
+    @recommended_recipe = Recipe.where.not(pre_save: 1)
+    @recommended_recipe = @recommended_recipe.find(:last)
   end
 
   # GET /recipes/new
@@ -124,7 +125,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :recipe_select, :tip, :image, :calorie, :kind, :people, category_selects_attributes: [:id, :category_number2, :category_number3, :category_number4, :category_number5, :category_number6], ingredients_attributes: [:id, :name, :volume], procedures_attributes: [:id, :body, :image])
+      params.require(:recipe).permit(:name, :description, :recipe_select, :tip, :image, :calorie, :kind, :people, :pre_save, category_selects_attributes: [:id, :category_number2, :category_number3, :category_number4, :category_number5, :category_number6], ingredients_attributes: [:id, :name, :volume], procedures_attributes: [:id, :body, :image])
     end
 
     # def ingredient_params

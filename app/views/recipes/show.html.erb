@@ -2,7 +2,12 @@
   <div class="gutters row">
     <div class="col col-18 "> 
       <div class="title-bar">
-        <i class="title-icon icon-cutlery"></i>レシピ
+        <i class="title-icon icon-cutlery"></i>
+        <% if @recipe.pre_save == 1 %>
+          下書き中のレシピ
+        <% else %>
+          レシピ
+        <% end %>
         <% if current_user?(@recipe.user) %>
         <div class="recipe-edit-btn">
             <!-- <a href="#">レシピを編集する
