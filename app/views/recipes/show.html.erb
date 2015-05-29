@@ -12,9 +12,9 @@
         <div class="recipe-edit-btn">
             <!-- <a href="#">レシピを編集する
           </a> -->
-          <%= link_to "レシピを編集する", edit_recipe_path(@recipe) %>
+          <%= link_to "編集する", edit_recipe_path(@recipe) %>
           
-          <%= link_to "レシピを削除する", @recipe, method: :delete,data: { confirm: "本当に削除しますか?" } %>
+          <%= link_to "削除する", @recipe, method: :delete,data: { confirm: "本当に削除しますか?" } %>
         </div>
         <% end %>
       </div>
