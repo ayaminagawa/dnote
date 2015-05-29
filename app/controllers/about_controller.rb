@@ -12,7 +12,8 @@ class AboutController < ApplicationController
     # @side1_recipe = @side1_recipes.first
     # @side2_recipe = @side2_recipes.first
     @nurtrition_menu = Menu.find(18)
-    @nutritionist = User.find(8)
+    @nurtrition_menu2 = Menu.find(19)
+
 
     @permission_columns = Column.where(permission: 2)
     @column = @permission_columns.find(:last)
