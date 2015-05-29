@@ -43,11 +43,11 @@
         <div class="line"></div>
         <div class="button sidemenu-post-repo">
           <!-- <a href="#"> -->
-          <% if @permission == "1" %>
-          <i class="icon-recipes-1"></i>
+          <% if current_user && current_user.permission == "1" %>
+            <i class="icon-recipes-1"></i>
             <%= link_to "コラムを投稿する", about_path, class:'icon-edit post-recipe-text',data: { confirm: "コラムを投稿するには管理人の許可が必要です" } %>
-          <% elsif @permission == "2" %>
-          <i class="icon-recipes-1"></i>
+          <% elsif current_user && current_user.@permission == "2" %>
+            <i class="icon-recipes-1"></i>
             <%= link_to "コラムを投稿する", new_column_path, class:'icon-edit post-recipe-text' %>
           <% end %>
           <!--  </a> -->
