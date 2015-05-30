@@ -3,69 +3,56 @@
 
   <div class="col col-11 pickup-menu-nuturition">
     <div class="menu-img">
-            <!-- <a href="recipe.html">
-              <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
-            </a> -->
-            <%= link_to menu_path(@nurtrition_menu) do %>
-
-            <div class="recommended-image" style="width:420px;background-image: url('<%= @nurtrition_menu.image.url(:original) %>');">
-
-            </div>
-            <% end %>
-            
-          </div>
-          <div class="nuturition gutters row">
-            <div class="col col-6 col-xs col-xs-6">
-              <div class="nuturition-img">
-                <!-- <a href="nuturition.html">
-                  <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo">
-                </a> -->
-                
-              </div>
-            </div>
-            <div class="col col-17 col-xs col-xs-17">
-              <div class="menu-title">
-                <!-- <a href="recipe.html">タイムとレモンでさっぱり☆ふんわり鶏肉の絶品パエリア</a> -->
-                <%= link_to @nurtrition_menu.name, menu_path(@nurtrition_menu)%>
-              </div>
-              <div class="nuturition-name">
-                <%=  link_to @nutritionist.name, user_path(@nutritionist)%>
-              </div>
-            </div>
-          </div>
+      <%= link_to menu_path(@nurtrition_menu) do %>
+        <div class="recommended-image" style="width:420px;background-image: url('<%= @nurtrition_menu.image.url(:original) %>');">
         </div>
-        
+      <% end %>        
+    </div>
+    <div class="nuturition gutters row">
+      <div class="col col-6 col-xs col-xs-6">
+        <div class="nuturition-img">
+        </div>
+      </div>
+      <div class="col col-17 col-xs col-xs-17">
+        <div class="menu-title">
+          <%= link_to @nurtrition_menu.name, menu_path(@nurtrition_menu)%>
+        </div>
+        <div class="nuturition-name">
+          <%=  link_to @nurtrition_menu.user.name, user_path(@nurtrition_menu.user)%>
+        </div>
+      </div>
+    </div>
+  </div>
 
-       <!--  <div class="col col-11 pickup-menu-nuturition pc-off">
-          <div class="menu-img">
-            <a href="recipe.html">
-              <img src="/assets/nuturition-menu-1.jpg" alt="" class="photo">
-            </a>
-          </div>
-          <div class="nuturition gutters row">
-            <div class="col col-6 col-xs col-xs-6">
-              <div class="nuturition-img">
-                <a href="nuturition.html">
-                  <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo">
-                </a>
-              </div>
-            </div>
-            <div class="col col-17 col-xs col-xs-17">
-              <div class="menu-title">
-                <a href="recipe.html">タイムとレモンでさっぱり☆ふんわり鶏肉の絶品パエリア</a>
-              </div>
-              <div class="nuturition-name">
-                  星野真里
-              </div>
-            </div>
-          </div>
-        </div> -->
+  <div class="col col-11 pickup-menu-nuturition">
+    <div class="menu-img">
+      <%= link_to menu_path(@nurtrition_menu) do %>
+        <div class="recommended-image" style="width:420px;background-image: url('<%= @nurtrition_menu.image.url(:original) %>');">
+        </div>
+      <% end %>        
+    </div>
+    <div class="nuturition gutters row">
+      <div class="col col-6 col-xs col-xs-6">
+        <div class="nuturition-img">
+        </div>
+      </div>
+      <div class="col col-17 col-xs col-xs-17">
+        <div class="menu-title">
+          <%= link_to @nurtrition_menu2.name, menu_path(@nurtrition_menu2)%>
+        </div>
+        <div class="nuturition-name">
+          <%=  link_to @nurtrition_menu2.user.name, user_path(@nurtrition_menu2.user)%>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="col col-13 nuturition-column-container sp-off">
+
+
+        <!-- <div class="col col-13 nuturition-column-container sp-off">
           <div class=" gutters row column-title-bar">
             <p class="vertical pull-left">コラム</p>
             <div class="col col-4 nuturition-img">
-              <!-- <img src="/assets/nuturition/nuturition-1.jpg" alt="" class="photo"> -->
               <div class="recommended-image photo" style="background-image: url('<%= @column.user.image.url(:original) %>');height:70px;">
               </div>
             </div>
@@ -76,19 +63,18 @@
               </div>
               <div class="column-title">
                 <%= link_to @column.title, @column %>
-                <!-- <a href="column.html">糖尿病で気をつけなければいけない事って？</a> -->
               </div>
             </div>
           </div>
 
           <div class="column-content">
-            <!-- <div class="column-heading">
+            <div class="column-heading">
               大事なのはバランスのとれた食事
-            </div> -->
+            </div>
             <p class="column-text">
               <%= @column.body %>
             </p>
-            <!-- <div class="column-heading">
+            <div class="column-heading">
               なんとしても習慣化！！
             </div>
             <p class="column-text">
@@ -99,7 +85,7 @@
               ・規則正しい生活は、肥満を防ぎ、糖尿病を遠ざける<br>
 
               基本は、食生活を見直し、運動する習慣をつけることです。<br>
-            </p> -->
+            </p>
           </div>
-        </div>  
+        </div>   -->
       </div>

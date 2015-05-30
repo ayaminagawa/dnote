@@ -187,6 +187,32 @@
      </a>
    </div>
  </div> -->
+   <% if @user.permission == "1" || @user.permission == "2" %>  
+    <h2 class="title-bar">
+      <i class="icon-recipes-1 title-icon"></i>
+      MYコラム
+    </h2>
+
+    <% @columns = Column.where(user_id: @user.id) %>
+
+    <div class="container inner-30 mykitchen-container repo">
+      <div class="inner mykitchen-head"> <%= @user.name %>さんが投稿したコラム</div>
+      <ul >
+        <% @columns.each do |column|%>
+          <li class="col col-12 inner repo">
+            <div class="menu-title">
+              <%= link_to column.title, column %>
+            </div>
+            <div class="repo-date">
+              <p class="repo-data">
+              <%= column.body %>
+              </p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div> 
+  <% end %>
 
 
  <div class="tab-switch-container">
@@ -260,20 +286,10 @@
       </div>
       <% end %>
     </div>
-  </li>
-  <% end %>
-  
+    </li>
+    <% end %>
+  </ul>
 
-</ul>
-
- <!--  <div class="read-more-accordion pc-off">
-    <a href="#" class="is-toggle-switch">
-      もっと見る
-      <span class="accordion-arrow">
-        <i class="icon-m orange icon-circle-right"></i>
-      </span>
-    </a>
-  </div> -->
 
 </div>
 </div>
