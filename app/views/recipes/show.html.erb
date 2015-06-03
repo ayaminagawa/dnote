@@ -50,17 +50,32 @@
               </p>
 
               <p class="recipe-author clear">
-                <!-- <a href="#" class="recipe-author-name ">
-                  by つくったひと
-                </a> -->
                 <%= link_to @recipe.user.name, user_path(@recipe.user)%>
               </p>
 
-              <% if @recipe.calorie.present? %>
+              <% if @recipe.calorie.present? && @recipe.sugar.present? %>
               <div class="pull-left mt-30">
                 <p class="kcal">
                   <i class="icon-scales"></i>
                   <%= @recipe.calorie %>Kcal
+                  ,糖質
+                  <%= @recipe.sugar %>g
+                </p>
+              </div>
+
+              <% elsif  @recipe.calorie.present? %>
+              <div class="pull-left mt-30">
+                <p class="kcal">
+                  <i class="icon-scales"></i>
+                  <%= @recipe.calorie %>Kcal
+                </p>
+              </div>
+
+              <% elsif @recipe.sugar.present? %>
+              <div class="pull-left mt-30">
+                <p class="kcal">
+                  <i class="icon-scales"></i>
+                  糖質<%= @recipe.sugar %>g
                 </p>
               </div>
               <% end %>
