@@ -4,18 +4,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-
-  # def after_sign_in_path_for(resource)
-  #   admin_dashboard_path
-  # end
-
-  # def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(resource)
+       case resource
+      when User
+        user_path(current_user)
+      when AdminUser
+        admin_root_path
+      end
+  end
+# def after_sign_in_path_for(resource)
   #   if　current_user.present? && current_user.permission == nil
   #      nutritionist_show_path(current_user)
   #     elsif current_user.present?
   #      user_path(current_user)
   #   end
   # end
+
 
   
   protected
