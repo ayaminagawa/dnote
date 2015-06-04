@@ -14,7 +14,7 @@ class ColumnsController < ApplicationController
   end
 
   def create
-    @column = Column.new(column_params)
+    @column = current_user.columns.build(column_params)
     if @column.save
       redirect_to(about_index_path)
     else
