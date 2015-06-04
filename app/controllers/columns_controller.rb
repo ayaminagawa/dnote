@@ -15,6 +15,7 @@ class ColumnsController < ApplicationController
 
   def create
     @column = Column.new(column_params)
+    @column.body = params[:body]
     if @column.save
       redirect_to(about_index_path)
     else
@@ -37,6 +38,6 @@ class ColumnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def column_params
-      params.require(:column).permit(:title, :body, :user_id, :permission)
+      params.require(:column).permit(:title, :user_id, :permission)
     end
   end
