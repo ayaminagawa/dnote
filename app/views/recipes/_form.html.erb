@@ -150,28 +150,29 @@
                 </div>
 
                 <div class="edit-area">
-                    <!-- <form action="#" >
-                      <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
-                      <br>
-                    </form> -->
-                    
-                    <%= f.text_area :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30', style: "font-size: 1.25rem" %>
-                    
-                  </div>
-                </div>
+                  <%= f.text_area :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30', style: "font-size: 1.25rem" %>
 
-                <div class="col col-12 memo-history recipe-history edit-history ">
-                 <div class="ml-30 sp-head edit-label">
-                   このレシピの一人分のカロリー
-                 </div>
-
-                 <div class="ml-30 edit-area">
-                  <!-- <form action="#" >
-                    <textarea class="edit-field edit-kcal" placeholder="選択して編集する (例：400)"></textarea>
-                  </form> -->
-                  <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する (例：400)', style: "font-size: 1.25rem" %>
-                  <div class="ml-30 sp-head edit-label">Kcal</div>
                 </div>
+              </div>
+
+              <div class="col col-12 memo-history recipe-history edit-history ">
+               <div class="ml-30 sp-head edit-label">
+                 このレシピの一人分のカロリー
+               </div>
+
+               <div class="ml-30 edit-area">
+                <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する', style: "font-size: 1.25rem" %>Kcal
+               </div>
+              </div>
+
+              <div class="col col-12 memo-history recipe-history edit-history ">
+               <div class="ml-30 sp-head edit-label">
+                 このレシピの一人分の糖質量
+               </div>
+
+               <div class="ml-30 edit-area">
+                <%= f.text_field :sugar, class:'edit-field edit-kcal', placeholder:'選択して編集する', style: "font-size: 1.25rem" %>g
+               </div>
               </div>
             </div>
 
