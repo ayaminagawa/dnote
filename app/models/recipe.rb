@@ -63,8 +63,8 @@ class Recipe < ActiveRecord::Base
      "7" => "サラダ",
      "8" => "スープ・汁物",
      "9" => "お弁当",
-     "10" => "おもてなし料理",
-     "11" => "お菓子",
+     # "10" => "おもてなし料理",
+     "11" => "お菓子・デザート",
      "12" => "パン"
    }
   end
@@ -90,8 +90,8 @@ class Recipe < ActiveRecord::Base
       7 => "サラダ",
       8 => "スープ・汁物",
       9 => "お弁当",
-      10 => "おもてなし料理",
-      11 => "お菓子",
+      # 10 => "おもてなし料理",
+      11 => "お菓子・デザート",
       12 => "パン"
     }
   end
@@ -107,8 +107,8 @@ class Recipe < ActiveRecord::Base
       [ "7", "category-icon/salada.png", "サラダ" ],
       [ "8", "category-icon/soup.png", "スープ・汁物" ],
       [ "9", "category-icon/obento.png", "お弁当" ],
-      [ "10", "category-icon/omotenashi.png", "おもてなし料理" ],
-      [ "11", "category-icon/okashi.png", "お菓子" ],
+      # [ "10", "category-icon/omotenashi.png", "おもてなし料理" ],
+      [ "11", "category-icon/okashi.png", "お菓子・デザート" ],
       [ "12", "category-icon/pan.png", "パン" ]
     ]
   end
