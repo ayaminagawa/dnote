@@ -16,6 +16,7 @@ class ColumnsController < ApplicationController
   def create
     @column = Column.new(column_params)
     @column.body = params[:body]
+
     if @column.save
       redirect_to(about_index_path)
     else
