@@ -65,7 +65,8 @@ class Recipe < ActiveRecord::Base
      "9" => "お弁当",
      # "10" => "おもてなし料理",
      "11" => "お菓子・デザート",
-     "12" => "パン"
+     "12" => "パン",
+     "13" => "大豆のおかず"
    }
   end
 
@@ -92,7 +93,8 @@ class Recipe < ActiveRecord::Base
       9 => "お弁当",
       # 10 => "おもてなし料理",
       11 => "お菓子・デザート",
-      12 => "パン"
+      12 => "パン",
+      13 => "大豆のおかず"
     }
   end
 
@@ -109,7 +111,8 @@ class Recipe < ActiveRecord::Base
       [ "9", "category-icon/obento.png", "お弁当" ],
       # [ "10", "category-icon/omotenashi.png", "おもてなし料理" ],
       [ "11", "category-icon/okashi.png", "お菓子・デザート" ],
-      [ "12", "category-icon/pan.png", "パン" ]
+      [ "12", "category-icon/pan.png", "パン" ],
+      [ "13", "", "大豆のおかず"]
     ]
   end
 
