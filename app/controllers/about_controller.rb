@@ -16,7 +16,8 @@ class AboutController < ApplicationController
 
 
     @permission_columns = Column.where(permission: 2)
-    @column = @permission_columns.find(:last)
+    @columns = @permission_columns.limit(3)
+
 
     if user_signed_in?
       @permission = current_user.permission

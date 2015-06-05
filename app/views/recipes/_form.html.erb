@@ -243,16 +243,11 @@
 
           </div>
 
-
-          <label>
-            <%= f.check_box :pre_save %>
-            下書き保存にして公開しない
-          </label>
-
-          <div class="centering mt-56 create-recipe-btn-container" >
-            <!--          <a href="#" class="create-recipe-btn">レシピを公開する</a> -->          
-            <%= f.submit "レシピを保存する", class: 'create-recipe-btn' %>
+          <div class="centering mt-56 create-recipe-btn-container" >      
+            <%= f.submit "レシピを公開する", class: 'create-recipe-btn' , name: 'save' %>
+            <%= f.submit "レシピを下書き保存する", class: 'create-recipe-btn' , name: 'pre_save' %>
           </div>
+
 
         </div>
         <% end %>
