@@ -16,7 +16,7 @@
     <div class=" gutters row">
       <div class="col col-20">
         <div class="edit-recipe-title-container">
-          <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピのタイトルを入力</div>
+          <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピのタイトルを入力(必須)</div>
           <div class="edit-area imgInput">
             <!-- <form action="#"> -->
             <!-- <textarea class="edit-field edit-recipe-title" rows="2" placeholder="レシピのタイトルを入力"></textarea> -->    
@@ -83,7 +83,7 @@
           </div> -->
           <br>
           <div class="sp-head edit-label">
-            <i class="icon-s icon-scales"></i>&nbsp;材料  <%= f.text_field :people, value:'2', rows:'2', cols:'1' %>人分
+            <i class="icon-s icon-scales"></i>&nbsp;材料(必須)  <%= f.text_field :people, value:'2', rows:'2', cols:'1' %>人分
           </div>
 
           <div class="field">
@@ -121,7 +121,7 @@
 
           <div class="recipe-bottom pt-30 pb-30">
             <div class="sp-head edit-label">
-              <i class="icon-s icon-scales"></i>&nbsp;作り方
+              <i class="icon-s icon-scales"></i>&nbsp;作り方(必須)
             </div>
             <div class="field">
               <ul class="steps row" id="step-list">
