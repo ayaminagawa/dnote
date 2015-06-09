@@ -33,9 +33,9 @@
         </h2>
 
         <div class="container inner-30 mykitchen-container">
-          <div class="inner mykitchen-head"> <%= @user.name %>さんの投稿したレシピ</div>
+          <div class="inner mykitchen-head"> <%= @user.name %>さんの投稿した主菜レシピ</div>
           <ul >
-            <% @recipes.each do |recipe| %>
+            <% @main_recipes.each do |recipe| %>
             <% if @user == current_user %>
               <li class="col col-12 inner">
                 <div class="menu-title">
@@ -68,6 +68,44 @@
             <% end %>
             <% end %>
           </ul>
+        </div>
+        <div class="container inner-30 mykitchen-container">
+          <div class="inner mykitchen-head"> <%= @user.name %>さんの投稿した副菜レシピ</div>
+          <ul >
+            <% @sub_recipes.each do |recipe| %>
+            <% if @user == current_user %>
+              <li class="col col-12 inner">
+                <div class="menu-title">
+                  <%= link_to recipe.name, recipe_path(recipe) %>
+                  <% if recipe.pre_save == 1 %>
+                    (制作中、未公開)
+                  <% end %>
+                </div>
+
+                <div class="menu-img">
+                  <%= link_to recipe_path(recipe) do %>
+                  <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url(:original) %>');">
+                  </div>
+                  <% end %>
+                </div>
+              </li>
+            <% elsif recipe.pre_save != 1 %>
+              <li class="col col-12 inner">
+                <div class="menu-title">
+                  <%= link_to recipe.name, recipe_path(recipe) %>
+                </div>
+
+                <div class="menu-img">
+                  <%= link_to recipe_path(recipe) do %>
+                  <div class="recommended-image photo" style="background-image: url('<%= recipe.image.url(:original) %>');">
+                  </div>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+            <% end %>
+          </ul>
+
         </div> 
 
         <!-- <div class="centering">
