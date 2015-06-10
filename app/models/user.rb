@@ -6,17 +6,16 @@ class User < ActiveRecord::Base
   
   
   validates :name, length: { maximum: 15 }, presence: true
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	# validates :gender, presence: true
-	# validates :email, presence: true,format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+	validates :email, presence: true, uniqueness: true
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :password, presence: true, length: {minimum: 6, maximum: 20}, on: :create
+  validates :password, length: {minimum: 6, maximum: 120}, on: :update, allow_blank: true
 
 	has_many :menus, dependent: :destroy 
   has_many :recipes, dependent: :destroy 
   has_many :made_reports, dependent: :destroy
 	# has_secure_password
-  validates :password, presence: true, length: {minimum: 6, maximum: 20}, on: :create
-  validates :password, length: {minimum: 6, maximum: 120}, on: :update, allow_blank: true
-
   has_many :favorites
   has_many :favorite_recipes, through: :favorites, source: :recipe
   has_many :favorite_menus, through: :favorites, source: :menu
