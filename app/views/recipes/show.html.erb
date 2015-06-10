@@ -60,6 +60,8 @@
                   <%= @recipe.calorie %>Kcal
                   ,糖質
                   <%= @recipe.sugar %>g
+                  <br>
+                  (1人あたり)
                 </p>
               </div>
 
@@ -67,7 +69,7 @@
               <div class="pull-left mt-30">
                 <p class="kcal">
                   <i class="icon-scales"></i>
-                  <%= @recipe.calorie %>Kcal
+                  <%= @recipe.calorie %>Kcal(1人あたり)
                 </p>
               </div>
 
@@ -75,7 +77,7 @@
               <div class="pull-left mt-30">
                 <p class="kcal">
                   <i class="icon-scales"></i>
-                  糖質<%= @recipe.sugar %>g
+                  糖質<%= @recipe.sugar %>g(1人あたり)
                 </p>
               </div>
               <% end %>
@@ -123,9 +125,9 @@
                     <% end %>
                   </div>
 
-                  <div class="col col-xs col-xs-12 step-info">
+                  <div class="col col-xs col-xs-12 step-info ">
                     <div class="step-count"><%= 1 + index %></div>
-                    <p class="step-text">
+                    <p class="step-text" style="font-size:14px;">
                       <%= br(procedure.body) %>
                     </p>
                   </div>
