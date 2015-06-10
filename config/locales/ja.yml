@@ -209,6 +209,8 @@ ja:
       user:
         name: 名前
         password: パスワード
+        email: メールアドレス
+        gender: 性別
       made_report:
         message: コメント
         image: 写真のファイル

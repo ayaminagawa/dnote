@@ -1,4 +1,8 @@
-<h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>新規登録</h2>
+<% if @u_n == "1"  %>
+  <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>新規登録</h2>
+<% else %>
+  <h2 class="title-bar"><i class="title-icon icon-l icon-nife-fork"></i>管理栄養士の新規登録</h2>
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
@@ -9,7 +13,7 @@
         <div class=" gutters row">
           <div class="col col-20">
             <div class="edit-recipe-title-container">
-              <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前</div>
+              <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前(必須)</div>
               <div class="edit-area">  
                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'お名前を入力', rows:'2' %>
               </div>
@@ -43,7 +47,7 @@
         <div class="col col-12 inner">
           <br>
           <div class="sp-head edit-label">
-           <i class="icon-s icon-play"></i>&nbsp;メールアドレス
+           <i class="icon-s icon-play"></i>&nbsp;メールアドレス(必須)
          </div>
          <div class="field">
           <div class="fields">
@@ -59,7 +63,7 @@
       <div class="col col-12 inner">
         <br>
         <div class="sp-head edit-label">
-         <i class="icon-s icon-play"></i>&nbsp;パスワード(6～20桁で設定してください)
+         <i class="icon-s icon-play"></i>&nbsp;パスワード(6～20桁で設定してください)(必須)
        </div>
        <div class="field">
         <div class="fields">
@@ -78,7 +82,7 @@
       <div class="col col-12 inner">
         <br>
         <div class="sp-head edit-label">
-          <i class="icon-s icon-play"></i>&nbsp;パスワード確認
+          <i class="icon-s icon-play"></i>&nbsp;パスワード確認(必須)
         </div>
         <div class="field">
           <div class="fields">
@@ -97,7 +101,7 @@
         <div class=" gutters row">
           <div class="col col-20">
             <div class="edit-recipe-title-container">
-              <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前</div>
+              <div class="sp-head "> <i class="icon-s icon-pencil"></i>お名前(必須)</div>
               <div class="edit-area">  
                 <%= f.text_field :name, class:'edit-field edit-recipe-title', placeholder:'お名前を入力', rows:'2' %>
               </div>
@@ -130,7 +134,7 @@
         <div class="col col-12 inner">
           <br>
           <div class="sp-head edit-label">
-           <i class="icon-s icon-play"></i>&nbsp;メールアドレス
+           <i class="icon-s icon-play"></i>&nbsp;メールアドレス(必須)
          </div>
          <div class="field">
           <div class="fields">
@@ -146,7 +150,7 @@
       <div class="col col-12 inner">
         <br>
         <div class="sp-head edit-label">
-         <i class="icon-s icon-play"></i>&nbsp;パスワード
+         <i class="icon-s icon-play"></i>&nbsp;パスワード(6～20桁で設定してください)(必須)
        </div>
        <div class="field">
         <div class="fields">
@@ -165,7 +169,7 @@
       <div class="col col-12 inner">
         <br>
         <div class="sp-head edit-label">
-          <i class="icon-s icon-play"></i>&nbsp;パスワード確認
+          <i class="icon-s icon-play"></i>&nbsp;パスワード確認(必須)
         </div>
         <div class="field">
           <div class="fields">
