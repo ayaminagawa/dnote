@@ -77,12 +77,15 @@
         <li>
           <%= link_to "情報セキュリティ基本方針", security_information_path %>
         </li>
+        <% if user_signed_in? %>
+        <% else %>
         <li>
           <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
         </li>
         <li>
           <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
         </li>
+        <% end %>
       </ul>
     </div>
   </footer>
