@@ -11,7 +11,7 @@
         </div>
         <div class="account-img">
           <% if user_signed_in? %>
-          <%= image_tag(current_user.image)%>
+          <%= image_tag(current_user.image, :class => "account-img")%>
           <% else %>
           <i class="icon-user"></i>
           <% end %>
