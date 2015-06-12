@@ -35,12 +35,11 @@
           </div>
 
           <div class="edit-area">
-            <p>あと60文字</p>
-                      <!-- <form action="#" >
-                        <textarea class="edit-field" rows="2" cols="30" name="value" placeholder="選択して編集する"></textarea>
-                        <br>
-                      </form> -->
-                      
+            <div>
+            残り
+            <span class="count">60</span>
+            文字
+            </div>    
                       <%= f.text_area :description, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30' %>              
                     </div>
                   </div>
@@ -151,7 +150,6 @@
 
                 <div class="edit-area">
                   <%= f.text_area :tip, class:'edit-field', placeholder:'選択して編集する', rows:'2', cols:'30', style: "font-size: 1.25rem" %>
-
                 </div>
               </div>
 
