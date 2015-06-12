@@ -30,25 +30,25 @@
           <!-- </a> -->
         </div>
         <div class="line"></div>
-        <div class="button sidemenu-post-repo">
+        <div class="button sidemenu-post-recipe">
           <!-- <a href="#"> -->
-          <i class="icon-recipes-1"></i>
+          <i class="icon-edit"></i>
           <% if user_signed_in? %>
-          <%= link_to "献立をのせる", new_menu_path %>
+          <%= link_to "献立をのせる　", new_menu_path %>
           <% else %>
-          <%= link_to "献立をのせる", new_user_registration_path %>
+          <%= link_to "献立をのせる　", new_user_registration_path %>
           <% end %>
           <!--  </a> -->
         </div>
         <div class="line"></div>
-        <div class="button sidemenu-post-repo">
+        <div class="button sidemenu-post-recipe">
           <!-- <a href="#"> -->
           <% if current_user && current_user.permission == "1" %>
-            <i class="icon-recipes-1"></i>
-            <%= link_to "コラムを投稿する", about_path, class:'icon-edit post-recipe-text',data: { confirm: "コラムを投稿するには管理人の許可が必要です" } %>
+            <i class="icon-edit"></i>
+            <%= link_to "コラムを投稿する", about_path,　data: { confirm: "コラムを投稿するには管理人の許可が必要です" } %>
           <% elsif current_user && current_user.permission == "2" %>
-            <i class="icon-recipes-1"></i>
-            <%= link_to "コラムを投稿する", new_column_path, class:'icon-edit post-recipe-text' %>
+            <i class="icon-edit"></i>
+            <%= link_to "コラムをのせる", new_column_path %>
           <% end %>
           <!--  </a> -->
         </div>
