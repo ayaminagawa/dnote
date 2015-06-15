@@ -6,67 +6,46 @@ Dnote::Application.routes.draw do
   
   get "contacts/new"
   post "contacts/create"
-  # get "nutritionists/index"
-  # get 'nutritionists/show/:id' => 'nutritionists#show'
-  get 'columns/show/:id' => 'columns#show'
-  get "column/new"
-  get "column/create"
-  get "column/destroy"
-  get "column/update"
-  get "column/index"
+
   resources :columns
   
   devise_for :nutritionists, controllers: {
-   :sessions => "users/sessions",
-   :registrations => "users/registrations"
- }
+    :sessions => "users/sessions",
+    :registrations => "users/registrations"
+  }
  
- devise_for :users, controllers: {
-  omniauth_callbacks: "users/omniauth_callbacks",
-  :passwords => "users/passwords",
-  :registrations => "users/registrations",
-  :sessions => "users/sessions"
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks",
+    :passwords => "users/passwords",
+    :registrations => "users/registrations",
+    :sessions => "users/sessions"
   }
 
-# devise_scope :users do
-#   get "nutritionist_sign_in", :to => 'user/sessions#new'
-# end
-# devise_for :users, :controllers => { :sessions => "sessions" } do
-#   get 'nutritionist/sign_in',   :to => 'nutritionist/sessions#new'
-#   post 'nutritionist/sign_in',   :to => 'nutritionist/sessions#create'
-# end
+  resources :menus
 
-resources :menus
+  root  'about#index'
+  match '/about', to:'about#index', via:'get'
+  get "company", to: "about#company"
+  get "security_information", to: "about#security_information"
+  get "privacy_policy", to: "about#privacy_policy"
 
-get "menu/new"
-get "menu/create"
-get "menu/destroy"
-root  'about#index'
-match '/about', to:'about#index', via:'get'
-get "company", to: "about#company"
-get "security_information", to: "about#security_information"
-get "privacy_policy", to: "about#privacy_policy"
+  get "about/index"
 
-get "about/index"
+  resources :recipes do
+    resource :made_reports
+  end
+  resources :users
+  resources :menu_recipes
+  resources :ingredients
 
-resources :recipes do
-  resource :made_reports
-end
-resources :users
-resources :menu_recipes
-resources :ingredients
+  get '/kinds', to:'recipes#recipe_kinds'
+  get '/categories', to:'recipes#recipe_categories'
+  get '/calories', to:'recipes#calories'
 
-get '/kinds', to:'recipes#recipe_kinds'
-get '/categories', to:'recipes#recipe_categories'
-get '/calories', to:'recipes#calories'
+  resources :favorites, only: [:create, :destroy]
 
-get "made_report/new"
-get "made_report/create"
-get "made_report/destroy"
-resources :favorites, only: [:create, :destroy]
-
-get '/menu_recipes', to:'menus#menu_recipes'
- resources :nutritionists
+  get '/menu_recipes', to:'menus#menu_recipes'
+  resources :nutritionists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
