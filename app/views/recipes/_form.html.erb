@@ -153,34 +153,42 @@
                 </div>
               </div>
 
-              <div class="col col-12 memo-history recipe-history edit-history ">
-               <div class="ml-30 sp-head edit-label">
-                 このレシピの一人分のカロリー
-                 <% if current_user.permission != nil %>
-                 (必須)
-                 <% end %>
-               </div>
+              <div class="col-12" style="float:left;">
+                <div class="col col-24 memo-history recipe-history edit-history ">
+                 <div class="ml-30 sp-head edit-label">
+                   このレシピの１人分のカロリー
+                   <% if current_user.permission != nil %>
+                   (必須)
+                   <% end %>
+                 </div>
 
-               <div class="ml-30 edit-area">
-                <%= f.text_field :calorie, class:'edit-field edit-kcal', placeholder:'選択して編集する', style: "font-size: 1.25rem" %>Kcal
-               </div>
+                 <div class="ml-30 edit-area">
+                  <%= f.text_field :calorie, class:'edit-field edit-kcal col-xs-8', placeholder:'選択して編集する', style: "font-size: 1.25rem;float:left;"%>
+                  <p class="edit-label col-xs-8 pc-off" style="float:left;padding:2rem;">Kcal</p>
+                  <p class="edit-label col-xs-8 sp-off" style="float:left;">Kcal</p>
+
+                 </div>
+                </div>
+
+                <div class="col col-24 memo-history recipe-history edit-history ">
+                 <div class="ml-30 sp-head edit-label">
+                   このレシピの１人分の糖質量
+                   <% if current_user.permission != nil %>
+                   (必須)
+                   <% end %>
+                 </div>
+
+                 <div class="ml-30 edit-area">
+                  <%= f.text_field :sugar, class:'edit-field edit-kcal col-xs-8', placeholder:'選択して編集する', style: "font-size: 1.25rem;float:left;" %>
+                  <p class="edit-label col-xs-8 pc-off" style="float:left;padding:2rem;">g</p>
+                  <p class="edit-label col-xs-8 sp-off" style="float:left;">g</p>
+
+                 </div>
+                </div>
+              </div>
               </div>
 
-              <div class="col col-12 memo-history recipe-history edit-history ">
-               <div class="ml-30 sp-head edit-label">
-                 このレシピの一人分の糖質量
-                 <% if current_user.permission != nil %>
-                 (必須)
-                 <% end %>
-               </div>
 
-               <div class="ml-30 edit-area">
-                <%= f.text_field :sugar, class:'edit-field edit-kcal', placeholder:'選択して編集する', style: "font-size: 1.25rem" %>g
-               </div>
-              </div>
-            </div>
-
-            <br>
             <hr>
             <br>
             <div class="sp-head "> <i class="icon-s icon-pencil"></i>レシピカテゴリの選択</div><br>
