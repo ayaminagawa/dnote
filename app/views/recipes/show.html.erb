@@ -178,13 +178,13 @@
               <li class="col col-6 repo">
 
 
-                <div class="repo-img made_report_image col-xs-12">
+                <div class="repo-img made_report_image col-xs-8" style="float:left;">
                    <%= image_tag("tsukurepo.JPG", :alt => "", :class => "photo")%>
                 </div>
 
                 <% if made_report.message || made_report.image %>
                 <div class="made_report_slidedown" style="display:none;">
-                  <div class="recommended-image photo sp-off" style="background-image: url('<%= made_report.image.url %>');">
+                  <div class="recommended-image col-xs-15 col-24" style="background-image: url('<%= made_report.image.url %>');">
                   </div>
                  <p class="repo-text">
                     <%= made_report.message %>
