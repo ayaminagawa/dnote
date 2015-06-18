@@ -58,6 +58,8 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.find(:all, :conditions => { :recipe_id => params[:id]})
     @procedures = Procedure.find(:all, :conditions => { :recipe_id => params[:id]})
     @recommended_recipe = Recipe.where(pre_save: 0).last
+    @made_report = MadeReport.new
+    @made_report_number = @recipe.made_reports.count
     # @recommended_recipe = @recommended_recipe.find(:last)
   end
 

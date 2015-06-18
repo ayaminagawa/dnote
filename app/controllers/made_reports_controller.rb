@@ -1,51 +1,25 @@
 class MadeReportsController < ApplicationController
-  def new
-    @made_report = MadeReport.new
-    @recipe = Recipe.find(params[:recipe_id])
-  end
+
 
   def create
   	@made_report = current_user.made_reports.build(made_report_params)
-    @recipe = Recipe.find(params[:recipe_id])
-    # @recipe = current_user.recipes.build(recipe_params)
-    # @made_report = current_user.made_reports.build(commit_params)
-
-
-    # respond_to do |format|
-    #   if @made_report.save
-    #     format.html { redirect_to @made_report, notice: 'made_report was successfully created.' }
-    #     format.json { render action: 'show', status: :created, location: @made_report }
-    #   else
-    #     format.html { render action: 'new' }
-    #     format.json { render json: @made_report.errors, status: :unprocessable_entity }
-    #   end
-    # end
-
-    # redirect_to(recipe_path(recipe_id))
 
     if @made_report.save
-      redirect_to(recipe_path(@recipe))
+      redirect_to(recipe_path(@made_report.recipe_id))
     else
       render 'new'
     end
+
   end
 
-  def update
- end
-
- def edit
-end
-
-def destroy
- @made_report.destroy
- respond_to do |format|
-  format.html { redirect_to made_reports_url }
-  format.json { head :no_content }
-end
-end
-
-def show
-end
+  def destroy
+   @made_report.destroy
+   # respond_to do |format|
+   #  format.html { redirect_to made_reports_url }
+   #  format.json { head :no_content }
+   redirect_to(recipe_path(@made_report.recipe_id))
+   end
+  end
 
 private
     # Use callbacks to share common setup or constraints between actions.
@@ -58,4 +32,3 @@ private
       params.require(:made_report).permit(:message, :image, :recipe_id)
     end
 
-  end

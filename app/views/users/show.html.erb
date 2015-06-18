@@ -187,42 +187,34 @@
 
         <h2 class="title-bar">
           <i class="icon-recipes-1 title-icon"></i>
-          つくレポ
+          作ったよレシピ
         </h2>
 
         <div class="container inner-30 mykitchen-container repo">
-          <div class="inner mykitchen-head"> <%= @user.name %>さんが投稿したつくレポ</div>
-          <ul >
-            <% @made_reports.each do |made_report|%>
-            <li class="col col-12 inner repo">
-              <div class="menu-title">
-                <!-- <a href="recipe.html">
-                  低カロリーチーズのこってりサラダ！ワインといっしょにおいしいよ！
-                </a> -->
+          <div class="inner mykitchen-head"> <%= @user.name %>さんの作ったよレシピ</div>
+          <ul class="gutters row repos">
 
-                <%= made_report.recipe.name %>
-              </div>
+              <% @made_reports.each do |made_report| %>
+              <li class="col col-6 repo">
 
-              <div class="menu-img">
-               <!-- <a href="recipe.html">
-                <img src="images/mypage-recipe-1.jpg" alt="" class="photo">
-              </a> -->
-              <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url(:original) %>');">
-              </div>
-            </div>
 
-            <div class="repo-date">
-              <p class="repo-data">
-                <%= made_report.message %>
-              </p>
-              <p class="repo-comment">
+                <div class="repo-img made_report_image col-xs-8" style="float:left;">
+                   <%= image_tag("tsukurepo.JPG", :alt => "", :class => "photo")%>
+                </div>
+
+                <% if made_report.message || made_report.image %>
+                <div class="made_report_slidedown" style="display:none;">
+                  <div class="recommended-image col-xs-15 col-24" style="background-image: url('<%= made_report.image.url %>');">
+                  </div>
+                 <p class="repo-text">
+                    <%= made_report.message %>
+                  </p>
+                </div>
+                <% end %>
                 
-              </p>
-            </div>
-          </li>
-          <% end %>
-
-        </ul>
+              </li>
+              <% end %>
+            </ul>
       </div> 
 <!-- 
   <div class="centering">
