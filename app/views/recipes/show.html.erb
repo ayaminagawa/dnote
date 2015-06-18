@@ -8,15 +8,13 @@
         <% else %>
           レシピ
         <% end %>
-        <% if current_user?(@recipe.user) %>
         <div class="recipe-edit-btn">
-            <!-- <a href="#">レシピを編集する
-          </a> -->
+          <% if current_user?(@recipe.user) %>
           <%= link_to "編集する", edit_recipe_path(@recipe) %>
           
           <%= link_to "削除する", @recipe, method: :delete,data: { confirm: "本当に削除しますか?" } %>
+          <% end %>
         </div>
-        <% end %>
       </div>
 
       <div class="container-full inner-30">
@@ -27,12 +25,18 @@
             </div>
           </div>
 
-          <div class="col col-6 col-xs col-xs-7 pull-right">
-            <div class="button pull-right recipe-save" id="save-btn">
+          <div class="col col-8 col-xs col-xs-6 centering">
+            <div class="button recipe-save" id="save-btn">
               <span id="recipe_<%= @recipe.id %>">
                 <%= render 'favorites/favorite_btn', recipe: @recipe %>
               </span>
-            </div>  
+            </div>
+            <div class="button" id="tsukurepo-show">
+            <% if user_signed_in? %>
+              <span class="sp-off"><i class="title-icon icon-recipes-1"></i><br></span>
+              <p>作ったよ</p>
+            <% end %>
+            </div>
           </div>
         </div>
 
@@ -160,12 +164,12 @@
         </div><!-- recipe-bottom -->
 
 
-        <div class="container-full top-border-green sp-off">
+        <div class="container-full top-border-green">
           <div class="repo-container">
 
            
             <div class="repo-head">
-              <i class="title-icon icon-recipes-1"></i> つくレポ
+              <i class="title-icon icon-recipes-1"></i> みんなの作ったよ回数：<%= @made_report_number %>
             </div>
 
             <ul class="gutters row repos">
@@ -173,34 +177,29 @@
               <% @made_reports.each do |made_report| %>
               <li class="col col-6 repo">
 
-                
-                <div class="repo-img">
-                  <div class="repo-data">
-                    <%= made_report.created_at %>
-                  </div>
-                  <!-- <img src="images/step/step-1.jpg" alt="" class="photo"> -->
-                  <div class="recommended-image photo" style="background-image: url('<%= made_report.image.url %>');">
-                  </div>
+
+                <div class="repo-img made_report_image col-xs-8" style="float:left;">
+                   <%= image_tag("tsukurepo.JPG", :alt => "", :class => "photo")%>
                 </div>
 
-                <p class="repo-text">
-                  <%= made_report.message %>
-                </p>
+                <% if made_report.message || made_report.image %>
+                <div class="made_report_slidedown" style="display:none;">
+                  <div class="recommended-image col-xs-15 col-24" style="background-image: url('<%= made_report.image.url %>');">
+                  </div>
+                 <p class="repo-text">
+                    <%= made_report.message %>
+                  </p>
+                </div>
+                <% end %>
 
                 <p class="author pull-right">
-                  <!-- <a href="menu-recipe.html" class="author-name">by つくったひと</a> -->
-                  
+                  <p>by <%= made_report.user.name %></p>
                 </p>
                 
-                <p><%= link_to "つくれぽを削除する", @made_report, method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
-                
-
               </li>
               <% end %>
             </ul>
           </div>
-
-
 <!-- 
         <div class="read-more-accordion sp-off">
           <a href="#" class="is-toggle-switch">
@@ -213,13 +212,7 @@
         </div> -->
       </div>
 
-      <div class="centering">
-        <% if user_signed_in? %>
-        <div class="button sp-off">
-          <%= link_to "つくれぽを投稿", new_recipe_made_reports_path(recipe_id: @recipe.id), class:"title-icon icon-recipes-2" %>
-        </div>
-        <% end %>
-      </div>
+      
     </div>
 
 
@@ -249,3 +242,6 @@
 </div>
 
 </div><!-- contents end-->
+<%= render 'made_reports/form'%>
+
+

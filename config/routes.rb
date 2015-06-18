@@ -49,12 +49,14 @@ get "privacy_policy", to: "about#privacy_policy"
 
 get "about/index"
 
-resources :recipes do
-  resource :made_reports
-end
+# resources :recipes do
+#   resource :made_reports
+# end
 resources :users
 resources :menu_recipes
 resources :ingredients
+resources :made_reports
+resources :recipes
 
 get '/kinds', to:'recipes#recipe_kinds'
 get '/categories', to:'recipes#recipe_categories'
