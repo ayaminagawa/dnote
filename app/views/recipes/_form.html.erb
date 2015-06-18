@@ -156,6 +156,9 @@
               <div class="col col-12 memo-history recipe-history edit-history ">
                <div class="ml-30 sp-head edit-label">
                  このレシピの一人分のカロリー
+                 <% if current_user.permission != nil %>
+                 (必須)
+                 <% end %>
                </div>
 
                <div class="ml-30 edit-area">
@@ -166,6 +169,9 @@
               <div class="col col-12 memo-history recipe-history edit-history ">
                <div class="ml-30 sp-head edit-label">
                  このレシピの一人分の糖質量
+                 <% if current_user.permission != nil %>
+                 (必須)
+                 <% end %>
                </div>
 
                <div class="ml-30 edit-area">

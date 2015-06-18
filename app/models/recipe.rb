@@ -34,6 +34,21 @@ class Recipe < ActiveRecord::Base
   #   image.s3_object(style).url_for(:read, :secure => true)
   # end
 
+  validate :check_calorie
+  validate :check_sugar
+
+  def check_calorie
+    if user.permission != nil && !calorie
+      errors.add(:calorie, 'を入力してください')
+    end
+  end
+
+  def check_sugar
+    if user.permission != nil && !sugar
+      errors.add(:sugar, 'を入力してください')
+    end
+  end
+
   def main?
     recipe_select == 1
   end

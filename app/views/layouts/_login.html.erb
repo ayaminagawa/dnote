@@ -5,10 +5,6 @@
     <div class="col col-12 modal-inner">
       <h4 class="modal-title"> ログアウト</h4>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'button-b'  %>
-      <div class="facebook-btn-container">
-        <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class:'facebook-btn' %>
-        <%= link_to "Twitterでログイン",  user_omniauth_authorize_path(:twitter), class:'twitter_btn' %>
-      </div>  
     </div>
     <% else %>
 

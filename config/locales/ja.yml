@@ -198,6 +198,8 @@ ja:
       recipe:
         name: レシピ名
         description: キャッチコピー
+        calorie: カロリー
+        sugar: 糖質量
       ingredients:
         name: 材料の名前
       procedures: 
