@@ -14,6 +14,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def edit
   end
 
+  def create
+    @user = User.new(user_params)
+    file = params[:user][:image]
+    @user.set_image(file)
+
+    # respond_to do |format|
+      if @user.save
+        # format.html { redirect_to @user, notice: 'User was successfully created.' }
+        # format.json { render action: 'show', status: :created, location: @user }
+        sign_up(resource_name, resource)
+        redirect_to(user_path(@user))
+      else
+        # format.html { render action: 'new' }
+        # format.json { render json: @user.errors, status: :unprocessable_entity }
+        render 'new'
+      end
+    # end
+  end
+
+
   def update
    
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
@@ -40,11 +60,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:name, :image, :gender, :email, :password, :password_confirmation, :nuntritionist_description, :permission)
+      u.permit(:name, :image, :gender, :email, :password, :password_confirmation, :nuntritionist_description, :permission, :height, :weight)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :image, :gender, :email, :password, :password_confirmation, :current_password, :nuntritionist_description, :permission)
+      u.permit(:name, :image, :gender, :email, :password, :password_confirmation, :current_password, :nuntritionist_description, :permission, :height, :weight)
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :image, :gender, :email, :password, :password_confirmation, :height, :weight)
   end
 
 

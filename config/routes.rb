@@ -6,26 +6,19 @@ Dnote::Application.routes.draw do
   
   get "contacts/new"
   post "contacts/create"
-  # get "nutritionists/index"
-  # get 'nutritionists/show/:id' => 'nutritionists#show'
-  get 'columns/show/:id' => 'columns#show'
-  get "column/new"
-  get "column/create"
-  get "column/destroy"
-  get "column/update"
-  get "column/index"
+
   resources :columns
   
   devise_for :nutritionists, controllers: {
-   :sessions => "users/sessions",
-   :registrations => "users/registrations"
- }
+    :sessions => "users/sessions",
+    :registrations => "users/registrations"
+  }
  
- devise_for :users, controllers: {
-  omniauth_callbacks: "users/omniauth_callbacks",
-  :passwords => "users/passwords",
-  :registrations => "users/registrations",
-  :sessions => "users/sessions"
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks",
+    :passwords => "users/passwords",
+    :registrations => "users/registrations",
+    :sessions => "users/sessions"
   }
 
 # devise_scope :users do
@@ -58,17 +51,15 @@ resources :ingredients
 resources :made_reports
 resources :recipes
 
-get '/kinds', to:'recipes#recipe_kinds'
-get '/categories', to:'recipes#recipe_categories'
-get '/calories', to:'recipes#calories'
 
-get "made_report/new"
-get "made_report/create"
-get "made_report/destroy"
-resources :favorites, only: [:create, :destroy]
+  get '/kinds', to:'recipes#recipe_kinds'
+  get '/categories', to:'recipes#recipe_categories'
+  get '/calories', to:'recipes#calories'
 
-get '/menu_recipes', to:'menus#menu_recipes'
- resources :nutritionists
+  resources :favorites, only: [:create, :destroy]
+
+  get '/menu_recipes', to:'menus#menu_recipes'
+  resources :nutritionists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

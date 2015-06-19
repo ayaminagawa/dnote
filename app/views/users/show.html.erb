@@ -12,20 +12,36 @@
 
       <div class="mypage-content">
 
-        <div class="author-img-sp-container">
+      <% if @user.height != nil && @user.weight != nil %>
+        <% @BMI = @user.weight*10000/@user.height/@user.height.to_f.round(2)  %>
+      <% else %>
+        <% @BMI = nil %>
+      <% end %>
+        <div class="author-img-sp-container col-12">
           <div class="inner mykitchen-head"> <%= @user.name %>さん</div>
           <ul >
             <div class="author-img-sp">
               <div class="profile-image" style="background-image: url('<%= @user.image.url(:original) %>');">
               </div>
-              <!--   <%= profile_image_for @user %> -->
+              <div class="sp-off" style="float:right;">
+                <div class="inner mykitchen-head">
+                  身長：<%= @user.height %>cm
+                  <br>
+                  体重：<%= @user.weight %>kg
+                  <br>
+                  BMI: <%= @BMI %>
+                </div>
+              </div>              
             </div>
-          <!-- <a href="#" class="author-img-edit">
-            <i class="icon-star"></i>
-            あなたの写真を変更する
-          </a> -->
-          
         </div>
+        <div class="pc-off">
+          <div class="inner mykitchen-head centering">
+            身長：<%= @user.height %><br>cm
+            体重：<%= @user.weight %><br>kg
+            BMI: <%= @BMI %>
+          </div>
+        </div>        
+        
 
         <h2 class="mt-56 title-bar">
           <i class="icon-chef-hat-spoun title-icon"></i>
