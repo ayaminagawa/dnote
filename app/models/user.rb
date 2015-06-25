@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
         user = User.new(name:    auth.extra.raw_info.name,
          provider: auth.provider,
          uid:      auth.uid,
-         email:    auth.info.email,
+         email:    User.create_unique_email,
          password: Devise.friendly_token[0,20],
          )
         # paperclip用に画像を扱う
@@ -91,6 +91,11 @@ class User < ActiveRecord::Base
         user.save!
       end
       user
+    end
+
+      # twitterではemailを取得できないので、適当に一意のemailを生成
+    def self.create_unique_email
+      User.create_unique_string + "@dnote.com"
     end
 
     def update_without_current_password(params, *options)
