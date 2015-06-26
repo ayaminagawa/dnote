@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
         user = User.new(name:    auth.extra.raw_info.name,
          provider: auth.provider,
          uid:      auth.uid,
-         email:    User.create_unique_email,
+         email:    auth.info.email,
          password: Devise.friendly_token[0,20],
          )
         # paperclip用に画像を扱う
