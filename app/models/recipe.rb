@@ -1,6 +1,8 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :menu
+  has_many :recipe_feelings, dependent: :destroy
+  accepts_nested_attributes_for :recipe_feelings, :allow_destroy => true
 	has_many :menus, as: :menu_recipes
 	has_many :menu_recipes, :class_name => "MenuRecipe", dependent: :destroy
 	validates :name, presence: true

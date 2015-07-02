@@ -253,6 +253,56 @@
 
             </div>
             <br>
+             <br><br>
+                <ul>
+                  <%= f.fields_for :recipe_feelings, @recipe_feelings do |f| %>
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'1' %>
+                        小腹を満たしたいとき
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'2' %>
+                        さっぱりしたものを食べたい
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'4' %>
+                        少しこってりしたものを食べたい
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'8' %>
+                        野菜多めなものが食べたい
+                      </lavel>
+                    </li>  
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'16' %>
+                        女性ホルモンに良さそうなもの
+                      </lavel>
+                    </li>
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'32' %>
+                        胃腸にやさしいものが食べたい
+                      </lavel>
+                    </li>  
+                    <li>
+                      <label>
+                        <%= f.check_box :feeling,{'name'=>'recipe_feelings[feeling][]'},'64' %>
+                        体調が弱っている時に
+                      </lavel>
+                    </li>                                                                  
+                  <% end %>
+                </ul>
+
+            </div>
+            <br>
             
 
           </div>
