@@ -103,7 +103,6 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    hashie (3.4.0)
     hashie (3.4.1)
     hike (1.2.3)
     hirb (0.7.3)
@@ -294,3 +293,6 @@ DEPENDENCIES
   uglifier (= 2.1.1)
   will_paginate (= 3.0.4)
   will_paginate-bootstrap
+
+BUNDLED WITH
+   1.10.3
