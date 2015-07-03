@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615064038) do
+ActiveRecord::Schema.define(version: 20150701051308) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -183,6 +183,13 @@ ActiveRecord::Schema.define(version: 20150615064038) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "recipe_feelings", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "feeling"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "recipes", force: true do |t|

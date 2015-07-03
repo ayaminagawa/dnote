@@ -252,6 +252,19 @@
                 </ul>
 
             </div>
+             <br><br>
+                <ul>
+                  <% RecipeFeeling.feelings.each do |index, recipe_feeling| %>
+                      <li>
+                        <label>
+                          <%= check_box_tag "recipe[recipe_feelings_attributes][#{index}][feeling]", index, @recipe.recipe_feelings.map(&:feeling).include?(index) %>
+                          <%= RecipeFeeling.feelings[index] %>
+                        </label>
+                      </li>
+                  <% end %>
+                </ul>
+
+            </div>
             <br>
             
 

@@ -1,6 +1,8 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :menu
+  has_many :recipe_feelings, dependent: :destroy
+  accepts_nested_attributes_for :recipe_feelings, :allow_destroy => true, :reject_if => :reject_feeling
 	has_many :menus, as: :menu_recipes
 	has_many :menu_recipes, :class_name => "MenuRecipe", dependent: :destroy
 	validates :name, presence: true
@@ -10,16 +12,9 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, :class_name => "Ingredient", dependent: :destroy
   accepts_nested_attributes_for :ingredients, :allow_destroy => true, :reject_if => :reject_ingredient
 
-  def reject_ingredient(attributed)
-    attributed['name'].blank?
-  end
-
   has_many :procedures, :class_name => "Procedure", :dependent => :destroy
   accepts_nested_attributes_for :procedures, :allow_destroy => true, :reject_if => :reject_procedure
 
-  def reject_procedure(attributed)
-    attributed['body'].blank?
-  end
   has_many :category_selects, :class_name => "CategorySelect", :dependent => :destroy
   accepts_nested_attributes_for :category_selects
   
@@ -130,6 +125,20 @@ class Recipe < ActiveRecord::Base
       [ "13", "", "大豆のおかず"]
     ]
   end
+
+  private
+
+    def reject_ingredient(attributed)
+      attributed['name'].blank?
+    end
+
+    def reject_procedure(attributed)
+      attributed['body'].blank?
+    end
+
+    def reject_feeling(attributed)
+      attributed['feeling'] == "0"
+    end
 
 
 end
