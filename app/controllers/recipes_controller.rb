@@ -86,9 +86,9 @@ class RecipesController < ApplicationController
     # @recipe.ingredients.build
     # @category_select = @recipe.category_select.build(params[:category])
     if params[:save]
-     @recipe.pre_save = 0
+      @recipe.pre_save = 0
     elsif params[:pre_save]
-     @recipe.pre_save = 1
+      @recipe.pre_save = 1
     end
 
     if @recipe.save
@@ -107,14 +107,16 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1
   # PATCH/PUT /recipes/1.json
   def update
-    respond_to do |format|
-      if @recipe.update(recipe_params)
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
+    if params[:save]
+     @recipe.pre_save = 0
+    elsif params[:pre_save]
+     @recipe.pre_save = 1
+    end
+
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: 'Recipe was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
