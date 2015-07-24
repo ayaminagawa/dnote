@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   
   validates :name, length: { maximum: 15 }, presence: true
 	# validates :gender, presence: true
-	# validates :email, presence: true, uniqueness: true
+	validates :email, uniqueness: true
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :password, presence: true, length: {minimum: 6, maximum: 20}, on: :create
-  validates :password, length: {minimum: 6, maximum: 120}, on: :update, allow_blank: true
+  validates :password, length: {minimum: 6, maximum: 20}, on: :update, allow_blank: true
 
 	has_many :menus, dependent: :destroy 
   has_many :recipes, dependent: :destroy 
