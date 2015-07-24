@@ -199,7 +199,7 @@ ja:
         name: レシピ名
         description: キャッチコピー
         calorie: カロリー
-        sugar: 糖質量
+        sugar: 炭水化物量
       ingredients:
         name: 材料の名前
       procedures: 
