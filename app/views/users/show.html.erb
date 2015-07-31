@@ -29,7 +29,11 @@
                   <br>
                   体重：<%= @user.weight %>kg
                   <br>
-                  BMI: <%= @BMI %>
+                  <% if @BMI != nil %>
+                    BMI: <%= @BMI.to_d.floor(2).to_f %>
+                  <% else %>
+                    BMI:
+                  <% end %>
                 </div>
               </div>              
             </div>
