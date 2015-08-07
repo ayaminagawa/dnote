@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :header_permission
+  before_action :ensure_domain
 
   def after_sign_in_path_for(resource)
        case resource
@@ -24,6 +25,12 @@ class ApplicationController < ActionController::Base
   def header_permission
     if user_signed_in?
       @permission = current_user.permission
+    end
+  end
+
+  def ensure_domain
+    if Rails.env.production? && request.env['HTTP_HOST'] != "dnote.jp"
+      redirect_to "http://dnote.jp", :status => 301
     end
   end
 
