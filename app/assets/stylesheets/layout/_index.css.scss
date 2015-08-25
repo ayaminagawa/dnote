@@ -130,8 +130,8 @@
 }
 
 .ranking-item__image{
-  width: $image_width*10;
-  height: $image_height*10;
+  width: $image_width*8;
+  height: $image_height*8;
   @include background-resize;
 }
 

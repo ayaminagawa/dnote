@@ -22,10 +22,10 @@
             =image_tag "crown.png"
             = i
             位
-          .ranking-item__image
+          .ranking-item__image.u-pt10
             = link_to recipe_path(favorite_recipe) do 
-              .ranking-item__image{style:"background-image: url(%{favorite_recipe.image.url});"}
-          .ranking-item__name
+              .ranking-item__image{style:"background-image: url(#{favorite_recipe.image.url(:original)});"}
+          .ranking-item__name.u-pt30.u-bold
             = link_to favorite_recipe.name, recipe_path(favorite_recipe)
           .ranking-item__description
             = favorite_recipe.description
@@ -53,19 +53,20 @@
       - i = 0
       - @favorite_recipes.each do |favorite_recipe|
         - i += 1
-        %li.mobile-index-main__contents__item.u-pr10.u-pl10.u-pt10.clearfix
+        %li.mobile-index-main__contents__item.u-pr10.u-pl10.u-pt10.clearfix.u-pb20
           .mobile
             .mobile-ranking-item__top.u-white-1.c-circle.c-small.u-pink-2
               = i
             .mobile-ranking-item__top.u-white-1.c-circle.c-small.u-pink-2
               位
-          .mobile-ranking-item__image.col-xs-7
+          .mobile-ranking-item__image.col-xs-6.u-pt10
             = link_to recipe_path(favorite_recipe) do 
-              .mobile-ranking-item__image{style:"background-image: url(%{favorite_recipe.image.url});"}
-          .mobile-ranking-item__name.col-xs-5
+              .mobile-ranking-item__image{style:"background-image: url(#{favorite_recipe.image.url(:original)});"}
+          .mobile-ranking-item__name.col-xs-6
             = link_to favorite_recipe.name, recipe_path(favorite_recipe)
             .mobile-ranking-item__description
-              = favorite_recipe.description
+
+
 
 
 
