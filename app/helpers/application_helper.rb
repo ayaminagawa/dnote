@@ -9,7 +9,7 @@ module ApplicationHelper
     fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
       render("fields_" + association.to_s.singularize, :f => builder)
     end
-    link_to_function(name, raw("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"), options)
+    link_to_function(raw(name), raw("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"), options)
   end
 
   #current_userの存在の確認
@@ -25,5 +25,4 @@ module ApplicationHelper
   def br(str)
     html_escape(str).gsub(/\r\n|\r|\n/, "<br />").html_safe
   end
-  
 end

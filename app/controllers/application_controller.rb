@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_filter :header_permission
   before_action :ensure_domain
 
+
+
   def after_sign_in_path_for(resource)
        case resource
       when User
@@ -33,7 +35,6 @@ class ApplicationController < ActionController::Base
       redirect_to "http://dnote.jp", :status => 301
     end
   end
-
 
   
   protected

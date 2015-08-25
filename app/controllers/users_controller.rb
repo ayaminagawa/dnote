@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @id = params[:id]
     @main_recipes = Recipe.where(:user_id => @id, :recipe_select => "1")
     @sub_recipes = Recipe.where(:user_id => @id, :recipe_select => "2" )
-
+    @recipes = Recipe.where(:user_id => @id)
 
     @menus = Menu.find(:all, :conditions => { :user_id => @id})
     @made_reports = MadeReport.find(:all, :conditions => { :user_id => @id})
@@ -40,8 +40,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    file = params[:user][:image]
-    @user.set_image(file)
+    # file = params[:user][:image]
+    # @user.set_image(file)
 
     respond_to do |format|
       if @user.save

@@ -1,0 +1,162 @@
+//レイアウト
+
+#recipe__new__box{
+  margin-right: 100px;
+  margin-left: 100px;
+  background-color:  #FFFFFF;
+  border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+#mobile-recipe__new__box{
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color:  #FFFFFF;
+  border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+
+//細かい設定
+
+.recipe__new__top{
+  background-image: url('bg_check.png');
+  background-repeat: repeat;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+}
+
+.recipe__new__contents{
+  padding: 15px 35px 40px 35px;
+}
+
+.recipe__new__title{
+  border-bottom :3px solid #E2D8C2;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  width: 70%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.recipe__new__name-1, .recipe__new__descroption-1{
+  margin-top: 20px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+
+.recipe__new__descroption{
+  width: 650px;
+}
+
+.recipe__new__submit{
+  text-align: center;
+}
+
+.recipe__new__name-1{
+  display: inline-block;
+}
+
+.recipe__new__name, .recipe__new__descroption, .recipe__new__image, .recipe__new__procedure, .recipe__new__point, .recipe__new__category{
+  font-size: 14px;
+}
+
+.recipe__new__category-2{
+  border-right: 1px solid $grey;
+  border-left: 1px solid $grey;
+}
+
+.recipe__new__category-3{
+  border-right: 1px solid $grey;
+}
+
+.recipe__new__name, .recipe__new__descroption, .recipe__new__image, .recipe__new__procedure,  .recipe__new__point, .recipe__new__category{
+  padding: 0px 15px 0px 15px;
+}
+
+.recipe_new__description-count{
+  float: right;
+  margin-top: 28px;
+}
+
+.recipe__new__nophoto{
+  background-image: url('no_image.png');
+  @include background-resize;
+  width: $image_width*11;
+  height: $image_height*11;
+}
+
+.mobile-recipe__new__nophoto{
+  background-image: url('no_image.png');
+  @include background-resize;
+  width: $image_width*8;
+  height: $image_height*8;
+}
+
+.ingredient__image{
+  background-image: url('no_image.png');
+  @include background-resize;
+  width: $image_width*6;
+  height: $image_height*6;
+}
+
+.mobile-ingredient__image{
+  background-image: url('no_image.png');
+  @include background-resize;
+  width: $image_width*8;
+  height: $image_height*8;
+}
+
+.ingredient-sortable{
+  margin-top: 11px;
+}
+
+.ingredient-delete{
+  margin-top: 9px;
+}
+
+
+//モバイル
+
+.mobile-recipe__new__contents{
+  padding: 5px 0px 20px 0px;
+}
+
+.mobile-recipe__new__title{
+  border-bottom :3px solid #E2D8C2;
+  font-size: 17px;
+  font-weight: bold;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  margin: 0px 15px 0px 15px;
+}
+
+.procedure__top{
+  border-bottom :1px solid #E2D8C2;
+}
+
+.recipe__new__category-title{
+  font-size: 12px;
+}
+
+.recipe__new__category-button{
+  font-weight: bold;
+}
+
+.mobile-recipe__new__name, .mobile-recipe__new__descroption, .mobile-recipe__new__image, .mobile-recipe__new__procedure,  .mobile-recipe__new__point, .mobile-recipe__new__category{
+  font-size: 12px;
+  padding: 0px 15px 0px 15px;
+}
+
+.recipe__new__ingredient{
+  font-size: 12px;
+}
+
+.category-button__item--col{
+  padding-left: -15px;
+}

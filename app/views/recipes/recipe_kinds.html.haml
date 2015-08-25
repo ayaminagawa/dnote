@@ -1,0 +1,36 @@
+#recipe__index__box.clearfix.hidden-xs.container
+  .recipe__index__main
+    .recipe__index__top
+      .index-main__top__english
+        %p Recipe
+      .index-main__top__japanese
+        %p.u-white-1.c-circle.c-large.u-pink-2 レ
+        %p.u-white-1.c-circle.c-large.u-pink-2 シ
+        %p.u-white-1.c-circle.c-large.u-pink-2 ピ
+        %p.c-circle.c-large.u-beige-2 一
+        %p.c-circle.c-large.u-beige-2 覧
+    .recipe__index__items.clearfix
+      .recipe__index__items-title
+        = Recipe.kinds[@recipe_kind]
+      .recipe__index__item-recipe.u-pl10
+        - @kinds.each do |kind| 
+          = render 'recipes/recipe', recipe: kind
+  .recipe__index__side
+    =render 'layouts/side_block'
+#mobile-recipe__index__box.clearfix.visible-xs
+  .mobile-recipe__index__top
+    .index-main__top.clearfix.u-pb10.u-pt10
+      .index-main__top__english.u-pl10
+        %p Recipe
+      .mobile-index-main__top__japanese.u-pl10
+        %p.u-white-1.c-circle.c-mobile.u-pink-2 レ
+        %p.u-white-1.c-circle.c-mobile.u-pink-2 シ
+        %p.u-white-1.c-circle.c-mobile.u-pink-2 ピ
+        %p.c-circle.c-mobile.u-grey-2 一
+        %p.c-circle.c-mobile.u-grey-2 覧
+  %ul.mobile-recipe__index__contents.u-white-2
+    .recipe__index__items-title
+      = Recipe.kinds[@recipe_kind]
+    - @kinds.each do |kind| 
+      = render 'recipes/recipe', recipe: kind
+

@@ -7,37 +7,54 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
 //
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
+//= require_directory ./project
 //= require jquery_ujs
+//= require_tree .
 
-//= require_tree ../../../vendor/assets/javascripts/.
-//= require_directory .
 
-// application_jquery.js
-function remove_fields(link) {
-  $(link).prev("input[type=hidden]").val("1");
-  $(link).closest(".fields").remove();
-}
+//プレビュー画像を表示
+$(function(){
+  var setFileInput = $('.imgInput'),
+  setFileImg = $('.imgView');
+  
+  setFileInput.each(function(){
+    var selfFile = $(this),
+    selfInput = $(this).find('input[type=file]'),
+    prevElm = selfFile.find(setFileImg),
+    orgPass = prevElm.attr('src');
+    
+    selfInput.change(function(){
+      var file = $(this).prop('files')[0],
+      fileRdr = new FileReader();
+      
+      if (!this.files.length){
+        prevElm.attr('src', orgPass);
+        return;
+      } else {
+        if (!file.type.match('image.*')){
+          prevElm.attr('src', orgPass);
+          return;
+        } else {
+          fileRdr.onload = function() {
+            prevElm.attr('style', 'background-image:url(\'' +fileRdr.result + '\')');
+          }
+          fileRdr.readAsDataURL(file);
+        }
+      }
+    });
+  });
 
-function add_fields(link, association, content) {
-  $fields = $("." + association).find(".fields")
-  // console.log($fields.filter(":last").find(".step-count").text());
-  var new_id = $fields[0] ? $fields.filter(":last").find(".step-count").text() : new Date().getTime();
-  var regexp = new RegExp("new_" + association, "g")
-  $(link).parent().before(content.replace(regexp, new_id));
-  // $(link).parents("." + association).find(".step-count").text(new_id + 1);
-}
-
-$(function() {
+  //エンターキーでsubmitされないように
   $(document).on("keypress", "input:not(.allow_submit)", function(event) {
     return event.which !== 13;
   });
-});
 
-$(function() {
+  //エンターキーで改行できるように
   $(document).on("keypress", "input:text", function (e) {
   // $("input:text").keypress(function(e) {
     if (e.which == 13) { // Enterキーの場合
@@ -62,117 +79,58 @@ $(function() {
       }
     }
   });
-});
 
-  // $(function(){
-  //   var setFileInput = $('.imgInput');
-    
-  //   setFileInput.each(function(){
-  //     var selfFile = $(this),
-  //     selfInput = $(this).find('input[type=file]');
-      
-  //     selfInput.change(function(){
-  //       var file = $(this).prop('files')[0],
-  //       fileRdr = new FileReader(),
-  //       selfImg = selfFile.find('.imgView');
-        
-  //       if(!this.files.length){
-  //         if(0 < selfImg.size()){
-  //           selfImg.remove();
-  //           return;
-  //         }
-  //       } else {
-  //         if(file.type.match('image.*')){
-  //           if(!(0 < selfImg.size())){
-  //             selfFile.append('<img alt="" class="imgView">');
-  //           }
-  //           var prevElm = selfFile.find('.imgView');
-  //           fileRdr.onload = function() {
-  //             prevElm.attr('src', fileRdr.result);
-  //           }
-  //           fileRdr.readAsDataURL(file);
-  //         } else {
-  //           if(0 < selfImg.size()){
-  //             selfImg.remove();
-  //             return;
-  //           }
-  //         }
-  //       }
-  //     });
-  //   });
-  // });
+  //カウントダウンしてくれる
+  var countMax = 60;
+  $('textarea').bind('keydown keyup keypress change',function(){
+    var thisValueLength = $(this).val().length;
+    var countDown = (countMax)-(thisValueLength);
+    $('.count').html(countDown);
 
-
-$(function(){
-  var setFileInput = $('.imgInput'),
-  setFileImg = $('.imgView');
-  
-  setFileInput.each(function(){
-    var selfFile = $(this),
-    selfInput = $(this).find('input[type=file]'),
-    prevElm = selfFile.find(setFileImg),
-    orgPass = prevElm.attr('src');
-    
-    selfInput.change(function(){
-      var file = $(this).prop('files')[0],
-      fileRdr = new FileReader();
-      
-      if (!this.files.length){
-        prevElm.attr('src', orgPass);
-        return;
-      } else {
-        if (!file.type.match('image.*')){
-          prevElm.attr('src', orgPass);
-          return;
-        } else {
-          fileRdr.onload = function() {
-            prevElm.attr('src', fileRdr.result);
-          }
-          fileRdr.readAsDataURL(file);
-        }
-      }
-    });
-  });
-});
-
-$(function(){
-        var countMax = 60;
-        $('textarea').bind('keydown keyup keypress change',function(){
-            var thisValueLength = $(this).val().length;
-            var countDown = (countMax)-(thisValueLength);
-            $('.count').html(countDown);
-     
-            if(countDown < 0){
-                $('.count').css({color:'#ff0000',fontWeight:'bold'});
-            } else {
-                $('.count').css({color:'#000000',fontWeight:'normal'});
-            }
-        });
-        $(window).load(function(){
-            $('.count').html(countMax);
-        });
-    });
-
-$(function(){
-  $('#tsukurepo-show').click(function(){
-    $('#tsukurepo-modal').show();
-  });
-})
-
-$(function(){
-  $('#close-modal').click(function(){
-    $('#tsukurepo-modal').hide();
-  });
-});
-
-$(function(){
-  $('.made_report_image').click(function(){
-    $('.made_report_slidedown').toggleClass('active');
-    if($('.made_report_slidedown').hasClass('active')){
-      $('.made_report_slidedown').slideUp();
-    } else{
-      $('.made_report_slidedown').slideDown();
+    if(countDown < 0){
+      $('.count').css({color:'#ff0000',fontWeight:'bold'});
+    } else {
+      $('.count').css({color:'#000000',fontWeight:'normal'});
     }
   });
+  $(window).load(function(){
+    $('.count').html(countMax);
+  });
+
+
+  // 献立ページ、レシピページ、保存と保存後の切り替え
+  $("#save-btn").on('click', function(){
+    if ( $(this).hasClass('menu-saved')) {
+      $(this).removeClass("menu-saved");
+      $('.save-btn-text', this).text("★ レシピを保存");
+    }else {
+      $(this).addClass("menu-saved");
+      $('.save-btn-text', this).text("★ レシピを削除");
+    }
+  });
+
+  $.slidebars();
+
+  
 });
+
+
+//材料、作り方のフォームの追加、削除
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").remove();
+}
+
+function add_fields(link, association, content) {
+  $fields = $("." + association).find(".fields")
+  // console.log($fields.filter(":last").find(".step-count").text());
+  var new_id = $fields[0] ? $fields.filter(":last").find(".step-count").text() : new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().before(content.replace(regexp, new_id));
+  // $(link).parents("." + association).find(".step-count").text(new_id + 1);
+}
+
+
+
+
 

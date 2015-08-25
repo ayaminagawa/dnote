@@ -12,4 +12,4 @@ def secure_token
   end
 end
 
-Dnote::Application.config.secret_key_base = secure_token
+Dnote2::Application.config.secret_key_base = secure_token

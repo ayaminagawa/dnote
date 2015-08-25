@@ -1,13 +1,13 @@
-Dnote::Application.routes.draw do
+Dnote2::Application.routes.draw do
 
   get "/nutritionist_show" ,to: "users#nutritionist_show"
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  get "/nutritionist_show" ,to: "users#nutritionist_show"
   
   get "contacts/new"
   post "contacts/create"
-
-  resources :columns
   
   devise_for :nutritionists, controllers: {
     :sessions => "users/sessions",
@@ -21,45 +21,35 @@ Dnote::Application.routes.draw do
     :sessions => "users/sessions"
   }
 
-# devise_scope :users do
-#   get "nutritionist_sign_in", :to => 'user/sessions#new'
-# end
-# devise_for :users, :controllers => { :sessions => "sessions" } do
-#   get 'nutritionist/sign_in',   :to => 'nutritionist/sessions#new'
-#   post 'nutritionist/sign_in',   :to => 'nutritionist/sessions#create'
-# end
+  resources :menus
+  resources :users
+  resources :menu_recipes
+  resources :ingredients
+  resources :made_reports
+  resources :recipes
+  resources :favorites, only: [:create, :destroy]
+  resources :nutritionists
+  resources :columns
 
-resources :menus
 
-get "menu/new"
-get "menu/create"
-get "menu/destroy"
-root  'about#index'
-match '/about', to:'about#index', via:'get'
-get "company", to: "about#company"
-get "security_information", to: "about#security_information"
-get "privacy_policy", to: "about#privacy_policy"
+  get "menu/new"
+  get "menu/create"
+  get "menu/destroy"
+  root  'about#index'
+  match '/about', to:'about#index', via:'get'
+  get "company", to: "about#company"
+  get "security_information", to: "about#security_information"
+  get "privacy_policy", to: "about#privacy_policy"
 
-get "about/index"
-
-# resources :recipes do
-#   resource :made_reports
-# end
-resources :users
-resources :menu_recipes
-resources :ingredients
-resources :made_reports
-resources :recipes
+  get "about/index"
 
 
   get '/kinds', to:'recipes#recipe_kinds'
   get '/categories', to:'recipes#recipe_categories'
   get '/calories', to:'recipes#calories'
-
-  resources :favorites, only: [:create, :destroy]
+  get '/search', to:'recipes#search'
 
   get '/menu_recipes', to:'menus#menu_recipes'
-  resources :nutritionists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
