@@ -1,0 +1,32 @@
+// ==========================================================================
+// Colors
+// ==========================================================================
+$yellow: #E59838;
+$green: #73943A;
+$pink: #E87D5C;
+$dark-brown: #3B170B;
+$brown: #8E7461;
+$grey: #8D8173;
+$beige: #E2D8C2;
+
+// ==========================================================================
+// image_size_proportion
+// ==========================================================================
+$image_width: 30px;
+$image_height: $image_width * 2 / 3;
+
+// ==========================================================================
+// Mixin
+// ==========================================================================
+@mixin antialias {
+  -webkit-font-smoothing: antialiased;
+     -moz-font-smoothing: antialiased;
+      -ms-font-smoothing: antialiased;
+       -o-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+}
+
+@mixin background-resize {
+  background-size: cover;
+  background-position: center;
+}

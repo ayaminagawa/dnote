@@ -1,0 +1,66 @@
+//フォントカラー(-1)
+
+.u-white-1{
+  color: #FFFFFF;
+}
+
+.u-grey-1{
+  color: #848484;
+}
+
+.u-dark-grey-1{
+　color: #5F5C54;
+}
+
+.u-pink-1{
+  color: $pink;
+}
+
+.u-brown{
+  color: $brown;
+}
+
+//背景カラー(-2)
+
+.u-pink-2{
+  background-color: $pink;
+}
+
+.u-yellow-2{
+  background-color: $yellow;
+}
+
+.u-green-2{
+  background-color: $green;
+}
+
+.u-beige-2{
+  background-color: #AFA896;
+}
+
+.u-white-2{
+  background-color: #FFFFFF;
+}
+
+.u-black-2{
+  background-color: #000000;
+}
+
+.u-facebook-2{
+  background-color: #3b5998;
+}
+
+.u-twitter-2{
+  background-color: #4295FA;
+}
+
+
+//太字
+
+.u-bold{
+  font-weight: bold;
+}
+
+.u-lighter{
+  font-weight: lighter;
+}

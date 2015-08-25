@@ -1,0 +1,103 @@
+//レイアウト
+
+#menu__new__box{
+  margin-right: 100px;
+  margin-left: 100px;
+  background-color:  #FFFFFF;
+  border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+#mobile-menu__new__box{
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color:  #FFFFFF;
+  border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+
+//細かい設定
+
+.menu__new__top{
+  background-image: url('bg_check.png');
+  background-repeat: repeat;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+}
+
+.menu__new__contents{
+  padding: 15px 35px 40px 35px;
+}
+
+.menu__new__title{
+  border-bottom :3px solid #E2D8C2;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  width: 70%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.menu__new__name-1, .menu__new__descroption-1, .menu__new__category-title{
+  margin-top: 20px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+
+.menu__new__submit{
+  text-align: center;
+}
+
+.menu__new__main-recipe-image, .menu_new__sub-recipes-image{
+  height: 200px;
+  @include background-resize;
+  width: 100%;
+}
+
+.menu__new__name-1, .menu__new__main-recipe-title{
+  display: inline-block;
+}
+
+.menu__new__descroption-1{
+  float: left;
+}
+
+.menu_new__description-count{
+  float: right;
+  margin-top: 20px;
+}
+
+.character, .count{
+  display: inline-block;
+}
+
+.menu__new__no-image{
+  background-image: url('no_image.png');
+  @include background-resize;
+  width: $image_width*11;
+  height: $image_height*11;
+}
+
+.mobile-menu__new__no-image{
+  background-image: url('no_image.png');
+  @include background-resize;
+  width: $image_width*8;
+  height: $image_height*8;
+}
+
+//モバイル
+
+.mobile-menu__new__contents{
+  padding: 10px 10px 20px 10px;
+}
+
+.mobile-menu__new__main-recipe-image{
+  height: 160px;
+  width: 100%;
+  @include background-resize;
+}

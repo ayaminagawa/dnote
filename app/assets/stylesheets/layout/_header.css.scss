@@ -1,0 +1,142 @@
+//ヘッダー上部
+
+#header-top{
+  background-color: #FFFFFF;
+}
+
+.header-top__menu__item, #header-top__menu__logo{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.header-top__menu__item{
+  float: right;
+  padding-right: 10px;
+  margin-top: 27px;
+}
+
+.header-top__menu__item a{
+  font-size: 14px;
+}
+
+.header-top__menu__item__pencil{
+  position: relative;
+  top: -11px;
+  left: 15px;
+  width: 40px;
+}
+
+.header-top__menu__item__key{
+  width: 30px;
+}
+
+.signup-modal{
+  display: none;
+}
+
+
+//ヘッダーナビゲーション
+
+#header-nav{
+  background-color: #F5B42A;
+}
+
+#header-nav__block{
+  text-align: center;
+  height: 3em;
+}
+
+.header-nav__button, .header-nav__category, {
+  display: inline-block;
+  color: #FFFFFF;
+}
+
+.header-nav__button{
+  float: left;
+  width: 120px;
+}
+
+.header-nav__search{
+  background-color: #DAA024;
+  float: left;
+  width: 350px;
+}
+
+.header-nav__category{
+  background-color: #DAA024;
+  float: left;
+  width: 200px;
+}
+
+.header-nav__button a{
+  color: #FFFFFF;
+  display: block;
+  height: 3em;
+  line-height: 3em;
+}
+
+.header-nav__button a:hover,
+.header-nav__button a:focus {
+  background-color: #DAA024;
+}
+
+.header-nav__search p{
+  padding-top: 4%;
+  display: inline-block;
+  height: 3em;
+}
+
+.header-nav__category a{
+  display: block;
+}
+
+.header-nav__category__content--line{
+  border-bottom: 1px solid #FFFFFF;
+}
+
+#category-dropdown-box{
+  display:none;
+  position: absolute;
+  background-color: #DAA024;
+}
+
+.header-nav__category__content a{
+  color: #FFFFFF;
+  padding: 7px 30px 7px 30px;
+  z-index: 0;
+}
+
+#category-dropdown-box{
+  z-index: 10;
+}
+
+
+//ヘッダーモバイル
+
+#sp-header-top__menu{
+  background-color: $yellow;
+  height: 40px;
+  text-align: center;
+}
+
+#sp-header-top__menu p{
+  font-size: 2px;
+  color: #FFFFFF;
+  line-height:40px;
+}
+
+.sp-header-top__menu__sidebar{
+  margin-top: 17%;
+  background-color: #FFFFFF;
+  padding: 5px 5px 5px 5px;
+  width: 35px;
+}
+
+.fa-yellow:before {
+  color: $yellow;
+}
+
+
+
+

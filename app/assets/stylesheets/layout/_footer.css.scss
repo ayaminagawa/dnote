@@ -1,0 +1,29 @@
+//フッター
+
+.footer-inner{
+  text-align: center;
+  background-color: #FBF5EC;
+}
+
+.footer__nav__list__content{
+  padding-bottom: 1em;
+}
+
+.footer__nav__list__content　a{
+  color: #A4A4A4;
+}
+
+
+//フッターモバイル
+
+.sp-footer__nav__list__content{
+  height: 30px;
+  border: solid 1px #BDBDBD;
+}
+
+
+.sp-footer__nav__list__content a{
+  font-size: 10px;
+  color: #848484;
+  line-height: 30px;
+}

@@ -1,0 +1,244 @@
+//トップページレイアウト
+.index__main{
+  width: 75%;
+  float: left;
+}
+
+.index__side{
+  width: 25%;
+  float: left;
+}
+
+.index__main__item{
+  overflow: hidden;
+}
+
+
+//トップページメイン
+.index-main__top__english{
+  border-bottom :1px solid #E2D8C2;
+}
+
+.index-main__top__english p{
+  color: #817F7F;
+}
+
+.index-main__top__japanese{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.index-main__top__japanese p{
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.index-main__top__link a{
+  color: #5F5C54;
+  line-height: 56px;
+}
+
+.index-main__contents__cover{
+  background-image: url('bg_check.png');
+  background-repeat: repeat;
+  padding-bottom: 1px;
+}
+
+.index-main__contents{
+  background-color: #FFFFFF;
+  margin: 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.index-main__picture{
+  padding: 10px;
+  width: $image_width*11;
+  height: $image_height*11;
+  z-index: 100;
+  position: relative;
+  @include background-resize;
+}
+
+.index-main__recipe--name a{
+  color: #EF8766;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.index-main__recipe__li{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.index-main__recipe{
+}
+
+.index-main__recipe p{
+  font-weight: lighter;
+}
+
+.index-main__recipe__select{
+  line-height: 25px;
+  text-align: center;
+  display: inline-block;
+}
+
+.index-main__recipe__name{
+  display: inline-block;
+}
+
+.index-main__recipe--user{
+  position: absolute;
+  right: 15px;
+}
+
+.index-main__top__link{
+  height: 40px;
+}
+
+.ranking-item__top{
+  font-weight: bold;
+  text-align: center;
+}
+
+.ranking-item__top img{
+  height: 40px;
+  width: 40px;
+}
+
+.index-main__contents__item{
+  display: inline-block;
+}
+
+.index-main__contents--recipe-category__item{
+  display: inline-block;
+  text-align: center;
+}
+
+.index-main__contents--recipe-category__item a{
+  display: block;
+  color: #5F5C54;
+  border: 1px dotted #462425;
+  height: 70px;
+  background-color: #FAFAFA;
+  line-height: 70px;
+}
+
+.index-main__contents__description{
+  display: relative;
+}
+
+.ranking-item__image{
+  width: $image_width*10;
+  height: $image_height*10;
+  @include background-resize;
+}
+
+.index-main__top--ranking{
+  position: relative;
+  top: 9px;
+  background-color: $pink;
+  border: 2px solid #FFFFFF;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.index-side__contents__search{
+  padding: 0px 10px 10px 10px;
+}
+
+
+//モバイル
+
+.mobile-index-main{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mobile-index-main__picture{
+  padding: 10px;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  position: relative;
+  @include background-resize;
+}
+
+.index__top img{
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.mobile-index-main__top{
+  border-bottom :1px solid #E2D8C2;
+}
+
+.mobile-index-main{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mobile-index-main__top__link{
+  color: #5F5C54;
+  font-size: 11px;
+}
+
+.mobile-index-main__top__japanese{
+  padding-top: 5px;
+}
+
+.mobile-index-main__top__japanese p{
+  display: inline-block;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.index-main__recipe__name a{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mobile-index-main__recipe p{
+  font-size: 10px;
+}
+
+.mobile-index-main__contents__name a{
+  color: #FFFFFF;
+}
+
+.mobile-index-main__recipe p{
+  font-size: 10px;
+  color: #5F5C54;
+}
+
+.mobile-index-main__contents__item{
+  border-bottom: 1px solid #EBE1CA;
+}
+
+.mobile-ranking-item__image{
+  width: $image_width*4;
+  height: $image_height*4;
+  @include background-resize;
+}
+
+.mobile-ranking-item__top{
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+}
+
+.mobile-index-main__contents--recipe-category__item{
+  background-color: #FFFFFF;
+  border-right: 4px solid #E8E1CA;
+  height: 50px;
+  line-height: 50px;
+}
+
+.mobile-index-main__contents--recipe-category__item a{
+  font-size: 12px;
+}
