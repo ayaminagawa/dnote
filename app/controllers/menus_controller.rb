@@ -4,7 +4,7 @@ class MenusController < ApplicationController
   # GET /menus
   # GET /menus.json
   def index
-    @menus = Menu.all
+    @menus = Menu.order("created_at DESC").all
   end
 
   # GET /menus/1

@@ -1,7 +1,7 @@
 //トップの部分
 
 .user__show__top{
-  background-image: url('sp_user_show_05.png');
+  background-image: image-url('sp_user_show_05.png');
   background-repeat: no-repeat;
   background-position: center; 
   background-size: 100% 100%;
@@ -125,7 +125,7 @@
 //メインコンテンツ
 
 .user__show__main-cover{
-  background-image: url('bg_check.png');
+  background-image: image-url('bg_check.png');
   background-repeat: repeat;
   padding: 10px 10px 10px 10px;
   position: relative;
@@ -157,7 +157,7 @@
 //モバイル
 
 .mobile-user__show__top{
-  background-image: url('sp_user_show_05.png');
+  background-image: image-url('sp_user_show_05.png');
   background-repeat: no-repeat;
   background-position: center; 
   background-size: 100% 100%;

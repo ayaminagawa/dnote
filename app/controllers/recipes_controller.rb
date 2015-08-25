@@ -4,8 +4,8 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
-    @menus = Menu.all 
+    @recipes = Recipe.order("created_at DESC").all
+    @menus = Menu.order("created_at DESC").all 
   end
 
   def recipe_kinds
