@@ -30,6 +30,11 @@ Dnote2::Application.routes.draw do
   resources :favorites, only: [:create, :destroy]
   resources :nutritionists
   resources :columns
+  resources :food_infos, only: [:index] do
+    member do
+      post :update_use_flag
+    end
+  end
 
 
   get "menu/new"

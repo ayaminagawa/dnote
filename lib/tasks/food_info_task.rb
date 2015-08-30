@@ -45,8 +45,11 @@ class Tasks::FoodInfoTask
       puts "item_no: #{food_info.item_no}"
       i += 1
     end
+  end
 
-
-
+  def self.fix
+    FoodInfo.all.each do |food_info|
+      food_info.update(name: food_info.name.gsub(/\[食品番号\].*?\] /, ''))
+    end
   end
 end

@@ -1,0 +1,20 @@
+%table.table.table-bordered.table-striped
+  %tr
+    %th 有効
+    %th 名前
+    %th カロリー
+    %th 炭水化物
+    %th タンパク質
+    %th 脂質
+    %th 食塩相当量
+  - @food_infos.each do |food_info|
+    %tr
+      %td= check_box_tag(:use_flag, 1, food_info.use_flag == 1, 'data-check-url' => update_use_flag_food_info_path(food_info))
+      %td= food_info.name
+      %td= food_info.energy
+      %td= food_info.carbohydrate
+      %td= food_info.protein
+      %td= food_info.fat
+      %td= food_info.salt_equivalents
+
+= will_paginate @food_infos, :renderer => BootstrapPagination::Rails

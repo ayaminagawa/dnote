@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830042304) do
+ActiveRecord::Schema.define(version: 20150830124543) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20150830042304) do
     t.float    "weight_change_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "use_flag"
   end
 
   create_table "ingredients", force: true do |t|
