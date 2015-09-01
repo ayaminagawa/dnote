@@ -8,6 +8,7 @@ gem 'rails', '4.0.5'
 gem 'rails_config'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'active_admin_importable'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
