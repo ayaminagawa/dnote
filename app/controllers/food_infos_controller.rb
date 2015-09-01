@@ -8,4 +8,10 @@ class FoodInfosController < ApplicationController
     food_info.update(use_flag: params[:checked])
     render :nothing => true
   end
+
+  def update_weight
+    food_info = FoodInfo.find(params[:id])
+    eval("food_info.update(#{params[:name]}: params[:value])")
+    render :nothing => true
+  end
 end

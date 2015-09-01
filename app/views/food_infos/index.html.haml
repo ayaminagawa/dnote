@@ -1,6 +1,8 @@
 %table.table.table-bordered.table-striped
   %tr
     %th 有効
+    %th 単位(例：中１個)
+    %th 重量(g)
     %th 名前
     %th カロリー
     %th 炭水化物
@@ -10,6 +12,8 @@
   - @food_infos.each do |food_info|
     %tr
       %td= check_box_tag(:use_flag, 1, food_info.use_flag == 1, 'data-check-url' => update_use_flag_food_info_path(food_info))
+      %td= text_field_tag(:unit, food_info.unit, "data-update-url" => update_weight_food_info_path(food_info))
+      %td= text_field_tag(:weight, food_info.weight, "data-update-url" => update_weight_food_info_path(food_info))
       %td= food_info.name
       %td= food_info.energy
       %td= food_info.carbohydrate
