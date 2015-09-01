@@ -32,7 +32,7 @@ Dnote2::Application.routes.draw do
   resources :columns
   resources :food_infos, only: [:index] do
     member do
-      post :update_use_flag
+      post :update_use_flag, :update_weight
     end
   end
 

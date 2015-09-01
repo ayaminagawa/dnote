@@ -9,4 +9,15 @@ $(function(){
       console.log('ajax error');
     });
   });
+
+  $('input[type="text"]').keydown(function(){
+    $.ajax({
+      url: $(this).data("update-url"),
+      method: "post",
+      data: {name: $(this).attr("name"), value: $(this).val()}
+    }).error(function(data){
+      console.log('ajax error');
+    });
+  });
+
 });
