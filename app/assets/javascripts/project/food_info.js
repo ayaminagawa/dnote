@@ -10,7 +10,7 @@ $(function(){
     });
   });
 
-  $('input[type="text"]').keydown(function(){
+  $('input[type="text"]').keyup(function(){
     $.ajax({
       url: $(this).data("update-url"),
       method: "post",
