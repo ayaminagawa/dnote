@@ -1,15 +1,16 @@
-%li.clearfix.u-pt5.hidden-xs
+%li.clearfix.u-pt5
   .fields
-    %i.col-sm-1.ingredient-sortable.fa.fa-arrows.fa-lg
-    .field.col-sm-7= f.text_field :name, placeholder:'例) 鳥のむね肉', style:'width: 100%;height: 35px;'
-    .field.col-sm-3= f.text_field :volume, placeholder:'例) 100g', style:'width: 100%;height: 35px;'  
-    .col-sm-1.ingredient-delete= link_to_remove_fields "✖️", f 
-%li.clearfix.u-pt5.visible-xs
-  .fields
-    %i.col-xs-1.ingredient-sortable.fa.fa-arrows.fa-lg
-    .field.col-xs-5= f.text_field :name, placeholder:'例) 鳥のむね肉', style:'width: 100%;height: 35px;'
-    .field.col-xs-4= f.text_field :volume, placeholder:'例) 100g', style:'width: 100%;height: 35px;'
+    / %i.col-sm-1.ingredient-sortable.fa.fa-arrows.fa-lg
+    .field.col-sm-7.col-xs-5= f.text_field :name, placeholder:'例) 鳥のむね肉', style:'width: 100%;height: 35px;'
+    .field.col-sm-3.col-xs-4= f.text_field :volume, placeholder:'例) 100g', style:'width: 100%;height: 35px;'  
     .col-xs-1.ingredient-delete= link_to_remove_fields "✖️", f 
+
+/ %li.clearfix.u-pt5.visible-xs
+/   .fields
+/     / %i.col-xs-1.ingredient-sortable.fa.fa-arrows.fa-lg
+/     .field.col-xs-5= f.text_field :name, placeholder:'例) 鳥のむね肉', style:'width: 100%;height: 35px;'
+/     .field.col-xs-4= f.text_field :volume, placeholder:'例) 100g', style:'width: 100%;height: 35px;'
+/     .col-xs-1.ingredient-delete= link_to_remove_fields "✖️", f 
 
 
 
