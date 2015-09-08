@@ -1,6 +1,6 @@
 class FoodInfosController < ApplicationController
   def index
-    @food_infos = FoodInfo.paginate(page: params[:page], per_page: 50)
+    @food_infos = FoodInfo.order(:item_no).paginate(page: params[:page], per_page: 50)
   end
 
   def update_use_flag
