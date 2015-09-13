@@ -65,12 +65,17 @@
   .menu__show__side_block
     =render 'layouts/side_block'
 .mobile-menu__show__box.visible-xs
-  .mobile-recipe__show__top.u-pr10.u-pl10.u-pt10
+  .mobile-recipe__show__top.u-pr10.u-pl10.u-pt10.clearfix
     .mobile-recipe__show__english
       %p Menu
-    .mobile-recipe__show__japanese
+    .mobile-recipe__show__japanese.u-left
       %p.u-white-1.c-circle.c-large.u-pink-2 献
       %p.u-white-1.c-circle.c-large.u-yellow-2 立
+    .mobile-recipe__show__link.u-right.u-pt5
+      -if current_user?(@menu.user)
+        = link_to edit_menu_path do
+          .fa.fa-caret-right 
+          献立を編集する
   .mobile-recipe__show__image.visible-xs.u-mt10{style:"background-image: url(#{@menu.image.url});"}
   .mobile-recipe__show__title.visible-xs.u-white-2.u-pr10.u-pl10.u-pt10= @menu.name
   .mobile-recipe__show__kcal-category-name.visible-xs.u-white-2.u-pr10.u-pl10.u-pt10.clearfix

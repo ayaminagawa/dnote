@@ -100,13 +100,18 @@
   =render 'layouts/side_block'
   =render 'made_reports/form'
 #mobile-recipe__show__main.visible-xs
-  .mobile-recipe__show__top.visible-xs.u-pr10.u-pl10.u-pb10.u-pt10
+  .mobile-recipe__show__top.visible-xs.u-pr10.u-pl10.u-pb10.u-pt10.clearfix
     .mobile-recipe__show__english
       %p Recipe
-    .mobile-recipe__show__japanese
+    .mobile-recipe__show__japanese.u-left
       %p.u-white-1.c-circle.c-large.u-pink-2 レ
       %p.u-white-1.c-circle.c-large.u-yellow-2 シ
       %p.u-white-1.c-circle.c-large.u-green-2 ピ
+    .mobile-recipe__show__link.u-right.u-pt10
+      -if current_user?(@recipe.user)
+        = link_to edit_recipe_path do
+          .fa.fa-caret-right 
+          レシピを編集する
   .mobile-recipe__show__image.visible-xs{style:"background-image: url(#{@recipe.image.url});"}
   .mobile-recipe__show__title.visible-xs.u-white-2.u-pr10.u-pl10.u-pt10
     = @recipe.name
