@@ -1,0 +1,57 @@
+
+.company_profile__box{
+  width: 75%;
+  float: left;
+  margin-top: 30px;
+}
+
+.company_profile__top{
+  font-size: 24px;
+  color: $grey;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+.company_profile__main_left{
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.conpany_profile__main_right{
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.privacy_policy__unity{
+  margin-bottom: 30px;
+}
+
+//モバイル
+
+.mobile-company_profile__top{
+  border-bottom :1px solid #E2D8C2;
+  color: #817F7F;
+  font-size: 17px;
+  padding-left: 7px;
+  margin-top: 2px;
+}
+
+.mobile-company_profile__main{
+  margin-top: 20px;
+  margin-left: 7px;
+}
+
+.mobile-company_profile__main_left{
+  font-size: 13px;
+
+}
+
+.mobile-conpany_profile__main_right{
+  margin-bottom: 16px;
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.mobile-privacy_policy__unity{
+  margin-bottom: 20px;
+}
