@@ -37,22 +37,29 @@
   font-size: 13px;
 }
 
-.modal-inner__btn, .mobile-modal-inner__btn{
+.modal-inner__btn{
   margin-bottom: 2px;
 }
 
 
 //モバイル
-.mobile-signup-modal__box{
-  background-color: #FFFFFF;
-  position: absolute;
-  top: 5%;
-  padding: 50px 0;
-  border-radius: 10px;
+
+.mobile-modal-title{
   text-align: center;
+  font-size: 20px;
+  color: $grey;
+  padding-bottom: 8px;
 }
 
 .mobile-modal-inner__btn a{
   color: #FFFFFF;
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.mobile-login__main{
+  padding: 30px 0px 30px 0px ;
+}
+
+.mobile-modal-inner__btn{
+  margin-bottom: 5px;
 }
