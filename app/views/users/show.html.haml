@@ -117,25 +117,25 @@
   %ul.mobile-user__show__main.crearfix.u-pt10.clearfix
     .mobile-user__show__main-menu.mobile-main.active
       - @menus.each do |menu|
-        %li.col-xs-6
+        %li.col-xs-12
           = link_to menu_path(menu) do
             .mobile-index-main__picture{style:"background-image: url(#{menu.image.url(:original)});"}
             .mobile-index-main__recipe.mobile-index-main__recipe--name
               = link_to menu.name, menu_path(menu)
-          .mobile-index-main__recipe
-            %ul
-              %li.mobile-index-main__recipe__li
-                .mobile-index-main__recipe__select.c-circle.c-small.u-pink-2.u-white-1 主
-                .mobile-index-main__recipe__name
-                  =link_to menu.main_recipe.name, recipe_path(menu.main_recipe)
-              - menu.side_recipes.each do |recipe|
-                %li.mobile-index-main__recipe__li
-                  .mobile-index-main__recipe__select.c-circle.c-small.u-yellow-2.u-white-1 副
-                  .mobile-index-main__recipe__name
-                    =link_to recipe.name, recipe_path(recipe)
+          / .mobile-index-main__recipe
+          /   %ul
+          /     %li.mobile-index-main__recipe__li
+          /       .mobile-index-main__recipe__select.c-circle.c-small.u-pink-2.u-white-1 主
+          /       .mobile-index-main__recipe__name
+          /         =link_to menu.main_recipe.name, recipe_path(menu.main_recipe)
+          /     - menu.side_recipes.each do |recipe|
+          /       %li.mobile-index-main__recipe__li
+          /         .mobile-index-main__recipe__select.c-circle.c-small.u-yellow-2.u-white-1 副
+          /         .mobile-index-main__recipe__name
+          /           =link_to recipe.name, recipe_path(recipe)
     .mobile-user__show__main-recipe.mobile-main
       - @recipes.each do |recipe|
-        %li.col-xs-6
+        %li.col-xs-12
           .mobile-user__show__recipe-title
             =link_to recipe.name, recipe_path(recipe)
             - if recipe.pre_save == 1
@@ -144,7 +144,7 @@
             .mobile-user__show__recipe-image{style: "background-image: url('#{recipe.image.url(:original)}');"}
     .mobile-user__show__main-tsukurepo.mobile-main
       - @made_reports.each do |made_report|
-        %li.col-xs-6
+        %li.col-xs-12
           .mobile-user__show__recipe-image{style: "background-image: url('#{made_report.image.url(:original)}');"}
           .mobile-user__show__recipe-description
             = made_report.message

@@ -10,15 +10,17 @@
             さん
           .sidebar__top__recipe-new.c-btn.c-sidebar--recipe.u-mb15
             = link_to 'レシピをのせる', new_recipe_path
-          .sidebar__top__menu-new.c-btn.c-sidebar--menu.u-mb15
+          .sidebar__top__recipe-new.c-btn.c-sidebar--recipe.u-mb15
             = link_to '献立をのせる', new_menu_path
-          .sidebar__top__recipe-new.c-btn.c-sidebar--recipe.u-mb15.header-top__menu__item--login.u-white-1
-            マイページ
+          .sidebar__top__menu-new.c-btn.c-sidebar--menu.u-mb15.u-white-1
+            = link_to 'マイページ', current_user
+          .sidebar__top__menu-new.c-btn.c-sidebar--menu.u-mb15.u-white-1
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
         -else
           .sidebar__top__user-name.u-pt10.u-bold.u-mb15
             ゲストさん
-          .sidebar__top__recipe-new.c-btn.c-sidebar--recipe.u-mb15.header-top__menu__item--login
-            ログインする
+          .sidebar__top__recipe-new.c-btn.c-sidebar--recipe.u-mb15.u-white-1
+            = link_to 'ログイン / 新規登録', login_path
       .sidebar__search
         = form_tag search_path, :method => 'get' do
           = text_field_tag :search, params[:search] , class: "search-bar-2", placeholder: "レシピ名で探す"
