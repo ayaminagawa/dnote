@@ -12,8 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def edit
-    if @permission == "1" || @pemission == "2"
-      params[:u_n] = "0"
+    if current_user.is_nutritionist?
+      params[:u_n] = "2"
     else
       params[:u_n] = "1"
     end

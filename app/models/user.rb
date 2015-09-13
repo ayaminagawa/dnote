@@ -153,6 +153,10 @@ class User < ActiveRecord::Base
     favorites.find_by(menu_id: menu.id).destroy
   end
 
+  def is_nutritionist?()
+    self.permission == "1" || self.permission == "2"
+  end
+
   # Facebook, Twitterの画像を扱う
   def User.process_uri(uri)
     require 'open-uri'
