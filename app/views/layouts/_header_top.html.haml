@@ -1,7 +1,7 @@
 %header#header-top
   .header-top-inner
     %ul#header-top__menu.hidden-xs
-      %li#header-top__menu__logo.col-sm-offset-2
+      %li#header-top__menu__logo.col-sm-offset-1.col-md-offset-2
         = link_to image_tag("logo.png" , class: "logo", alt: "dnote", height: "110px"), about_path
       -if user_signed_in?
         %li.header-top__menu__item.header-top__menu__item--login.u-mr40
