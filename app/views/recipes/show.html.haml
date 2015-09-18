@@ -60,11 +60,11 @@
             %ul.recipe__show__procedure.clearfix
               - @procedures.each_with_index do | procedure, index |
                 %li.procedure__list.col-sm-4
-                  - if procedure.image_file_name != nil 
-                    .procedure__list__image{style:"background-image: url(#{procedure.image.url});"}
                   .procedure__list__contents
                     .procedure__list__number.c-circle.c-procedure.u-green-2.u-white-1
                       = 1 + index
+                    - if procedure.image_file_name != nil 
+                      .procedure__list__image{style:"background-image: url(#{procedure.image.url});"}
                     .procedure__list__body.u-mb15 
                       = procedure.body
             .recipe__show__point.u-ls-2
