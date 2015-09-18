@@ -113,6 +113,11 @@
   float: left;
 }
 
+.procedure__list__image{
+  @include background-resize;
+  height: 150px;
+}
+
 
 
 //つくれぽ
