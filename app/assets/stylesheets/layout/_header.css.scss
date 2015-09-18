@@ -47,25 +47,24 @@
   height: 3em;
 }
 
-.header-nav__button, .header-nav__category, {
+.header-nav__button, .header-nav__category {
   display: inline-block;
   color: #FFFFFF;
 }
 
 .header-nav__button{
-  float: left;
-  width: 120px;
+  display: inline-block;
+  width: 100px;
 }
 
 .header-nav__search{
   background-color: #DAA024;
-  float: left;
-  width: 350px;
+  width: 310px;
+  display: inline-block;
 }
 
 .header-nav__category{
   background-color: #DAA024;
-  float: left;
   width: 200px;
 }
 

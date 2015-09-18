@@ -5,7 +5,7 @@
       %li.header-nav__button= link_to 'レシピ一覧', recipes_path
       %li.header-nav__button= link_to '献立', menus_path
       %li.header-nav__button= link_to 'コラム', columns_path
-      %li.header-nav__search>
+      %li.header-nav__search.visible-lg-inline-block.visible-md-inline-block>
         %p.u-white-1<>
           レシピを探す 
         = form_tag search_path, :method => 'get' do 
