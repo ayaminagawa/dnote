@@ -57,6 +57,7 @@ function userAgeSelect(user_age){
   return userAgeSelect;
 }
 
+
 $(function() {
 
   //現在の体重の表示
@@ -96,7 +97,7 @@ $(function() {
     var user_birth_year = $('select[name="user[birth_year]"] option:selected').val();
     var user_age = now_year - user_birth_year;
     var user_active = $('input[name="user[active_level]"]').filter(':checked').val();
-    user_age_select = userAgeSelect(user_age);
+    var user_age_select = userAgeSelect(user_age);
     standardCalorieDay = standardCalorieData[user_sex][user_active][user_age_select]
     $('.user-question-2_4').html(standardCalorieDay)
     var standardCalorie = standardCalorieDay / 3

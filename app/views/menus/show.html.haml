@@ -12,6 +12,7 @@
             = link_to edit_menu_path do
               .fa.fa-caret-right 
               献立を編集する
+            = link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" }
     #contents-inner.contents-inner__cover.contents-inner__cover-menu-show
       .contents-inner__white.contents-inner__white-menu-show.hidden-xs.clearfix
         .menu__show__main.hidden-xs
@@ -76,6 +77,7 @@
         = link_to edit_menu_path do
           .fa.fa-caret-right 
           献立を編集する
+        = link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" }
   .mobile-recipe__show__image.visible-xs.u-mt10{style:"background-image: url(#{@menu.image.url});"}
   .mobile-recipe__show__title.visible-xs.u-white-2.u-pr10.u-pl10.u-pt10= @menu.name
   .mobile-recipe__show__kcal-category-name.visible-xs.u-white-2.u-pr10.u-pl10.u-pt10.clearfix

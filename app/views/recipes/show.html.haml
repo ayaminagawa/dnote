@@ -13,6 +13,7 @@
             = link_to edit_recipe_path do
               .fa.fa-caret-right 
               レシピを編集する
+            = link_to "レシピを削除する", @recipe, method: :delete,data: { confirm: "本当に削除しますか?" }
     .contents-inner.contents-inner__cover.clearfix
       .contents-inner__white.hidden-xs.clearfix
         .recipe__show__main.hidden-xs
@@ -114,6 +115,7 @@
         = link_to edit_recipe_path do
           .fa.fa-caret-right 
           レシピを編集する
+        = link_to "レシピを削除する", @recipe, method: :delete,data: { confirm: "本当に削除しますか?" }
   .mobile-recipe__show__image.visible-xs{style:"background-image: url(#{@recipe.image.url});"}
   .mobile-recipe__show__title.visible-xs.u-white-2.u-pr10.u-pl10.u-pt10
     = @recipe.name
