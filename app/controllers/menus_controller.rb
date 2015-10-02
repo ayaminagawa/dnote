@@ -54,7 +54,8 @@ class MenusController < ApplicationController
   # PATCH/PUT /menus/1
   # PATCH/PUT /menus/1.json
   def update
-      if @menu.update(update_menu_params)
+    @menu.menu_recipes.delete_all
+      if @menu.update(menu_params)
         redirect_to(menu_path(@menu))
       else
         format.html { render action: 'edit' }
