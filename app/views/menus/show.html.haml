@@ -12,6 +12,7 @@
             = link_to edit_menu_path do
               .fa.fa-caret-right 
               献立を編集する
+            = link_to "献立を削除する", @menu, method: :delete,data: { confirm: "本当に削除しますか?" }
     #contents-inner.contents-inner__cover.contents-inner__cover-menu-show
       .contents-inner__white.contents-inner__white-menu-show.hidden-xs.clearfix
         .menu__show__main.hidden-xs
