@@ -79,9 +79,10 @@ class User < ActiveRecord::Base
 
 
   def self.find_for_facebook_oauth(auth)
+    raise
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
-      user = User.find_by(email: auth.info.email)
+      user = User.find_by(email: auth.info.email) if auth.info.email
       if user
         user.update(uid: auth.uid)
       else
@@ -108,12 +109,13 @@ class User < ActiveRecord::Base
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
-      user = User.new(name:     auth.info.nickname,
-       provider: auth.provider,
-       uid:      auth.uid,
-       email:    User.create_unique_email,
-       password: Devise.friendly_token[0,20],
-       )
+      user = User.new(
+        name:     auth.info.nickname,
+        provider: auth.provider,
+        uid:      auth.uid,
+        email:    User.create_unique_email,
+        password: Devise.friendly_token[0,20],
+      )
       # paperclip用に画像を扱う
       user.image = URI.parse(User.process_uri(auth.info.image)) if auth.info.image?
       user.save!
