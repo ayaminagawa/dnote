@@ -79,7 +79,6 @@ class User < ActiveRecord::Base
 
 
   def self.find_for_facebook_oauth(auth)
-    raise
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.find_by(email: auth.info.email, provider: auth.provider) if auth.info.email
