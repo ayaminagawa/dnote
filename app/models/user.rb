@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
     unless user
       user = User.find_by(email: auth.info.email, provider: auth.provider) if auth.info.email
       if user
-        user.update(uid: auth.uid)
+        user.uid = auth.uid
       else
         user = User.new(
           name:     auth.extra.raw_info.name,
@@ -92,10 +92,10 @@ class User < ActiveRecord::Base
           email:    auth.info.email,
           password: Devise.friendly_token[0,20],
         )
-        # paperclip用に画像を扱う
-        user.image = URI.parse(User.process_uri(auth.info.image)) if auth.info.image?
-        user.save!
       end
+      # paperclip用に画像を扱う
+      user.image = URI.parse(User.process_uri(auth.info.image)) if auth.info.image?
+      user.save!
       # file = open("http://graph.facebook.com/#{@user.facebook_id}/picture")
       # image_data = file.read
       # file_size = file.length
