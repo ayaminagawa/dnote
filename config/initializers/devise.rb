@@ -4,16 +4,16 @@ Devise.setup do |config|
 
   config.scoped_views = true
 
-   # API key   
+   # API key
     # config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca"
     # config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
 
 # API key
-  if Rails.env.production?     
-    config.omniauth :facebook, "1407581469552162", "eb129520033df6ca0720c4bdb79e8d96"
+  if Rails.env.production?
+    config.omniauth :facebook, "124572817956059", "22be98b83bb661a26ee2e7be89eef937"
     config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
   else
-    config.omniauth :facebook, "330215280471691", "55cc8c6daf5295b4569a81be479810ca", {:scope => 'email'}
+    config.omniauth :facebook, "596501403859655", "8553a4c7ea3ba7643f285697370bac6a", {:scope => 'email'}
     config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y", {:image_size => 'original', :display => 'popup'}
   end
 
@@ -38,7 +38,7 @@ Devise.setup do |config|
  #                   “vG0RxqWBz5Jz2ayuz7hp8DeQX”,
  #                   “Q3CBR6w52mfk3hxG0kk8PmUciNn9gOrBl3kHQKBWELMNgWkzMi”,
  #                   {:image_size => ‘original’, :display => ‘popup’} )
- 
+
  #  end
 
   # The secret key used by Devise. Devise uses this key to generate
