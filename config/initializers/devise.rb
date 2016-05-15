@@ -10,11 +10,27 @@ Devise.setup do |config|
 
 # API key
   if Rails.env.production?
-    config.omniauth :facebook, "124572817956059", "22be98b83bb661a26ee2e7be89eef937"
-    config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y"
+    config.omniauth(:facebook,
+                    "124572817956059",
+                    "22be98b83bb661a26ee2e7be89eef937",
+                    scope: 'email',
+                    info_fields: 'name, email')
+    config.omniauth(:twitter,
+                    "v7ByEftCPcYL06ufERUZ6IDrZ",
+                    "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y",
+                    image_size: 'original',
+                    display: 'popup')
   else
-    config.omniauth :facebook, "596501403859655", "8553a4c7ea3ba7643f285697370bac6a", {:scope => 'email'}
-    config.omniauth :twitter,  "v7ByEftCPcYL06ufERUZ6IDrZ", "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y", {:image_size => 'original', :display => 'popup'}
+    config.omniauth(:facebook,
+                    "596501403859655",
+                    "8553a4c7ea3ba7643f285697370bac6a",
+                    scope: 'email',
+                    info_fields: 'name, email')
+    config.omniauth(:twitter,
+                    "v7ByEftCPcYL06ufERUZ6IDrZ",
+                    "Py7aflkqjv83zB9fWf54RGiSy1q97BafdPAV6Mie8uwoGmvy5y",
+                    image_size: 'original',
+                    display: 'popup')
   end
 
 
