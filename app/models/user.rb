@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
     raise
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
-      user = User.find_by(email: auth.info.email) if auth.info.email
+      user = User.find_by(email: auth.info.email, provider: auth.provider) if auth.info.email
       if user
         user.update(uid: auth.uid)
       else
