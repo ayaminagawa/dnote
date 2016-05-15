@@ -17,8 +17,8 @@ default: &default
 # Do not set this db to the same as development or production.
 development:
   <<: *default
-  database: mydb
-  username: root
+  database: dnote
+  username: progate
 test:
   <<: *default
 production:

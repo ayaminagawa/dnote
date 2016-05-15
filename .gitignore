@@ -19,3 +19,5 @@ doc/
 .secret
 public/images
 public/system
+
+vendor/bundle
